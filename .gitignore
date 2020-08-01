@@ -5,7 +5,7 @@
 # Except for the files and folders we want to track
 !README.md
 !.screenshot.png
-!.forest\ evening.jpg
+!.background.jpg
 
 !.screenlayout
 !.bashrc
