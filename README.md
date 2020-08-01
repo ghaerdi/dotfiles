@@ -1,72 +1,79 @@
 # Dotfiles & Configs
 
 ![Screenshot](.screenshot.png)
-El fondo se descarga y se aplica automáticamente (se puede cambiar en .xsession)
+![Background](.background.jpg)
+El fondo se descarga y aplica automáticamente, se puede reemplazar el archivo con otro utilizando el mismo nombre (formato .jpg o .png).
 
-# Widgets utilizados (de derecha a izquierda en la barra superior)
-<ul>
-<li>Clock</li>
-<li>Layouts (cambia de layout al presioanr)</li>
-<li>CheckUpdates (actualiza al presionar)</li>
-<li>Volume (presionar para mute y scroll para ajustar)</li>
-<li>moc (presionar para pausar, scroll para cambiar)</li>
-<li>systray (muestra aplicaciones en segundo plano)</li>
-</ul>
 
 # Tutorial
 Necesitarás git para ejecutar los siguientes comandos y adquirir toda la configuración.
 
 ```bash
 git clone https://github.com/ghaerdi/dotfiles
-cd dotfiles
-sudo cp -R home/usuario/dotfiles home/usuario/
+sudo cp -R home/usuario/dotfiles/. home/usuario/
 ```
-Los atajos se pueden configurar en el archivo home/usuario/.config/qtile/config.py <br/>
-Las aplicaciones utilizadas en los atajos también se pueden modificar facilmente en las variables que han sido almacenadas.
+Los atajos se pueden configurar en el archivo home/usuario/.config/qtile/config.py.
+<br/>
+Las aplicaciones asignados en qtile también se pueden modificar facilmente en el mismo archivo.
 
-# Paquetes necesarios para qtile y la interfaz
-<ul>
-<li>Xorg (gráficos)</li>
-<li>interfaz para iniciar sesión (lightdm recomendado)</li>
-<li>Qtile (gestor de ventanas)</li>
-<li>Picom (transparencias)</li>
-<li>Feh (fondo)</li>
-<li>Alacritty (terminal de gpu)</li>
-<li>Firefox (explorador)</li>
-<li>nnn (gestor de archivos en terminal)</li>
-<li>Rofi (barra de búsqueda y menú de aplicaciones)</li>
-<li>Brightnessctl (luminosidad)</li>
-<li>Redshift (calor para las noches)</li>
-<li>Neofetch (logo de arch linux en terminal + información del sistema)</li>
-<li>Htop (monitor de recursos)</li>
-<li>alsa (volumen)</li>
-<li>moc (música en terminal)</li>
-<li>deepin-screenshot (screenshots)</li>
-<li>Inconsolata (fuente para terminal)</li>
-<li>noto-fonts (símbolos)</li>
-</ul>
+<table><tr>
 
-# Otros paquetes necesarios para Arch
-<ul>
-<li>Sudo (permisos)</li>
-<li>networkmanager (ethernet y wifi)</li>
-<li>Grub (bootloader)</li>
-<li>Git (repositorios)</li>
-<li>base-devel (AUR makepkg)</li>
-<li>ntfs-3g (particiones)</li>
-<li>polkit (particiones)</li>
-<li>os-prober (mostrar otros sistemas operativos en grub)</li>
-<li></li>
-</ul>
+<td valign="top" width="33%">
+
+### Paquetes qtile e interfaz
+* Xorg (gráficos)
+* Inicio de sesión (lightdm)
+* Qtile (gestor de ventanas)
+* Picom (transparencias)
+* Feh (fondo)
+* Alacritty (terminal)
+* Firefox (explorador)
+* nnn (gestor de archivos)
+* Rofi (menú y busqueda de apps)
+* Brightnessctl (luminosidad)
+* Redshift (calor)
+* Neofetch (logo + información del sistema en terminal)
+* Htop (monitor de recursos)
+* alsa (volumen)
+* moc (música en terminal)
+* deepin-screenshot (screenshots)
+* Inconsolata (fuente)
+* noto-fonts (símbolos)
+
+</td><td valign="top" width="34%">
+
+### Paquetes Arch
+* Sudo (permisos)
+* networkmanager
+* Grub (bootloader)
+* Git (repositorios)
+* base-devel (AUR)
+* ntfs-3g (particiones)
+* polkit (particiones)
+* os-prober (mostrar otros sistemas operativos en grub)
+</td><td valign="top" width="33%">
+
+### Widgets utilizados
+
+* Clock
+* Layouts (cambia al presionar)
+* CheckUpdates (actualiza al presionar)
+* Volume (mute al presionar y scroll para ajustar)
+* moc (presionar para pausar, scroll para cambiar)
+* systray (muestra aplicaciones en segundo plano)
+
+</td></tr></table>
 
 # Atajos
 
-## Ventanas
+<table><tr><td valign="top" width="50%">
+
+### Ventanas
 
 | Key                 | Action               |
 |---------------------|----------------------|
 | **mod + i**         | next window (up)     |
-| **mod + k**         | next window (up)     |
+| **mod + k**         | next window (down)   |
 | **mod + j**         | next window (left)   |
 | **mod + l**         | next window (right)  |
 | **mod + shift + i** | move window up       |
@@ -81,12 +88,13 @@ Las aplicaciones utilizadas en los atajos también se pueden modificar facilment
 | **mod + ctrl + r**  | restart qtile        |
 | **mod + ctrl + q**  | quit qtile           |
 
-## Aplicaciones
+</td><td valign="top" width="50%">
+
+### Aplicaciones
 
 | Key                 | Action              |
 |---------------------|---------------------|
 | **mod + m**         | launch rofi         |
-| **alt + tab**       | window nav (rofi)   |
 | **mod + b**         | launch browser      |
 | **mod + f**         | launch file manager |
 | **mod + return**    | launch terminal     |
@@ -97,3 +105,5 @@ Las aplicaciones utilizadas en los atajos también se pueden modificar facilment
 | **mod + F10**       | mute sound          |
 | **mod + F11**       | volume -5%          |
 | **mod + F12**       | volume +5%          |
+
+</td></tr></table>

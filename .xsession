@@ -50,9 +50,20 @@ udiskie -t &
 # Java Fonts
 xsettingsd &
 
+
 # Set wallpaper
-feh --bg-scale .forest\ evening.jpg
+if [ -f .background.jpg ]; then
+    feh --bg-scale .background.jpg
+fi
+
+if [ -f .background.png ]; then
+    feh --bg-scale .background.png
+fi
+
 # Set keyboard map
 setxkbmap de deadtilde
 # Set mouse map
 xmodmap -e "pointer = 3 2 1" &
+
+# Look for updates
+sudo pacman -Sy &

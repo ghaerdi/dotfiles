@@ -41,8 +41,8 @@ import subprocess
 import json
 
 # APPS
-browser = "firefox"
 terminal = "alacritty"
+browser = "firefox"
 file_explorer = terminal + " -e nnn"
 apps_menu = "rofi -show drun"
 window_menu = "rofi -show window"
@@ -282,7 +282,7 @@ def powerline_base():
         # widget.CurrentLayout(
         #     **base(bg='color2'),
         #     **current_layout
-        # ),fm
+        # ),
         widget.Image(
            filename=img['color1']
         ),
