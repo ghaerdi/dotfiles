@@ -192,7 +192,7 @@ separator = {
 separator2 = {
     **base(),
     'linewidth': 0,
-    'padding': 75
+    'padding': 50
 }
 
 group_box = {
@@ -221,6 +221,7 @@ window_name = {
     'icon_size': 0,
     'padding': 3.5,
     'margin': 0,
+    'margin_x': 10,
     'rounded': False,
     'border': colors['color6'],
     'borderwidth': 1,
