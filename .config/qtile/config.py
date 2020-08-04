@@ -1,17 +1,6 @@
 # Qtile Config File
 # http://www.qtile.org/
 
-# Antonio Sarosi
-# https://www.youtube.com/channel/UCzTi9I3zApECTkukkMOpEEA/featured
-
-# Copyright (c) 2010 Aldo Cortesi
-# Copyright (c) 2010, 2014 dequis
-# Copyright (c) 2012 Randall Ma
-# Copyright (c) 2012-2014 Tycho Andersen
-# Copyright (c) 2012 Craig Barnes
-# Copyright (c) 2013 horsik
-# Copyright (c) 2013 Tao Sauvage
-
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
@@ -43,9 +32,8 @@ import json
 # APPS
 terminal = "alacritty"
 browser = "firefox"
-file_explorer = terminal + " -e nnn"
+file_explorer = terminal + " -e ranger"
 apps_menu = "rofi -show drun"
-window_menu = "rofi -show window"
 screenshot = "deepin-screenshot"
 
 # QTILE PATCH
@@ -107,7 +95,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # Restart Qtile
     ([mod, "control"], "r", lazy.restart()),
-    
+
     # Quit Qtile
     ([mod, "control"], "q", lazy.shutdown()),
 
@@ -118,9 +106,6 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # Menu
     ([mod], "m", lazy.spawn(apps_menu)),
-
-    # Window Nav
-    (["mod1"], "Tab", lazy.spawn(window_menu)),
 
     # Browser
     ([mod], "b", lazy.spawn(browser)),
@@ -158,7 +143,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
 # GROUPS
 
-groups = [Group(i) for i in ["NET", "DEV", "TERM", "FS", "CHAT", "OTHER"]]
+groups = [Group(i) for i in [" ", " ", " ", " ", "切 ", "", "..."]]
 
 for i, group in enumerate(groups):
     # Each workspace is identified by a number starting at 1
@@ -176,13 +161,14 @@ for i, group in enumerate(groups):
 layout_conf = {
     'border_focus': colors['color6'][0],
     'border_width': 1,
-    'margin': 2
+    'margin': 5
 }
 
 layouts = [
     layout.Max(),
     layout.MonadTall(**layout_conf),
-    layout.MonadWide(**layout_conf),
+    # layout.MonadWide(**layout_conf),
+    layout.Bsp(**layout_conf)
 ]
 
 
@@ -203,30 +189,44 @@ separator = {
     'padding': 5,
 }
 
+separator2 = {
+    **base(),
+    'linewidth': 0,
+    'padding': 75
+}
+
 group_box = {
     **base(),
-    'font': 'Ubuntu Bold',
-    'fontsize': 10,
-    'margin_y': 5,
+    'font': 'UbuntuMono Nerd Font',
+    'fontsize': 16,
+    'margin_y': 3,
     'margin_x': 0,
-    'padding_y': 8,
-    'padding_x': 5,
+    'padding_y': 5,
+    'padding_x': 10,
     'borderwidth': 1,
     'active': colors['light'],
-    'inactive': colors['light'],
+    'inactive': colors['grey'],
+    'disable_drag': True,
     'rounded': False,
-    'highlight_method': 'block',
-    'this_current_screen_border': colors['color5'],
-    'this_screen_border': colors['color6'],
-    'other_current_screen_border': colors['dark'],
-    'other_screen_border': colors['dark']
+    'highlight_method': 'text',
+    'background': colors['black'],
+    'this_current_screen_border': colors['color6'],
 }
 
 window_name = {
-    **base(fg='color6'),
+    'foreground': colors['light'],
+    'background': colors['black'],
     'font': 'Ubuntu',
     'fontsize': 12,
-    'padding': 5
+    'icon_size': 0,
+    'padding': 3.5,
+    'margin': 0,
+    'rounded': False,
+    'border': colors['color6'],
+    'borderwidth': 1,
+    'txt_floating': '🗗 ',
+    'txt_minimized': '🗕 ',
+    'title_width_method': 'uniform'
 }
 
 systray = {
@@ -237,7 +237,7 @@ systray = {
 text_box = {
     'font': 'Ubuntu Bold',
     'fontsize': 15,
-    'padding': 5
+    'padding': 5,
 }
 
 pacman = {
@@ -264,9 +264,30 @@ clock = {
 def workspaces():
     return [
         widget.Sep(**separator),
-        widget.GroupBox(**group_box),
+        widget.TextBox(
+            background=colors['dark'],
+            foreground=colors['color6'],
+            font='UbuntuMono Nerd Font',
+            fontsize=20,
+            text=' '
+        ),
         widget.Sep(**separator),
-        widget.WindowName(**window_name)
+        widget.Image(
+            filename=img['black']
+        ),
+        widget.GroupBox(**group_box),
+        widget.Image(
+            filename=img['black2']
+        ),
+        widget.Sep(**separator2),
+        widget.Image(
+            filename=img['black4']
+        ),
+        widget.TaskList(**window_name),
+        widget.Image(
+            filename=img['black3']
+        ),
+        widget.Sep(**separator2),
     ]
 
 
@@ -275,27 +296,28 @@ def powerline_base():
         widget.Image(
            filename=img['color2']
         ),
-        widget.CurrentLayoutIcon(
+        widget.TextBox(
             **base(bg='color2'),
-            **current_layout_icon   
+            font= 'Ubuntu',
+            fontsize= 30,
+            padding= 2,
+            text=''
         ),
-        # widget.CurrentLayout(
-        #     **base(bg='color2'),
-        #     **current_layout
-        # ),
+        widget.Clock(
+            **base(bg='color2'),
+            **clock
+        ),
         widget.Image(
            filename=img['color1']
         ),
-        widget.TextBox(
+        widget.CurrentLayoutIcon(
             **base(bg='color1'),
-            font= 'Ubuntu',
-            fontsize= 15,
-            padding= 2,
-            text='🕘'
+            **current_layout_icon
         ),
-        widget.Clock(
+        widget.Sep(
             **base(bg='color1'),
-            **clock
+            linewidth = 0,
+            padding = 5
         )
     ]
 
@@ -324,7 +346,8 @@ laptop_widgets = [
         **base(bg='color5'),
         play_color = "#ffffff",
         fmt = "{} ",
-        max_chars = 30
+        max_chars = 30,
+        markup = False
     ),
     widget.Image(
        filename=img['color4']
@@ -332,9 +355,9 @@ laptop_widgets = [
     widget.TextBox(
         **base(bg='color4'),
         font= 'Ubuntu',
-        fontsize= 12,
+        fontsize= 25,
         padding= 2,
-        text='🎶'
+        text=''
     ),
     widget.Volume(
         **base(bg='color4')
@@ -345,9 +368,9 @@ laptop_widgets = [
     widget.TextBox(
         **base(bg='color3'),
         font= 'Ubuntu',
-        fontsize= 20,
-        padding= 1,
-        text='⟳',
+        fontsize= 25,
+        padding= 2,
+        text='',
         **pacman
     ),
     widget.CheckUpdates(
@@ -374,7 +397,7 @@ extension_defaults = widget_defaults.copy()
 # SCREENS
 
 screens = [
-    Screen(top=bar.Bar(laptop_widgets, 24, opacity=0.95))
+    Screen(top=bar.Bar(laptop_widgets, 24, opacity=0.90))
 ]
 
 # check connected monitors

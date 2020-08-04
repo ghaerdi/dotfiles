@@ -28,7 +28,7 @@ Las aplicaciones asignados en qtile también se pueden modificar facilmente en e
 * Feh (fondo)
 * Alacritty (terminal)
 * Firefox (explorador)
-* nnn (gestor de archivos)
+* Ranger (gestor de archivos)
 * Rofi (menú y busqueda de apps)
 * Brightnessctl (luminosidad)
 * Redshift (calor)
@@ -38,7 +38,7 @@ Las aplicaciones asignados en qtile también se pueden modificar facilmente en e
 * moc (música en terminal)
 * deepin-screenshot (screenshots)
 * Inconsolata (fuente)
-* noto-fonts (símbolos)
+* noto-fonts & UbuntuMono Nerd Fonts (símbolos)
 
 </td><td valign="top" width="34%">
 
@@ -60,7 +60,9 @@ Las aplicaciones asignados en qtile también se pueden modificar facilmente en e
 * CheckUpdates (actualiza al presionar)
 * Volume (mute al presionar y scroll para ajustar)
 * moc (presionar para pausar, scroll para cambiar)
-* systray (muestra aplicaciones en segundo plano)
+* systray (aplicaciones en segundo plano)
+* TaskList (aplicaciones en ejecución)
+* Groups
 
 </td></tr></table>
 

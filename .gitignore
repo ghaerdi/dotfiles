@@ -6,6 +6,7 @@
 !README.md
 !.screenshot.png
 !.background.jpg
+!.background.png
 
 !.screenlayout
 !.bashrc
@@ -13,3 +14,7 @@
 !.config
 !.moc
 !.git-prompt.sh
+!.aliases
+!.zshrc
+!.p10k.zsh
+!powerlevel10K
