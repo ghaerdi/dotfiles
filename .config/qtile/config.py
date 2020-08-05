@@ -143,7 +143,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
 # GROUPS
 
-groups = [Group(i) for i in [" ", " ", " ", " ", "切 ", "", "..."]]
+groups = [Group(i) for i in [" ", " ", " ", " ", " ", "切 ", "者 ", "調 ",  "..."]]
 
 for i, group in enumerate(groups):
     # Each workspace is identified by a number starting at 1
@@ -161,13 +161,15 @@ for i, group in enumerate(groups):
 layout_conf = {
     'border_focus': colors['color6'][0],
     'border_width': 1,
-    'margin': 5
+    'margin': 5,
+    'single_border_width': 0,
+    'single_margin': 0
 }
 
 layouts = [
-    layout.Max(),
+    # layout.Max(),
     layout.MonadTall(**layout_conf),
-    # layout.MonadWide(**layout_conf),
+    layout.MonadWide(**layout_conf),
     layout.Bsp(**layout_conf)
 ]
 
@@ -186,7 +188,7 @@ def base(fg='light', bg='dark'):
 separator = {
     **base(),
     'linewidth': 0,
-    'padding': 5,
+    'padding': 10,
 }
 
 separator2 = {
@@ -276,7 +278,15 @@ def workspaces():
         widget.Image(
             filename=img['black']
         ),
+        widget.Sep(
+            **base(bg='black'),
+            linewidth = 0,
+            padding = 10),
         widget.GroupBox(**group_box),
+        widget.Sep(
+            **base(bg='black'),
+            linewidth = 0,
+            padding = 10),
         widget.Image(
             filename=img['black2']
         ),

@@ -22,7 +22,7 @@ Las aplicaciones asignados en qtile también se pueden modificar facilmente en e
 
 ### Paquetes qtile e interfaz
 * Xorg (gráficos)
-* Inicio de sesión (lightdm)
+* Lightdm (inicio de sesión)
 * Qtile (gestor de ventanas)
 * Picom (transparencias)
 * Feh (fondo)
@@ -46,6 +46,7 @@ Las aplicaciones asignados en qtile también se pueden modificar facilmente en e
 * Sudo (permisos)
 * networkmanager
 * Grub (bootloader)
+* intel-ucode (o amd-ucode)
 * Git (repositorios)
 * base-devel (AUR)
 * ntfs-3g (particiones)
@@ -55,8 +56,8 @@ Las aplicaciones asignados en qtile también se pueden modificar facilmente en e
 
 ### Widgets utilizados
 
-* Clock
 * Layouts (cambia al presionar)
+* Clock
 * CheckUpdates (actualiza al presionar)
 * Volume (mute al presionar y scroll para ajustar)
 * moc (presionar para pausar, scroll para cambiar)
