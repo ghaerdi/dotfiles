@@ -2,8 +2,9 @@
 
 ![Screenshot](.screenshot.png)
 ![Background](.background.jpg)
-El fondo se descarga y aplica automáticamente, se puede reemplazar el archivo con otro utilizando el mismo nombre (formato .jpg o .png).
-
+El fondo se descarga y aplica automáticamente, se puede reemplazar el archivo con otro utilizando el mismo nombre (background[.jpg o .png]).
+<br/>
+El repositorio incluye una carpeta en donde guarda algunos wallpapers.
 
 # Tutorial
 Necesitarás git para ejecutar los siguientes comandos y adquirir toda la configuración.
