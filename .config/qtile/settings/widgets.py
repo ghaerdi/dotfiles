@@ -61,7 +61,7 @@ window_name = {
 
 systray = {
     'background': colors['black'],
-    'padding': 5,
+    'padding': 10,
 }
 
 text_box = {
@@ -195,7 +195,7 @@ laptop_widgets = [
         font= 'Ubuntu',
         fontsize= 25,
         padding= 2,
-        text=''
+        text='墳'
     ),
     widget.Volume(
         **base(bg='color4')

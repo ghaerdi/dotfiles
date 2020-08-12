@@ -3,7 +3,7 @@ from libqtile.config import Key, Group
 from libqtile.command import lazy
 from settings.keys import mod, keys
 
-groups = [Group(i) for i in [" ", " ", " ", " ", " ", "切 ", "者 ", "調 ",  "..."]]
+groups = [Group(i) for i in [" ", " ", " ", " ", "切 ", "者 ", "調 ",  "..."]]
 
 for i, group in enumerate(groups):
     # Each workspace is identified by a number starting at 1

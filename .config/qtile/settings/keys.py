@@ -4,8 +4,8 @@ from libqtile.command import lazy
 
 #                     Apps
 terminal = "alacritty"
-browser = "firefox"
-file_explorer = terminal + " -e ranger"
+browser = "google-chrome-stable"
+file_explorer = "nautilus"
 apps_menu = "rofi -show drun"
 screenshot = "deepin-screenshot"
 

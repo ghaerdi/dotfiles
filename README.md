@@ -28,8 +28,8 @@ Las aplicaciones asignados en qtile también se pueden modificar facilmente en e
 * Picom (transparencias)
 * Feh (fondo)
 * Alacritty (terminal)
-* Firefox (explorador)
-* Ranger (gestor de archivos)
+* Google Chrome (explorador)
+* Nautilus (gestor de archivos)
 * Rofi (menú y busqueda de apps)
 * Brightnessctl (luminosidad)
 * Redshift (calor)
@@ -53,6 +53,7 @@ Las aplicaciones asignados en qtile también se pueden modificar facilmente en e
 * ntfs-3g (particiones)
 * polkit (particiones)
 * os-prober (mostrar otros sistemas operativos en grub)
+* yarn
 </td><td valign="top" width="33%">
 
 ### Widgets utilizados

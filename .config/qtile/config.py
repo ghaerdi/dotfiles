@@ -19,7 +19,6 @@ def autostart():
     script = path.join(qtile_path, "autostart.sh")
     subprocess.call([script])
 
-
 # OTHER STUFF
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
