@@ -27,9 +27,9 @@ Las aplicaciones asignados en qtile también se pueden modificar facilmente en e
 * Qtile (gestor de ventanas)
 * Picom (transparencias)
 * Feh (fondo)
-* Alacritty (terminal)
+* Konsole (terminal)
 * Google Chrome (explorador)
-* Nautilus (gestor de archivos)
+* Ranger (gestor de archivos)
 * Rofi (menú y busqueda de apps)
 * Brightnessctl (luminosidad)
 * Redshift (calor)
@@ -37,9 +37,9 @@ Las aplicaciones asignados en qtile también se pueden modificar facilmente en e
 * Htop (monitor de recursos)
 * alsa (volumen)
 * moc (música en terminal)
-* deepin-screenshot (screenshots)
-* Inconsolata (fuente)
-* noto-fonts & UbuntuMono Nerd Fonts (símbolos)
+* deepin-screenshot & xfce4-clipman (screenshots)
+* Fira Code (fuente)
+* UbuntuMono Nerd Fonts (símbolos)
 
 </td><td valign="top" width="34%">
 
@@ -53,7 +53,7 @@ Las aplicaciones asignados en qtile también se pueden modificar facilmente en e
 * ntfs-3g (particiones)
 * polkit (particiones)
 * os-prober (mostrar otros sistemas operativos en grub)
-* yarn
+* yarn & npm (para nvim)
 </td><td valign="top" width="33%">
 
 ### Widgets utilizados
@@ -103,6 +103,7 @@ Las aplicaciones asignados en qtile también se pueden modificar facilmente en e
 | **mod + b**         | launch browser      |
 | **mod + f**         | launch file manager |
 | **mod + return**    | launch terminal     |
+| **mod + f**         | launch moc          |
 | **mod + r**         | redshift            |
 | **mod + s**         | screenshot          |
 | **mod + F6**        | -brighness          |

@@ -3,11 +3,12 @@ from libqtile.config import Key
 from libqtile.command import lazy
 
 #                     Apps
-terminal = "alacritty"
+terminal = "konsole"
 browser = "google-chrome-stable"
-file_explorer = "nautilus"
+file_explorer = terminal + " -e ranger"
 apps_menu = "rofi -show drun"
 screenshot = "deepin-screenshot"
+music_player = terminal + " -e mocp"
 
 #                  Super key
 mod = "mod4"
@@ -64,7 +65,11 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Terminal
     ([mod], "Return", lazy.spawn(terminal)),
 
+    # Screenshot
     ([mod], "s", lazy.spawn(screenshot)),
+
+    # Music player
+    ([mod], "p", lazy.spawn(music_player)),
 
     # Redshift
     ([mod], "r", lazy.spawn("redshift -O 2400")),

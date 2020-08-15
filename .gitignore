@@ -9,13 +9,11 @@
 !.background.png
 
 !.screenlayout
-!.bashrc
 !.xsession
 !.config
-!.moc
 !.git-prompt.sh
 !.aliases
 !.zshrc
 !.p10k.zsh
-!powerlevel10K
 !Wallpapers
+!.local
