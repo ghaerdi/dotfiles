@@ -8,26 +8,39 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-    " Better Syntax Support
-    Plug 'sheerun/vim-polyglot'
-    " File Explorer
-    Plug 'scrooloose/NERDTree'
-    " Auto pairs for '(' '[' '{'
-    Plug 'jiangmiao/auto-pairs'
-    " Autocomplet
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " Airline
+    " UI
+    Plug 'sheerun/vim-polyglot' " Better Syntax Support
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    " Icons
-    Plug 'ryanoasis/vim-devicons'
-    " Indent guides
+    Plug 'ryanoasis/vim-devicons' " Icons
+    Plug 'mhartington/oceanic-next' "Theme
+    "
+    " File Explorer
+    Plug 'scrooloose/NERDTree'
+
+    " Autocomplet
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'Yggdroot/indentLine'
-    " Autoclose tags
     Plug 'alvan/vim-closetag'
+
     " Comment code
     Plug 'tpope/vim-commentary'
+    
     " Autosave
     Plug '907th/vim-auto-save'
 
-    call plug#end()
+call plug#end()
+
+let g:coc_global_extensions = [
+\   'coc-tsserver',
+\   'coc-eslint',
+\   'coc-prettier',
+\   'coc-css',
+\   'coc-html',
+\   'coc-json',
+\   'coc-yaml',
+\   'coc-emmet',
+\   'coc-ultisnips',
+\   'coc-highlight'
+\ ]

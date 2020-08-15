@@ -1,5 +1,16 @@
+" Theme and Syntax
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+syntax enable
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+colorscheme OceanicNext
+
+
 " Airline
-let g:airline_theme='base16_snazzy'
+let g:airline_theme='oceanicnext'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 

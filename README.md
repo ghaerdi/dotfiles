@@ -38,8 +38,7 @@ Las aplicaciones asignados en qtile también se pueden modificar facilmente en e
 * alsa (volumen)
 * moc (música en terminal)
 * deepin-screenshot & xfce4-clipman (screenshots)
-* Fira Code (fuente)
-* UbuntuMono Nerd Fonts (símbolos)
+* FiraCode & UbuntuMono Nerd Fonts (fuentes y símbolos)
 
 </td><td valign="top" width="34%">
 
@@ -53,7 +52,7 @@ Las aplicaciones asignados en qtile también se pueden modificar facilmente en e
 * ntfs-3g (particiones)
 * polkit (particiones)
 * os-prober (mostrar otros sistemas operativos en grub)
-* yarn & npm (para nvim)
+* yarn & npm
 </td><td valign="top" width="33%">
 
 ### Widgets utilizados
