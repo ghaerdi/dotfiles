@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# GO Path
+export PATH="$PATH:$HOME/go/bin"
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=50
@@ -16,7 +18,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # Terminal
 . ~/.git-prompt.sh
 
-# Alias 
+# Alias
 if [ -f ~/.aliases ]; then
 . ~/.aliases
 fi

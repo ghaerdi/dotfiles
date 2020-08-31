@@ -13,20 +13,23 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'ryanoasis/vim-devicons' " Icons
-    Plug 'mhartington/oceanic-next' "Theme
-    "
+    Plug 'dracula/vim'
+
     " File Explorer
     Plug 'scrooloose/NERDTree'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
 
     " Autocomplet
     Plug 'jiangmiao/auto-pairs'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'Yggdroot/indentLine'
     Plug 'alvan/vim-closetag'
+    Plug 'dense-analysis/ale'
 
     " Comment code
     Plug 'tpope/vim-commentary'
-    
+
     " Autosave
     Plug '907th/vim-auto-save'
 
@@ -34,13 +37,10 @@ call plug#end()
 
 let g:coc_global_extensions = [
 \   'coc-tsserver',
-\   'coc-eslint',
-\   'coc-prettier',
 \   'coc-css',
 \   'coc-html',
-\   'coc-json',
-\   'coc-yaml',
 \   'coc-emmet',
 \   'coc-ultisnips',
-\   'coc-highlight'
+\   'coc-highlight',
+\   'coc-go'
 \ ]

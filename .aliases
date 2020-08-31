@@ -1,1 +1,1 @@
-alias mongodb='mongod --port 27017 --dbpath /home/rudolf/Documentos/databases'
+alias mongodb='mongod --port 27017 --dbpath /home/rudolf/Documents/database'

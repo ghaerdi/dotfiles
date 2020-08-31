@@ -1,16 +1,17 @@
 " Theme and Syntax
+syntax enable
+
 if (has("termguicolors"))
  set termguicolors
 endif
 
-syntax enable
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
-colorscheme OceanicNext
+" Dracula
+colorscheme dracula
+let g:airline_theme = 'dracula'
 
+hi Normal guibg=NONE ctermbg=NONE
 
 " Airline
-let g:airline_theme='oceanicnext'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 

@@ -4,7 +4,7 @@ from libqtile.command import lazy
 
 #                     Apps
 terminal = "konsole"
-browser = "google-chrome-stable"
+browser = "opera"
 file_explorer = terminal + " -e ranger"
 apps_menu = "rofi -show drun"
 screenshot = "deepin-screenshot"
@@ -18,22 +18,22 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Window Configs ------------
 
     # Switch between windows in current stack pane
-    ([mod], "k", lazy.layout.down()),
-    ([mod], "i", lazy.layout.up()),
-    ([mod], "j", lazy.layout.left()),
+    ([mod], "j", lazy.layout.down()),
+    ([mod], "k", lazy.layout.up()),
+    ([mod], "h", lazy.layout.left()),
     ([mod], "l", lazy.layout.right()),
 
     # Change window sizes (MonadTall)
-    ([mod, "control"], "j", lazy.layout.shrink()),
+    ([mod, "control"], "h", lazy.layout.shrink()),
     ([mod, "control"], "l", lazy.layout.grow()),
 
     # Toggle floating
     ([mod, "shift"], "f", lazy.window.toggle_floating()),
 
     # Move windows in current stack
-    ([mod, "shift"], "k", lazy.layout.shuffle_down()),
-    ([mod, "shift"], "i", lazy.layout.shuffle_up()),
-    ([mod, "shift"], "j", lazy.layout.shuffle_left()),
+    ([mod, "shift"], "j", lazy.layout.shuffle_down()),
+    ([mod, "shift"], "k", lazy.layout.shuffle_up()),
+    ([mod, "shift"], "h", lazy.layout.shuffle_left()),
     ([mod, "shift"], "l", lazy.layout.shuffle_right()),
 
     # Toggle between different layouts as defined below

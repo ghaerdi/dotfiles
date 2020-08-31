@@ -2,29 +2,17 @@
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
   "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
     "go",
     "python",
     "php",
     "markdown",
-    "javascript",
-    "typescript",
-    "json",
-    "jsonc"
+    "json"
   ],
-  "eslint.filetypes": [
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "javascriptreact",
-    "typescript.tsx"
-  ],
-  "eslint.options": {
-    "env": {
-      "browser": true,
-      "node": true
-    },
-    "diagnostic.errorSign": "✕",
-    "diagnostic.warningSign": "⚠",
-    "diagnostic.infoSign": "•"
-  }
+  "diagnostic.displayByAle": true,
+  "eslint.enable": false,
+  "diagnostic.errorSign": "✕",
+  "diagnostic.warningSign": "⚠",
+  "diagnostic.infoSign": "•"
 }
