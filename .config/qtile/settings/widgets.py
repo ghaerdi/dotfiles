@@ -36,6 +36,7 @@ group_box = {
     'active': colors['light'],
     'inactive': colors['grey'],
     'disable_drag': True,
+    'hide_unused': True,
     'rounded': False,
     'highlight_method': 'text',
     'background': colors['black'],

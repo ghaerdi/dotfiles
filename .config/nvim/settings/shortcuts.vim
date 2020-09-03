@@ -7,12 +7,20 @@ nnoremap <S-Tab> <<
 "Revert Tab like VSCode
 inoremap <S-Tab> <C-d>
 
-""" NERDTree
-" Toggle NERDTree
+""" Toggle NERDTree
 map <C-n> :NERDTreeToggle<CR>
+
+""" Open fzf
+map <C-f> :Files<CR>
+map <C-b> :Buffers<CR>
+map <C-d> :bdelete<CR>
 
 """ COC
 map <silent> gd <Plug>(coc-definition)
 map <silent> gy <Plug>(coc-type-definition)
 map <silent> gi <Plug>(coc-implementation)
 map <silent> gr <Plug>(coc-references)
+
+""" Prettier
+vmap <S-f>  <Plug>(coc-format-selected)
+nmap <S-f>  <Plug>(coc-format-selected)

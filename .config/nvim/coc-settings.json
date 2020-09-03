@@ -1,18 +1,17 @@
 {
-  "suggest.echodocSupport": true,
-  "suggest.maxCompleteItemCount": 20,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "javascript",
-    "typescript",
-    "go",
-    "python",
-    "php",
-    "markdown",
-    "json"
-  ],
-  "diagnostic.displayByAle": true,
-  "eslint.enable": false,
-  "diagnostic.errorSign": "✕",
-  "diagnostic.warningSign": "⚠",
-  "diagnostic.infoSign": "•"
+        "suggest.echodocSupport": true,
+        "suggest.maxCompleteItemCount": 20,
+        "prettier.formatterPriority": 1,
+        "prettier.arrowParens": "avoid",
+        "coc.preferences.formatOnSaveFiletypes": [
+                "go",
+                "python",
+                "php",
+                "markdown"
+        ],
+        "diagnostic.displayByAle": true,
+        "eslint.enable": false,
+        "diagnostic.errorSign": "✕",
+        "diagnostic.warningSign": "⚠",
+        "diagnostic.infoSign": "•"
 }

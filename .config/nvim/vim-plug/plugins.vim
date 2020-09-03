@@ -14,6 +14,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'vim-airline/vim-airline-themes'
     Plug 'ryanoasis/vim-devicons' " Icons
     Plug 'dracula/vim'
+    Plug 'wadackel/vim-dogrun'
 
     " File Explorer
     Plug 'scrooloose/NERDTree'
@@ -34,13 +35,3 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug '907th/vim-auto-save'
 
 call plug#end()
-
-let g:coc_global_extensions = [
-\   'coc-tsserver',
-\   'coc-css',
-\   'coc-html',
-\   'coc-emmet',
-\   'coc-ultisnips',
-\   'coc-highlight',
-\   'coc-go'
-\ ]

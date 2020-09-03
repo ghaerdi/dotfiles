@@ -6,9 +6,14 @@ if (has("termguicolors"))
 endif
 
 " Dracula
-colorscheme dracula
+" colorscheme dracula
+" let g:airline_theme = 'dracula'
+
+" Dogrun
+colorscheme dogrun
 let g:airline_theme = 'dracula'
 
+" Transparent background
 hi Normal guibg=NONE ctermbg=NONE
 
 " Airline
