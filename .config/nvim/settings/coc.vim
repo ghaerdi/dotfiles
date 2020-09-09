@@ -1,11 +1,12 @@
 " Default extensions
 let g:coc_global_extensions = [
+\   'coc-emmet',
+\   'coc-html',
+\   'coc-css',
 \   'coc-tsserver',
 \   'coc-prettier',
-\   'coc-css',
-\   'coc-html',
-\   'coc-emmet',
+\   'coc-json',
+\   'coc-go',
 \   'coc-ultisnips',
-\   'coc-highlight',
-\   'coc-go'
+\   'coc-highlight'
 \ ]

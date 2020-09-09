@@ -22,5 +22,5 @@ map <silent> gi <Plug>(coc-implementation)
 map <silent> gr <Plug>(coc-references)
 
 """ Prettier
-vmap <S-f>  <Plug>(coc-format-selected)
-nmap <S-f>  <Plug>(coc-format-selected)
+vmap <S-f>  :CocCommand prettier.formatFile<CR>
+nmap <S-f>  :CocCommand prettier.formatFile<CR>

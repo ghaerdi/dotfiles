@@ -1,1 +1,2 @@
 neofetch
+taskbook --color

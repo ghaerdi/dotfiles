@@ -15,13 +15,16 @@ SAVEHIST=50
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
-# Terminal
-. ~/.git-prompt.sh
-
 # Alias
 if [ -f ~/.aliases ]; then
 . ~/.aliases
 fi
+
+# Auto cd
+setopt autocd
+
+# Terminal
+. ~/.git-prompt.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

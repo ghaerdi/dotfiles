@@ -1,1 +1,16 @@
-alias mongodb='mongod --port 27017 --dbpath /home/rudolf/Documents/database'
+alias sdn="shutdown now"
+
+alias c="clear"
+alias ls="ls -a"
+alias ...="cd ../../"
+alias ....="cd ../../../"
+alias .....="cd ../../../../"
+alias dev="cd Documents/Programming"
+alias qtc="cd .config/qtile"
+alias vic="cd .config/nvim"
+
+alias vi="nvim"
+alias visudo="sudo EDITOR=nvim visudo"
+
+alias mongodb="mongod --port 27017 --dbpath /home/rudolf/Documents/database"
+alias tb="taskbook"
