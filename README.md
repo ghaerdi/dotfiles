@@ -2,116 +2,77 @@
 
 ![Screenshot](.screenshot.png)
 ![Background](.background.jpg)
-El fondo se descarga y aplica automáticamente, se puede reemplazar el archivo con otro utilizando el mismo nombre (background[.jpg o .png]).
+Dotfiles include the background, you can replace it with the same name (background[.jpg or .png]) or editing/adding something like this:
+```bash
+# ~/.xsession
+
+feh --bg-scale your-wallpaper.jpg
+```
 <br/>
-El repositorio incluye una carpeta en donde guarda algunos wallpapers.
+The repository include more backgrounds images in the Wallpaper folder.
 
 # Tutorial
 
-Necesitarás git para ejecutar los siguientes comandos y adquirir toda la configuración.
+You will need git to run this:
 
 ```bash
 git clone https://github.com/ghaerdi/dotfiles
-sudo cp -R home/usuario/dotfiles/. home/usuario/
+cp -R home/usuario/dotfiles/. home/usuario/
 ```
-
-Los atajos se pueden configurar en el archivo home/usuario/.config/qtile/config.py.
-<br/>
-Las aplicaciones asignados en qtile también se pueden modificar facilmente en el mismo archivo.
 
 <table><tr>
 
 <td valign="top" width="33%">
 
-### Paquetes qtile e interfaz
+### Basic packages
 
-- Xorg (gráficos)
-- Lightdm (inicio de sesión)
-- Qtile (gestor de ventanas)
-- Picom (transparencias)
-- Feh (fondo)
-- Konsole (terminal)
-- Opera (explorador)
-- Ranger (gestor de archivos)
-- Rofi (menú y busqueda de apps)
-- Brightnessctl (luminosidad)
-- Redshift (calor)
-- Neofetch (logo + información del sistema en terminal)
-- Htop (monitor de recursos)
-- alsa (volumen)
-- moc (música en terminal)
-- deepin-screenshot & xfce4-clipman (screenshots)
-- FiraCode & UbuntuMono Nerd Fonts (fuentes y símbolos)
+- Sudo (permits for users)
+- networkmanager (internet and wifi)
+- intel-ucode o amd-ucode
+- Grub (bootloader)
+- Xorg (graphics)
+- Git
+- base-devel (AUR)
+- Lightdm (login screen)
+- pulseaudio (sound)
 
 </td><td valign="top" width="34%">
 
-### Paquetes Arch
+### Packages for Qtile
 
-- Sudo (permisos)
-- networkmanager
-- Grub (bootloader)
-- intel-ucode (o amd-ucode)
-- Git (repositorios)
-- base-devel (AUR)
-- ntfs-3g (particiones)
-- polkit (particiones)
-- os-prober (mostrar otros sistemas operativos en grub)
-- yarn & npm
+- Qtile (tilling window manager)
+- Konsole (terminal)
+- Opera (browser)
+- Ranger (terminal file explorer)
+- Rofi (menu and search apps)
+- Brightnessctl
+- Redshift (color temperature)
+- pulseaudio-alsa (sound)
+- alsa-utils (terminal volume control)
+- moc (terminal music player)
+- deepin-screenshot (screenshot)
+- xfce4-clipman (clipboard systray)
+- FiraCode & UbuntuMono Nerd Fonts (font and symbols)
+
 </td><td valign="top" width="33%">
 
-### Widgets utilizados
+### Optional packages
 
-- Layouts (cambia al presionar)
-- Clock
-- CheckUpdates (actualiza al presionar)
-- Volume (mute al presionar y scroll para ajustar)
-- moc (presionar para pausar, scroll para cambiar)
-- systray (aplicaciones en segundo plano)
-- TaskList (aplicaciones en ejecución)
-- Groups
-
-</td></tr></table>
-
-# Atajos
-
-<table><tr><td valign="top" width="50%">
-
-### Ventanas
-
-| Key                 | Action               |
-| ------------------- | -------------------- |
-| **mod + k**         | next window (up)     |
-| **mod + j**         | next window (down)   |
-| **mod + h**         | next window (left)   |
-| **mod + l**         | next window (right)  |
-| **mod + shift + k** | move window up       |
-| **mod + shift + j** | move window down     |
-| **mod + shift + h** | move window left     |
-| **mod + shift + l** | move window right    |
-| **mod + ctrl + l**  | increase window size |
-| **mod + ctrl + h**  | decrease window size |
-| **mod + shift + f** | toggle floating      |
-| **mod + tab**       | change layout        |
-| **mod + w**         | kill window          |
-| **mod + ctrl + r**  | restart qtile        |
-| **mod + ctrl + q**  | quit qtile           |
-
-</td><td valign="top" width="50%">
-
-### Aplicaciones
-
-| Key              | Action          |
-| ---------------- | --------------- |
-| **mod + m**      | launch rofi     |
-| **mod + b**      | launch browser  |
-| **mod + return** | launch terminal |
-| **mod + f**      | launch moc      |
-| **mod + r**      | redshift        |
-| **mod + s**      | screenshot      |
-| **mod + F6**     | -brighness      |
-| **mod + F5**     | +brighness      |
-| **mod + F10**    | mute sound      |
-| **mod + F11**    | volume -5%      |
-| **mod + F12**    | volume +5%      |
+- ntfs-3g (partitions)
+- polkit (partitions)
+- os-prober (show windows OS in grub)
+- Htop (task manager)
+- Neofetch (logo + info system in terminal)
+- Picom (transparency)
+- Feh (background)
+- yarn & npm
+- Nautilos o thunar (file explorer GUI)
+- network-manager-applet (NetworkManager systray)
+- pavucontrol (volume control GUI)
+- libnotify & notification-daemon (notifications)
+- udiskie (automount)
+- cbatticon (batery systray)
+- volumeicon (volume systray)
+- neovim (terminal file editor)
 
 </td></tr></table>
