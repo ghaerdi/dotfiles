@@ -41,6 +41,8 @@ group_box = {
     'highlight_method': 'text',
     'background': colors['black'],
     'this_current_screen_border': colors['color6'],
+    'urgent_alert_method': 'block',
+    'urgent_border': colors['color5']
 }
 
 window_name = {
@@ -72,7 +74,7 @@ text_box = {
 }
 
 pacman = {
-    'mouse_callbacks': {'Button1': lambda qtile: qtile.cmd_spawn(terminal + ' -e sudo pacman -Syu')}
+    'mouse_callbacks': {'Button1': lambda qtile: qtile.cmd_spawn(terminal + ' -e sudo pacman -Su')}
 }
 
 htop = {

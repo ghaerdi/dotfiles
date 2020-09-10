@@ -2,6 +2,9 @@
 ColorScheme=Qtile
 Font=Fira Code Retina,11,-1,5,53,0,0,0,0,0,Regular
 
+[Cursor Options]
+CursorShape=1
+
 [General]
 LocalTabTitleFormat=%n
 Name=arching
@@ -15,3 +18,6 @@ TrimTrailingSpacesInSelectedText=true
 
 [Scrolling]
 ScrollBarPosition=2
+
+[Terminal Features]
+BlinkingCursorEnabled=true

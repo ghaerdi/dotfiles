@@ -20,7 +20,7 @@ Color=17,17,17
 Color=49,54,59
 
 [Color0Intense]
-Color=127,140,141
+Color=158,174,175
 
 [Color1]
 Color=255,47,50
@@ -50,22 +50,22 @@ Color=182,86,25
 Color=251,253,91
 
 [Color4]
-Color=0,48,153
+Color=33,65,248
 
 [Color4Faint]
 Color=27,102,143
 
 [Color4Intense]
-Color=0,2,168
+Color=58,101,255
 
 [Color5]
-Color=123,62,255
+Color=125,125,255
 
 [Color5Faint]
 Color=97,74,115
 
 [Color5Intense]
-Color=107,33,255
+Color=119,92,255
 
 [Color6]
 Color=46,255,249
@@ -74,16 +74,16 @@ Color=46,255,249
 Color=24,108,96
 
 [Color6Intense]
-Color=88,255,255
+Color=93,255,237
 
 [Color7]
-Color=225,225,225
+Color=207,207,207
 
 [Color7Faint]
 Color=99,104,109
 
 [Color7Intense]
-Color=255,255,255
+Color=233,233,240
 
 [Foreground]
 Color=241,241,241
@@ -103,6 +103,6 @@ RandomSaturationRange=100
 [General]
 Blur=true
 ColorRandomization=false
-Description=Qtile
+Description=qtile
 Opacity=0.9
 Wallpaper=

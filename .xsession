@@ -50,7 +50,6 @@ udiskie -t &
 # Java Fonts
 xsettingsd &
 
-
 # Set wallpaper
 if [ -f .background.jpg ]; then
     feh --bg-scale .background.jpg

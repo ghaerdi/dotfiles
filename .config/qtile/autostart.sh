@@ -1,5 +1,6 @@
 #!/bin/sh
 
-# systray battery icon
-cbatticon -u 5 &
+# Save all clipboards (important for screenshot)
 xfce4-clipman &
+# Battery
+cbatticon &

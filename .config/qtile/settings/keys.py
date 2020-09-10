@@ -66,7 +66,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod], "Return", lazy.spawn(terminal)),
 
     # Screenshot
-    ([mod], "s", lazy.spawn(screenshot)),
+    ([], "Print", lazy.spawn(screenshot)),
 
     # Music player
     ([mod], "p", lazy.spawn(music_player)),
@@ -78,17 +78,11 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Hardware Configs ------------
 
     # Volume
-    ([mod], "F12", lazy.spawn(
-        "amixer set Master 5%+"
-    )),
-    ([mod], "F11", lazy.spawn(
-        "amixer set Master 5%-"
-    )),
-    ([mod], "F10", lazy.spawn(
-        "amixer set Master toggle"
-    )),
+    ([mod], "F11", lazy.spawn("amixer set Master 5%-")),
+    ([mod], "F12", lazy.spawn("amixer set Master 5%+")),
+    ([mod], "F10", lazy.spawn("amixer set Master toggle")),
 
-    #Brightness
-    ([mod], "F5", lazy.spawn("brightnessctl set 10%-")),
-    ([mod], "F6", lazy.spawn("brightnessctl set +10%")),
+      #Brightness
+    ([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
+    ([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
 ]]

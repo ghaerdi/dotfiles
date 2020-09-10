@@ -3,7 +3,7 @@ from libqtile.config import Key, Group, Match
 from libqtile.command import lazy
 from settings.keys import mod, keys, browser
 
-browsers = ["Firefox", "firefox", "google-chrome-stable", "Opera", "opera", browser.lower(), browser[0].upper()+browser[1::].lower()]
+browsers = ["Mozilla Firefox", "Google Chrome", "Opera", browser.lower(), browser[0].upper()+browser[1::].lower()]
 developer_tools = ["Insomnia", "insomnia"]
 chat_apps = ["teams", "Teams", "telegram", "Telegram"]
 
@@ -14,7 +14,7 @@ groups = [
     Group("ﭮ :4", matches=[Match(wm_class=["discord", "Discord"])]),
     Group("5: 切 ", matches=[Match(wm_class=[chat_apps])]),
     Group("6: 者 "),
-    Group("7: ...")
+    Group("7: ...", matches=[Match(title=["GLava"])])
 ]
 
 for i, group in enumerate(groups):
