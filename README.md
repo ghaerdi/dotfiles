@@ -11,7 +11,7 @@ feh --bg-scale your-wallpaper.jpg
 <br/>
 The repository include more backgrounds images in the Wallpaper folder.
 
-# Tutorial
+# Download dotfiles to your user directory
 
 You will need git to run this:
 
@@ -19,6 +19,8 @@ You will need git to run this:
 git clone https://github.com/ghaerdi/dotfiles
 cp -R home/usuario/dotfiles/. home/usuario/
 ```
+
+# Packages
 
 <table><tr>
 
@@ -63,6 +65,7 @@ cp -R home/usuario/dotfiles/. home/usuario/
 - os-prober (show windows OS in grub)
 - Htop (task manager)
 - Neofetch (logo + info system in terminal)
+- Taskbook (task for terminal)
 - Picom (transparency)
 - Feh (background)
 - yarn & npm
@@ -74,5 +77,46 @@ cp -R home/usuario/dotfiles/. home/usuario/
 - cbatticon (batery systray)
 - volumeicon (volume systray)
 - neovim (terminal file editor)
+- xcb-util-cursor (cursor theme)
+- lxappearance
 
 </td></tr></table>
+
+# Themes
+
+## Grub
+Download [Stylish](https://www.pling.com/p/1009237) or [Tela](https://www.pling.com/p/1307852/) <br>
+Run:
+
+```bash
+cd Downloads
+tar -xf Stylsh.1080p.tar.xz
+rm Stylsh.1080p.tar.xz
+cd Stylish-1080p
+./install.sh
+# To make sure if the grub theme changed:
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+## Cursor
+Download [Vimix](https://www.pling.com/p/1358330) <br>
+Run:
+
+```bash
+sudo pacman -S xcb-util-cursor # if you dont hava installed yet
+cd Downloads
+tar -xf 01-Vimix-cursors.tar.xz
+mv Vimix-cursors /usr/share/icons
+rm 01-Vimix-cursors.tar.xz
+```
+
+Edit `~/.gtkrc.2-0` and `~/.config/gtk3-0`
+
+```bash
+# ~/.gtkrc-2.0
+gtk-cursor-theme-name = "Vimix-cursors"
+
+# ~/.config/gtk-3.0/settings.ini
+gtk-cursor-theme-name = Vimix-cursors
+```
+Or you can use Ixappearance
