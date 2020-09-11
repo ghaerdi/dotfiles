@@ -5,7 +5,7 @@ import subprocess
 import json
 
 # Set theme
-theme = "material-darker" # only if available in ~/.config/qtile/themes
+theme = "material-darker-colorized" # only if available in ~/.config/qtile/themes
 
 qtile_path = path.join(path.expanduser("~"), ".config", "qtile")
 theme_path = path.join(qtile_path, "themes", theme)
@@ -17,6 +17,6 @@ with open(path.join(theme_path, "colors.json")) as f:
 img = {}
 
 # map image name to its path
-img_path = path.join(theme_path, "img2")
+img_path = path.join(theme_path, "img")
 for i in listdir(img_path):
     img[i.split(".")[0]] = path.join(img_path, i)

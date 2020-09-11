@@ -5,7 +5,7 @@ from settings.keys import terminal
 
 # Reusable configs for displaying different widgets on different screens
 
-def base(fg='light', bg='dark'):
+def base(fg='white', bg='dark'):
     return {
         'foreground': colors[fg],
         'background': colors[bg]
@@ -33,7 +33,7 @@ group_box = {
     'padding_y': 5,
     'padding_x': 10,
     'borderwidth': 1,
-    'active': colors['light'],
+    'active': colors['white'],
     'inactive': colors['grey'],
     'disable_drag': True,
     'hide_unused': True,
@@ -46,16 +46,16 @@ group_box = {
 }
 
 window_name = {
-    'foreground': colors['light'],
-    'background': colors['black'],
+    'foreground': colors['title-text'],
+    'background': colors['title-background'],
     'font': 'Ubuntu',
     'fontsize': 12,
     'icon_size': 0,
-    'padding': 3.5,
+    'padding': 5,
     'margin': 0,
-    'margin_x': 10,
+    'margin_x': 0,
     'rounded': False,
-    'border': colors['color6'],
+    'border': colors['title-highlight'],
     'borderwidth': 1,
     'txt_floating': '🗗 ',
     'txt_minimized': '🗕 ',
@@ -122,11 +122,11 @@ def workspaces():
         ),
         widget.Sep(**separator2),
         widget.Image(
-            filename=img['black4']
+            filename=img['title2']
         ),
         widget.TaskList(**window_name),
         widget.Image(
-            filename=img['black3']
+            filename=img['title']
         ),
         widget.Sep(**separator2),
     ]

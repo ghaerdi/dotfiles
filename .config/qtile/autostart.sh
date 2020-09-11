@@ -4,3 +4,5 @@
 xfce4-clipman &
 # Battery
 cbatticon &
+#
+xset s off &

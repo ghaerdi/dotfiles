@@ -1,9 +1,4 @@
-A theme consists of a file named **colors.json** and a folder named
-**img**. The file must have the following format:
-``
-´´´json
-
-````{
+{
     "black": [
         "#030305"
     ],
@@ -35,30 +30,13 @@ A theme consists of a file named **colors.json** and a folder named
         "#4aeaff"
     ],
     "title-background": [
-        "#030305"
+        "#4aeaff"
     ],
     "title-text": [
-        "#ffffff"
+        "#030305"
     ],
     "title-highlight": [
-        "#4aeaff"
+        "#030305"
     ]
+
 }
-´´´
-
-The **img** folder must have this content:
-
-- black.png
-- black2.png
-- title.png
-- title2.png
-- color1.png
-- color2.png
-- color3.png
-- color4.png
-- color5.png
-
-```
-
-```
-````
