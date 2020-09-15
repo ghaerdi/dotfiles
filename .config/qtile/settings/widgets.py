@@ -187,7 +187,7 @@ laptop_widgets = [
         **base(bg='color5'),
         play_color = "#ffffff",
         fmt = "{} ",
-        max_chars = 30,
+        max_chars = 25,
         markup = False
     ),
     widget.Image(
