@@ -4,5 +4,7 @@
 xfce4-clipman &
 # Battery
 cbatticon &
-#
+# Volume
+volumeicon &
+# Disable black screen saver
 xset s off &

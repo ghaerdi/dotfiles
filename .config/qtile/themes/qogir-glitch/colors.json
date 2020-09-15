@@ -1,0 +1,41 @@
+{
+    "black": [
+        "#181919"
+    ],
+    "dark": [
+        "#32343D"
+    ],
+    "grey": [
+        "#5c5c5c"
+    ],
+    "white": [
+        "#D8D9DF"
+    ],
+    "color1": [
+        "#8C315D"
+    ],
+    "color2": [
+        "#8C5731"
+    ],
+    "color3": [
+        "#7F8C31"
+    ],
+    "color4": [
+        "#31608C"
+    ],
+    "color5": [
+        "#52318C"
+    ],
+    "color6": [
+        "#A37BE9"
+    ],
+    "title-background": [
+        "#181919"
+    ],
+    "title-text": [
+        "#D8D9DF"
+    ],
+    "title-highlight": [
+        "#A37BE9"
+    ]
+}

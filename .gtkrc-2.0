@@ -2,8 +2,8 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/rudolf/.gtkrc-2.0.mine"
-gtk-theme-name="Material-Black-Blueberry"
-gtk-icon-theme-name="Material-Black-Blueberry-Suru"
+gtk-theme-name="Qogir-win-dark"
+gtk-icon-theme-name="Tela-circle-purple"
 gtk-font-name="Cantarell 11"
 gtk-cursor-theme-name="Vimix-cursors"
 gtk-cursor-theme-size=0

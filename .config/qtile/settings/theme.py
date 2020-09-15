@@ -5,7 +5,7 @@ import subprocess
 import json
 
 # Set theme
-theme = "material-darker-colorized" # only if available in ~/.config/qtile/themes
+theme = "qogir-glitch" # only if available in ~/.config/qtile/themes
 
 qtile_path = path.join(path.expanduser("~"), ".config", "qtile")
 theme_path = path.join(qtile_path, "themes", theme)

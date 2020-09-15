@@ -9,7 +9,6 @@
                 "html",
                 "css",
                 "python",
-                "go",
                 "php"
         ],
         "diagnostic.displayByAle": true,

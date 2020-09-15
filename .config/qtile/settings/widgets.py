@@ -32,7 +32,7 @@ group_box = {
     'margin_x': 0,
     'padding_y': 5,
     'padding_x': 10,
-    'borderwidth': 1,
+    'borderwidth': 0,
     'active': colors['white'],
     'inactive': colors['grey'],
     'disable_drag': True,
@@ -218,6 +218,11 @@ laptop_widgets = [
         **base(bg='color3'),
         display_format='{updates}',
         **pacman
+    ),
+    widget.Sep(
+        **base(bg="color3"),
+        linewidth = 0,
+        padding = 5
     ),
     *powerline_base()
  ]

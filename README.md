@@ -12,9 +12,7 @@ The repository include more backgrounds images in the Wallpaper folder.
 
 # Tutorial
 
-Alert: I recommend read and study all commands instead follow this guide step by step. Depending of your system (BIOS or UEFI) the installation change a little bit (I'm using a BIOS system). I will share different links to the ArchWiki documentation.
-
-Another alert: This tutorial is in progress.
+Alert: This tutorial is make for personal uses. If you want follow this tutorial I recommend read and study all commands instead follow this guide step by step. Depending of your system (BIOS or UEFI) the installation change a little bit (I'm using a BIOS system). I will share different links to the ArchWiki documentation.
 
 ## Install Arch
 
@@ -98,62 +96,8 @@ You will need git to run this:
 
 ```bash
 git clone https://github.com/ghaerdi/dotfiles
-cp -R home/usuario/dotfiles/. home/usuario/
+cp -R home/usuario/dotfiles/. home/user/
 ```
-
-## Themes
-
-### Grub
-Download [Stylish](https://www.pling.com/p/1009237) or [Tela](https://www.pling.com/p/1307852/) <br>
-Run:
-
-```bash
-cd Downloads
-tar -xf Stylsh.1080p.tar.xz
-rm Stylsh.1080p.tar.xz
-cd Stylish-1080p
-./install.sh
-# To make sure if the grub theme changed:
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-```
-
-### Cursor
-Download [Vimix](https://www.pling.com/p/1358330) <br>
-Run:
-
-```bash
-sudo pacman -S xcb-util-cursor # if you dont hava installed yet
-cd Downloads
-tar -xf 01-Vimix-cursors.tar.xz
-mv Vimix-cursors /usr/share/icons
-rm 01-Vimix-cursors.tar.xz
-```
-
-Edit `~/.gtkrc.2-0` and `~/.config/gtk3-0`
-
-```bash
-# ~/.gtkrc-2.0
-gtk-cursor-theme-name = "Vimix-cursors"
-
-# ~/.config/gtk-3.0/settings.ini
-gtk-cursor-theme-name = Vimix-cursors
-```
-Or you can use Ixappearance instead of terminal commands
-
-### GUI Theme and icons
-Is the same thing as cursor theming.
-Download a theme and run:
-```bash
-cd Downloads
-tar -xf theme.tar.xz
-
-# In case of GUI theme:
-mv theme /usr/share/themes
-
-# In case of icons theme
-mv theme /usr/share/icons
-```
-Also you can use Ixappearance
 
 # Packages
 
@@ -175,7 +119,7 @@ Also you can use Ixappearance
 
 </td><td valign="top" width="34%">
 
-### Packages for Qtile
+### Qtile dependecies
 
 - Qtile (tilling window manager)
 - Konsole (terminal)
@@ -204,7 +148,7 @@ Also you can use Ixappearance
 - Picom (transparency)
 - Feh (background)
 - yarn & npm
-- Nautilos o thunar (file explorer GUI)
+- Nautilos (file explorer GUI)
 - network-manager-applet (NetworkManager systray)
 - pavucontrol (volume control GUI)
 - libnotify & notification-daemon (notifications)
@@ -216,3 +160,11 @@ Also you can use Ixappearance
 - lxappearance
 
 </td></tr></table>
+
+# Themes
+
+- Grub: [Stylish](https://www.pling.com/p/1009237) or [Tela](https://www.pling.com/p/1307852/)
+- Lightdm [lightdm-webkit2-greeter](https://www.archlinux.org/packages/community/x86_64/lightdm-webkit2-greeter/) and [lightdm-webkit-theme-aether](https://aur.archlinux.org/packages/lightdm-webkit-theme-aether/)
+- GUI: [Qogir](https://www.gnome-look.org/p/1230631/)
+- Icons: [Tela circle](https://www.gnome-look.org/p/1359276/)
+- Cursor: [Vimix](https://www.pling.com/p/1358330)
