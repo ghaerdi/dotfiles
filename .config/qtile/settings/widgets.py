@@ -11,11 +11,6 @@ def base(fg='font', bg='background'):
         'background': colors[bg]
     }
 
-line_separator = {
-    **base(),
-    'linewidth': 1
-}
-
 def separator(bg='background', padding =5):
     return {
         **base(bg=bg),
@@ -24,7 +19,7 @@ def separator(bg='background', padding =5):
     }
 
 group_box = {
-    **base(),
+    **base(bg="dark"),
     'font': 'UbuntuMono Nerd Font',
     'fontsize': 16,
     'margin_y': 3,
@@ -38,9 +33,9 @@ group_box = {
     'hide_unused': True,
     'rounded': False,
     'highlight_method': 'text',
-    'this_current_screen_border': colors['principal-lighter'],
+    'this_current_screen_border': colors['primary-lighter'],
     'urgent_alert_method': 'block',
-    'urgent_border': colors['principal-lighter']
+    'urgent_border': colors['primary-lighter']
 }
 
 task_list = {
@@ -51,9 +46,9 @@ task_list = {
     'max_title_width': 250,
     'padding': 5,
     'margin': 0,
-    'rounded': False,
-    'highlight_method': 'block',
     'border': colors['task-highlight'],
+    'markup': True,
+    'markup_focused': '<span underline="low">{}</span>',
     'txt_floating': '🗗 ',
     'txt_minimized': '🗕 ',
 }
@@ -93,17 +88,20 @@ clock = {
 
 def workspaces():
     return [
-        widget.Sep(**separator()),
+        widget.Sep(**separator("dark")),
         widget.TextBox(
-            **base(fg="principal-lighter"),
+            **base(bg="dark", fg="primary-lighter"),
             font='UbuntuMono Nerd Font',
             fontsize=20,
             text=' '
         ),
-        widget.Sep(**line_separator),
+        widget.Sep(**separator("dark", padding=10)),
         widget.GroupBox(**group_box),
-        widget.Sep(**line_separator),
-        widget.Sep(**separator()),
+        widget.Sep(**separator("dark")),
+        widget.Image(
+            filename=img["groups"]
+        ),
+        widget.Sep(**separator(padding=10)),
         widget.TaskList(**task_list),
     ]
 
@@ -126,10 +124,10 @@ def powerline_base():
            filename=img['primary']
         ),
         widget.CurrentLayoutIcon(
-            **base(bg='principal'),
+            **base(bg='primary'),
             **current_layout_icon
         ),
-        widget.Sep(**separator("principal"))
+        widget.Sep(**separator("primary"))
     ]
 
 
@@ -144,7 +142,7 @@ laptop_widgets = [
         markup = False
     ),
     widget.Image(
-       filename=img['dark']
+       filename=img['systray']
     ),
     widget.Systray(
         **systray

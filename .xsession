@@ -47,14 +47,16 @@ picom &
 nm-applet &
 # Automount Devices
 udiskie -t &
+# Volume
+volumeicon &
+# Battery
+cbatticon &
 # Java Fonts
 xsettingsd &
 # Clipman
 xfce4-clipman &
-# Volume
-volumeicon &
-
 # Set wallpaper
+
 if [ -f .background.jpg ]; then
     feh --bg-scale .background.jpg
 fi
@@ -67,6 +69,3 @@ fi
 setxkbmap de deadtilde
 # Set mouse map
 xmodmap -e "pointer = 3 2 1" &
-
-# Look for updates
-sudo pacman -Sy &

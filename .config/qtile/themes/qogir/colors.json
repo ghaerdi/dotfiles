@@ -11,19 +11,19 @@
     "font": [
         "#D8D9DF"
     ],
-    "principal": [
+    "primary": [
         "#52318C"
     ],
     "secondary": [
-        "#31608C"
+        "#25656e"
     ],
     "third": [
         "#8C315D"
     ],
-    "principal-lighter": [
+    "primary-lighter": [
         "#A37BE9"
     ],
     "task-highlight": [
-        "#181919"
+        "#32343D"
     ]
 }

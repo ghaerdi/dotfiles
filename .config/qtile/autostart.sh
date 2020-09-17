@@ -1,4 +1,4 @@
 #!/bin/sh
 
-# Battery
-cbatticon &
+# Look for updates
+sudo pacman -Sy &
