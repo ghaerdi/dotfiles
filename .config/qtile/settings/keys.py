@@ -5,8 +5,9 @@ from libqtile.command import lazy
 #                     Apps
 terminal = "konsole"
 browser = "opera"
-file_explorer = terminal + " -e ranger"
-apps_menu = "rofi -show drun"
+terminal_explorer = terminal + " -e ranger"
+file_explorer = "nautilus"
+apps_menu = "rofi -modi drun -show drun"
 screenshot = "deepin-screenshot"
 music_player = terminal + " -e mocp"
 
@@ -15,7 +16,9 @@ mod = "mod4"
 
 #          Special  KeyCap  Actions
 keys = [Key(key[0], key[1], *key[2:]) for key in [
-    # ------------ Window Configs ------------
+    # ------------------------------------------------------
+    # -------------------- WINDOW --------------------------
+    # ------------------------------------------------------
 
     # Switch between windows in current stack pane
     ([mod], "j", lazy.layout.down()),
@@ -29,6 +32,9 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # Toggle floating
     ([mod, "shift"], "f", lazy.window.toggle_floating()),
+
+    # Minimize window
+    ([mod], "n", lazy.window.toggle_minimize()),
 
     # Move windows in current stack
     ([mod, "shift"], "j", lazy.layout.shuffle_down()),
@@ -51,7 +57,9 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Switch window focus to other pane(s) of stack
     ([mod], "space", lazy.layout.next()),
 
-    # ------------ Apps Configs ------------
+    # ------------------------------------------------------
+    # ------------------------ APP -------------------------
+    # ------------------------------------------------------
 
     # Menu
     ([mod], "m", lazy.spawn(apps_menu)),
@@ -60,7 +68,8 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod], "b", lazy.spawn(browser)),
 
     # File Manager
-    ([mod], "f", lazy.spawn(file_explorer)),
+    ([mod], "f", lazy.spawn(terminal_explorer)),
+    ([mod, "control",], "f", lazy.spawn(file_explorer)),
 
     # Terminal
     ([mod], "Return", lazy.spawn(terminal)),
@@ -75,17 +84,19 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod], "r", lazy.spawn("redshift -O 2400")),
     ([mod, "shift"], "r", lazy.spawn("redshift -x")),
 
-    # ------------ Hardware Configs ------------
+    # Screen locker
+    ([mod], "x", lazy.spawn("xsecurelock")),
+
+    # ------------------------------------------------------
+    # ------------------ HARDWARE CONFIGS ------------------
+    # ------------------------------------------------------
 
     # Volume
     ([mod], "F11", lazy.spawn("amixer set Master 5%-")),
     ([mod], "F12", lazy.spawn("amixer set Master 5%+")),
     ([mod], "F10", lazy.spawn("amixer set Master toggle")),
 
-      #Brightness
+    # Brightness
     ([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
-    ([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
-
-    # Screensaver with cmatrix
-    ([mod], "c", lazy.spawn(terminal + (" --fullscreen -e cmatrix -u 10 -a -s -n -C magenta")))
+    ([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-"))
 ]]

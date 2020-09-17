@@ -5,24 +5,23 @@ from settings.keys import terminal
 
 # Reusable configs for displaying different widgets on different screens
 
-def base(fg='white', bg='dark'):
+def base(fg='font', bg='background'):
     return {
         'foreground': colors[fg],
         'background': colors[bg]
     }
 
-
-separator = {
+line_separator = {
     **base(),
-    'linewidth': 0,
-    'padding': 10,
+    'linewidth': 1
 }
 
-separator2 = {
-    **base(),
-    'linewidth': 0,
-    'padding': 50
-}
+def separator(bg='background', padding =5):
+    return {
+        **base(bg=bg),
+        'linewidth': 0,
+        'padding': padding,
+    }
 
 group_box = {
     **base(),
@@ -33,38 +32,36 @@ group_box = {
     'padding_y': 5,
     'padding_x': 10,
     'borderwidth': 0,
-    'active': colors['white'],
+    'active': colors['font'],
     'inactive': colors['grey'],
     'disable_drag': True,
     'hide_unused': True,
     'rounded': False,
     'highlight_method': 'text',
-    'background': colors['black'],
-    'this_current_screen_border': colors['color6'],
+    'this_current_screen_border': colors['principal-lighter'],
     'urgent_alert_method': 'block',
-    'urgent_border': colors['color5']
+    'urgent_border': colors['principal-lighter']
 }
 
-window_name = {
-    'foreground': colors['title-text'],
-    'background': colors['title-background'],
+task_list = {
+    **base(),
     'font': 'Ubuntu',
     'fontsize': 12,
-    'icon_size': 0,
+    'icon_size': 12,
+    'max_title_width': 250,
     'padding': 5,
     'margin': 0,
-    'margin_x': 0,
     'rounded': False,
-    'border': colors['title-highlight'],
-    'borderwidth': 1,
+    'highlight_method': 'block',
+    'border': colors['task-highlight'],
     'txt_floating': '🗗 ',
     'txt_minimized': '🗕 ',
-    'title_width_method': 'uniform'
 }
 
 systray = {
-    'background': colors['black'],
+    **base(bg="dark"),
     'padding': 10,
+    'icon_size': 15
 }
 
 text_box = {
@@ -90,124 +87,75 @@ current_layout = {
 }
 
 clock = {
-    'format': '%A %d, %B - %H:%M '
+    'format': '%A %d, %b - %H:%M '
 }
 
 
 def workspaces():
     return [
-        widget.Sep(**separator),
+        widget.Sep(**separator()),
         widget.TextBox(
-            background=colors['dark'],
-            foreground=colors['color6'],
+            **base(fg="principal-lighter"),
             font='UbuntuMono Nerd Font',
             fontsize=20,
             text=' '
         ),
-        widget.Sep(**separator),
-        widget.Image(
-            filename=img['black']
-        ),
-        widget.Sep(
-            **base(bg='black'),
-            linewidth = 0,
-            padding = 10),
+        widget.Sep(**line_separator),
         widget.GroupBox(**group_box),
-        widget.Sep(
-            **base(bg='black'),
-            linewidth = 0,
-            padding = 10),
-        widget.Image(
-            filename=img['black2']
-        ),
-        widget.Sep(**separator2),
-        widget.Image(
-            filename=img['title2']
-        ),
-        widget.TaskList(**window_name),
-        widget.Image(
-            filename=img['title']
-        ),
-        widget.Sep(**separator2),
+        widget.Sep(**line_separator),
+        widget.Sep(**separator()),
+        widget.TaskList(**task_list),
     ]
 
 
 def powerline_base():
     return [
-        widget.Image(
-           filename=img['color2']
-        ),
+        widget.Sep(**separator("secondary")),
         widget.TextBox(
-            **base(bg='color2'),
+            **base(bg='secondary'),
             font= 'Ubuntu',
             fontsize= 30,
             padding= 2,
             text=''
         ),
         widget.Clock(
-            **base(bg='color2'),
+            **base(bg='secondary'),
             **clock
         ),
         widget.Image(
-           filename=img['color1']
+           filename=img['primary']
         ),
         widget.CurrentLayoutIcon(
-            **base(bg='color1'),
+            **base(bg='principal'),
             **current_layout_icon
         ),
-        widget.Sep(
-            **base(bg='color1'),
-            linewidth = 0,
-            padding = 5
-        )
+        widget.Sep(**separator("principal"))
     ]
 
 
 laptop_widgets = [
     *workspaces(),
 
-    widget.Sep(
-        **separator
+    widget.Moc(
+        **base(),
+        play_color = colors['font'],
+        noplay_color = colors['grey'],
+        fmt = " {} ",
+        markup = False
     ),
     widget.Image(
-       filename=img['black']
+       filename=img['dark']
     ),
     widget.Systray(
         **systray
     ),
-    widget.Sep(
-        linewidth = 0,
-        padding = 5,
-        **base(bg='black')
-    ),
+    widget.Sep(**separator('dark')),
     widget.Image(
-       filename=img['color5']
+        filename=img['third']
     ),
-    widget.Moc(
-        **base(bg='color5'),
-        play_color = "#ffffff",
-        fmt = "{} ",
-        max_chars = 25,
-        markup = False
-    ),
-    widget.Image(
-       filename=img['color4']
-    ),
+    widget.Sep(**separator("third")),
     widget.TextBox(
-        **base(bg='color4'),
-        font= 'Ubuntu',
-        fontsize= 25,
-        padding= 2,
-        text='墳'
-    ),
-    widget.Volume(
-        **base(bg='color4')
-    ),
-    widget.Image(
-        filename=img['color3']
-    ),
-    widget.TextBox(
-        **base(bg='color3'),
+        **base(bg='third'),
         font= 'Ubuntu',
         fontsize= 25,
         padding= 2,
@@ -215,20 +163,23 @@ laptop_widgets = [
         **pacman
     ),
     widget.CheckUpdates(
-        **base(bg='color3'),
+        **base(bg='third'),
         display_format='{updates}',
         **pacman
     ),
-    widget.Sep(
-        **base(bg="color3"),
-        linewidth = 0,
-        padding = 5
+    widget.Sep(**separator("third")),
+    widget.Image(
+       filename=img['secondary']
     ),
+
     *powerline_base()
  ]
 
 monitor_widgets = [
     *workspaces(),
+    widget.Image(
+        filename=img['secondary-monitor']
+    ),
     *powerline_base()
 ]
 

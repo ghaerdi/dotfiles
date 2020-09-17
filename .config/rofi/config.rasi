@@ -1,0 +1,95 @@
+configuration {
+    show-icons: true;
+    icon-theme: "Tela-dark";
+    font: "SF Pro Display 14";
+    display-drun: "";
+    drun-display-format: "{name}";
+}
+
+* {
+    background-color: transparent;
+    background: #1F2430;
+    background-alt: #E5E9F047;
+    text-color: #D8DEE9;
+    selected-text-color: #000000;
+    primary: #A3BE8C;
+    urgent: #BF616A;
+    width: 70%;
+    height: 60%;
+}
+
+window {
+    transparency: "real";
+    background-color: @background;
+}
+
+inputbar {
+    background-color: #ffffff20;
+    text-color: @foreground;
+    border-radius: 55;
+    padding: 1.5%;
+    margin: 5% 10%;
+}
+
+prompt {
+    enabled: true;
+    margin: 0 1% 0 0;
+}
+
+entry {
+    placeholder-color: #999999;
+    placeholder: "Search Applications";
+    blink: true;
+}
+
+
+mainbox {
+    children: [ inputbar, listview ];
+    padding: 0% 5%;
+}
+
+listview {
+    columns: 5;
+    layout: vertical;
+    spacing: 75;
+    margin: 0% 0%;
+}
+
+element {
+    orientation: vertical;
+    padding: 2% 0;
+    border-radius: 10;
+}
+
+element normal.urgent, element alternate.urgent {
+    background-color: @urgent;
+}
+
+element normal.active, element alternate.active {
+    background-color: @background-alt;
+    color: @selected-text-color;
+}
+
+element selected {
+    background-color: @background-alt;
+    color: @selected-text-color;
+}
+
+element selected.urgent {
+    background-color: @urgent;
+}
+
+element selected.active {
+    background-color: @background-alt;
+    color: @selected-text-color;
+}
+
+element-icon {
+    size: 6%;
+}
+
+element-text {
+    padding: 10 0 0 0;
+    text-color: inherit;
+    horizontal-align: 0.5;
+}

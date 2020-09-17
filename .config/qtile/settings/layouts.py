@@ -3,7 +3,7 @@ from libqtile import layout
 from settings.theme import colors
 
 layout_conf = {
-    'border_focus': colors['color6'][0],
+    'border_focus': colors['principal-lighter'][0],
     'border_width': 1,
     'margin': 5,
     'single_border_width': 0,
@@ -11,10 +11,10 @@ layout_conf = {
 }
 
 layouts = [
-    # layout.Max(),
+    layout.Max(),
     layout.MonadTall(**layout_conf),
-    layout.MonadWide(**layout_conf),
-    layout.Bsp(**layout_conf)
+    # layout.MonadWide(**layout_conf),
+    layout.Bsp(**layout_conf),
 ]
 
 floating_layout = layout.Floating(
@@ -34,5 +34,5 @@ floating_layout = layout.Floating(
         {'wname': 'pinentry'},  # GPG key password entry
         {'wmclass': 'ssh-askpass'},  # ssh-askpass
     ],
-    border_focus=colors["color6"][0]
+    border_focus=colors["principal-lighter"][0]
 )

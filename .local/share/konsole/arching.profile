@@ -2,6 +2,7 @@
 ColorScheme=Qtile
 Font=Fira Code Retina,11,-1,5,53,0,0,0,0,0,Regular
 LineSpacing=0
+UseFontLineChararacters=true
 
 [Cursor Options]
 CursorShape=1

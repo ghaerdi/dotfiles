@@ -9,13 +9,14 @@ chat_apps = ["Microsoft Teams", "Telegram"]
 extra_apps = ["figma-linux", "obs"]
 
 groups = [
-    Group("1:  ", matches=[Match(wm_class=browsers)]),
-    Group("2: ", matches=[Match(wm_class=developer_tools)]),
-    Group("3:  ", layout="bsp"),
-    Group("4:  "),
-    Group("ﭮ :5", matches=[Match(wm_class=["discord"])]),
-    Group("6: 切 ", matches=[Match(title=chat_apps)]),
-    Group("7: ...", matches=[Match(wm_class=extra_apps)])
+    Group("1:  ", matches=[Match(wm_class=browsers)]),
+    Group("2:  ", matches=[Match(wm_class=developer_tools)]),
+    Group("3:  ", layout="bsp"),
+    Group("4:  "),
+    Group("5:  "),
+    Group(" ﭮ :6", matches=[Match(wm_class=["discord"])]),
+    Group("7: 切 ", matches=[Match(title=chat_apps)]),
+    Group("8: ...", matches=[Match(wm_class=extra_apps)])
 ]
 
 for i, group in enumerate(groups):

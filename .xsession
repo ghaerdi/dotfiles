@@ -49,6 +49,10 @@ nm-applet &
 udiskie -t &
 # Java Fonts
 xsettingsd &
+# Clipman
+xfce4-clipman &
+# Volume
+volumeicon &
 
 # Set wallpaper
 if [ -f .background.jpg ]; then

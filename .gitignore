@@ -11,7 +11,7 @@
 !.screenlayout
 !.xsession
 !.config
-!.git-prompt.sh
+!.git-prompt.bash
 !.aliases
 !.zshrc
 !.p10k.zsh
