@@ -4,7 +4,7 @@ from libqtile.command import lazy
 
 #                     Apps
 terminal = "konsole"
-browser = "opera"
+browser = "firefox"
 terminal_explorer = terminal + " -e ranger"
 file_explorer = "nautilus"
 apps_menu = "rofi -modi drun -show drun"

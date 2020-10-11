@@ -7,6 +7,9 @@ fi
 
 # GO Path
 export PATH="$PATH:$HOME/go/bin"
+
+# .NET Patth
+export PATH="$PATH:/home/rudolf/.dotnet/tools"
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=50
