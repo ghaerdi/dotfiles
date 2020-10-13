@@ -1,41 +1,30 @@
 {
-    "black": [
+    "dark": [
         "#030305"
     ],
-    "dark": [
+    "background": [
         "#07080d"
     ],
     "grey": [
         "#5c5c5c"
     ],
-    "white": [
+    "font": [
         "#ffffff"
     ],
-    "color1": [
+    "primary": [
         "#250770"
     ],
-    "color2": [
-        "#164782"
-    ],
-    "color3": [
-        "#146e3b"
-    ],
-    "color4": [
-        "#918f19"
-    ],
-    "color5": [
+    "secondary": [
         "#8f1a2c"
     ],
-    "color6": [
+    "third": [
+        "#918f19"
+    ],
+    "primary-lighter": [
         "#4aeaff"
     ],
-    "title-background": [
-        "#030305"
+    "task-highlight": [
+        "#07080d"
     ],
-    "title-text": [
-        "#ffffff"
-    ],
-    "title-highlight": [
-        "#4aeaff"
-    ]
+    "yolo": "#146e3b"
 }
