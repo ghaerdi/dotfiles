@@ -4,8 +4,5 @@
 
 # Except for the files and folders we want to track
 !rofi
-!qtile
 !neofetch
-!nvim
-!picom.conf
 !gtk-3.0

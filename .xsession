@@ -42,7 +42,8 @@ else
 fi
 
 # Composer
-picom &
+# picom &
+xcompmgr -c &
 # Network
 nm-applet &
 # Automount Devices
