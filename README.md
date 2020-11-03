@@ -1,7 +1,7 @@
+[My Qtile config](https://github.com/ghaerdi/Qtile-config)
+
 # Dotfiles
-![Screenshot](.screenshot.png)
-![Background](.background.jpg)
-Dotfiles include the background, you can replace it with the same name (background[.jpg or .png]) or editing/adding something like this:
+Dotfiles include a background, you can replace it with the same name (background[.jpg or .png]) or editing/adding something like this:
 ```bash
 # ~/.xsession
 
@@ -18,7 +18,7 @@ Alert: This tutorial is make for personal uses. If you want follow this tutorial
 
 Follow the [arch installation guide](https://wiki.archlinux.org/index.php/installation_guide) and don't reboot.
 
-### After follow the arch installation guide and before rebooting
+### After follow the arch installation guide.
 
 Install this next packages
 ```bash
@@ -30,10 +30,12 @@ pacman -S intel-ucode
 # If you have amd processor:
 pacman -S amd-ucode
 ```
+Read about [Network Manager](https://wiki.archlinux.org/index.php/NetworkManager)
+Read about [Microcode](https://wiki.archlinux.org/index.php/Microcode)
 
 #### Enable internet for next session
 
-[NetworkManager](https://wiki.archlinux.org/index.php/NetworkManager) will connect your computer to network automatically after you have installed Arch, but for that you need enable it:
+[NetworkManager](https://wiki.archlinux.org/index.php/NetworkManager) will connect your computer to ethernet automatically after you have installed Arch, but for that you need enable it:
 ```bash
 systemctl enable NetworkManager.service
 ```
@@ -96,14 +98,14 @@ You will need git to run this:
 
 ```bash
 git clone https://github.com/ghaerdi/dotfiles
-cp -R home/usuario/dotfiles/. home/user/
+cp -r home/user/dotfiles/. home/user/
 ```
 
 # Packages
 
 <table><tr>
 
-<td valign="top" width="33%">
+<td valign="top" width="50%">
 
 ### Basic packages
 
@@ -117,25 +119,7 @@ cp -R home/usuario/dotfiles/. home/user/
 - Lightdm (login screen)
 - pulseaudio (sound)
 
-</td><td valign="top" width="34%">
-
-### Qtile dependecies
-
-- Qtile (tilling window manager)
-- Konsole (terminal)
-- Opera (browser)
-- Ranger (terminal file explorer)
-- Rofi (menu and search apps)
-- Brightnessctl
-- Redshift (color temperature)
-- pulseaudio-alsa (sound)
-- alsa-utils (terminal volume control)
-- moc (terminal music player)
-- deepin-screenshot (screenshot)
-- xfce4-clipman (clipboard systray)
-- FiraCode & UbuntuMono Nerd Fonts (font and symbols)
-
-</td><td valign="top" width="33%">
+</td><td valign="top" width="50%">
 
 ### Optional packages
 
@@ -147,17 +131,14 @@ cp -R home/usuario/dotfiles/. home/user/
 - Taskbook (task for terminal)
 - Picom (transparency)
 - Feh (background)
-- yarn & npm
-- Nautilos (file explorer GUI)
 - network-manager-applet (NetworkManager systray)
 - pavucontrol (volume control GUI)
 - libnotify & notification-daemon (notifications)
 - udiskie (automount)
 - cbatticon (batery systray)
 - volumeicon (volume systray)
-- neovim (terminal file editor)
 - xcb-util-cursor (cursor theme)
-- lxappearance
+- lxappearance (theme manager)
 
 </td></tr></table>
 
