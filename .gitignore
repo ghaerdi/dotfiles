@@ -1,0 +1,28 @@
+# Ignore everything
+/*
+!.gitignore
+
+# Except for the files and folders we want to track
+!README.md
+!.screenshot.png
+!.background.jpg
+!.background.png
+
+!.xsession
+!.git-prompt.bash
+!.aliases
+!.zshrc
+!.p10k.zsh
+!Wallpapers
+
+!.config
+.config/*
+!.config/rofi
+!.config/neofetch
+!.config/gtk-3.0
+
+!.local
+.local/*
+!.local/share
+.local/share/*
+!.local/share/konsole
