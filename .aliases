@@ -2,7 +2,7 @@ alias sdn="shutdown now"
 
 alias c="clear"
 
-alias ls="ls -a"
+alias ls="ls -a -l --color=auto"
 alias ...="cd ../../"
 alias ....="cd ../../../"
 alias .....="cd ../../../../"
@@ -12,9 +12,8 @@ alias vic="cd ~/.config/nvim"
 
 alias grep="grep -i -r --color=auto"
 
-alias vi="nvim"
 alias visudo="sudo EDITOR=nvim visudo"
 alias cat='ccat -G Plaintext="white" -G Keyword="purple" -G String="darkgreen" -G Punctuation="brown" -G Comment="faint"'
 
-alias mongodb="mongod --port 27017 --dbpath /home/rudolf/Documents/database"
+alias mongodb="mongod --port 27017 --dbpath ~/Documents/database"
 alias tb="taskbook"
