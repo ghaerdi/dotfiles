@@ -32,8 +32,8 @@ if [ -f .background.png ]; then
 fi
 
 # Set keyboard map
-setxkbmap us
-# setxkbmap de deadtilde
+setxkbmap us intl &
+# setxkbmap de deadtilde &
 
 # Set mouse map
 xmodmap -e "pointer = 3 2 1" &
