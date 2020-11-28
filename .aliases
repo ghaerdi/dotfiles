@@ -17,3 +17,7 @@ alias cat='ccat -G Plaintext="white" -G Keyword="purple" -G String="darkgreen" -
 
 alias mongodb="mongod --port 27017 --dbpath ~/Documents/database"
 alias tb="taskbook"
+
+alias clearos="sudo pacman -Scc && sudo rm -rf ~/.cache ~/.xsession-error ~/.xsession-error.old ~/.histfile"
+alias de="setxkbmap de deadtilde"
+alias us="setxkbmap us intl"

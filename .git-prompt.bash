@@ -1,2 +1,2 @@
-COMMANDS=("neofetch" "taskbook --color" "figlet Nice wiki" "figlet Arch Linux" "figlet El pepe")
+COMMANDS=("neofetch" "taskbook --color" "figlet Teteo")
 $(shuf -n1 -e "${COMMANDS[@]}")
