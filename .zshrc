@@ -5,11 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# GO Path
+# Path
 export PATH="$PATH:$HOME/go/bin"
-
-# .NET Patth
 export PATH="$PATH:$HOME/.dotnet/tools"
+export PATH="$HOME/.deno/bin:$PATH"
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
