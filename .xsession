@@ -20,7 +20,7 @@ volumeicon &
 xfce4-clipman &
 
 # Screens
-xrandr --output LVDS-1 --auto --output HDMI-1 --auto --left-of LVDS-1
+xrandr --output LVDS1 --auto --output HDMI1 --auto --left-of LVDS1
 
 # Set wallpaper
 if [ -f .background.jpg ]; then
