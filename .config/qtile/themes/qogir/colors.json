@@ -1,0 +1,26 @@
+{
+    "dark": [
+        "#181919"
+    ],
+    "background": [
+        "#32343D"
+    ],
+    "grey": [
+        "#a1a2ab"
+    ],
+    "font": [
+        "#D8D9DF"
+    ],
+    "primary": [
+        "#52318C"
+    ],
+    "secondary": [
+        "#25656e"
+    ],
+    "third": [
+        "#8C315D"
+    ],
+    "primary-lighter": [
+        "#A37BE9"
+    ]
+}
