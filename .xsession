@@ -20,7 +20,7 @@ volumeicon &
 xfce4-clipman &
 
 # Screens
-xrandr --output LVDS1 --auto --output HDMI1 --auto --left-of LVDS1
+xrandr --output LVDS-1 --auto --output HDMI-1 --auto --left-of LVDS-1
 
 # Set wallpaper
 if [ -f .background.jpg ]; then
@@ -32,8 +32,7 @@ if [ -f .background.png ]; then
 fi
 
 # Set keyboard map
-setxkbmap us intl &
-# setxkbmap de deadtilde &
+setxkbmap us &
 
 # Set mouse map
 xmodmap -e "pointer = 3 2 1" &
