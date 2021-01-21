@@ -13,13 +13,13 @@
 !.aliases
 !.zshrc
 !.p10k.zsh
-!Wallpapers
 
 !.config
 .config/*
 !.config/rofi
 !.config/neofetch
 !.config/gtk-3.0
+!.config/qtile
 
 !.local
 .local/*
