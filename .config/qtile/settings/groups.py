@@ -10,7 +10,7 @@ chat_apps = ["Microsoft Teams", "Telegram", "discord"]
 extra_apps = ["figma-linux", "obs"]
 
 groups = [
-    Group(" ", matches=[Match(wm_class=browsers), Match(title=browsers)], layout="max"),
+    Group(" ", matches=[Match(wm_class=browsers), Match(title=browsers)], layout="max"),
     Group(" ", matches=[Match(wm_class=developer_tools)]),
     Group(" ", layout="bsp"),
     Group("切 ", matches=[Match(wm_class=chat_apps), Match(title=chat_apps)]),
