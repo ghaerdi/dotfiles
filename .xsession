@@ -32,7 +32,7 @@ if [ -f .background.png ]; then
 fi
 
 # Set keyboard map
-setxkbmap us &
+setxkbmap de deadtilde 
 
 # Set mouse map
 xmodmap -e "pointer = 3 2 1" &
