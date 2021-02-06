@@ -1,2 +1,2 @@
-COMMANDS=("neofetch" "taskbook --color" "figlet Teteo")
+COMMANDS=("neofetch" "taskbook --color")
 $(shuf -n1 -e "${COMMANDS[@]}")
