@@ -6,7 +6,7 @@ alias ls="ls -a -l --color=auto"
 alias ...="cd ../../"
 alias ....="cd ../../../"
 alias .....="cd ../../../../"
-alias dev="cd ~/Documents/Programming"
+alias dev="cd ~/Document/Programming"
 alias qtc="cd ~/.config/qtile"
 alias vic="cd ~/.config/nvim"
 
@@ -15,7 +15,7 @@ alias grep="grep -i -r --color=auto"
 alias visudo="sudo EDITOR=nvim visudo"
 alias cat='ccat -G Plaintext="white" -G Keyword="purple" -G String="darkgreen" -G Punctuation="brown" -G Comment="faint"'
 
-alias mongodb="mongod --port 27017 --dbpath ~/Documents/database"
+alias mongodb="mongod --port 27017 --dbpath ~/Document/database"
 alias tb="taskbook"
 
 alias clearos="sudo pacman -Scc && sudo rm -rf ~/.cache ~/.xsession-errors ~/.xsession-errors.old ~/.histfile ~/.Xauthority"
