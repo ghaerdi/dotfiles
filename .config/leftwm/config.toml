@@ -28,6 +28,13 @@ modifier = ["modkey"]
 key = "m"
 
 [[keybind]]
+# Take screenshot
+command = "Execute"
+value = "deepin-screenshot"
+modifier = ["modkey", "Shift"]
+key = "s"
+
+[[keybind]]
 # Open project in neovim
 command = "Execute"
 value = "ls ~/Documents/Projects/ | dmenu | xargs -I_ emacsclient -c -a 'emacs' ~/Documents/Projects/_"
