@@ -5,7 +5,10 @@ picom &
 nm-applet &
 
 # Keyboard Layout
-setxkbmap es &
+setxkbmap us &
+
+# emacs
+/usr/bin/emacs --daemon
 
 # Automount Devices
 udiskie -t &

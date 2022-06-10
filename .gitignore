@@ -20,6 +20,10 @@
 !.config/neofetch
 !.config/gtk-3.0
 !.config/qtile
+!.config/leftwm
+!.config/polybar
+!.config/dunst
+!.config/archlinux-logout
 
 !.local
 .local/*

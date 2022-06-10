@@ -10,6 +10,7 @@ export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.dotnet/tools"
 export PATH="$HOME/.deno/bin:$PATH"
 export PATH="$PATH:$HOME/.myscripts"
+export PATH="$HOME/.emacs.d/bin:$PATH"
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
