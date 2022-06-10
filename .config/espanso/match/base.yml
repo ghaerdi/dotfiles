@@ -1,0 +1,52 @@
+matches:
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%m/%d/%Y"
+
+  - trigger: ":config"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "bat $HOME/.config/espanso/match/base.yml"
+
+  - trigger: "''a"
+    replace: "á"
+    propagate_case: true
+  - trigger: "''e"
+    replace: "é"
+    propagate_case: true
+  - trigger: "''i"
+    replace: "í"
+    propagate_case: true
+  - trigger: "''o"
+    replace: "ó"
+    propagate_case: true
+  - trigger: "''u"
+    replace: "ú"
+    propagate_case: true
+  - trigger: "\"\"a"
+    replace: "ä"
+    propagate_case: true
+  - trigger: "\"\"e"
+    replace: "ë"
+    propagate_case: true
+  - trigger: "\"\"i"
+    replace: "ï"
+    propagate_case: true
+  - trigger: "\"\"o"
+    replace: "ö"
+    propagate_case: true
+  - trigger: "\"\"u"
+    replace: "ü"
+    propagate_case: true
+  - trigger: "''n"
+    replace: "ñ"
+    propagate_case: true
+  - triggers: ["''s", "\"\"s"]
+    replace: "ß"

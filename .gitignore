@@ -23,6 +23,7 @@
 !.config/leftwm
 !.config/polybar
 !.config/dunst
+!.config/espanso
 !.config/archlinux-logout
 
 !.local
