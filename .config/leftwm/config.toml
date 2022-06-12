@@ -1,23 +1,16 @@
-#possible keybindings
-#https://github.com/leftwm/leftwm/blob/master/src/utils/xkeysym_lookup.rs
-
-#Mod4 = Super key
 modkey = "Mod4"
+mousekey = "Mod4"
 workspaces = []
-#tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-#tags = ["", "", "", "", "", "", "", "", ""]
-tags = ["www", "edit", "term", "files", "chat", "music", "..."]
-
-# layouts = ["MainAndVertStack", "MainAndHorizontalStack", "MainAndDeck", "GridHorizontal", "EvenHorizontal", "EvenVertical", "Fibonacci", "CenterMain", "CenterMainBalanced", "Monocle", "RightWiderLeftStack", "LeftWiderRightStack"]
+tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 layouts = ["MainAndVertStack", "MainAndDeck", "Monocle", "LeftWiderRightStack"]
+layout_mode = "Workspace"
+insert_behavior = "Bottom"
 scratchpad = []
-#[[scratchpad]]
-#name = "MainTerminal" # This is the name which is referenced when calling (case-sensitive)
-#value = "xfce4-terminal" # The command to load the application if it isn't started
-disable_current_tag_swap = true
+window_rules = []
+disable_current_tag_swap = false
+disable_tile_drag = false
+disable_window_snap = true
 focus_behaviour = "Sloppy"
-#focus_behaviour = "Driven"
-#focus_behaviour = "ClickTo"
 focus_new_windows = true
 
 [[keybind]]
@@ -58,7 +51,7 @@ key = "e"
 [[keybind]]
 # Open Terminal File Explorer
 command = "Execute"
-value = "alacritty -e ranger"
+value = "konsole -e ranger"
 modifier = ["modkey"]
 key = "e"
 
@@ -79,7 +72,7 @@ key = "Return"
 [[keybind]]
 # Open new terminal
 command = "Execute"
-value = "alacritty"
+value = "konsole"
 modifier = ["modkey"]
 key = "Return"
 

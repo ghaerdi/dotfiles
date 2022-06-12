@@ -1,11 +1,5 @@
-# Composer
-picom &
-
 # Network
 nm-applet &
-
-# Keyboard Layout
-setxkbmap us &
 
 # emacs
 /usr/bin/emacs --daemon
