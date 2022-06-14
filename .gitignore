@@ -4,31 +4,24 @@
 
 # Except for the files and folders we want to track
 !README.md
-!.screenshot.png
-!.background.jpg
-!.background.png
-
 !.xsession
-!.git-prompt.bash
+!.prompt.bash
 !.aliases
 !.zshrc
-!.p10k.zsh
+!.antigen
 !.emacs.d
 
-!.config
-.config/*
+!.icons
+!.themes
+!.config/starship
+!.config/alacritty
+!.config/kitty
 !.config/rofi
 !.config/neofetch
 !.config/gtk-3.0
 !.config/qtile
 !.config/leftwm
-!.config/polybar
 !.config/dunst
 !.config/espanso
 !.config/archlinux-logout
-
-!.local
-.local/*
-!.local/share
-.local/share/*
-!.local/share/konsole
+!.config/picom
