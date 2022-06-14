@@ -1,35 +1,98 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+#! /bin/zsh
+SHELL=$(which zsh || echo '/bin/zsh')
 
-# Path
-export PATH="$PATH:$HOME/go/bin"
-export PATH="$PATH:$HOME/.dotnet/tools"
-export PATH="$HOME/.deno/bin:$PATH"
-export PATH="$PATH:$HOME/.myscripts"
-export PATH="$HOME/.emacs.d/bin:$PATH"
+setopt autocd              # change directory just by typing its name
+setopt interactivecomments # allow comments in interactive mode
+setopt magicequalsubst     # enable filename expansion for arguments of the form ‘anything=expression’
+setopt nonomatch           # hide error message if there is no match for the pattern
+setopt notify              # report the status of background jobs immediately
+setopt numericglobsort     # sort filenames numerically when it makes sense
+setopt promptsubst         # enable command substitution in prompt
+setopt MENU_COMPLETE       # Automatically highlight first element of completion menu
+setopt AUTO_LIST           # Automatically list choices on ambiguous completion.
+setopt COMPLETE_IN_WORD    # Complete from both ends of a word.
 
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=50
-SAVEHIST=50
+# COMPLETION
+autoload -Uz compinit
+compinit -i
 
-# Alias
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "$HOME/.config/zsh/.zcompcache"
+
+# COMPLETERS
+zstyle ':completion:*' completer _extensions _complete _approximate
+zstyle ':completion:*:*:*:*:corrections' format '%F{yellow}!- %d (errors: %e) -!%f'
+zstyle ':completion:*:*:*:*:descriptions' format '%F{blue}-- %D %d --%f'
+zstyle ':completion:*:*:*:*:messages' format ' %F{purple} -- %d --%f'
+zstyle ':completion:*:*:*:*:warnings' format ' %F{red}-- no matches found --%f'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+# ONLY DISPLAY SOME TAGS FOR CD
+zstyle ':completion:*:*:cd:*' tag-order local-directories directory-stack path-directories
+
+# HISTORY
+HISTFILE="$HOME/.cache/.zsh_history"
+HISTSIZE=10000
+SAVEHIST=20000
+setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt hist_ignore_space      # ignore commands that start with space
+setopt hist_verify            # show command with history expansion to user before running it
+setopt share_history          # share command history data
+
+# SOURCE PLUGINS
+source $HOME/.antigen.zsh
+antigen use oh-my-zsh
+antigen bundle git
+antigen bundle fzf
+antigen bundle pip
+antigen bundle colorize
+antigen bundle command-not-found
+antigen bundle gitfast
+antigen bundle ufw
+antigen bundle zsh-interactive-cd
+antigen bundle copypath
+antigen bundle cp
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle laggardkernel/zsh-thefuck
+antigen bundle chrissicool/zsh-256color
+antigen bundle ael-code/zsh-colored-man-pages
+antigen theme spaceship-prompt/spaceship-prompt
+antigen apply
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#1e2123,underline"
+
+# CUSTOM FUNCTIONS
+cd() {
+	builtin cd "$@" && command ls --group-directories-first --color=auto -F
+}
+
+mcd () {
+    mkdir -p $1
+    cd $1
+}
+
+# ALIASES
 if [ -f ~/.aliases ]; then
 . ~/.aliases
 fi
 
-# Auto cd
-setopt autocd
 
-# Terminal
-. ~/.git-prompt.bash
+if [ -f ~/.prompt.bash ]; then
+~/.prompt.bash
+fi
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+# PROMPT
+#SPACESHIP_USER_SHOW="always"
+#SPACESHIP_PROMPT_SEPARATE_LINE="false"
+#SPACESHIP_CHAR_SYMBOL=" "
+
+# init starship
+eval "$(starship init zsh)"
+# setup starship custom prompt
+export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml

@@ -51,7 +51,7 @@ repository = "https://github.com/AethanFoot/leftwm-theme-dracula-rounded/"
 commit = "*"
 version = "0.0.3"
 leftwm_versions = "^0.3.0"
-current = true
+current = false
 
 [[repos.themes]]
 name = "Forest"
@@ -201,4 +201,10 @@ current = false
 url = "localhost"
 name = "LOCAL"
 definitions_version = 1
-themes = []
+
+[[repos.themes]]
+name = "saga"
+directory = "/home/rudolf/.config/leftwm/themes/saga"
+version = "0.0.0"
+leftwm_versions = "*"
+current = true

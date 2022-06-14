@@ -51,7 +51,7 @@ key = "e"
 [[keybind]]
 # Open Terminal File Explorer
 command = "Execute"
-value = "konsole -e ranger"
+value = "alacritty -e ranger"
 modifier = ["modkey"]
 key = "e"
 
@@ -72,7 +72,7 @@ key = "Return"
 [[keybind]]
 # Open new terminal
 command = "Execute"
-value = "konsole"
+value = "alacritty"
 modifier = ["modkey"]
 key = "Return"
 
