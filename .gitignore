@@ -13,6 +13,8 @@
 
 !.icons
 !.themes
+!.config
+.config/*
 !.config/starship
 !.config/alacritty
 !.config/kitty
