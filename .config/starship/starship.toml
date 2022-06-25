@@ -3,8 +3,8 @@ add_newline = false
 command_timeout = 2000
 
 [character]
-error_symbol = "[󰋔](bold red)"
-success_symbol = "[󰋑](bold pink)"
+error_symbol = "[󰀦](bold red)"
+success_symbol = "[󰫢](bold green)"
 vicmd_symbol = "[󰮭](bold yellow)"
 format = "$symbol [󰄾](bold bright-black) "
 
@@ -39,3 +39,4 @@ deleted = "󰆴 "
 ahead = "󰜷 "
 diverged = "󰹺 "
 behind = "󰜮 "
+style = "bold cyan"

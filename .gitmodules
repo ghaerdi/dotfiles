@@ -1,0 +1,3 @@
+[submodule ".config/leftwm/themes/xiao"]
+	path = .config/leftwm/themes/xiao
+	url = https://github.com/ghaerdi/xiao-leftwm-theme.git
