@@ -8,7 +8,7 @@
 !.prompt.bash
 !.aliases
 !.zshrc
-!.antigen
+!.antigen.zsh
 !.emacs.d
 
 !.icons
