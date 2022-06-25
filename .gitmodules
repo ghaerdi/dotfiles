@@ -1,3 +1,6 @@
 [submodule ".config/leftwm/themes/xiao"]
 	path = .config/leftwm/themes/xiao
 	url = https://github.com/ghaerdi/xiao-leftwm-theme.git
+[submodule ".config/leftwm/themes/saga"]
+	path = .config/leftwm/themes/saga
+	url = https://github.com/ghaerdi/SAGA.git
