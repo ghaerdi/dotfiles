@@ -4,3 +4,6 @@
 [submodule ".config/leftwm/themes/saga"]
 	path = .config/leftwm/themes/saga
 	url = https://github.com/ghaerdi/SAGA.git
+[submodule ".config/espanso/match"]
+	path = .config/espanso/match
+	url = https://gist.github.com/34d57244d9620281584a7436e8afdb34.git
