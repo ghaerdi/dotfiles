@@ -1,6 +1,10 @@
 #! /bin/zsh
 SHELL=$(which zsh || echo '/bin/zsh')
 
+if [ -f ~/.exports ]; then
+. ~/.exports
+fi
+
 setopt autocd              # change directory just by typing its name
 setopt interactivecomments # allow comments in interactive mode
 setopt magicequalsubst     # enable filename expansion for arguments of the form ‘anything=expression’
@@ -84,7 +88,7 @@ fi
 
 
 if [ -f ~/.prompt.bash ]; then
-~/.prompt.bash
+. ~/.prompt.bash
 fi
 
 # PROMPT
