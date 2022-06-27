@@ -7,3 +7,6 @@
 [submodule ".config/espanso/match"]
 	path = .config/espanso/match
 	url = https://gist.github.com/34d57244d9620281584a7436e8afdb34.git
+[submodule ".config/nvim"]
+	path = .config/nvim
+	url = https://github.com/neovim/neovim.git
