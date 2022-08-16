@@ -133,7 +133,6 @@ element normal.urgent {
 }
 element normal.active {
     background-color: 				@background;
-    text-color:       				@green;
 }
 element selected.normal {
     background-color: 				@active-foreground;
