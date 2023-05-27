@@ -3,7 +3,7 @@ alias sdn="shutdown now"
 alias c="clear"
 alias cls="clear"
 
-alias ls="ls -a -l --color=auto"
+alias ls="lsd -a -l --color=auto"
 alias ...="cd ../../"
 alias ....="cd ../../../"
 alias .....="cd ../../../../"

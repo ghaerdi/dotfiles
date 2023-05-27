@@ -1,4 +1,4 @@
-terminal = "konsole"
+terminal = "kitty"
 browser = "google-chrome-stable"
 terminal_explorer = terminal + " -e ranger"
 file_explorer = "thunar"
