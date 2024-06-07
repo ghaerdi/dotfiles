@@ -1,12 +1,12 @@
-[submodule ".config/leftwm/themes/xiao"]
-	path = .config/leftwm/themes/xiao
-	url = https://github.com/ghaerdi/xiao-leftwm-theme.git
-[submodule ".config/leftwm/themes/saga"]
-	path = .config/leftwm/themes/saga
-	url = https://github.com/ghaerdi/SAGA.git
-[submodule ".config/espanso/match"]
-	path = .config/espanso/match
+[submodule "espanso"]
+	path = espanso/.config/espanso/match
 	url = https://gist.github.com/34d57244d9620281584a7436e8afdb34.git
-[submodule ".config/nvim"]
-	path = .config/nvim
+[submodule "nvim"]
+	path = nvim/.config/nvim
 	url = https://github.com/ghaerdi/neovim-config.git
+[submodule "Wallpapers"]
+	path = Wallpapers
+	url = https://github.com/ghaerdi/Wallpapers
+[submodule "fastfetch/.local/share/fastfetch"]
+	path = fastfetch/.local/share/fastfetch
+	url = https://github.com/LierB/fastfetch.git
