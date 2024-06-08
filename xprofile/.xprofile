@@ -1,0 +1,5 @@
+#monitors
+xlayoutdisplay -p HDMI-1-0 -o HDMI-1-0 &
+
+# mouse for left-handed
+xmodmap -e 'pointer = 3 2 1' &

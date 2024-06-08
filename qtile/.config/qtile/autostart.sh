@@ -1,8 +1,9 @@
 #!/bin/sh
 
-~/.config/polybar/launch.sh &
+~/.config/polybar/launch.py &
 picom -b &
 xfce4-clipman &
 nm-applet &
 dunst & -config ~/.config/dunst/dunstrc &
-xmodmap -e 'pointer = 3 2 1'
+xmodmap -e 'pointer = 3 2 1' &
+feh --bg-fill ~/.dotfiles/Wallpapers/pixel-art-wallpaper-20072220050556.png

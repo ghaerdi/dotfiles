@@ -37,6 +37,16 @@ def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     subprocess.Popen([home])
 
+    # check connected monitors
+    monitors_status = subprocess.run(
+        "xrandr | grep 'connected' | cut -d ' ' -f 2",
+        shell=True,
+        stdout=subprocess.PIPE
+    ).stdout.decode("UTF-8").split("\n")[:-1]
+
+    if monitors_status.count("connected") == 2:
+        screens.append(Screen())
+
 
 mod = "mod4"
 terminal = guess_terminal()
@@ -161,9 +171,9 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
-screens = [
-    Screen(),
-]
+# SCREENS
+screens = [Screen()]
+
 
 # Drag floating layouts.
 mouse = [
