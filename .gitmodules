@@ -10,3 +10,6 @@
 [submodule "fastfetch/.local/share/fastfetch"]
 	path = fastfetch/.local/share/fastfetch
 	url = https://github.com/LierB/fastfetch.git
+[submodule "alacritty/.config/alacritty/themes"]
+	path = alacritty/.config/alacritty/themes
+	url = https://github.com/alacritty/alacritty-theme.git
