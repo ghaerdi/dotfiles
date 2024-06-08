@@ -139,8 +139,8 @@ for i in groups:
     )
 
 layouts = [
-    layout.Columns(border_focus=["#911969"], margin=4, border_width=4),
-    layout.Max(),
+    layout.Columns(border_focus=["#000000", "#FFBDCB"], margin=4, border_width=4),
+    layout.Max(margin=4),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
