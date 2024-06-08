@@ -42,7 +42,7 @@ mod = "mod4"
 terminal = guess_terminal()
 apps_launcher = "rofi -modi drun -show drun"
 polybar = "~/.config/polybar/launch.sh"
-screenshot = "deepin-screen-recorder"
+screenshot = "gnome-screenshot -c -a"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
