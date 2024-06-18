@@ -1,35 +1,29 @@
-[colors]
-	background = "#0A0D0F"
-	foreground = "#FFFCFF"
-
 [global]
+		frame_color = "#3c3836"
+		separator_color = "#3c3836"
     follow = mouse
-    width = 300
+    width = 400
     origin = top-right
     offset = 20x56
     indicate_hidden = yes
     shrink = no
     transparency = 0
     separator_height = 1
-    padding = 24
-    horizontal_padding = 24
-    frame_width = 6
-    corner_radius = 3
-    frame_color = "#0F1214"
-    separator_color = "#0F1214"
+    padding = 4
+    frame_width = 2
+    corner_radius = 6
     sort = yes
     idle_threshold = 120
-    highlight = "#FFBDCB"
+    highlight = "#000000"
     progress_bar_frame_width = 0
 
 ########################################
 #                TEXT                  #
 ########################################
-    font = Sarasa Mono CL Semibold 11
-    line_height = 1
+    font = JetBrainsMonoNL NF
+    line_height = 0
     markup = full
     format = "<b>%s </b>\n%b"
-    alignment = center
     show_age_threshold = 60
     word_wrap = yes
     ellipsize = middle
@@ -43,7 +37,6 @@
 ########################################
     icon_position = left
     max_icon_size = 100
-    icon_path= .local/share/icons/SAGACONS/status/scalable:.local/share/icons/SAGACONS/devices/scalable:.local/share/icons/SAGACONS/apps/scalable:.local/share/icons/SAGACONS/actions/scalable
     
 ########################################
 #            MISCELLANEOUS             #
@@ -51,7 +44,7 @@
     sticky_history = yes
     history_length = 20
     dmenu = /usr/bin/rofi -show run
-    browser = /usr/bin/firefox
+    browser = /usr/bin/brave
     always_run_script = true
     title = Dunst
     class = Dunst
@@ -65,17 +58,16 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background =  "#0A0D0F"
-    frame_color = "#0F1214"
+    background = "#282828"
+    foreground = "#d4be98"
     timeout = 10
 
 [urgency_normal]
-    background =  "#0A0D0F"
-    frame_color = "#0F1214"
+    background = "#7daea3"
+    foreground = "#282828"
     timeout = 10
 
 [urgency_critical]
-    background = "#0A0D0F"
-    frame_color = "#0F1214"
+    background = "#d3869b"
+    foreground = "#282828"
     timeout = 0
-

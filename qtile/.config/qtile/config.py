@@ -149,8 +149,13 @@ for i, group in enumerate(groups):
         ]
     )
 
+colors = {
+    "primary": "#d3869b",
+    "secondary": "#3c3836"
+}
+
 layouts = [
-    layout.Columns(border_focus=["#000000", "#FFBDCB"], margin=4, border_width=4),
+    layout.Columns(border_focus=colors["primary"], border_normal=colors["secondary"], margin=8, border_width=2),
     layout.Max(margin=4),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -164,13 +169,6 @@ layouts = [
     # layout.VerticalTile(),
     # layout.Zoomy(),
 ]
-
-widget_defaults = dict(
-    font="sans",
-    fontsize=12,
-    padding=3,
-)
-extension_defaults = widget_defaults.copy()
 
 # SCREENS
 screens = [Screen()]
@@ -190,6 +188,8 @@ bring_front_click = False
 floats_kept_above = True
 cursor_warp = False
 floating_layout = layout.Floating(
+    border_focus=colors["primary"],
+    border_normal=colors["secondary"],
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
