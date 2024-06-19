@@ -20,8 +20,8 @@
 ########################################
 #                TEXT                  #
 ########################################
-    font = JetBrainsMonoNL NF
-    line_height = 0
+    font = JetBrainsMonoNL NF 11
+    line_height = 1
     markup = full
     format = "<b>%s </b>\n%b"
     show_age_threshold = 60
@@ -36,7 +36,7 @@
 #                ICONS                 #
 ########################################
     icon_position = left
-    max_icon_size = 100
+    max_icon_size = 80
     
 ########################################
 #            MISCELLANEOUS             #
