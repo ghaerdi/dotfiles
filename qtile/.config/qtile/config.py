@@ -48,12 +48,17 @@ def autostart():
         screens.append(Screen())
 
 
-mod = "mod4"
 terminal = guess_terminal()
-apps_launcher = "rofi -modi drun -show drun"
 polybar = "~/.config/polybar/launch.sh"
-screenshot = "gnome-screenshot -c -a"
+screenshot = "gnome-screenshot -i"
+rofi = {
+    "apps": "rofi -show drun",
+    "emoji": "rofi -show emoji -modi emoji -config ~/.config/rofi/emoji.rasi",
+    "clipboard": "rofi -show clipboard -config ~/.config/rofi/clipboard.rasi",
+    "power-menu": "rofi -config ~/.config/rofi/power-menu.rasi -show p -modi 'p:rofi-power-menu --choices=shutdown/reboot'"
+}
 
+mod = "mod4"
 keys = [
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
@@ -95,8 +100,11 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), lazy.spawn(polybar), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod], "m", lazy.spawn(apps_launcher), desc="Search & Launch an app"),
-    Key([mod], "space", lazy.spawn(apps_launcher), desc="Search & Launch an app"),
+    Key([mod], "m", lazy.spawn(rofi["apps"]), desc="Search & Launch an app"),
+    Key([mod], "space", lazy.spawn(rofi["apps"]), desc="Search & Launch an app"),
+    Key([mod], "period", lazy.spawn(rofi["emoji"]), desc="Search & pick an emoji"),
+    Key([mod], "c", lazy.spawn(rofi["clipboard"]), desc="Open clipboard"),
+    Key([mod], "p", lazy.spawn(rofi["power-menu"]), desc="Open powermenu"),
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
     Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 0 -5%")),
@@ -106,6 +114,7 @@ keys = [
     Key([mod], "r", lazy.spawn("redshift -O 4000")),
     Key([mod, "shift"], "r", lazy.spawn("redshift -x")),
     Key([mod, "shift"], "s", lazy.spawn(screenshot)),
+    Key([], "Print", lazy.spawn(screenshot)),
 ]
 
 # Add key bindings to switch VTs in Wayland.

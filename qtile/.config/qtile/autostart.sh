@@ -2,7 +2,7 @@
 
 ~/.config/polybar/launch.py &
 picom -b &
-xfce4-clipman &
+greenclip daemon &
 nm-applet &
 dunst & -config ~/.config/dunst/dunstrc &
 xmodmap -e 'pointer = 3 2 1' &

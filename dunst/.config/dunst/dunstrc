@@ -3,7 +3,7 @@
 		separator_color = "#3c3836"
     follow = mouse
     width = 400
-    origin = top-right
+    origin = top-center
     offset = 20x56
     indicate_hidden = yes
     shrink = no

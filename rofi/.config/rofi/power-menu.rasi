@@ -1,0 +1,15 @@
+@import "config"
+
+* {
+		primary:	 @red;
+		secondary: @red;
+}
+
+configuration {
+    sidebar-mode:	false;
+}
+
+window {
+    width:	300px;
+    height:	180;
+}

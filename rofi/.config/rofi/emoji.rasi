@@ -1,0 +1,19 @@
+@import "config"
+
+* {
+		primary:	 @yellow;
+		secondary: @yellow;
+}
+
+configuration {
+    sidebar-mode:	false;
+}
+
+listview {
+    columns: 2;
+}
+
+window {
+		width:	50%;
+    height:	50%;
+}
