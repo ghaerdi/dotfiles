@@ -6,7 +6,9 @@
 }
 
 configuration {
+		modi: "p:rofi-power-menu --choices=shutdown/reboot";
     sidebar-mode:	false;
+		display-p: "POWERMENU";
 }
 
 window {

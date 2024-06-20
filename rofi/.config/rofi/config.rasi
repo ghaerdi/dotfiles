@@ -14,9 +14,9 @@
 		secondary: @blue;
 }
 
-// Main config
 configuration {
-		modi:                   "drun,window,emoji,filebrowser,clipboard:greenclip print";
+		modi:                   "combi,calc,filebrowser";
+		combi-modi:							"drun,window";
     font:										"JetBrainsMonoNL NF 11";
     fixed-num-lines: 				true;
     show-icons:		 					true;
@@ -25,27 +25,27 @@ configuration {
     scroll-method: 					0;
     window-format: 					"[{w}] ··· {c} ···   {t}";
     click-to-exit: 					true;
-    combi-hide-mode-prefix: false;
-    display-window: 				"󰫤 WINDOWS";
-		display-clipboard:			"󰫤 CLIPBOARD";
-    display-filebrowser: 		"󰫤 FILES";
+    combi-hide-mode-prefix: true;
+		display-combi:					" SEARCH";
+		display-clipboard:			" CLIPBOARD";
+    display-filebrowser: 		" FILES";
     display-ssh:						"󰫤 SSH";
-    display-drun: 					"󰫤 APPS";
     display-emoji: 					"󰫤 EMOJI";
+		display-calc:						"󰪚 CALCULATOR";
+    display-drun: 					" ";
+    display-window: 				"󰶮 ";
 }
 
-// bg color
 * {
     background-color:             	@background;
 }
 
-// setup
 window {
-    border: 					1px;
+    border: 					2px;
     border-color: 		@secondary;
     border-radius: 		6px;
-    padding: 					0;
-    width: 						35%;
+    padding: 					0px;
+    width: 						30%;
     height:						40%;
 }
 
@@ -95,7 +95,7 @@ listview {
 }
 
 element {
-    border-radius: 			5px;
+    border-radius: 			3px;
     padding: 						10px;
 }
 
@@ -149,25 +149,19 @@ button {
     margin:							5px;
     padding: 						5px;
     text-color: 				@background;
-    border: 						0px;
-    border-radius: 			4px;
-    border-color: 			@foreground;
+    border-radius: 			0px;
 }
 
 button selected {
     background-color:  	@primary;
     text-color: 				@foreground;
-    border: 						0px;
-    border-radius: 			4px;
-    border-color: 			@foreground;
+    border-radius: 			0px;
 }
 
 scrollbar {
     width:        					4px;
-    border:       					0px;
     handle-color: 					@foreground;
     handle-width: 					8px;
-    padding:      					0;
 }
 
 message {
@@ -191,27 +185,20 @@ element-icon {
 mode-switcher{
     enabled:                     true;
     expand:                      false;
-    spacing:                     0px;
-    margin:                      0px;
-    padding:                     0px;
-    border:                      0px solid;
-    border-radius:               0px;
     border-color:                @secondary;
     background-color:            transparent;
     text-color:                  @foreground;
 }
 button {
     padding:                     10px;
-    border:                      0px 0px 0px 0px ;
     border-radius:               0px;
-    border-color:                @secondary;
     background-color:            @background;
     text-color:                  inherit;
     cursor:                      pointer;
 }
 button selected {
     border:                      2px 2px 0px 2px ;
-    border-radius:               0px;
+    border-radius:               3px;
     border-color:                @secondary;
     background-color:            @secondary;
     text-color:                  @background;

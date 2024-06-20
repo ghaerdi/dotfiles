@@ -6,14 +6,16 @@
 }
 
 configuration {
-    sidebar-mode:	false;
+		modi:                   "emoji,clipboard:greenclip print";
+		display-clipboard:			" CLIPBOARD";
+    display-emoji: 					"󰞅 EMOJI";
 }
 
 listview {
-    columns: 2;
+    columns: 1;
 }
 
 window {
 		width:	50%;
-    height:	50%;
+    height:	80%;
 }

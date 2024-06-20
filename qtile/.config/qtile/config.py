@@ -48,15 +48,14 @@ def autostart():
         screens.append(Screen())
 
 
-terminal = guess_terminal()
-polybar = "~/.config/polybar/launch.sh"
-screenshot = "gnome-screenshot -i"
-rofi = {
-    "apps": "rofi -show drun",
-    "emoji": "rofi -show emoji -modi emoji -config ~/.config/rofi/emoji.rasi",
-    "clipboard": "rofi -show clipboard -config ~/.config/rofi/clipboard.rasi",
-    "power-menu": "rofi -config ~/.config/rofi/power-menu.rasi -show p -modi 'p:rofi-power-menu --choices=shutdown/reboot'"
-}
+class Apps:
+    terminal = guess_terminal()
+    polybar = "~/.config/polybar/launch.sh"
+    screenshot = "gnome-screenshot -i"
+    power_menu = "rofi -config ~/.config/rofi/power-menu.rasi -show p"
+    launcher = "rofi -show combi"
+    emoji = "rofi -show emoji -config ~/.config/rofi/emoji.rasi"
+
 
 mod = "mod4"
 keys = [
@@ -97,14 +96,12 @@ keys = [
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([], "F11", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window",),
     Key([mod], "f", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
-    Key([mod, "control"], "r", lazy.reload_config(), lazy.spawn(polybar), desc="Reload the config"),
+    Key([mod, "control"], "r", lazy.reload_config(), lazy.spawn(Apps.polybar), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod], "m", lazy.spawn(rofi["apps"]), desc="Search & Launch an app"),
-    Key([mod], "space", lazy.spawn(rofi["apps"]), desc="Search & Launch an app"),
-    Key([mod], "period", lazy.spawn(rofi["emoji"]), desc="Search & pick an emoji"),
-    Key([mod], "c", lazy.spawn(rofi["clipboard"]), desc="Open clipboard"),
-    Key([mod], "p", lazy.spawn(rofi["power-menu"]), desc="Open powermenu"),
+    Key([mod], "Return", lazy.spawn(Apps.terminal), desc="Launch terminal"),
+    Key([mod], "space", lazy.spawn(Apps.launcher), desc="Search & Launch an app"),
+    Key([mod], "period", lazy.spawn(Apps.emoji), desc="Search & pick an emoji"),
+    Key([mod], "p", lazy.spawn(Apps.power_menu), desc="Open powermenu"),
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
     Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 0 -5%")),
@@ -113,8 +110,8 @@ keys = [
     # Redshift
     Key([mod], "r", lazy.spawn("redshift -O 4000")),
     Key([mod, "shift"], "r", lazy.spawn("redshift -x")),
-    Key([mod, "shift"], "s", lazy.spawn(screenshot)),
-    Key([], "Print", lazy.spawn(screenshot)),
+    Key([mod, "shift"], "s", lazy.spawn(Apps.screenshot)),
+    Key([], "Print", lazy.spawn(Apps.screenshot)),
 ]
 
 # Add key bindings to switch VTs in Wayland.
@@ -158,13 +155,14 @@ for i, group in enumerate(groups):
         ]
     )
 
-colors = {
-    "primary": "#d3869b",
-    "secondary": "#3c3836"
-}
+
+class Colors:
+    primary = "#d3869b"
+    secondary = "#3c3836"
+
 
 layouts = [
-    layout.Columns(border_focus=colors["primary"], border_normal=colors["secondary"], margin=8, border_width=2),
+    layout.Columns(border_focus=Colors.primary, border_normal=Colors.secondary, margin=8, border_width=2),
     layout.Max(margin=4),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
