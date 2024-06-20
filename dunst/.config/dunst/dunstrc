@@ -63,8 +63,9 @@
     timeout = 10
 
 [urgency_normal]
-    background = "#7daea3"
-    foreground = "#282828"
+		frame_color = "#7daea3"
+    background = "#282828"
+    foreground = "#d4be98"
     timeout = 10
 
 [urgency_critical]
