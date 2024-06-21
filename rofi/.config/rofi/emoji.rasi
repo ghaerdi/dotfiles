@@ -1,21 +1,17 @@
-@import "config"
+@import "base"
 
 * {
-		primary:	 @yellow;
+		primary:   @yellow;
 		secondary: @yellow;
 }
 
 configuration {
-		modi:                   "emoji,clipboard:greenclip print";
-		display-clipboard:			" CLIPBOARD";
-    display-emoji: 					"󰞅 EMOJI";
-}
-
-listview {
-    columns: 1;
+		modi:              "emoji,clipboard:greenclip print";
+		display-clipboard: " CLIPBOARD";
+		display-emoji:     "󰞅 EMOJI";
 }
 
 window {
 		width:	50%;
-    height:	80%;
+		height:	80%;
 }

@@ -1,17 +1,16 @@
-@import "config"
+@import "base"
 
 * {
-		primary:	 @red;
+		primary:   @red;
 		secondary: @red;
 }
 
 configuration {
-		modi: "p:rofi-power-menu --choices=shutdown/reboot";
-    sidebar-mode:	false;
-		display-p: "POWERMENU";
+		modi:         "p:rofi-power-menu --choices=shutdown/reboot";
+		sidebar-mode: false;
 }
 
 window {
-    width:	300px;
-    height:	180;
+		width:  300px;
+		height: 180;
 }

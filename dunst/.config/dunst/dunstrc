@@ -1,74 +1,75 @@
 [global]
-		frame_color = "#3c3836"
-		separator_color = "#3c3836"
-    follow = mouse
-    width = 400
-    origin = top-center
-    offset = 20x56
-    indicate_hidden = yes
-    shrink = no
-    transparency = 0
-    separator_height = 1
-    padding = 4
-    frame_width = 2
-    corner_radius = 6
-    sort = yes
-    idle_threshold = 120
-    highlight = "#000000"
-    progress_bar_frame_width = 0
+frame_color = "#3c3836"
+separator_color = "#3c3836"
+follow = mouse
+width = 400
+origin = top-center
+offset = 20x56
+indicate_hidden = yes
+shrink = no
+transparency = 0
+separator_height = 1
+padding = 4
+frame_width = 2
+corner_radius = 6
+sort = yes
+idle_threshold = 120
+highlight = "#000000"
+progress_bar_frame_width = 0
 
 ########################################
 #                TEXT                  #
 ########################################
-    font = JetBrainsMonoNL NF 11
-    line_height = 1
-    markup = full
-    format = "<b>%s </b>\n%b"
-    show_age_threshold = 60
-    word_wrap = yes
-    ellipsize = middle
-    ignore_newline = no
-    stack_duplicates = false
-    hide_duplicate_count = false
-    show_indicators = yes
+font = JetBrainsMonoNL NF 11
+line_height = 1
+markup = full
+format = "<b>%s </b>\n%b"
+show_age_threshold = 60
+word_wrap = yes
+ellipsize = middle
+ignore_newline = no
+stack_duplicates = false
+hide_duplicate_count = false
+show_indicators = yes
 
 ########################################
 #                ICONS                 #
 ########################################
-    icon_position = left
-    max_icon_size = 80
-    
+icon_position = left
+max_icon_size = 80
+
 ########################################
 #            MISCELLANEOUS             #
 ########################################
-    sticky_history = yes
-    history_length = 20
-    dmenu = /usr/bin/rofi -show run
-    browser = /usr/bin/brave
-    always_run_script = true
-    title = Dunst
-    class = Dunst
-    force_xinerama = false
+sticky_history = yes
+history_length = 20
+dmenu = /usr/bin/rofi -show run
+browser = /usr/bin/brave
+always_run_script = true
+title = Dunst
+class = Dunst
+force_xinerama = false
 
 ########################################
 #              SHORTCUTS               #
+########################################
 
-    close = ctrl+space
-    close_all = ctrl+shift+space
-    context = ctrl+shift+period
+close = ctrl+space
+close_all = ctrl+shift+space
+context = ctrl+shift+period
 
 [urgency_low]
-    background = "#282828"
-    foreground = "#d4be98"
-    timeout = 10
+background = "#282828"
+foreground = "#d4be98"
+timeout = 10
 
 [urgency_normal]
-		frame_color = "#7daea3"
-    background = "#282828"
-    foreground = "#d4be98"
-    timeout = 10
+frame_color = "#7daea3"
+background = "#282828"
+foreground = "#d4be98"
+timeout = 10
 
 [urgency_critical]
-    background = "#d3869b"
-    foreground = "#282828"
-    timeout = 0
+background = "#d3869b"
+foreground = "#282828"
+timeout = 0

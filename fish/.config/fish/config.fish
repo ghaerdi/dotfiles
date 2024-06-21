@@ -25,9 +25,5 @@ end
 
 random_propmt
 
-# set -l COMMANDS ( "fastfetch" "colorscript" )
-# run (string pick $COMMANDS)
-
-
 # Starship (keep at the end of line)
 starship init fish | source
