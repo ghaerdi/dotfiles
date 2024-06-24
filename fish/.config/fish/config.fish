@@ -14,6 +14,8 @@ alias lt="exa -aT"
 alias visudo="sudo EDITOR=nvim visudo"
 alias cat='bat'
 
+set EDITOR nvim
+
 set fish_user_paths $fish_user_paths /bin/fastfetch
 
 function random_propmt
