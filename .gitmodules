@@ -19,3 +19,6 @@
 [submodule "spicetify/.config/spicetify/Themes"]
 	path = spicetify/.config/spicetify/Themes
 	url = https://github.com/spicetify/spicetify-themes.git
+[submodule "yazi/.config/yazi/flavors/gruvbox-dark.yazi"]
+	path = yazi/.config/yazi/flavors/gruvbox-dark.yazi
+	url = https://github.com/ghaerdi/gruvbox-dark.yazi
