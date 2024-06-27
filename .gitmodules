@@ -15,7 +15,7 @@
 	url = https://github.com/alacritty/alacritty-theme.git
 [submodule "tmux/.config/tmux/plugins/tpm"]
 	path = tmux/.config/tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm.git
+	url = https://github.com/tmux-plugins/tpm
 [submodule "spicetify/.config/spicetify/Themes"]
 	path = spicetify/.config/spicetify/Themes
 	url = https://github.com/spicetify/spicetify-themes.git
