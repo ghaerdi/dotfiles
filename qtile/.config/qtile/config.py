@@ -138,7 +138,7 @@ for vt in range(1, 8):
     )
 
 groups = [Group(i)
-          for i in ["I", "II", "III", "IV", "V", "VI", "VII", "VII", "IX"]]
+          for i in ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]]
 
 for i, group in enumerate(groups):
     actual_key = str(i+1)
