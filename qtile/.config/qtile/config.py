@@ -55,6 +55,9 @@ class Apps:
     power_menu = "rofi -config ~/.config/rofi/power-menu.rasi -show p"
     launcher = "rofi -show combi"
     emoji = "rofi -show emoji -config ~/.config/rofi/emoji.rasi"
+    spotify = "spotify-launcher"
+    chatgpt = "chromium --app=https://chatgpt.com/"
+    color_picker = "xcolor -s -f HEX"
 
 
 mod = "mod4"
@@ -167,13 +170,15 @@ for i, group in enumerate(groups):
     )
 
 groups.append(ScratchPad("scratchpad", [
-    DropDown("spotify", "spotify-launcher", x=0.05,
+    DropDown("spotify", Apps.spotify, x=0.05,
              y=0.05, width=0.9, height=0.9, opacity=0.9,),
+    DropDown("chatgpt", Apps.chatgpt, x=0.05,
+             y=0.05, width=0.9, height=0.9, opacity=0.99,),
 ]))
 
 keys.extend([
-    Key([mod], "y", lazy.group["scratchpad"].dropdown_toggle("spotify")),
-    Key([mod], "u", lazy.group["scratchpad"].dropdown_toggle("spotify")),
+    Key([mod], "y", lazy.group["scratchpad"].dropdown_toggle("chatgpt")),
+    Key([mod], "u", lazy.group["scratchpad"].dropdown_toggle("chatgpt")),
     Key([mod], "i", lazy.group["scratchpad"].dropdown_toggle("spotify")),
     Key([mod], "o", lazy.group["scratchpad"].dropdown_toggle("spotify")),
 ])
