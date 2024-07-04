@@ -124,6 +124,7 @@ keys = [
     Key([mod, "shift"], "r", lazy.spawn("redshift -x")),
     Key([mod, "shift"], "s", lazy.spawn(Apps.screenshot)),
     Key([], "Print", lazy.spawn(Apps.screenshot)),
+    Key([mod, "shift"], "c", lazy.spawn(Apps.color_picker)),
 ]
 
 # Add key bindings to switch VTs in Wayland.
