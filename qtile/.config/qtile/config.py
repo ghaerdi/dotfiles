@@ -58,6 +58,7 @@ class Apps:
     spotify = "spotify-launcher"
     chatgpt = "chromium --app=https://chatgpt.com/"
     color_picker = "xcolor -s -f HEX"
+    syncthing = "brave --app=http://localhost:8384"
 
 
 mod = "mod4"
@@ -175,13 +176,15 @@ groups.append(ScratchPad("scratchpad", [
              y=0.05, width=0.9, height=0.9, opacity=0.9,),
     DropDown("chatgpt", Apps.chatgpt, x=0.05,
              y=0.05, width=0.9, height=0.9, opacity=0.99,),
+    DropDown("syncthing", Apps.syncthing, x=0.05,
+             y=0.05, width=0.9, height=0.9, opacity=0.99,),
 ]))
 
 keys.extend([
     Key([mod], "y", lazy.group["scratchpad"].dropdown_toggle("chatgpt")),
-    Key([mod], "u", lazy.group["scratchpad"].dropdown_toggle("chatgpt")),
-    Key([mod], "i", lazy.group["scratchpad"].dropdown_toggle("spotify")),
-    Key([mod], "o", lazy.group["scratchpad"].dropdown_toggle("spotify")),
+    Key([mod], "u", lazy.group["scratchpad"].dropdown_toggle("spotify")),
+    Key([mod], "i", lazy.group["scratchpad"].dropdown_toggle("syncthing")),
+    Key([mod], "o", lazy.group["scratchpad"].dropdown_toggle("syncthing")),
 ])
 
 
