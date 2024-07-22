@@ -56,9 +56,9 @@ class Apps:
     launcher = "rofi -show combi"
     emoji = "rofi -show emoji -config ~/.config/rofi/emoji.rasi"
     spotify = "spotify-launcher"
-    chatgpt = "chromium --app=https://chatgpt.com/"
+    chatgpt = "chromium --app=https://chatgpt.com/ --new-window"
     color_picker = "xcolor -s -f HEX"
-    syncthing = "brave --app=http://localhost:8384"
+    syncthing = "chromium --app=http://localhost:8384 --new-window"
 
 
 mod = "mod4"
@@ -171,7 +171,7 @@ for i, group in enumerate(groups):
         ]
     )
 
-groups.append(ScratchPad("scratchpad", [
+groups.append(ScratchPad("X", [
     DropDown("spotify", Apps.spotify, x=0.05,
              y=0.05, width=0.9, height=0.9, opacity=0.9,),
     DropDown("chatgpt", Apps.chatgpt, x=0.05,
@@ -181,10 +181,10 @@ groups.append(ScratchPad("scratchpad", [
 ]))
 
 keys.extend([
-    Key([mod], "y", lazy.group["scratchpad"].dropdown_toggle("chatgpt")),
-    Key([mod], "u", lazy.group["scratchpad"].dropdown_toggle("spotify")),
-    Key([mod], "i", lazy.group["scratchpad"].dropdown_toggle("syncthing")),
-    Key([mod], "o", lazy.group["scratchpad"].dropdown_toggle("syncthing")),
+    Key([mod], "y", lazy.group["X"].dropdown_toggle("chatgpt")),
+    Key([mod], "u", lazy.group["X"].dropdown_toggle("spotify")),
+    Key([mod], "i", lazy.group["X"].dropdown_toggle("syncthing")),
+    Key([mod], "o", lazy.group["X"].dropdown_toggle("syncthing")),
 ])
 
 
