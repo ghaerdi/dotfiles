@@ -12,7 +12,6 @@ alias la="exa -a"
 alias ll="exa -l"
 alias lt="exa -aT"
 alias visudo="sudo EDITOR=nvim visudo"
-alias cat='bat'
 alias aic="~/.bun/bin/aic -t conventional -g 4"
 
 set EDITOR nvim
