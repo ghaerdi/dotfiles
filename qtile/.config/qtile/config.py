@@ -49,7 +49,7 @@ def autostart():
 
 
 class Apps:
-    terminal = guess_terminal()
+    terminal = "wezterm" or guess_terminal()
     polybar = "~/.config/polybar/launch.sh"
     screenshot = "gnome-screenshot -i"
     power_menu = "rofi -config ~/.config/rofi/power-menu.rasi -show p"
@@ -230,6 +230,7 @@ floating_layout = layout.Floating(
         Match(wm_class="ssh-askpass"),  # ssh-askpass
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
+        Match(title="zoom"),  # zoom notification
     ]
 )
 auto_fullscreen = True
