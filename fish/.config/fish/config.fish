@@ -30,3 +30,4 @@ random_propmt
 # Starship (keep at the end of line)
 starship init fish | source
 zoxide init fish | source
+pyenv init - | source
