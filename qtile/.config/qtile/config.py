@@ -196,7 +196,7 @@ class Colors:
 layouts = [
     layout.Columns(border_focus=Colors.primary,
                    border_normal=Colors.secondary, margin=8, border_width=2),
-    layout.Max(margin=8),
+    layout.Max(),
 ]
 
 # SCREENS
