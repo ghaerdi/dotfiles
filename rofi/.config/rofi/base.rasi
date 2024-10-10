@@ -20,6 +20,7 @@ configuration {
 		window-format:          "[{w}] ··· {c} ···   {t}";
 		click-to-exit:          true;
 		combi-hide-mode-prefix: true;
+		dpi: 0;
 }
 
 * {
@@ -31,7 +32,7 @@ window {
 		border-color:  @secondary;
 		border-radius: 6px;
 		padding:       0px;
-		width:         30%;
+		width:         40%;
 		height:        40%;
 }
 
@@ -155,7 +156,7 @@ textbox {
 }
 
 element-icon {
-		size:             24;
+		icon-size:             24;
 		margin:           0 10px 0 0;
 		vertical-align:   0.5;
 		horizontal-align: 0.5;
