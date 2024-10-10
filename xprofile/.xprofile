@@ -1,5 +1,5 @@
-#monitors
-xlayoutdisplay -r 60 -d 125 -p HDMI-1-0 -o HDMI-1-0 &
+# monitors
+xlayoutdisplay -r 60 -p HDMI-1-0 -o HDMI-1-0 &
 
 # mouse for left-handed
 xmodmap -e 'pointer = 3 2 1' &
