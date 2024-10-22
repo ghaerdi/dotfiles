@@ -1,0 +1,5 @@
+# This directory is a Syncthing folder marker.
+# Do not delete.
+
+folderID: g32fl-x7wew
+created: 2024-10-11T03:27:07-04:00
