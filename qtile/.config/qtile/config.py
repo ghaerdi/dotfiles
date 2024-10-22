@@ -126,6 +126,13 @@ keys = [
     Key([mod, "shift"], "s", lazy.spawn(Apps.screenshot)),
     Key([], "Print", lazy.spawn(Apps.screenshot)),
     Key([mod, "shift"], "c", lazy.spawn(Apps.color_picker)),
+
+    # FN action alternatives
+    Key([mod], "F1", lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")),
+    Key([mod], "F2", lazy.spawn("pactl set-sink-volume 0 -5%")),
+    Key([mod], "F3", lazy.spawn("pactl set-sink-volume 0 +5%")),
+    Key([mod], "F5", lazy.spawn("brightnessctl set 10%-")),
+    Key([mod], "F6", lazy.spawn("brightnessctl set +10%")),
 ]
 
 # Add key bindings to switch VTs in Wayland.
