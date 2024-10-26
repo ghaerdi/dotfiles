@@ -1,0 +1,16 @@
+@import "base"
+
+* {
+		primary:   @yellow;
+		secondary: @yellow;
+}
+
+configuration {
+		modi:              "clipboard:greenclip print";
+		display-clipboard: " CLIPBOARD";
+}
+
+window {
+		width:	50%;
+		height:	80%;
+}
