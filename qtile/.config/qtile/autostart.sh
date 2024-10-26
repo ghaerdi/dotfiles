@@ -1,7 +1,8 @@
 #!/bin/sh
 
-~/.config/polybar/launch.py &
+polybar -r laptop &
 picom -b &
+volctl &
 greenclip daemon &
 nm-applet &
 blueman-applet &

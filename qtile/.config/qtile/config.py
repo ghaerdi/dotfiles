@@ -49,16 +49,33 @@ def autostart():
 
 
 class Apps:
-    terminal = "wezterm" or guess_terminal()
+    terminal = "wezterm"
     polybar = "~/.config/polybar/launch.sh"
     screenshot = "gnome-screenshot -i"
     power_menu = "rofi -config ~/.config/rofi/power-menu.rasi -show p"
     launcher = "rofi -show combi"
     emoji = "rofi -show emoji -config ~/.config/rofi/emoji.rasi"
-    spotify = "spotify-launcher"
+    clipboard = "rofi -show clipboard -config ~/.config/rofi/clipboard.rasi"
+    spotify = "spotify"
     chatgpt = "chromium --app=https://chatgpt.com/ --new-window"
-    color_picker = "xcolor -s -f HEX"
+    color_picker = "xcolor -P 100 -S 10 -f HEX"
     syncthing = "chromium --app=http://localhost:8384 --new-window"
+
+
+class Volume:
+    up = "pactl set-sink-volume 0 +5%"
+    down = "pactl set-sink-volume 0 -5%"
+    mute = "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+
+
+class ScreenBrightness:
+    up = "brightnessctl set +10%"
+    down = "brightnessctl set 10%-"
+
+
+class ScreenTemperature:
+    up = "redshift -O 4000"
+    reset = "redshift -x"
 
 
 mod = "mod4"
@@ -112,27 +129,26 @@ keys = [
     Key([mod], "Return", lazy.spawn(Apps.terminal), desc="Launch terminal"),
     Key([mod], "space", lazy.spawn(Apps.launcher),
         desc="Search & Launch an app"),
-    Key([mod], "period", lazy.spawn(Apps.emoji), desc="Search & pick an emoji"),
+    Key([mod], "period", lazy.spawn(Apps.clipboard), desc="Open clipboard"),
     Key([mod], "p", lazy.spawn(Apps.power_menu), desc="Open powermenu"),
-    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
-    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
-    Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 0 -5%")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume 0 +5%")),
-    Key([], "XF86AudioMute", lazy.spawn(
-        "pactl set-sink-mute @DEFAULT_SINK@ toggle")),
+    Key([], "XF86MonBrightnessUp", lazy.spawn(ScreenBrightness.up)),
+    Key([], "XF86MonBrightnessDown", lazy.spawn(ScreenBrightness.down)),
+    Key([], "XF86AudioLowerVolume", lazy.spawn(Volume.down)),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn(Volume.up)),
+    Key([], "XF86AudioMute", lazy.spawn(Volume.mute)),
     # Redshift
-    Key([mod], "r", lazy.spawn("redshift -O 4000")),
-    Key([mod, "shift"], "r", lazy.spawn("redshift -x")),
+    Key([mod], "r", lazy.spawn(ScreenTemperature.up)),
+    Key([mod, "shift"], "r", lazy.spawn(ScreenTemperature.reset)),
     Key([mod, "shift"], "s", lazy.spawn(Apps.screenshot)),
     Key([], "Print", lazy.spawn(Apps.screenshot)),
     Key([mod, "shift"], "c", lazy.spawn(Apps.color_picker)),
 
     # FN action alternatives
-    Key([mod], "F1", lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")),
-    Key([mod], "F2", lazy.spawn("pactl set-sink-volume 0 -5%")),
-    Key([mod], "F3", lazy.spawn("pactl set-sink-volume 0 +5%")),
-    Key([mod], "F5", lazy.spawn("brightnessctl set 10%-")),
-    Key([mod], "F6", lazy.spawn("brightnessctl set +10%")),
+    Key([mod], "F1", lazy.spawn(Volume.mute)),
+    Key([mod], "F2", lazy.spawn(Volume.down)),
+    Key([mod], "F3", lazy.spawn(Volume.up)),
+    Key([mod], "F5", lazy.spawn(ScreenBrightness.down)),
+    Key([mod], "F6", lazy.spawn(ScreenBrightness.up)),
 ]
 
 # Add key bindings to switch VTs in Wayland.
