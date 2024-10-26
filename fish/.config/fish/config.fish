@@ -19,7 +19,7 @@ set EDITOR nvim
 set fish_user_paths $fish_user_paths /bin/fastfetch
 
 function random_propmt
-	set scripts "taskbook" "fastfetch --config arch" "fastfetch --config minimal"
+	set scripts "fastfetch --config arch" "fastfetch --config minimal"
 
 	set random_index (math (random) % (count $scripts) + 1)
 	eval $scripts[$random_index]
