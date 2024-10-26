@@ -6,7 +6,7 @@
 }
 
 configuration {
-		modi:                "combi,calc,filebrowser";
+		modi:                "combi,filebrowser";
 		combi-modi:          "drun,window";
 		display-combi:       " SEARCH";
 		display-filebrowser: " FILES";
