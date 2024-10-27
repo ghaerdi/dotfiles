@@ -1,11 +1,13 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   home.username = "vanzuh";
   home.homeDirectory = "/home/vanzuh";
 
-  nixpkgs.config.allowUnfreePredicate =
-    pkg: builtins.elem (pkgs.lib.getName pkg) [
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (pkgs.lib.getName pkg) [
       "spotify"
       "zoom"
       "obsidian"
@@ -70,7 +72,7 @@
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-emoji
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (nerdfonts.override {fonts = ["JetBrainsMono"];})
 
     (pkgs.writeShellScriptBin "greet" ''
       echo "Hello, ${config.home.username}!" | ${pkgs.cowsay}/bin/cowsay | ${pkgs.lolcat}/bin/lolcat
@@ -79,6 +81,15 @@
     (pkgs.writeShellScriptBin "bonsai" ''
       ${pkgs.cbonsai}/bin/cbonsai \
         -L 60 -M 12 -p -m "grew up in nixos btw"
+    '')
+
+    (pkgs.writeShellScriptBin "toggle-polybar" ''
+        if [ "$(ps -a | grep polybar | awk '{print $4}' | head -n 1)" = "polybar" ]; then
+      ${pkgs.dunst}/bin/dunstify -t 1500 -u low "Closing polybar. Wait..."
+          ${pkgs.polybar}/bin/polybar-msg cmd quit
+        else
+          ${pkgs.polybar}/bin/polybar -r laptop &
+        fi
     '')
   ];
 
