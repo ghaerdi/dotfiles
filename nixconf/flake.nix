@@ -33,6 +33,7 @@
 
     homeConfigurations = {
       "vanzuh@nixos" = home-manager.lib.homeManagerConfiguration {
+        extraSpecialArgs = {pkgs-stable = pkgs;};
         pkgs = pkgs-unstable;
         modules = [./home-manager/home.nix];
       };
