@@ -37,7 +37,6 @@
     redshift
     espanso
     blueman
-    kanata
     neovim
     xcolor
     volctl
@@ -73,6 +72,7 @@
 
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
+      "mongodb-compass"
       "spotify"
       "obsidian"
       "slack"

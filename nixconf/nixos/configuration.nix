@@ -2,11 +2,12 @@
   imports = [
     ./hardware-configuration.nix
   ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
   };
 
   networking.hostName = "nixos";
@@ -65,6 +66,20 @@
     };
   };
 
+  services.udev.packages = [
+    (pkgs.writeTextFile {
+      name = "uinput";
+      text = ''
+        KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
+      '';
+      destination = "/etc/udev/rules.d/99-input.rules";
+    })
+  ];
+
+  users.groups = {
+    uinput = {};
+  };
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -72,7 +87,7 @@
   users.users.vanzuh = {
     isNormalUser = true;
     description = "Vanzuh";
-    extraGroups = ["networkmanager" "audio" "docker" "wheel"];
+    extraGroups = ["networkmanager" "audio" "docker" "wheel" "uinput" "input"];
     shell = pkgs.fish;
     packages = with pkgs; [
       wezterm
