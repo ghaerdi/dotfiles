@@ -10,10 +10,20 @@
         Documentation = "https://github.com/jtroo/kanata";
       };
       Service = {
-        Restart = "always";
-        RestartSec = "3";
         Type = "simple";
         ExecStart = "${pkgs.kanata}/bin/kanata --cfg ${config.home.homeDirectory}/.config/kanata/kanata.kbd";
+      };
+      Install = {
+        WantedBy = ["default.target"];
+      };
+    };
+    ollama = {
+      Unit = {
+        Description = "Ollama service";
+        # After = "network-online.target";
+      };
+      Service = {
+        ExecStart = "${pkgs.ollama}/bin/ollama serve";
       };
       Install = {
         WantedBy = ["default.target"];

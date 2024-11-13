@@ -29,6 +29,7 @@
     spotify
     pavucontrol
     obsidian
+    obs-studio
 
     # TOOLS
     gnome-screenshot
@@ -37,6 +38,7 @@
     redshift
     espanso
     blueman
+    ollama
     neovim
     xcolor
     volctl
