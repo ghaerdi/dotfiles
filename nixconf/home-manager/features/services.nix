@@ -20,7 +20,6 @@
     ollama = {
       Unit = {
         Description = "Ollama service";
-        # After = "network-online.target";
       };
       Service = {
         ExecStart = "${pkgs.ollama}/bin/ollama serve";
