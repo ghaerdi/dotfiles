@@ -3,6 +3,7 @@
   pkgs-stable,
   config,
   lib,
+  zen-browser,
   ...
 }: {
   programs.home-manager.enable = true;
@@ -21,15 +22,15 @@
 
   home.packages = with pkgs; [
     # GUI
-    rofi
-    dunst
     telegram-desktop
-    vesktop
-    spicetify-cli
-    spotify
+    youtube-music
     pavucontrol
-    obsidian
+    zen-browser
     obs-studio
+    obsidian
+    vesktop
+    dunst
+    rofi
 
     # TOOLS
     gnome-screenshot
@@ -75,7 +76,6 @@
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
       "mongodb-compass"
-      "spotify"
       "obsidian"
       "slack"
     ];

@@ -5,16 +5,17 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     loader = {
-			efi = {
-				canTouchEfiVariables = true;
-				efiSysMountPoint = "/boot";
-			};
-			grub = {
-				enable = true;
-				useOSProber = true;
-				device = "/dev/nvme1n1";
-				efiSupport = true;
-			};
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot";
+      };
+      systemd-boot.enable = false;
+      grub = {
+        enable = true;
+        useOSProber = true;
+        device = "nodev";
+        efiSupport = true;
+      };
     };
   };
 

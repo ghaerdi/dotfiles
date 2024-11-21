@@ -9,6 +9,7 @@
     ripgrep
     killall
     zoxide
+    aichat
     pyenv
     tmux
     htop
