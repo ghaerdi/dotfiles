@@ -56,7 +56,7 @@ class Apps:
     launcher = "rofi -show combi"
     emoji = "rofi -show emoji -config ~/.config/rofi/emoji.rasi"
     clipboard = "rofi -show clipboard -config ~/.config/rofi/clipboard.rasi"
-    spotify = "spotify"
+    music = "youtube-music"
     chatgpt = "chromium --app=https://chatgpt.com/ --new-window"
     color_picker = "xcolor -P 100 -S 10 -f HEX"
     syncthing = "chromium --app=http://localhost:8384 --new-window"
@@ -195,7 +195,7 @@ for i, group in enumerate(groups):
     )
 
 groups.append(ScratchPad("X", [
-    DropDown("spotify", Apps.spotify, x=0.05,
+    DropDown("music", Apps.music, x=0.05,
              y=0.05, width=0.9, height=0.9, opacity=0.9,),
     DropDown("chatgpt", Apps.chatgpt, x=0.05,
              y=0.05, width=0.9, height=0.9, opacity=0.99,),
@@ -205,7 +205,7 @@ groups.append(ScratchPad("X", [
 
 keys.extend([
     Key([mod], "y", lazy.group["X"].dropdown_toggle("chatgpt")),
-    Key([mod], "u", lazy.group["X"].dropdown_toggle("spotify")),
+    Key([mod], "u", lazy.group["X"].dropdown_toggle("music")),
     Key([mod], "i", lazy.group["X"].dropdown_toggle("syncthing")),
     Key([mod], "o", lazy.group["X"].dropdown_toggle("syncthing")),
 ])
