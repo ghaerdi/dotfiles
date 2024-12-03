@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
+    ../home-manager/features/battery.nix
   ];
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;

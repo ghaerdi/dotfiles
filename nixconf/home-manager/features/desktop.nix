@@ -28,6 +28,7 @@
     zen-browser
     obs-studio
     obsidian
+    stremio
     vesktop
     dunst
     rofi
