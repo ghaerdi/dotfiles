@@ -59,7 +59,9 @@
     go
 
     # Fonts
-    (nerdfonts.override {fonts = ["JetBrainsMono"];})
+		nerd-fonts.fira-code
+		nerd-fonts.jetbrains-mono
+		jetbrains-mono
     noto-fonts-cjk-sans
     noto-fonts-emoji
     noto-fonts
@@ -73,6 +75,10 @@
          fi
     '')
   ];
+
+	fonts.fontconfig = {
+		enable = true;
+	};
 
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
