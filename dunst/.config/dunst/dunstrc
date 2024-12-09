@@ -20,7 +20,7 @@ progress_bar_frame_width = 0
 ########################################
 #                TEXT                  #
 ########################################
-font = JetBrainsMonoNL NF 11
+font = JetBrainsMonoNL 11
 line_height = 1
 markup = full
 format = "<b>%s </b>\n%b"

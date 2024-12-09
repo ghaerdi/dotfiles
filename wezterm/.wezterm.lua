@@ -5,7 +5,7 @@ local config = wezterm.config_builder()
 config.color_scheme = "Gruvbox Material (Gogh)"
 
 -- font
-config.font = wezterm.font("JetBrainsMono NF")
+config.font = wezterm.font("FiraCode Nerd Font")
 
 -- tab bar
 config.enable_tab_bar = false

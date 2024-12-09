@@ -12,10 +12,9 @@
 }
 
 configuration {
-		font:                   "JetBrainsMonoNL NF 11";
+		font:                   "JetBrainsMonoNL 11";
 		fixed-num-lines:        true;
 		show-icons:             true;
-		icon-theme:             "JetBrainsMonoNL NF 11";
 		sidebar-mode:           true;
 		window-format:          "[{w}] ··· {c} ···   {t}";
 		click-to-exit:          true;
@@ -38,7 +37,7 @@ window {
 
 prompt {
 		background-color: @background;
-		font:             "JetBrainsMonoNL NF 11";
+		font:             "JetBrainsMonoNL 11";
 		text-color:       @foreground;
 }
 
