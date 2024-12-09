@@ -4,6 +4,7 @@
     ../home-manager/features/battery.nix
   ];
   boot = {
+    supportedFilesystems = ["ntfs"];
     kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       efi = {
@@ -18,6 +19,12 @@
         efiSupport = true;
       };
     };
+  };
+
+  fileSystems."/mnt/personal" = {
+    device = "/dev/nvme1n1p2";
+    fsType = "ntfs-3g";
+    options = ["rw" "uid=1000"];
   };
 
   networking.hostName = "nixos";
@@ -41,31 +48,9 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  services.xserver = {
-    enable = true;
-    dpi = 276;
-    xkb = {
-      layout = "us";
-      variant = "";
-    };
-    upscaleDefaultCursor = true;
-    displayManager.gdm.enable = true;
-    windowManager.qtile.enable = true;
-  };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
 
   virtualisation.docker = {
     enable = true;
@@ -76,63 +61,85 @@
     };
   };
 
-  services.udev.packages = [
-    (pkgs.writeTextFile {
-      name = "uinput";
-      text = ''
-        KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
-      '';
-      destination = "/etc/udev/rules.d/99-input.rules";
-    })
-  ];
-
-  users.groups = {
-    uinput = {};
+  services = {
+    printing.enable = true;
+    gvfs.enable = true;
+    udisks2.enable = true;
+    udev.packages = [
+      (pkgs.writeTextFile {
+        name = "uinput";
+        text = ''
+          KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
+        '';
+        destination = "/etc/udev/rules.d/99-input.rules";
+      })
+    ];
+    xserver = {
+      enable = true;
+      dpi = 276;
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
+      upscaleDefaultCursor = true;
+      displayManager.gdm.enable = true;
+      windowManager.qtile.enable = true;
+    };
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+    };
+    libinput.enable = true;
+    # Enable the OpenSSH daemon.
+    # openssh.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.vanzuh = {
-    isNormalUser = true;
-    description = "Vanzuh";
-    extraGroups = ["networkmanager" "audio" "docker" "wheel" "uinput" "input"];
-    shell = pkgs.fish;
-    packages = with pkgs; [
-      wezterm
-      networkmanagerapplet
-      xlayoutdisplay
-      home-manager
-      polybar
-      picom
-      stow
-      git
-    ];
+  users = {
+    groups = {
+      uinput = {};
+    };
+    # Define a user account. Don't forget to set a password with ‘passwd’.
+    users.vanzuh = {
+      isNormalUser = true;
+      description = "Vanzuh";
+      extraGroups = ["networkmanager" "audio" "docker" "wheel" "uinput" "input" "disk" "floppy" "storage"];
+      shell = pkgs.fish;
+      packages = with pkgs; [
+        wezterm
+        networkmanagerapplet
+        xlayoutdisplay
+        home-manager
+        polybar
+        picom
+        stow
+        git
+      ];
+    };
   };
 
   programs = {
     fish.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    xlayoutdisplay
-    home-manager
-    wezterm
-    neovim
-    git
-  ];
-  environment.variables = {
-    GDK_SCALE = "0.5";
-    GDK_DPI_SCALE = "0.5";
+  environment = {
+    systemPackages = with pkgs; [
+      xlayoutdisplay
+      home-manager
+      wezterm
+      neovim
+      git
+    ];
+    # variables = {
+    #   GDK_SCALE = "1.5";
+    #   GDK_DPI_SCALE = "0.5";
+    #   _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
+    # };
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
