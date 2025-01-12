@@ -108,7 +108,6 @@
       extraGroups = ["networkmanager" "audio" "docker" "wheel" "uinput" "input" "disk" "floppy" "storage"];
       shell = pkgs.fish;
       packages = with pkgs; [
-        wezterm
         networkmanagerapplet
         xlayoutdisplay
         home-manager
@@ -128,7 +127,6 @@
     systemPackages = with pkgs; [
       xlayoutdisplay
       home-manager
-      wezterm
       neovim
       git
     ];

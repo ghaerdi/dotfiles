@@ -15,11 +15,6 @@
     ];
   };
 
-  programs.wezterm = {
-    enable = true;
-    package = pkgs-stable.wezterm;
-  };
-
   home.packages = with pkgs; [
     # GUI
     telegram-desktop
@@ -34,6 +29,7 @@
     rofi
 
     # TOOLS
+    ghostty
     gnome-screenshot
     brightnessctl
     pulseaudio
