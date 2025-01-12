@@ -3,12 +3,10 @@ let
 in
   pkgs.mkShell {
     nativeBuildInputs = with pkgs; [
-      android-tools
       pkg-config
       gobject-introspection
       cargo
       cargo-tauri
-      nodejs
       bun
     ];
 
@@ -26,10 +24,4 @@ in
       webkitgtk_4_1
       openssl
     ];
-
-    # export JAVA_HOME=/opt/android-studio/jbr
-    shellHook = ''
-      export ANDROID_HOME="$HOME/Android/Sdk"
-      export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
-    '';
   }
