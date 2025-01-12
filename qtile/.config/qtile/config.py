@@ -25,7 +25,6 @@
 # SOFTWARE.
 
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown
-from libqtile.utils import guess_terminal
 from libqtile import layout, qtile, hook
 from libqtile.lazy import lazy
 import subprocess
@@ -49,7 +48,7 @@ def autostart():
 
 
 class Apps:
-    terminal = "wezterm"
+    terminal = "ghostty"
     polybar = "~/.config/polybar/launch.sh"
     screenshot = "gnome-screenshot -i"
     power_menu = "rofi -config ~/.config/rofi/power-menu.rasi -show p"
@@ -213,8 +212,8 @@ keys.extend([
 
 
 class Colors:
-    primary = "#d3869b"
-    secondary = "#3c3836"
+    primary = "#ffc2df"
+    secondary = "#505050"
 
 
 layouts = [
