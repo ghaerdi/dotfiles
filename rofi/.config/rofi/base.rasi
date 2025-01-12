@@ -1,14 +1,13 @@
 * {
-		background: #282828;
-		foreground: #D4BE98;
-		black:      #3C3836;
-		red:        #EA6962;
-		green:      #A9B665;
-		yellow:     #D8A657;
-		blue:       #7DAEA3;
-		magenta:    #D3869B;
+		background: #05080a;
+		foreground: #fff6ff;
+		black:      #101010;
+		red:        #f38ba8;
+		green:      #baf7b5;
+		yellow:     #f9e2af;
+		blue:       #b2fff3;
+		magenta:    #dfbaff;
 		cyan:       #89B482;
-		white:      #D4BE98;
 }
 
 configuration {
