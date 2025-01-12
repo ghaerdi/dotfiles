@@ -1,0 +1,10 @@
+gtk-titlebar = false
+
+theme = vesper
+background = black
+background-opacity = 0.8
+
+window-padding-x = 10
+window-padding-y = 10
+confirm-close-surface = false
+
