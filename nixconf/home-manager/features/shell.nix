@@ -8,14 +8,26 @@
     starship
     ripgrep
     killall
+    ollama
+    neovim
     zoxide
     aichat
     pyenv
+    unzip
     tmux
+    yazi
     htop
     eza
     bat
     fzf
+
+    lua-language-server
+    nodejs
+    rustup
+    zig
+    bun
+    gcc
+    go
     (pkgs.writeShellScriptBin "greet" ''
       echo "hello, ${config.home.username}!" | ${pkgs.cowsay}/bin/cowsay | ${pkgs.lolcat}/bin/lolcat
     '')

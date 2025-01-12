@@ -36,23 +36,14 @@
     redshift
     espanso
     blueman
-    ollama
-    neovim
     xcolor
     volctl
     picom
-    yazi
     feh
 
     # PROGRAMMING & DEPENDENCIES
     haskellPackages.greenclip
     xorg.xmodmap
-    nodejs
-    rustup
-    zig
-    bun
-    gcc
-    go
 
     # Fonts
     nerd-fonts.fira-code
