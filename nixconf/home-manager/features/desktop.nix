@@ -1,6 +1,5 @@
 {
   pkgs,
-  pkgs-stable,
   config,
   lib,
   zen-browser,
@@ -9,7 +8,6 @@
   programs.home-manager.enable = true;
   programs.brave = {
     enable = true;
-    package = pkgs-stable.brave;
     extensions = [
       {id = "hdokiejnpimakedhajhdlcegeplioahd";}
     ];
