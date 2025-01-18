@@ -2,7 +2,6 @@
   pkgs,
   config,
   lib,
-  zen-browser,
   ...
 }: {
   programs.home-manager.enable = true;
@@ -18,7 +17,6 @@
     telegram-desktop
     youtube-music
     pavucontrol
-    zen-browser
     obs-studio
     obsidian
     stremio
