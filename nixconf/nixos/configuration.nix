@@ -1,7 +1,12 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
-    ../home-manager/features/battery.nix
+    ./features/hyprland.nix
+    ./features/battery.nix
   ];
   boot = {
     supportedFilesystems = ["ntfs"];
@@ -91,6 +96,7 @@
       alsa.support32Bit = false;
       pulse.enable = true;
       jack.enable = false;
+      wireplumber.enable = true;
     };
     libinput.enable = true;
     # Enable the OpenSSH daemon.

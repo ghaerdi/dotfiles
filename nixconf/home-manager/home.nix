@@ -1,4 +1,10 @@
-{config, ...}: {
+{
+  config,
+  username,
+  homeDirectory,
+  stateVersion,
+  ...
+}: {
   imports = [
     ./features/services.nix
     ./features/desktop.nix
@@ -6,26 +12,31 @@
     ./features/work.nix
   ];
   home = {
-    username = "vanzuh";
-    homeDirectory = "/home/${config.home.username}";
-    stateVersion = "24.05"; # Please read releases notes before changing.
+    username = username;
+    homeDirectory = homeDirectory;
+    stateVersion = stateVersion;
     file = {
-      ".config/picom".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/picom/.config/picom";
-      ".config/kanata".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/kanata/.config/kanata";
-      ".config/polybar".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/polybar/.config/polybar";
-      ".config/qtile".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/qtile/.config/qtile";
-      ".config/hypr".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/hypr/.config/hypr";
-      ".config/dunst".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/dunst/.config/dunst";
-      ".config/rofi".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/rofi/.config/rofi";
-      ".config/tmux".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/tmux/.config/tmux";
-      ".config/ghostty".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/ghostty/.config/ghostty";
-      ".config/espanso".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/espanso/.config/espanso";
-      ".local/share/fastfetch".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/fastfetch/.local/share/fastfetch";
-      ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim/.config/nvim";
-      ".config/starship".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/starship/.config/starship";
-      ".config/yazi".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/yazi/.config/yazi";
-      ".xprofile".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/xprofile/.xprofile";
-      ".themes".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/themes/.themes";
+      ".config/kanata".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/kanata/.config/kanata";
+      ".config/dunst".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/dunst/.config/dunst";
+      ".config/tmux".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/tmux/.config/tmux";
+      ".config/ghostty".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/ghostty/.config/ghostty";
+      ".config/espanso".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/espanso/.config/espanso";
+      ".local/share/fastfetch".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/fastfetch/.local/share/fastfetch";
+      ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/nvim/.config/nvim";
+      ".config/starship".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/starship/.config/starship";
+      ".config/yazi".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/yazi/.config/yazi";
+      ".themes".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/themes/.themes";
+
+      # xserver
+      ".config/polybar".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/polybar/.config/polybar";
+      ".config/qtile".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/qtile/.config/qtile";
+      ".config/picom".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/picom/.config/picom";
+      ".config/rofi".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/rofi/.config/rofi";
+      ".xprofile".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/xprofile/.xprofile";
+
+      # wayland
+      ".config/hypr".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/hypr/.config/hypr";
+      ".config/eww".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/eww/.config/eww";
     };
   };
 }

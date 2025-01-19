@@ -13,6 +13,23 @@
   };
 
   home.packages = with pkgs; [
+    # wayland
+    espanso-wayland
+    rofi-wayland
+    playerctl
+    pamixer
+    wofi
+    # eww and scripts
+    socat
+    bash
+    jq
+    python3
+    ripgrep
+    # stdbuf
+    # awk
+    eww
+    # seq
+
     # GUI
     telegram-desktop
     youtube-music
@@ -22,7 +39,7 @@
     stremio
     vesktop
     dunst
-    rofi
+    # rofi
 
     # TOOLS
     ghostty
@@ -30,7 +47,7 @@
     brightnessctl
     pulseaudio
     redshift
-    espanso
+    # espanso
     blueman
     xcolor
     volctl
