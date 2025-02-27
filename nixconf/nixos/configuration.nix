@@ -1,13 +1,14 @@
 {
   inputs,
   pkgs,
+  lib,
   ...
 }: {
   imports = [
     ./hardware-configuration.nix
-    ./features/hyprland.nix
-    ./features/battery.nix
+    ./features/stylix.nix
   ];
+
   boot = {
     supportedFilesystems = ["ntfs"];
     kernelPackages = pkgs.linuxPackages_latest;
@@ -27,17 +28,27 @@
   };
 
   fileSystems."/mnt/personal" = {
-    device = "/dev/nvme1n1p2";
+    device = "/dev/disk/by-uuid/504CE43A4CE41D0A"; # Correct UUID
     fsType = "ntfs-3g";
-    options = ["rw" "uid=1000"];
+    options = [
+      "default"
+      "nofail"
+      "uid=vanzuh"
+      "gid=users"
+      "dmask=0000"
+      "fmask=0000"
+    ];
   };
-
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
-  hardware.bluetooth.enable = true;
+  hardware = {
+    bluetooth.enable = true;
+    graphics.enable = true;
+  };
 
-  time.timeZone = "America/Santo_Domingo";
+  # time.timeZone = "America/Santo_Domingo";
+  time.timeZone = "America/Santiago";
 
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.supportedLocales = ["en_US.UTF-8/UTF-8" "es_DO.UTF-8/UTF-8"];
@@ -54,16 +65,11 @@
   };
 
   # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
 
   virtualisation.docker = {
     enable = true;
     storageDriver = "btrfs";
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
-    };
   };
 
   services = {
@@ -88,19 +94,8 @@
       };
       upscaleDefaultCursor = true;
       displayManager.gdm.enable = true;
-      windowManager.qtile.enable = true;
-    };
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = false;
-      pulse.enable = true;
-      jack.enable = false;
-      wireplumber.enable = true;
     };
     libinput.enable = true;
-    # Enable the OpenSSH daemon.
-    # openssh.enable = true;
   };
 
   users = {
@@ -110,6 +105,7 @@
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.vanzuh = {
       isNormalUser = true;
+      initialPassword = "password";
       description = "Vanzuh";
       extraGroups = ["networkmanager" "audio" "docker" "wheel" "uinput" "input" "disk" "floppy" "storage"];
       shell = pkgs.fish;
@@ -131,8 +127,10 @@
 
   environment = {
     systemPackages = with pkgs; [
+      inputs.swww.packages.${pkgs.system}.swww
       xlayoutdisplay
       home-manager
+      ntfs3g
       neovim
       git
     ];

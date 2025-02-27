@@ -28,5 +28,16 @@
         WantedBy = ["default.target"];
       };
     };
+    # open-webui = {
+    #     Unit = {
+    #       Description = "Open webui service";
+    #     };
+    #     Service = {
+    #       ExecStart = "${pkgs.open-webui}/bin/open-webui serve";
+    #     };
+    #     Install = {
+    #       WantedBy = ["default.target"];
+    #     };
+    # };
   };
 }

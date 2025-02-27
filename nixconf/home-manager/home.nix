@@ -5,12 +5,6 @@
   stateVersion,
   ...
 }: {
-  imports = [
-    ./features/services.nix
-    ./features/desktop.nix
-    ./features/shell.nix
-    ./features/work.nix
-  ];
   home = {
     username = username;
     homeDirectory = homeDirectory;
@@ -25,18 +19,18 @@
       ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/nvim/.config/nvim";
       ".config/starship".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/starship/.config/starship";
       ".config/yazi".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/yazi/.config/yazi";
-      ".themes".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/themes/.themes";
+      ".config/rofi".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/rofi/.config/rofi";
 
       # xserver
       ".config/polybar".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/polybar/.config/polybar";
       ".config/qtile".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/qtile/.config/qtile";
       ".config/picom".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/picom/.config/picom";
-      ".config/rofi".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/rofi/.config/rofi";
       ".xprofile".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/xprofile/.xprofile";
 
       # wayland
       ".config/hypr".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/hypr/.config/hypr";
-      ".config/eww".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/eww/.config/eww";
+      ".config/waybar".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/waybar/.config/waybar";
+      ".config/wal".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/wal/.config/wal";
     };
   };
 }

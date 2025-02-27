@@ -2,6 +2,7 @@
   pkgs,
   config,
   lib,
+  zen-browser,
   ...
 }: {
   programs.home-manager.enable = true;
@@ -13,41 +14,22 @@
   };
 
   home.packages = with pkgs; [
-    # wayland
-    espanso-wayland
-    rofi-wayland
-    playerctl
-    pamixer
-    wofi
-    # eww and scripts
-    socat
-    bash
-    jq
-    python3
-    ripgrep
-    # stdbuf
-    # awk
-    eww
-    # seq
-
     # GUI
     telegram-desktop
     youtube-music
     pavucontrol
+    zen-browser
     obs-studio
     obsidian
     stremio
     vesktop
     dunst
-    # rofi
 
     # TOOLS
     ghostty
-    gnome-screenshot
     brightnessctl
     pulseaudio
     redshift
-    # espanso
     blueman
     xcolor
     volctl
@@ -80,27 +62,11 @@
     enable = true;
   };
 
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [
-      "mongodb-compass"
-      "obsidian"
-      "slack"
-    ];
   nixpkgs.config.pulseaudio = true;
 
   services = {
     syncthing.enable = true;
   };
-
-  qt.enable = true;
-  qt.platformTheme.name = "gtk";
-  gtk.enable = true;
-  gtk.theme.package = pkgs.adw-gtk3;
-  gtk.theme.name = "adw-gtk3-dark";
-  gtk.iconTheme.package = pkgs.gruvbox-plus-icons;
-  gtk.iconTheme.name = "Gruvbox-Plus-Dark";
-  gtk.cursorTheme.package = pkgs.catppuccin-cursors.frappeDark;
-  gtk.cursorTheme.name = "catppuccin-frappe-dark-cursors";
 
   home.sessionVariables = {
     EDITOR = "neovim";
