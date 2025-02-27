@@ -11,6 +11,7 @@
     ../../home-manager/features/shell.nix
     ../../home-manager/features/work.nix
     ../../home-manager/features/wayland.nix
+    ../../home-manager/features/asus.nix
   ];
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [

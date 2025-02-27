@@ -64,8 +64,20 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable sound with pipewire.
-  security.rtkit.enable = true;
+  security = {
+    rtkit.enable = true;
+    sudo.extraRules = [
+      {
+        users = ["vanzuh"];
+        commands = [
+          {
+            command = "/home/vanzuh/.nix-profile/bin/kbd-backlight-toggle";
+            options = ["NOPASSWD"];
+          }
+        ];
+      }
+    ];
+  };
 
   virtualisation.docker = {
     enable = true;
