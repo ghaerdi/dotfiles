@@ -1,8 +1,8 @@
 gtk-titlebar = false
 
-theme = vesper
-background = black
-background-opacity = 0.9
+theme=/home/vanzuh/.cache/wal/colors-ghostty
+
+background-opacity = 0.96
 
 window-padding-x = 10
 window-padding-y = 10
