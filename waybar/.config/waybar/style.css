@@ -1,0 +1,87 @@
+@import url("/home/vanzuh/.cache/wal/colors-waybar.css");
+
+* {
+    border: none;
+    font-size: 13px;
+    font-family: "JetBrainsMono NL";
+		color: @foreground;
+    min-height: 23px;
+}
+
+window#waybar {
+  background: @background;
+ }
+
+.modules-center {
+  background-color: rgba(0,0,0,0.5);
+  padding: 0 15px;
+	margin: 3px 0;
+  border-radius: 15px;
+}
+
+#battery,
+#custom-clipboard,
+#custom-colorpicker,
+#custom-powerDraw,
+#bluetooth,
+#pulseaudio,
+#network,
+#disk,
+#memory,
+#backlight,
+#cpu,
+#temperature,
+#custom-weather,
+#custom-love,
+#idle_inhibitor,
+#jack,
+#tray,
+#window,
+#workspaces,
+#clock {
+  padding: 0 10px;
+}
+#pulseaudio {
+  padding-top: 5px;
+}
+
+#pulseaudio.muted {
+  color: @color6;
+  padding-top: 0;
+}
+
+#clock{
+  color: @color4;
+}
+
+#custom-love {
+	color: @color5;
+}
+
+#battery {
+    background-color: transparent;
+    color: @foreground;
+}
+
+#battery.warning:not(.charging) {
+    background-color: @color4;
+    color: @background;
+}
+
+#battery.critical:not(.charging) {
+    background-color: @color3;
+    color: @background;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+@keyframes blink {
+    to {
+        background-color: @foreground;
+        color: @background;
+    }
+}
