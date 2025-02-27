@@ -1,14 +1,4 @@
-* {
-		background: #05080a;
-		foreground: #fff6ff;
-		black:      #101010;
-		red:        #f38ba8;
-		green:      #baf7b5;
-		yellow:     #f9e2af;
-		blue:       #b2fff3;
-		magenta:    #dfbaff;
-		cyan:       #89B482;
-}
+@import "~/.cache/wal/colors-rofi-dark.rasi"
 
 configuration {
 		font:                   "JetBrainsMonoNL 11";
@@ -27,7 +17,7 @@ configuration {
 
 window {
 		border:        2px;
-		border-color:  @secondary;
+		border-color:  @border-color;
 		border-radius: 6px;
 		padding:       0px;
 		width:         40%;
@@ -69,7 +59,7 @@ listview {
 		lines:        15;
 		columns:      1;
 		border-top:   1px;
-		border-color: @secondary;
+		border-color: @border-color;
 		spacing:      4px;
 		scrollbar:    false;
 		padding:      10px;
@@ -96,7 +86,7 @@ element normal.active {
 }
 
 element selected.normal {
-		background-color: @primary;
+		background-color: @selected-normal-background;
 		text-color:       @background;
 }
 
@@ -106,8 +96,8 @@ element selected.urgent {
 }
 
 element selected.active {
-		background-color: @foreground;
-		text-color:       @background;
+		background-color: @active-foreground;
+		text-color:       @active-background;
 }
 
 element alternate.normal {
@@ -135,8 +125,8 @@ button {
 }
 
 button selected {
-		background-color:   @primary;
-		text-color:         @foreground;
+		background-color:   @selected-normal-background;
+		text-color:         @selected-normal-foreground;
 }
 
 scrollbar {
@@ -150,7 +140,7 @@ message {
 }
 
 textbox {
-		text-color: @primary;
+		text-color: @selected-normal-foreground;
 }
 
 element-icon {
@@ -163,7 +153,7 @@ element-icon {
 mode-switcher{
 		enabled:          true;
 		expand:           false;
-		border-color:     @secondary;
+		border-color:     @border-color;
 		background-color: transparent;
 		text-color:       @foreground;
 }
@@ -178,7 +168,7 @@ button {
 button selected {
 		border:           2px 2px 0px 2px ;
 		border-radius:    3px;
-		border-color:     @secondary;
-		background-color: @secondary;
-		text-color:       @background;
+		border-color:     @border-color;
+		background-color: @selected-normal-background;
+		text-color:       @selected-normal-foreground;
 }
