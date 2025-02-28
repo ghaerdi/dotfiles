@@ -6,6 +6,7 @@
 }: {
   imports = [
     ../../nixos/configuration.nix
+    ../../nixos/features/battery.nix
     ../../nixos/features/nvidia.nix
     ../../nixos/features/steam.nix
     ../../nixos/features/hyprland.nix
