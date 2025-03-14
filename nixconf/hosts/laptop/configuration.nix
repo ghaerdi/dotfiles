@@ -12,7 +12,6 @@
     ../../nixos/features/hyprland.nix
     ../../nixos/features/pipewire.nix
     ../../nixos/features/steam.nix
-    ../../nixos/features/gnome.nix
   ];
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
