@@ -21,7 +21,7 @@
     zen-browser
     obs-studio
     obsidian
-    stremio
+    # stremio
     vesktop
     dunst
 
