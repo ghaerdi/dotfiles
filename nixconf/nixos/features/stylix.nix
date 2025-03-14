@@ -7,6 +7,7 @@
   stylix.cursor = {
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Ice";
+    size = 24;
   };
   stylix.opacity = {
     terminal = 0.9;

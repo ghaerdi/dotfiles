@@ -7,6 +7,7 @@
   stylix.cursor = {
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Ice";
+    size = 24;
   };
   stylix.opacity = {
     terminal = 0.9;
@@ -33,7 +34,7 @@
   };
   stylix.iconTheme = {
     enable = true;
-    package = pkgs.gruvbox-dark-icons-gtk;
+    package = pkgs.gruvbox-plus-icons;
     dark = "Gruvbox-Plus-Dark";
     light = "Gruvbox-Plus-Light";
   };
