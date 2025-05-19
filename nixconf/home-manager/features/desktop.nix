@@ -65,6 +65,7 @@
   nixpkgs.config.pulseaudio = true;
 
   services = {
+    kdeconnect.enable = true;
     syncthing.enable = true;
   };
 
