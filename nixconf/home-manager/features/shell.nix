@@ -24,7 +24,7 @@
     lua-language-server
     python3
     nodejs
-    rustup
+    # rustup
     deno
     zig
     bun
