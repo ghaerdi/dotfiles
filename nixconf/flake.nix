@@ -58,7 +58,7 @@
         };
         pkgs = pkgs;
         modules = [
-          stylix.homeManagerModules.stylix
+          stylix.homeModules.stylix
           ./hosts/laptop/home-manager.nix
         ];
       };
@@ -71,7 +71,7 @@
         };
         pkgs = pkgs;
         modules = [
-          stylix.homeManagerModules.stylix
+          stylix.homeModules.stylix
           ./hosts/qtile/home-manager.nix
         ];
       };
