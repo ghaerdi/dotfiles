@@ -4,15 +4,18 @@
   ...
 }: {
   home.packages = with pkgs; [
+    uutils-coreutils-noprefix
     fastfetch
     starship
     ripgrep
     killall
+    du-dust
     ollama
     neovim
     zoxide
     aichat
     pyenv
+    gitui
     unzip
     tmux
     yazi
@@ -20,6 +23,8 @@
     eza
     bat
     fzf
+    fd
+    xh
 
     lua-language-server
     python3
