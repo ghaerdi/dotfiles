@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   stylix.enable = true;
   stylix.autoEnable = true;
-  stylix.image = ../../../wallpapers/Wallpapers/space.png;
+  stylix.image = ../../../wallpapers/Wallpapers/space-dark.png;
   stylix.polarity = "dark";
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
   stylix.cursor = {

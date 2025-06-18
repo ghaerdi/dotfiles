@@ -30,7 +30,7 @@
     python3
     nodejs
     # rustup
-    deno
+    # deno
     zig
     bun
     gcc
