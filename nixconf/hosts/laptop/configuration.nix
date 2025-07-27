@@ -15,12 +15,10 @@
   ];
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
-      # nvidia
       "nvidia-persistenced"
       "nvidia-settings"
       "nvidia-x11"
       "cuda-merged"
-      # steam
       "steam"
       "steam-original"
       "steam-unwrapped"
