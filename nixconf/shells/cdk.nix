@@ -1,13 +1,25 @@
 let
   pkgs = import <nixpkgs> {};
+  packageOverrides = pkgs.callPackage ./python-packages.nix {};
+  python = pkgs.python3.override {inherit packageOverrides;};
 in
   pkgs.mkShell {
-    packages = [
-      pkgs.ssm-session-manager-plugin
-      (pkgs.python3.withPackages (python-pkgs: [
-        python-pkgs.pexpect
-        python-pkgs.requests
-        python-pkgs.boto3
-      ]))
+    packages = with pkgs; [
+      uv
+      ssm-session-manager-plugin
+      (python3.withPackages (p:
+        with p; [
+          pexpect
+          requests
+          boto3
+        ]))
+      (python.withPackages (p:
+        with p; [
+          constructs
+        ]))
+    ];
+    env.LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
+      pkgs.stdenv.cc.cc.lib
+      pkgs.libz
     ];
   }
