@@ -2,7 +2,7 @@ gtk-titlebar = false
 
 theme=/home/vanzuh/.cache/wal/colors-ghostty
 
-background-opacity = 0.96
+background-opacity = 0.86
 
 window-padding-x = 10
 window-padding-y = 10
