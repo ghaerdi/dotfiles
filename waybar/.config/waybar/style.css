@@ -10,6 +10,7 @@
 
 window#waybar {
   background: @background;
+	opacity: 0.86;
  }
 
 .modules-center {
