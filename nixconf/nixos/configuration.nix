@@ -111,6 +111,7 @@
         destination = "/etc/udev/rules.d/99-input.rules";
       })
     ];
+    displayManager.gdm.enable = true;
     xserver = {
       enable = true;
       dpi = 276;
@@ -119,7 +120,6 @@
         variant = "";
       };
       upscaleDefaultCursor = true;
-      displayManager.gdm.enable = true;
     };
     libinput.enable = true;
   };
