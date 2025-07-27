@@ -27,17 +27,31 @@
     };
   };
 
-  fileSystems."/mnt/personal" = {
-    device = "/dev/disk/by-uuid/504CE43A4CE41D0A"; # Correct UUID
-    fsType = "ntfs-3g";
-    options = [
-      "default"
-      "nofail"
-      "uid=vanzuh"
-      "gid=users"
-      "dmask=0000"
-      "fmask=0000"
-    ];
+  fileSystems = {
+    "/mnt/personal" = {
+      device = "/dev/disk/by-uuid/504CE43A4CE41D0A"; # Correct UUID
+      fsType = "ntfs-3g";
+      options = [
+        "default"
+        "nofail"
+        "uid=vanzuh"
+        "gid=users"
+        "dmask=0000"
+        "fmask=0000"
+      ];
+    };
+    "/mnt/external" = {
+      device = "/dev/sda1";
+      fsType = "ntfs-3g";
+      options = [
+        "default"
+        "nofail"
+        "uid=vanzuh"
+        "gid=users"
+        "dmask=0000"
+        "fmask=0000"
+      ];
+    };
   };
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
