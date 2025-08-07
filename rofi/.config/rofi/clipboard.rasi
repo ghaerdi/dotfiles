@@ -10,6 +10,7 @@ configuration {
 		display-clipboard: " CLIPBOARD";
 }
 
+
 window {
 		width:	50%;
 		height:	80%;
