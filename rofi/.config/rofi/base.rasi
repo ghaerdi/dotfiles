@@ -76,28 +76,28 @@ element normal.normal {
 }
 
 element normal.urgent {
-		background-color: @background;
-		text-color:       @red;
+		background-color: @urgent-background;
+		text-color:       @urgent-foreground;
 }
 
 element normal.active {
-		background-color: @background;
-		text-color:       @foreground;
+		background-color: @active-background;
+		text-color:       @active-foreground;
 }
 
 element selected.normal {
 		background-color: @selected-normal-background;
-		text-color:       @background;
+		text-color:       @selected-normal-foreground;
 }
 
 element selected.urgent {
-		background-color: @background;
-		text-color:       @red;
+		background-color: @selected-urgent-background;
+		text-color:       @selected-urgent-foreground;
 }
 
 element selected.active {
-		background-color: @active-foreground;
-		text-color:       @active-background;
+		background-color: @selected-active-background;
+		text-color:       @selected-active-foreground;
 }
 
 element alternate.normal {
@@ -106,13 +106,13 @@ element alternate.normal {
 }
 
 element alternate.urgent {
-		background-color: @background;
-		text-color:       @foreground;
+		background-color: @urgent-background;
+		text-color:       @urgent-foreground;
 }
 
 element alternate.active {
-		background-color: @background;
-		text-color:       @foreground;
+		background-color: @active-background;
+		text-color:       @active-foreground;
 }
 
 button {
