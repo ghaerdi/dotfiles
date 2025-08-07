@@ -6,6 +6,7 @@
   home.packages = with pkgs; [
     uutils-coreutils-noprefix
     fastfetch
+    playerctl
     starship
     ripgrep
     killall
