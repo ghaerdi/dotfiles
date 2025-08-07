@@ -6,7 +6,6 @@
   home.packages = with pkgs; [
     espanso-wayland
     rofi-wayland
-    playerctl
     wl-clipboard
     hyprpicker
     hyprpaper
@@ -14,7 +13,9 @@
     hyprsunset
     cliphist
     waybar
+    slurp
     pywal
+    grim
     swww
   ];
 }
