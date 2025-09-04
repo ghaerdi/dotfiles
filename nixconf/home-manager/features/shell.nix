@@ -30,8 +30,6 @@
     lua-language-server
     python3
     nodejs
-    rustup
-    # deno
     zig
     bun
     gcc
