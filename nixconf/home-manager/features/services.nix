@@ -3,6 +3,15 @@
   config,
   ...
 }: {
+  services.udiskie = {
+    enable = true;
+    settings = {
+      program_options = {
+        automount = true;
+        notify = true;
+      };
+    };
+  };
   systemd.user.services = {
     kanata = {
       Unit = {
@@ -28,16 +37,5 @@
         WantedBy = ["default.target"];
       };
     };
-    # open-webui = {
-    #     Unit = {
-    #       Description = "Open webui service";
-    #     };
-    #     Service = {
-    #       ExecStart = "${pkgs.open-webui}/bin/open-webui serve";
-    #     };
-    #     Install = {
-    #       WantedBy = ["default.target"];
-    #     };
-    # };
   };
 }
