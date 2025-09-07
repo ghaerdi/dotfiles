@@ -67,6 +67,7 @@
   services = {
     kdeconnect.enable = true;
     syncthing.enable = true;
+    udiskie.enable = true;
   };
 
   home.sessionVariables = {

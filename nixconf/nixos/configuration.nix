@@ -40,25 +40,20 @@
         "fmask=0000"
       ];
     };
-    "/mnt/external" = {
-      device = "/dev/sda1";
-      fsType = "ntfs-3g";
-      options = [
-        "default"
-        "nofail"
-        "uid=vanzuh"
-        "gid=users"
-        "dmask=0000"
-        "fmask=0000"
-      ];
-    };
   };
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
   hardware = {
     bluetooth.enable = true;
-    graphics.enable = true;
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+    amdgpu.amdvlk = {
+      enable = true;
+      support32Bit.enable = true;
+    };
   };
 
   # time.timeZone = "America/Santo_Domingo";
@@ -137,10 +132,7 @@
       shell = pkgs.fish;
       packages = with pkgs; [
         networkmanagerapplet
-        xlayoutdisplay
         home-manager
-        polybar
-        picom
         stow
         git
       ];
@@ -154,23 +146,18 @@
   environment = {
     systemPackages = with pkgs; [
       inputs.swww.packages.${pkgs.system}.swww
-      xlayoutdisplay
       home-manager
       ntfs3g
       neovim
       git
+      udiskie
     ];
-    # variables = {
-    #   GDK_SCALE = "1.5";
-    #   GDK_DPI_SCALE = "0.5";
-    #   _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
-    # };
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  # Open ports in the firewall.
   networking.firewall = rec {
+    enable = true;
     allowedTCPPortRanges = [
       {
         from = 1714;
