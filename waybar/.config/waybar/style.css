@@ -10,48 +10,68 @@
 
 window#waybar {
   background: @background;
-	opacity: 0.86;
+	opacity: 0.9;
  }
 
+#system,
+#workspaces,
 .modules-center {
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgb(0,0,0);
   padding: 0 15px;
-	margin: 3px 0;
+}
+
+.modules-center {
+	min-height: 21px;
   border-radius: 15px;
 }
 
+#system {
+	min-height: 23px;
+  border-radius: 15px 0 0 15px;
+}
+
+#workspaces {
+	min-height: 23px;
+  border-radius: 0 15px 15px 0;
+}
+
+#custom-power,
+#custom-quit,
+#custom-reboot,
+#custom-lock {
+	color: @color6;
+}
+
+#custom-quit {
+	margin-left: 20px;
+}
+
 #battery,
-#custom-clipboard,
-#custom-colorpicker,
-#custom-powerDraw,
 #bluetooth,
 #pulseaudio,
 #network,
-#disk,
-#memory,
-#backlight,
-#cpu,
-#temperature,
-#custom-weather,
-#custom-love,
-#idle_inhibitor,
-#jack,
-#tray,
-#window,
 #workspaces,
+#reboot,
+#lock,
+#quit,
+#disk,
+#cpu,
+#custom-love,
+#custom-power,
+#custom-quit,
+#custom-lock,
+#custom-reboot,
+#custom-expand-icon,
+#tray,
 #clock {
   padding: 0 10px;
-}
-#pulseaudio {
-  padding-top: 5px;
 }
 
 #pulseaudio.muted {
   color: @color6;
-  padding-top: 0;
 }
 
-#clock{
+#clock {
   color: @color4;
 }
 
