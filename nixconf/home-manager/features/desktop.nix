@@ -16,6 +16,13 @@
   home.packages = with pkgs; [
     # GUI
     veracrypt
+    gnome-calculator
+    gnome-disk-utility
+    nautilus # file explorer
+    baobab # disk usage
+    eog # gnome image viewer
+    evince # gnome document viewer
+    localsend
     telegram-desktop
     youtube-music
     pavucontrol
@@ -23,14 +30,17 @@
     obs-studio
     obsidian
     vesktop
+    ghostty
+    blueberry # bluetooth
+    nmgui # network manager
     dunst
+    vlc
 
     # TOOLS
-    ghostty
     brightnessctl
     pulseaudio
     redshift
-    blueman
+    pamixer
     xcolor
     volctl
     picom
@@ -63,12 +73,6 @@
   };
 
   nixpkgs.config.pulseaudio = true;
-
-  services = {
-    kdeconnect.enable = true;
-    syncthing.enable = true;
-    udiskie.enable = true;
-  };
 
   home.sessionVariables = {
     EDITOR = "neovim";

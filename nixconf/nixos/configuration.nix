@@ -41,8 +41,26 @@
       ];
     };
   };
-  networking.hostName = "nixos";
-  networking.networkmanager.enable = true;
+
+  networking = {
+    hostName = "nixos";
+    networkmanager.enable = true;
+    wireless.iwd.enable = true;
+    networkmanager.wifi.backend = "iwd";
+    wireless.iwd.settings.Settings.AutoConnect = true;
+    firewall = rec {
+      enable = true;
+      allowedTCPPortRanges = [
+        {
+          from = 1714;
+          to = 1764;
+        }
+      ];
+      allowedUDPPortRanges = allowedTCPPortRanges;
+    };
+    # Or disable the firewall altogether.
+    # firewall.enable = false;
+  };
 
   hardware = {
     bluetooth.enable = true;
@@ -131,7 +149,6 @@
       extraGroups = ["networkmanager" "audio" "docker" "wheel" "uinput" "input" "disk" "floppy" "storage"];
       shell = pkgs.fish;
       packages = with pkgs; [
-        networkmanagerapplet
         home-manager
         stow
         git
@@ -155,19 +172,6 @@
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  networking.firewall = rec {
-    enable = true;
-    allowedTCPPortRanges = [
-      {
-        from = 1714;
-        to = 1764;
-      }
-    ];
-    allowedUDPPortRanges = allowedTCPPortRanges;
-  };
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

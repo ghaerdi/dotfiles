@@ -3,12 +3,16 @@
   config,
   ...
 }: {
-  services.udiskie = {
-    enable = true;
-    settings = {
-      program_options = {
-        automount = true;
-        notify = true;
+  services = {
+    kdeconnect.enable = true;
+    syncthing.enable = true;
+    udiskie = {
+      enable = true;
+      settings = {
+        program_options = {
+          automount = true;
+          notify = true;
+        };
       };
     };
   };
@@ -32,6 +36,18 @@
       };
       Service = {
         ExecStart = "${pkgs.ollama}/bin/ollama serve";
+      };
+      Install = {
+        WantedBy = ["default.target"];
+      };
+    };
+    localsend = {
+      Unit = {
+        Description = "An open-source cross-platform alternative to AirDrop";
+        Documentation = "https://github.com/localsend/localsend";
+      };
+      Service = {
+        ExecStart = "${pkgs.localsend}/bin/localsend_app";
       };
       Install = {
         WantedBy = ["default.target"];
