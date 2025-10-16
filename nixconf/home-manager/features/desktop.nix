@@ -15,6 +15,7 @@
 
   home.packages = with pkgs; [
     # GUI
+    swaynotificationcenter
     veracrypt
     gnome-calculator
     gnome-disk-utility
@@ -31,16 +32,16 @@
     obsidian
     vesktop
     ghostty
-    blueberry # bluetooth
     nmgui # network manager
-    dunst
     vlc
 
     # TOOLS
     brightnessctl
     pulseaudio
+    libnotify
     redshift
     pamixer
+    bluetui # bluetooth
     xcolor
     volctl
     picom
@@ -57,15 +58,6 @@
     noto-fonts-cjk-sans
     noto-fonts-emoji
     noto-fonts
-
-    (pkgs.writeShellScriptBin "toggle-polybar" ''
-         if [ "$(ps -a | grep polybar | awk '{print $4}' | head -n 1)" = "polybar" ]; then
-      ${pkgs.dunst}/bin/dunstify -t 1500 -u low "Closing polybar. Wait..."
-           ${pkgs.polybar}/bin/polybar-msg cmd quit
-         else
-           ${pkgs.polybar}/bin/polybar -r laptop &
-         fi
-    '')
   ];
 
   fonts.fontconfig = {

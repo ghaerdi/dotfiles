@@ -11,7 +11,6 @@
     stateVersion = stateVersion;
     file = {
       ".config/kanata".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/kanata/.config/kanata";
-      ".config/dunst".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/dunst/.config/dunst";
       ".config/tmux".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/tmux/.config/tmux";
       ".config/ghostty".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/ghostty/.config/ghostty";
       ".config/espanso".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/espanso/.config/espanso";
@@ -31,6 +30,7 @@
       ".config/hypr".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/hypr/.config/hypr";
       ".config/waybar".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/waybar/.config/waybar";
       ".config/wal".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/wal/.config/wal";
+      ".config/swaync".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/swaync/.config/swaync";
     };
   };
 }

@@ -43,7 +43,7 @@
 	},
 	"group/system": {
 		"orientation": "inherit",
-		"modules": ["network", "battery", "group/power"]
+		"modules": ["network", "battery", "custom/notification-center"]
 	},
 	"battery": {
 		"format": "{icon}",
@@ -75,40 +75,6 @@
 		"on-click": "$TERMINAL --title=impala -e impala",
 		"on-click-right": "nmgui"
 	},
-	"group/power": {
-		"orientation": "inherit",
-		"drawer": {
-			"transition-duration": 200,
-			"children-class": "not-power",
-			"transition-left-to-right": false
-		},
-		"modules": [
-			"custom/power",
-			"custom/quit",
-			"custom/lock",
-			"custom/reboot"
-		]
-	},
-	"custom/quit": {
-		"format": "󰗼 ",
-		"tooltip-format": "Logout",
-		"on-click": "hyprctl dispatch exit"
-	},
-	"custom/lock": {
-		"format": "󰍁 ",
-		"tooltip-format": "Lock",
-		"on-click": "hyprlock"
-	},
-	"custom/reboot": {
-		"format": "󰜉 ",
-		"tooltip-format": "Reboot",
-		"on-click": "reboot"
-	},
-	"custom/power": {
-		"format": " ",
-		"tooltip-format": "Shutdown",
-		"on-click": "shutdown now"
-	},
 	"group/tray-expander": {
 		"orientation": "inherit",
 		"drawer": {
@@ -136,8 +102,7 @@
 		"format-disabled": "󰂲",
 		"format-connected": "",
 		"tooltip-format": "Devices connected: {num_connections}",
-		"on-click": "$TERMINAL --title=bluetui -e bluetui",
-		"on-click-right": "blueberry"
+		"on-click": "$TERMINAL --title=bluetui -e bluetui"
 	},
 	"pulseaudio": {
 		"format": "{icon}",
@@ -154,7 +119,7 @@
 		},
 		"on-click": "$TERMINAL --title=wiremix -e wiremix",
 		"on-click-right": "pavucontrol",
-		"on-click-middle": "pamixer -t",
+		"on-click-middle": "volume toggle",
 		"tooltip-format": "Playing at {volume}%"
 	},
 	"custom/expand-icon": {
@@ -164,6 +129,11 @@
 	"tray": {
 		"icon-size": 13,
 		"spacing": 10
+	},
+	"custom/notification-center": {
+		"format": "",
+		"tooltip-format": "Notification center",
+		"on-click": "swaync-client -t"
 	}
 }
 

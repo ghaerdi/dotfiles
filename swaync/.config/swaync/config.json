@@ -1,0 +1,136 @@
+{
+	"$schema": "/home/vanzuh/.nix-profile/etc/xdg/swaync/configSchema.json",
+  "cssPriority": "user",
+  "control-center-margin-bottom": 40,
+  "timeout": 5,
+  "timeout-low": 3,
+  "fit-to-screen": false,
+  "control-center-width": 470,
+  "control-center-height": 600,
+  "notification-window-width": 470,
+  "image-visibility": "always",
+  "widgets": [
+		"mpris",
+		"buttons-grid",
+		"volume",
+		"backlight",
+		"slider",
+    "title",
+    "dnd",
+    "notifications"
+  ],
+  "widget-config": {
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": "Clear All"
+    },
+    "dnd": {
+      "text": "Do Not Disturb"
+    },
+    "mpris": {
+      "show-album-art": "always",
+      "loop-carousel": true
+    },
+		"volume": {
+			"label": "󰎇"
+		},
+		"backlight": {
+			"label": "󰖨",
+			"device": "amdgpu_bl1"
+		},
+		"slider": {
+			"label": "󰌌",
+			"max": 3,
+			"max_limit": 3,
+			"cmd_getter": "vanzuh-kbd-backlight get",
+			"cmd_setter": "vanzuh-kbd-backlight set $value"
+		},
+    "buttons-grid": {
+      "buttons-per-row": 4,
+      "actions": [
+        {
+          "label": "󰗼",
+          "type": "toggle",
+          "command": "hyprctl dispatch exit"
+        },
+        {
+          "label": "󰍁",
+          "active": true,
+          "command": "hyprlock"
+        },
+        {
+          "label": "󰜉",
+          "active": true,
+          "command": "reboot"
+        },
+        {
+          "label": "",
+          "active": true,
+          "command": "shutdown now"
+        },
+        {
+          "label": "󰤨",
+          "type": "toggle",
+          "active": true,
+          "command": "vanzuh-wifi toggle",
+          "update-command": "sh -c '[[ $(vanzuh-wifi status) == \"on\" ]] && echo true || echo false'"
+        },
+        {
+          "label": "",
+          "type": "toggle",
+          "active": true,
+          "command": "vanzuh-bluetooth toggle",
+          "update-command": "sh -c '[[ $(vanzuh-bluetooth status) == \"on\" ]] && echo true || echo false'"
+        },
+        {
+          "label": "󰖔",
+          "type": "toggle",
+          "active": true,
+          "command": "vanzuh-night-mode toggle",
+          "update-command": "sh -c '[[ $(vanzuh-night-mode status) == \"on\" ]] && echo true || echo false'"
+        }
+      ]
+    }
+  },
+  "ignore-gtk-theme": true,
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "control-center-layer": "top",
+  "layer-shell": true,
+  "layer-shell-cover-screen": true,
+  "control-center-margin-top": 0,
+  "control-center-margin-right": 0,
+  "control-center-margin-left": 0,
+  "notification-2fa-action": true,
+  "notification-inline-replies": false,
+  "notification-body-image-height": 100,
+  "notification-body-image-width": 200,
+  "timeout-critical": 0,
+  "relative-timestamps": true,
+  "keyboard-shortcuts": true,
+  "notification-grouping": true,
+  "transition-time": 200,
+  "hide-on-action": true,
+  "text-empty": "No Notifications",
+  "script-fail-notify": true,
+  "scripts": {
+    "example-script": {
+      "exec": "echo 'Do something...'",
+      "urgency": "Normal"
+    },
+    "example-action-script": {
+      "exec": "echo 'Do something actionable!'",
+      "urgency": "Normal",
+      "run-on": "action"
+    }
+  },
+  "notification-visibility": {
+    "example-name": {
+      "state": "muted",
+      "urgency": "Low",
+      "app-name": "Spotify"
+    }
+  }
+}

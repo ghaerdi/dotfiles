@@ -1,0 +1,147 @@
+@import url("/home/vanzuh/.cache/wal/colors-waybar.css");
+@import url("./styles/notifications.css");
+
+/* .floating-notifications > scrolledwindow > viewport > box { */
+/*   margin-top: 50px; */
+/* } */
+
+/* applies only to floating block, not the notifications in control center */
+.floating-notifications .notification-row {
+  padding: 0;
+}
+
+.notification-row {
+  outline: none;
+  margin: 0;
+  padding: 0px;
+  font: 1em shantell sans;
+}
+
+.notification-group {
+  background-color: @background;
+}
+
+.notification-group-headers {
+  /* font: 1em shantell sans; */
+  font-weight: bold;
+  font-size: 1.25rem;
+  text-shadow: 3px 3px @background;
+  color: @foreground;
+  letter-spacing: 2px;
+  font: bold 1em Megrim;
+  margin-left: -33px;
+}
+
+.notification-group-icon {
+  color: alpha(@color13, 0.7);
+  text-shadow: 1px 1px 3px @background;
+  margin-right: 8px;
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+  background: alpha(@background, 0.8);
+  border: none;
+}
+
+.notification-group-collapse-button:hover,
+.notification-group-close-all-button:hover {
+  background: alpha(@color6, 0.7);
+}
+
+.notification {
+  padding: 0.2em; /* 6px? */
+  box-shadow: 3px 3px 0 0 @color6;
+  border-radius: 15px;
+  background: @background;
+}
+
+.low {
+  border: 1px solid @color3;
+}
+.normal {
+  border: 1px solid @color13;
+} /* or color5 */
+.notification.critical {
+  border: 1px solid @foreground;
+}
+
+.notification-content {
+  padding: 5px 0;
+  margin-left: 10px;
+  color: @foreground;
+  background: @background;
+}
+
+/* no mouse, ty */
+.close-button,
+.close-button:hover {
+  background: @background;
+  color: @background;
+}
+
+/* yet another useless wrapper */
+.notification-default-action,
+.notification-action,
+.notification-default-action:hover,
+.notification-action:hover {
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  background: @background;
+  border: none;
+}
+
+.image {
+  margin-left: -3px;
+  margin-right: 8px; /* 1em? */
+  min-width: 68px;
+  min-height: 68px;
+  border-radius: 7px;
+}
+
+.body-image {
+  /* margin-top: 6px; */
+  background-color: white;
+  /* border-radius: 12px; */
+}
+
+.summary {
+  font-size: 1.2em;
+  font-weight: bold;
+  background: @background;
+  color: @color3;
+  text-shadow: none;
+}
+
+.time {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: @color8;
+  margin-bottom: 5px;
+  font-style: italic;
+}
+
+.body {
+  font-size: 12pt;
+  font-weight: normal;
+  background: @background;
+  color: @foreground;
+}
+
+.control-center {
+  background: @background;
+}
+
+.control-center-list {
+  background: @background;
+}
+
+.control-center-list-placeholder {
+  opacity: 0.8;
+}
+
+/* Window behind control center and on all other monitors */
+.blank-window {
+  background: transparent;
+}

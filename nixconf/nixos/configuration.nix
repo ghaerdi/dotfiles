@@ -91,20 +91,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  security = {
-    rtkit.enable = true;
-    sudo.extraRules = [
-      {
-        users = ["vanzuh"];
-        commands = [
-          {
-            command = "/home/vanzuh/.nix-profile/bin/kbd-backlight-toggle";
-            options = ["NOPASSWD"];
-          }
-        ];
-      }
-    ];
-  };
+  security.rtkit.enable = true;
 
   virtualisation.docker = {
     enable = true;
@@ -124,6 +111,9 @@
         destination = "/etc/udev/rules.d/99-input.rules";
       })
     ];
+    udev.extraRules = ''
+      SUBSYSTEM=="leds", KERNEL=="asus::kbd_backlight", ACTION=="add", RUN+="${pkgs.coreutils}/bin/chmod 664 /sys/class/leds/asus::kbd_backlight/brightness", RUN+="${pkgs.coreutils}/bin/chgrp wheel /sys/class/leds/asus::kbd_backlight/brightness"
+    '';
     displayManager.gdm.enable = true;
     xserver = {
       enable = true;
