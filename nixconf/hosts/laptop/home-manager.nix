@@ -11,7 +11,13 @@
     ../../home-manager/features/shell.nix
     ../../home-manager/features/work.nix
     ../../home-manager/features/wayland.nix
-    ../../home-manager/features/asus.nix
+    ../../home-manager/scripts/kbd-backlight-toggle.nix
+    ../../home-manager/scripts/select-wallpaper.nix
+    ../../home-manager/scripts/volume.nix
+    ../../home-manager/scripts/brightness.nix
+    ../../home-manager/scripts/bluetooth.nix
+    ../../home-manager/scripts/network.nix
+    ../../home-manager/scripts/night-mode.nix
   ];
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [

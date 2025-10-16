@@ -35,15 +35,8 @@ window#waybar {
   border-radius: 0 15px 15px 0;
 }
 
-#custom-power,
-#custom-quit,
-#custom-reboot,
-#custom-lock {
-	color: @color6;
-}
-
-#custom-quit {
-	margin-left: 20px;
+#custom-notification-center {
+	font-size: 20px;
 }
 
 #battery,
@@ -57,11 +50,8 @@ window#waybar {
 #disk,
 #cpu,
 #custom-love,
-#custom-power,
-#custom-quit,
-#custom-lock,
-#custom-reboot,
 #custom-expand-icon,
+#custom-notification-center,
 #tray,
 #clock {
   padding: 0 10px;
@@ -77,6 +67,7 @@ window#waybar {
 
 #custom-love {
 	color: @color5;
+	font-size: 12px;
 }
 
 #battery {

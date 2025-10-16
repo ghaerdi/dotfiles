@@ -9,7 +9,6 @@
     playerctl
     starship
     ripgrep
-    bluetui
     wiremix
     killall
     du-dust

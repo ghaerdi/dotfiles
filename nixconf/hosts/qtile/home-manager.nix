@@ -11,7 +11,7 @@
     ../../home-manager/features/shell.nix
     ../../home-manager/features/work.nix
     ../../home-manager/features/xserver.nix
-    ../../home-manager/features/asus.nix
+    ../../home-manager/scripts/kbd-backlight-toggle.nix
   ];
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
