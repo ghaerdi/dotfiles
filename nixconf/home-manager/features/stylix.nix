@@ -9,11 +9,6 @@
     name = "Bibata-Modern-Ice";
     size = 24;
   };
-  stylix.opacity = {
-    terminal = 0.9;
-    popups = 0.9;
-    desktop = 0.9;
-  };
   stylix.fonts = {
     serif = {
       package = pkgs.dejavu_fonts;

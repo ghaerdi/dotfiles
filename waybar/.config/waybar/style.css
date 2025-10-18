@@ -1,22 +1,21 @@
 @import url("/home/vanzuh/.cache/wal/colors-waybar.css");
 
 * {
-    border: none;
-    font-size: 13px;
-    font-family: "JetBrainsMono NL";
-		color: @foreground;
-    min-height: 23px;
+	border: none;
+	font-size: 13px;
+	font-family: "JetBrainsMono NL";
+	color: @foreground;
+	min-height: 23px;
 }
 
 window#waybar {
-  background: @background;
-	opacity: 0.9;
+  background: alpha(@background, 0.8);
  }
 
 #system,
 #workspaces,
 .modules-center {
-  background-color: rgb(0,0,0);
+  background-color: @background;
   padding: 0 15px;
 }
 
@@ -71,29 +70,24 @@ window#waybar {
 }
 
 #battery {
-    background-color: transparent;
-    color: @foreground;
+	color: @foreground;
 }
 
 #battery.warning:not(.charging) {
-    background-color: @color4;
-    color: @background;
+  color: @color5;
 }
 
 #battery.critical:not(.charging) {
-    background-color: @color3;
-    color: @background;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+	color: @color5;
+	animation-name: blink;
+	animation-duration: 0.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
 
-
 @keyframes blink {
-    to {
-        background-color: @foreground;
-        color: @background;
-    }
+  to {
+    color: @color6;
+  }
 }
