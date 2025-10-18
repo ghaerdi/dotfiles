@@ -20,6 +20,7 @@
     ../../home-manager/scripts/bluetooth.nix
     ../../home-manager/scripts/network.nix
     ../../home-manager/scripts/night-mode.nix
+    ../../home-manager/scripts/dnd.nix
   ];
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
