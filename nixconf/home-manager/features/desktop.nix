@@ -36,16 +36,16 @@
     vlc
 
     # TOOLS
-    brightnessctl
+    # brightnessctl
     pulseaudio
-    libnotify
-    redshift
-    pamixer
+    # libnotify
+    # redshift
+    # pamixer
     bluetui # bluetooth
     xcolor
     volctl
-    picom
-    feh
+    # picom
+    # feh
 
     # PROGRAMMING & DEPENDENCIES
     haskellPackages.greenclip
