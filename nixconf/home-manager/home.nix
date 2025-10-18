@@ -16,7 +16,7 @@
       ".config/espanso".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/espanso/.config/espanso";
       ".local/share/fastfetch".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/fastfetch/.local/share/fastfetch";
       ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/nvim/.config/nvim";
-      ".config/starship".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/starship/.config/starship";
+      ".config/starship.toml".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/starship/.config/starship.toml";
       ".config/yazi".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/yazi/.config/yazi";
       ".config/rofi".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/rofi/.config/rofi";
 
