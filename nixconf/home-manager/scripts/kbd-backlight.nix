@@ -55,18 +55,18 @@
       set_kbd_backlight() {
         value=$1
         max_brightness=$(cat "$MAX_BRIGHTNESS_FILE")
-        
+
         # Validate input
         if [ -z "$value" ] || ! [ "$value" -eq "$value" ] 2>/dev/null; then
           echo "Error: Please provide a valid number (0-$max_brightness)"
           exit 1
         fi
-        
+
         if [ "$value" -lt 0 ] || [ "$value" -gt "$max_brightness" ]; then
           echo "Error: Value must be between 0 and $max_brightness"
           exit 1
         fi
-        
+
         # Set brightness level
         echo "$value" > "$BRIGHTNESS_FILE"
       }
