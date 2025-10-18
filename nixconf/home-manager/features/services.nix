@@ -41,17 +41,5 @@
         WantedBy = ["default.target"];
       };
     };
-    localsend = {
-      Unit = {
-        Description = "An open-source cross-platform alternative to AirDrop";
-        Documentation = "https://github.com/localsend/localsend";
-      };
-      Service = {
-        ExecStart = "${pkgs.localsend}/bin/localsend_app";
-      };
-      Install = {
-        WantedBy = ["default.target"];
-      };
-    };
   };
 }

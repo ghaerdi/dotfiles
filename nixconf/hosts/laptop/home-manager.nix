@@ -11,7 +11,8 @@
     ../../home-manager/features/shell.nix
     ../../home-manager/features/work.nix
     ../../home-manager/features/wayland.nix
-    ../../home-manager/scripts/kbd-backlight-toggle.nix
+    ../../home-manager/scripts/kbd-backlight.nix
+    ../../home-manager/scripts/screenshot.nix
     ../../home-manager/scripts/select-wallpaper.nix
     ../../home-manager/scripts/volume.nix
     ../../home-manager/scripts/brightness.nix
