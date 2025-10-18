@@ -18,7 +18,7 @@ configuration {
 window {
 		border:        2px;
 		border-color:  @border-color;
-		border-radius: 6px;
+		border-radius: 9px;
 		padding:       0px;
 		width:         40%;
 		height:        40%;
@@ -151,7 +151,7 @@ element-icon {
 }
 
 mode-switcher{
-		enabled:          true;
+		enabled:          false;
 		expand:           false;
 		border-color:     @border-color;
 		background-color: transparent;

@@ -4,33 +4,37 @@
   "control-center-margin-bottom": 40,
   "timeout": 5,
   "timeout-low": 3,
-  "fit-to-screen": false,
+  "fit-to-screen": true,
   "control-center-width": 470,
-  "control-center-height": 600,
   "notification-window-width": 470,
   "image-visibility": "always",
   "widgets": [
-		"mpris",
 		"buttons-grid",
 		"volume",
 		"backlight",
 		"slider",
     "title",
-    "notifications"
+    "notifications",
+		"mpris"
   ],
   "widget-config": {
     "title": {
       "text": "Notifications",
       "clear-all-button": true,
-      "button-text": "Clear All"
+      "button-text": "󰆴"
     },
     "mpris": {
       "show-album-art": "always",
       "loop-carousel": true
     },
-		"volume": {
-			"label": "󰎇"
-		},
+    "volume": {
+      "label": "󰎇",
+      "expand-button-label": "",
+      "collapse-button-label": "",
+      "show-per-app": true,
+      "show-per-app-icon": true,
+      "show-per-app-label": false
+    },
 		"backlight": {
 			"label": "󰖨",
 			"device": "amdgpu_bl1"

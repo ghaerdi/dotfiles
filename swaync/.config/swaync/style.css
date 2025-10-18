@@ -1,147 +1,331 @@
-@import url("/home/vanzuh/.cache/wal/colors-waybar.css");
-@import url("./styles/notifications.css");
+@import "/home/vanzuh/.cache/wal/colors-waybar.css";
+/* -----------------------------------
+   🟤 Catppuccin Mocha – Crust Palette
+-------------------------------------- */
+@define-color gray alpha(@foreground, 0.2);
+@define-color select alpha(@foreground, 0.6);
 
-/* .floating-notifications > scrolledwindow > viewport > box { */
-/*   margin-top: 50px; */
-/* } */
+/* 🎵 MPRIS */
+@define-color mpris-album-art-overlay rgba(0, 0, 0, 0.55);
+@define-color mpris-button-hover rgba(0, 0, 0, 0.5);
+@define-color mpris-button-bg @foreground;
+@define-color mpris-button-fg @color0;
 
-/* applies only to floating block, not the notifications in control center */
-.floating-notifications .notification-row {
-  padding: 0;
-}
-
-.notification-row {
+/* -----------------------------------
+   🔤 Global Defaults
+-------------------------------------- */
+* {
   outline: none;
-  margin: 0;
-  padding: 0px;
-  font: 1em shantell sans;
-}
-
-.notification-group {
-  background-color: @background;
-}
-
-.notification-group-headers {
-  /* font: 1em shantell sans; */
-  font-weight: bold;
-  font-size: 1.25rem;
-  text-shadow: 3px 3px @background;
+  font-size: 18px;
+  text-shadow: none;
   color: @foreground;
-  letter-spacing: 2px;
-  font: bold 1em Megrim;
-  margin-left: -33px;
+  background-color: transparent;
+  border-radius: 9px;
 }
 
-.notification-group-icon {
-  color: alpha(@color13, 0.7);
-  text-shadow: 1px 1px 3px @background;
-  margin-right: 8px;
+/* -----------------------------------
+   🧩 Control Center
+-------------------------------------- */
+.control-center {
+  background-color: alpha(@background, 0.9);
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.65); */
+  box-shadow: none;
+  padding: 2px;
+  border: 2px solid  alpha(@color4,0.3);
+	outline: 2px solid @background;
+	margin: 9px;
 }
 
-.notification-group-collapse-button,
-.notification-group-close-all-button {
-  background: alpha(@background, 0.8);
+.notification-row .notification-background {
+  /* margin: 5px 0 15px; */
+}
+
+/* -----------------------------------
+   🔔 Notifications
+-------------------------------------- */
+.notification {
+  background-color: alpha(@background, 0.9);
+  border: 2px solid alpha(@color4, 0.3);
+	outline: 2px solid @background;
+  padding: 6px 10px;
+  margin-bottom: 6px;
+  min-height: 50px;
+  box-shadow: none;
+}
+
+.notification .summary {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.notification .time {
+  font-size: 0.75rem;
+  color: alpha(@foreground, 0.6);
+}
+
+.notification .body {
+  font-size: 0.95rem;
+}
+
+.notification-action>button {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  background-color: @select;
+  border: none;
+  margin: 6px 6px 0 0;
+}
+
+.notification-action>button:hover {
+  background-color: @color4;
+}
+
+.notification-action>button:hover label {
+  background-color: @color4;
+  color: @color0;
+}
+
+/* Urgency */
+.notification.critical {
+  border: 2px solid @color6;
+}
+
+.notification.critical .title,
+.notification.critical .summary {
+  color: alpha(@color6, 0.9);
+  font-weight: bold;
+}
+
+.notification.low,
+.notification.normal {
+  background-color: alpha(@background, 0.95);
+}
+
+/* -----------------------------------
+   🖼️ Image/Icon
+-------------------------------------- */
+.image {
+  margin-right: 10px;
+  min-width: 36px;
+  min-height: 36px;
   border: none;
 }
 
-.notification-group-collapse-button:hover,
-.notification-group-close-all-button:hover {
-  background: alpha(@color6, 0.7);
+/* -----------------------------------
+   ❌ Close Buttons
+-------------------------------------- */
+.close-button {
+  background-color: alpha(@gray, 0.8);
 }
 
-.notification {
-  padding: 0.2em; /* 6px? */
-  box-shadow: 3px 3px 0 0 @color6;
-  border-radius: 15px;
-  background: @background;
+.close-button label {
+  color: aliceblue;
 }
 
-.low {
-  border: 1px solid @color3;
-}
-.normal {
-  border: 1px solid @color13;
-} /* or color5 */
-.notification.critical {
-  border: 1px solid @foreground;
-}
-
-.notification-content {
-  padding: 5px 0;
-  margin-left: 10px;
-  color: @foreground;
-  background: @background;
-}
-
-/* no mouse, ty */
-.close-button,
 .close-button:hover {
-  background: @background;
+  background-color: alpha(@color6, 0.8);
+}
+
+/* -----------------------------------
+   🔃 Group Header Buttons
+-------------------------------------- */
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+  background-color: @gray;
+}
+
+.notification-group-collapse-button:hover {
+  background-color: @color4;
+  color: @color0;
+}
+
+.notification-group-close-all-button:hover {
+  background-color: @color6;
+  color: @color0;
+}
+
+/* -----------------------------------
+   📊 Sliders (Volume/Brightness)
+-------------------------------------- */
+.notification-content progressbar, 
+scale trough {
+  margin: 0 1rem;
+  background-color: @gray;
+  min-height: 8px;
+  min-width: 70px;
+}
+
+.notification-content progress,
+trough highlight {
+  background: @color4;
+  border-radius: 30px;
+}
+
+slider {
+  border-radius: 30px;
+  background-color: @foreground;
+}
+
+/* -----------------------------------
+   💬 Tooltip
+-------------------------------------- */
+tooltip {
+  background-color: @gray;
+}
+
+/* -----------------------------------
+   🔘 Buttons Grid
+-------------------------------------- */
+.widget-buttons-grid {
+	/* background-color: @background; */
+	/* border: 2px solid alpha(@color4, 0.3); */
+	/* outline: 2px solid @background; */
+	font-size: 1rem;
+  padding: 20px 20px 10px;
+}
+
+.widget-buttons-grid button {
+  background: @gray;
+	border: 1px solid alpha(@color4, 0.3);
+  color: #fff;
+  min-width: 60px;
+  min-height: 30px;
+  margin: 0 3px;
+  padding: 6px;
+}
+
+.widget-buttons-grid button:hover {
+  background: @select;
+}
+
+.widget-buttons-grid button.toggle:checked {
+  background: @color4;
+	border: 1px solid alpha(@background, 0.3);
+}
+
+.widget-buttons-grid button.toggle:checked label {
+  background: @color4;
   color: @background;
 }
 
-/* yet another useless wrapper */
-.notification-default-action,
-.notification-action,
-.notification-default-action:hover,
-.notification-action:hover {
-  padding: 0;
-  margin: 0;
-  border-radius: 0;
-  background: @background;
+
+.widget-buttons-grid button.toggle:checked:hover {
+  background: alpha(@color4, 0.8);
+}
+
+/* -----------------------------------
+   🎵 MPRIS Player
+-------------------------------------- */
+.widget-mpris .widget-mpris-player {
+	/*  background-color: @background; */
+	/* border: 2px solid alpha(@color4, 0.3); */
+	/* outline: 2px solid @background; */
+  padding: 6px;
+  margin: 6px 10px;
+  box-shadow: none;
+}
+
+.widget-mpris-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 8px 8px;
+  text-align: center;
+}
+
+.widget-mpris-subtitle {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.widget-mpris-album-art.art {
+  border-radius: 999px;
+  min-width: 128px;
+  min-height: 128px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  box-shadow: none;
+  background: @color6;
+}
+
+picture.mpris-background {
+  opacity: 0;
+  background: none;
+  box-shadow: none;
   border: none;
 }
 
-.image {
-  margin-left: -3px;
-  margin-right: 8px; /* 1em? */
-  min-width: 68px;
-  min-height: 68px;
-  border-radius: 7px;
+
+/* -----------------------------------
+   🔊 Volume Widget
+-------------------------------------- */
+.widget-backlight,
+.widget-volume {
+  padding: 6px 5px 5px;
+  font-size: 1.3rem;
 }
 
-.body-image {
-  /* margin-top: 6px; */
-  background-color: white;
-  /* border-radius: 12px; */
+.widget-volume button {
+  border: none;
 }
 
-.summary {
-  font-size: 1.2em;
+/* -----------------------------------
+   🎚️ Per-App Volume
+-------------------------------------- */
+.per-app-volume {
+  padding: 4px 8px 8px;
+  margin: 0 8px 8px;
+}
+
+/* -----------------------------------
+   🔕 DND
+-------------------------------------- */
+.widget-dnd {
   font-weight: bold;
+  padding: 20px 15px 15px;
+}
+
+.widget-dnd>switch {
+  background: @yellow;
+  border: none;
+  border-radius: 100px;
+  padding: 3px;
+}
+
+.widget-dnd>switch:checked {
+  background: @color4;
+}
+
+.widget-dnd>switch slider {
   background: @background;
-  color: @color3;
-  text-shadow: none;
+  border-radius: 12px;
+  min-width: 18px;
+  min-height: 18px;
 }
 
-.time {
-  font-size: 1.2em;
-  font-weight: normal;
-  color: @color8;
-  margin-bottom: 5px;
-  font-style: italic;
+/* -----------------------------------
+   🏷️ Title
+-------------------------------------- */
+.widget-title {
+  padding: 15px;
+  font-weight: bold;
 }
 
-.body {
-  font-size: 12pt;
-  font-weight: normal;
-  background: @background;
-  color: @foreground;
+.widget-title>label {
+  font-size: 1.25rem;
 }
 
-.control-center {
-  background: @background;
+.widget-title>button {
+  background: @color6;
+  padding: 0 6px;
+  transition: all 0.7s ease;
 }
 
-.control-center-list {
-  background: @background;
+.widget-title>button label {
+  color: @color0;
 }
 
-.control-center-list-placeholder {
-  opacity: 0.8;
-}
-
-/* Window behind control center and on all other monitors */
-.blank-window {
-  background: transparent;
+.widget-title>button:hover {
+  background: alpha(@color6, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.65);
 }
