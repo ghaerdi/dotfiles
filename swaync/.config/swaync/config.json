@@ -16,7 +16,6 @@
 		"backlight",
 		"slider",
     "title",
-    "dnd",
     "notifications"
   ],
   "widget-config": {
@@ -24,9 +23,6 @@
       "text": "Notifications",
       "clear-all-button": true,
       "button-text": "Clear All"
-    },
-    "dnd": {
-      "text": "Do Not Disturb"
     },
     "mpris": {
       "show-album-art": "always",
@@ -51,44 +47,43 @@
       "actions": [
         {
           "label": "󰗼",
-          "type": "toggle",
           "command": "hyprctl dispatch exit"
         },
         {
           "label": "󰍁",
-          "active": true,
           "command": "hyprlock"
         },
         {
           "label": "󰜉",
-          "active": true,
           "command": "reboot"
         },
         {
           "label": "",
-          "active": true,
           "command": "shutdown now"
         },
         {
           "label": "󰤨",
           "type": "toggle",
-          "active": true,
           "command": "vanzuh-wifi toggle",
           "update-command": "sh -c '[[ $(vanzuh-wifi status) == \"on\" ]] && echo true || echo false'"
         },
         {
           "label": "",
           "type": "toggle",
-          "active": true,
           "command": "vanzuh-bluetooth toggle",
           "update-command": "sh -c '[[ $(vanzuh-bluetooth status) == \"on\" ]] && echo true || echo false'"
         },
         {
           "label": "󰖔",
           "type": "toggle",
-          "active": true,
           "command": "vanzuh-night-mode toggle",
           "update-command": "sh -c '[[ $(vanzuh-night-mode status) == \"on\" ]] && echo true || echo false'"
+        },
+        {
+          "label": "",
+          "type": "toggle",
+          "command": "vanzuh-dnd toggle",
+          "update-command": "vanzuh-dnd status"
         }
       ]
     }
