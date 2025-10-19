@@ -27,11 +27,21 @@
         echo "$current_brightness"
       }
 
+      get_icon() {
+        brightness=$1
+        if [ "$brightness" -eq 0 ]; then
+          echo "/home/vanzuh/dotfiles/nixconf/assets/icons/keyboard-off.svg"
+        else
+          echo "/home/vanzuh/dotfiles/nixconf/assets/icons/keyboard.svg"
+        fi
+      }
+
       notify_user() {
         current_brightness=$(cat "$BRIGHTNESS_FILE")
         max_brightness=$(cat "$MAX_BRIGHTNESS_FILE")
         percentage=$((current_brightness * 100 / max_brightness))
-        ${pkgs.libnotify}/bin/notify-send -t $notification_timeout -u low -h string:x-canonical-private-synchronous:kbd_backlight -h int:value:$percentage "Keyboard Backlight" "Brightness Level: $current_brightness"
+        icon=$(get_icon $current_brightness)
+        ${pkgs.libnotify}/bin/notify-send -t $notification_timeout -u low -i "$icon" -h string:x-canonical-private-synchronous:kbd_backlight -h int:value:$percentage "Keyboard Backlight" "Brightness Level: $current_brightness"
       }
 
       toggle_kbd_backlight() {

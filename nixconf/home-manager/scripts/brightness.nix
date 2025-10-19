@@ -13,9 +13,21 @@
       	${pkgs.brightnessctl}/bin/brightnessctl -m | cut -d, -f4 | sed 's/%//'
       }
 
+      get_icon() {
+      	brightness=$1
+      	if [ $brightness -le 33 ]; then
+      		echo "/home/vanzuh/dotfiles/nixconf/assets/icons/brightness-down.svg"
+      	elif [ $brightness -le 66 ]; then
+      		echo "/home/vanzuh/dotfiles/nixconf/assets/icons/brightness-middle.svg"
+      	else
+      		echo "/home/vanzuh/dotfiles/nixconf/assets/icons/brightness-up.svg"
+      	fi
+      }
+
       notify_user() {
       	brightness=$(get_brightness)
-      	${pkgs.libnotify}/bin/notify-send -t $notification_timeout -u low -h string:x-canonical-private-synchronous:brightness -h int:value:$brightness "Screen" "Brightness: $brightness%"
+      	icon=$(get_icon $brightness)
+      	${pkgs.libnotify}/bin/notify-send -t $notification_timeout -u low -i "$icon" -h string:x-canonical-private-synchronous:brightness -h int:value:$brightness "Screen" "Brightness: $brightness%"
       }
 
       change_brightness() {

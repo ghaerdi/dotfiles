@@ -55,7 +55,7 @@
 
 .notification .summary {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: bold;
   margin-bottom: 2px;
 }
 
@@ -93,7 +93,6 @@
 .notification.critical .title,
 .notification.critical .summary {
   color: alpha(@color6, 0.9);
-  font-weight: bold;
 }
 
 .notification.low,
@@ -110,6 +109,7 @@
   min-height: 36px;
   border: none;
 }
+
 
 /* -----------------------------------
    ❌ Close Buttons
@@ -217,9 +217,10 @@ tooltip {
    🎵 MPRIS Player
 -------------------------------------- */
 .widget-mpris .widget-mpris-player {
-	/*  background-color: @background; */
-	/* border: 2px solid alpha(@color4, 0.3); */
+	/* background-color: @background; */
+	border-top: 2px solid alpha(@color4, 0.3);
 	/* outline: 2px solid @background; */
+	border-radius: 0;
   padding: 6px;
   margin: 6px 10px;
   box-shadow: none;
