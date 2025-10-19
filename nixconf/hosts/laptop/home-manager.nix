@@ -21,6 +21,7 @@
     ../../home-manager/scripts/network.nix
     ../../home-manager/scripts/night-mode.nix
     ../../home-manager/scripts/dnd.nix
+    ../../home-manager/scripts/webapp-launcher.nix
   ];
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [

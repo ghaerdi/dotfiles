@@ -18,12 +18,28 @@
       	${pkgs.pamixer}/bin/pamixer --get-mute
       }
 
-      notify_user() {
+      get_icon() {
       	if [ "$(get_mute_status)" = "true" ]; then
-      		${pkgs.libnotify}/bin/notify-send -t $notification_timeout -u low -h string:x-canonical-private-synchronous:volume "Audio" "Muted"
+      		echo "/home/vanzuh/dotfiles/nixconf/assets/icons/volume-muted.svg"
       	else
       		volume=$(get_volume)
-      		${pkgs.libnotify}/bin/notify-send -t $notification_timeout -u low -h string:x-canonical-private-synchronous:volume -h int:value:$volume "Audio" "Volume: $volume%"
+      		if [ $volume -eq 0 ]; then
+      			echo "/home/vanzuh/dotfiles/nixconf/assets/icons/volume-no-sound.svg"
+      		elif [ $volume -le 33 ]; then
+      			echo "/home/vanzuh/dotfiles/nixconf/assets/icons/volume-low.svg"
+      		else
+      			echo "/home/vanzuh/dotfiles/nixconf/assets/icons/volume-high.svg"
+      		fi
+      	fi
+      }
+
+      notify_user() {
+      	icon=$(get_icon)
+      	if [ "$(get_mute_status)" = "true" ]; then
+      		${pkgs.libnotify}/bin/notify-send -t $notification_timeout -u low -i "$icon" -h string:x-canonical-private-synchronous:volume "Audio" "Muted"
+      	else
+      		volume=$(get_volume)
+      		${pkgs.libnotify}/bin/notify-send -t $notification_timeout -u low -i "$icon" -h string:x-canonical-private-synchronous:volume -h int:value:$volume "Audio" "Volume: $volume%"
       	fi
       }
 
