@@ -1,0 +1,15 @@
+keybinds {
+    normal {
+        bind "Ctrl h" "Left" { MoveFocus "Left"; }
+        bind "Ctrl l" "Right" { MoveFocus "Right"; }
+        bind "Ctrl j" "Down" { MoveFocus "Down"; }
+        bind "Ctrl k" "Up" { MoveFocus "Up"; }
+    }
+    pane {
+        bind "h" "Left" { MoveFocus "Left"; }
+        bind "l" "Right" { MoveFocus "Right"; }
+        bind "j" "Down" { MoveFocus "Down"; }
+        bind "k" "Up" { MoveFocus "Up"; }
+    }
+}
+
