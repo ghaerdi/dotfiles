@@ -63,7 +63,17 @@
   };
 
   hardware = {
-    bluetooth.enable = true;
+    bluetooth = {
+      enable = true;
+      settings = {
+        General = {
+          AutoEnable = false;
+        };
+        Policy = {
+          AutoEnable = false;
+        };
+      };
+    };
     graphics = {
       enable = true;
       enable32Bit = true;
@@ -148,6 +158,7 @@
 
   programs = {
     fish.enable = true;
+    nix-ld.enable = true;
   };
 
   environment = {
