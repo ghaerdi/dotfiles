@@ -21,6 +21,7 @@
     gitui
     unzip
     tmux
+    zellij
     yazi
     btop
     eza

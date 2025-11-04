@@ -20,6 +20,7 @@
     gnome-calculator
     gnome-disk-utility
     nautilus # file explorer
+    libreoffice
     baobab # disk usage
     eog # gnome image viewer
     evince # gnome document viewer
@@ -36,20 +37,12 @@
     vlc
 
     # TOOLS
-    # brightnessctl
-    pulseaudio
-    # libnotify
-    # redshift
-    # pamixer
     bluetui # bluetooth
     xcolor
     volctl
-    # picom
-    # feh
 
     # PROGRAMMING & DEPENDENCIES
     haskellPackages.greenclip
-    xorg.xmodmap
 
     # Fonts
     nerd-fonts.fira-code
