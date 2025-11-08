@@ -1,0 +1,17 @@
+themes {{
+    pywal {{
+        bg "{background}"
+        fg "{foreground}"
+        red "{color1}"
+        green "{color2}"
+        blue "{color4}"
+        yellow "{color3}"
+        magenta "{color5}"
+        orange "{color6}"
+        cyan "{color6}"
+        black "{background}"
+        white "{foreground}"
+    }}
+}}
+
+theme "pywal"
