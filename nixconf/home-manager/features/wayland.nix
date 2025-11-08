@@ -5,16 +5,16 @@
 }: {
   home.packages = with pkgs; [
     espanso-wayland
-    rofi-wayland
     wl-clipboard
     hyprpicker
+    hyprsunset
     hyprpaper
     hyprlock
-    hyprsunset
     cliphist
     waybar
     slurp
     pywal
+    rofi
     grim
     swww
   ];
