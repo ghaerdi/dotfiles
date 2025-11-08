@@ -22,6 +22,7 @@
     unzip
     tmux
     zellij
+		cava
     yazi
     btop
     dust
