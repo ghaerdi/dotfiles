@@ -18,6 +18,10 @@
       	${pkgs.pamixer}/bin/pamixer --get-mute
       }
 
+      get_mic_mute_status() {
+      	${pkgs.pamixer}/bin/pamixer --default-source --get-mute
+      }
+
       get_icon() {
       	if [ "$(get_mute_status)" = "true" ]; then
       		echo "/home/vanzuh/dotfiles/nixconf/assets/icons/volume-muted.svg"
@@ -79,8 +83,18 @@
       				notify_user
       			fi
       			;;
+      		mic-mute)
+      			${pkgs.pamixer}/bin/pamixer --default-source --toggle-mute
+      			if [ "$notify_flag" = "--notify" ]; then
+      				if [ "$(get_mic_mute_status)" = "true" ]; then
+      					${pkgs.libnotify}/bin/notify-send -t $notification_timeout -u low -i "/home/vanzuh/dotfiles/nixconf/assets/icons/microphone-off.svg" "Microphone" "Muted"
+      				else
+      					${pkgs.libnotify}/bin/notify-send -t $notification_timeout -u low -i "/home/vanzuh/dotfiles/nixconf/assets/icons/microphone-on.svg" "Microphone" "Unmuted"
+      				fi
+      			fi
+      			;;
       		*)
-      			echo "Usage: $0 {up|down|+|-|get|status|toggle|mute} [--notify]"
+      			echo "Usage: $0 {up|down|+|-|get|status|toggle|mute|mic-mute} [--notify]"
       			exit 1
       			;;
       	esac
