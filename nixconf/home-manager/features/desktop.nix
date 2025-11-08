@@ -49,7 +49,7 @@
     nerd-fonts.jetbrains-mono
     jetbrains-mono
     noto-fonts-cjk-sans
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     noto-fonts
   ];
 

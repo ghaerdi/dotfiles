@@ -11,8 +11,8 @@
     ripgrep
     wiremix
     killall
-    du-dust
     ollama
+    devenv
     neovim
     zoxide
     aichat
@@ -24,6 +24,7 @@
     zellij
     yazi
     btop
+    dust
     eza
     bat
     fzf
