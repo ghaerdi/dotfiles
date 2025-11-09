@@ -72,7 +72,7 @@
 		"tooltip-format-disconnected": "Disconnected",
 		"interval": 3,
 		"spacing": 1,
-		"on-click": "$TERMINAL --title=impala -e impala",
+		"on-click": "$TERMINAL --class=com.ghaerdi.Impala -e impala",
 		"on-click-right": "nmgui"
 	},
 	"group/tray-expander": {
@@ -87,7 +87,7 @@
 		"format": "⛃",
 		"tooltip-format": "{specific_free:0.2f} GB out of {specific_total:0.2f} GB available.",
 		"unit": "GB",
-		"on-click": "$TERMINAL --title=yazi -e yazi",
+		"on-click": "$TERMINAL --class=com.ghaerdi.Yazi -e yazi",
 		"on-click-right": "nautilus",
 		"on-click-middle": "baobab"
 	},
@@ -95,14 +95,14 @@
     "interval": 10,
     "format": "",
     "max-length": 10,
-		"on-click": "$TERMINAL --title=btop -e btop"
+		"on-click": "$TERMINAL --class=com.ghaerdi.Btop -e btop"
 	},
 	"bluetooth": {
 		"format": "",
 		"format-disabled": "󰂲",
 		"format-connected": "",
 		"tooltip-format": "Devices connected: {num_connections}",
-		"on-click": "$TERMINAL --title=bluetui -e bluetui"
+		"on-click": "$TERMINAL --class=com.ghaerdi.Bluetui -e bluetui"
 	},
 	"pulseaudio": {
 		"format": "{icon}",
@@ -117,7 +117,7 @@
 			"car": "",
 			"default": ["", "", ""]
 		},
-		"on-click": "$TERMINAL --title=wiremix -e wiremix",
+		"on-click": "$TERMINAL --class=com.ghaerdi.Wiremix -e wiremix",
 		"on-click-right": "pavucontrol",
 		"on-click-middle": "volume toggle",
 		"tooltip-format": "Playing at {volume}%"
