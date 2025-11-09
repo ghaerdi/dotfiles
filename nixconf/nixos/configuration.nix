@@ -159,7 +159,7 @@
 
   environment = {
     systemPackages = with pkgs; [
-      inputs.swww.packages.${pkgs.system}.swww
+      inputs.swww.packages.${stdenv.hostPlatform.system}.swww
       home-manager
       ntfs3g
       neovim
