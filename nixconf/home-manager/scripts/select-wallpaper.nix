@@ -14,9 +14,13 @@
         ${pkgs.libnotify}/bin/notify-send -t $notification_timeout -u low -h string:x-canonical-private-synchronous:wallpaper "Wallpaper" "Colors generated."
       }
 
+      update_zellij_theme() {
+        # Add and remove comment to trigger config reload
+        echo '// reload trigger' >> ~/.config/zellij/config.kdl && ${pkgs.gnused}/bin/sed -i '/^\/\/ reload trigger$/d' ~/.config/zellij/config.kdl
+      }
+
       select_wallpaper() {
-        ${pkgs.coreutils}/bin/ls ~/dotfiles/wallpapers/Wallpapers/ | ${pkgs.rofi}/bin/rofi -dmenu | ${pkgs.findutils}/bin/xargs -I _ ${pkgs.bash}/bin/sh -c '${pkgs.swww}/bin/swww img -t wipe ~/dotfiles/wallpapers/Wallpapers/_ && ${pkgs.coreutils}/bin/sleep 2 && ${pkgs.pywal}/bin/wal -i ~/dotfiles/wallpapers/Wallpapers/_
-        ${pkgs.coreutils}/bin/sleep 1 && ${pkgs.swaynotificationcenter}/bin/swaync-client -rs'
+        ${pkgs.coreutils}/bin/ls ~/dotfiles/wallpapers/Wallpapers/ | ${pkgs.rofi}/bin/rofi -dmenu | ${pkgs.findutils}/bin/xargs -I _ ${pkgs.bash}/bin/sh -c '${pkgs.swww}/bin/swww img -t wipe ~/dotfiles/wallpapers/Wallpapers/_ && ${pkgs.coreutils}/bin/sleep 0.5 && ${pkgs.pywal}/bin/wal -i ~/dotfiles/wallpapers/Wallpapers/_ && ${pkgs.swaynotificationcenter}/bin/swaync-client -rs' && update_zellij_theme
       }
 
       main() {
