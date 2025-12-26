@@ -38,3 +38,5 @@ matches:
     replace: "¿"
   - triggers: ["''!", "\"\"!"]
     replace: "¡"
+  - trigger: "-''"
+    replace: "—"
