@@ -10,7 +10,7 @@ layout cwd="$HOME/Documents/los-navegantes-malditos" {
 		}
 	}
 	tab name="main" split_direction="vertical" {
-		pane command="nvim" size="65%"
-		pane command="gemini" size="35%"
+		pane size="70%"
+		pane command="gemini" size="40%"
 	}
 }
