@@ -7,4 +7,9 @@ background-opacity = 0.9
 window-padding-x = 10
 window-padding-y = 10
 confirm-close-surface = false
-
+gtk-single-instance = false
+custom-shader = ./cursor_smear.glsl
+keybind = alt+h=unbind
+keybind = alt+j=unbind
+keybind = alt+k=unbind
+keybind = alt+l=unbind
