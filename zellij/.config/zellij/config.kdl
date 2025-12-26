@@ -1,8 +1,19 @@
-theme "pywal"
-
 keybinds {
+  unbind "Ctrl o"
+	unbind "Alt h"
+	unbind "Alt j"
+	unbind "Alt k"
+	unbind "Alt l"
+	unbind "Alt n"
+	unbind "Alt p"
   shared_except "locked" {
     unbind "Ctrl o"
+		unbind "Alt h"
+		unbind "Alt j"
+		unbind "Alt k"
+		unbind "Alt l"
+		unbind "Alt n"
+		unbind "Alt p"
     bind "Ctrl q" { Detach; }
     bind "Ctrl s" { SwitchToMode "Session"; }
     bind "Ctrl f" { SwitchToMode "Scroll"; }
@@ -30,25 +41,25 @@ keybinds {
             payload "right";
         };
     }
-    bind "Alt h" {
+    bind "Ctrl Alt h" {
         MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
             name "resize";
             payload "left";
         };
     }
-    bind "Alt j" {
+    bind "Ctrl Alt j" {
         MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
             name "resize";
             payload "down";
         };
     }
-    bind "Alt k" {
+    bind "Ctrl Alt k" {
         MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
             name "resize";
             payload "up";
         };
     }
-    bind "Alt l" {
+    bind "Ctrl Alt l" {
         MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
             name "resize";
             payload "right";
@@ -62,3 +73,5 @@ keybinds {
     }
   }
 }
+
+theme "pywal"
