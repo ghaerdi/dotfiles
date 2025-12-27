@@ -4,7 +4,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "vanzuh-night-mode" ''
+    (pkgs.writeShellScriptBin "nixos-night-mode" ''
       #!/bin/sh
 
       notification_timeout=1000

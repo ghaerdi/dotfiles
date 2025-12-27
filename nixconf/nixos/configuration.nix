@@ -34,7 +34,7 @@
       options = [
         "default"
         "nofail"
-        "uid=vanzuh"
+        "uid=ghaerdi"
         "gid=users"
         "dmask=0000"
         "fmask=0000"
@@ -137,10 +137,10 @@
       uinput = {};
     };
     # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.vanzuh = {
+    users.ghaerdi = {
       isNormalUser = true;
       initialPassword = "password";
-      description = "Vanzuh";
+      description = "Gil Rudolf Härdi";
       extraGroups = ["networkmanager" "audio" "docker" "wheel" "uinput" "input" "disk" "floppy" "storage"];
       shell = pkgs.fish;
       packages = with pkgs; [

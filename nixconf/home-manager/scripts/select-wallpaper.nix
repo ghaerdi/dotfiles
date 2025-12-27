@@ -5,7 +5,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "vanzuh-wallpaper" ''
+    (pkgs.writeShellScriptBin "nixos-wallpaper" ''
       #!/bin/sh
 
       notification_timeout=3000

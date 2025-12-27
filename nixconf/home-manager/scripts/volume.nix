@@ -1,10 +1,11 @@
 {
   config,
   pkgs,
+  homeDirectory,
   ...
 }: {
   home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "vanzuh-volume" ''
+    (pkgs.writeShellScriptBin "nixos-volume" ''
       #!/bin/sh
 
       notification_timeout=1000
@@ -24,15 +25,15 @@
 
       get_icon() {
       	if [ "$(get_mute_status)" = "true" ]; then
-      		echo "/home/vanzuh/dotfiles/nixconf/assets/icons/volume-muted.svg"
+      		echo "${homeDirectory}/dotfiles/nixconf/assets/icons/volume-muted.svg"
       	else
       		volume=$(get_volume)
       		if [ $volume -eq 0 ]; then
-      			echo "/home/vanzuh/dotfiles/nixconf/assets/icons/volume-no-sound.svg"
+      			echo "${homeDirectory}/dotfiles/nixconf/assets/icons/volume-no-sound.svg"
       		elif [ $volume -le 33 ]; then
-      			echo "/home/vanzuh/dotfiles/nixconf/assets/icons/volume-low.svg"
+      			echo "${homeDirectory}/dotfiles/nixconf/assets/icons/volume-low.svg"
       		else
-      			echo "/home/vanzuh/dotfiles/nixconf/assets/icons/volume-high.svg"
+      			echo "${homeDirectory}/dotfiles/nixconf/assets/icons/volume-high.svg"
       		fi
       	fi
       }
@@ -87,9 +88,9 @@
       			${pkgs.pamixer}/bin/pamixer --default-source --toggle-mute
       			if [ "$notify_flag" = "--notify" ]; then
       				if [ "$(get_mic_mute_status)" = "true" ]; then
-      					${pkgs.libnotify}/bin/notify-send -t $notification_timeout -u low -i "/home/vanzuh/dotfiles/nixconf/assets/icons/microphone-off.svg" "Microphone" "Muted"
+      					${pkgs.libnotify}/bin/notify-send -t $notification_timeout -u low -i "${homeDirectory}/dotfiles/nixconf/assets/icons/microphone-off.svg" "Microphone" "Muted"
       				else
-      					${pkgs.libnotify}/bin/notify-send -t $notification_timeout -u low -i "/home/vanzuh/dotfiles/nixconf/assets/icons/microphone-on.svg" "Microphone" "Unmuted"
+      					${pkgs.libnotify}/bin/notify-send -t $notification_timeout -u low -i "${homeDirectory}/dotfiles/nixconf/assets/icons/microphone-on.svg" "Microphone" "Unmuted"
       				fi
       			fi
       			;;

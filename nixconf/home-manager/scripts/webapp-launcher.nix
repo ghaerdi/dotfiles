@@ -4,7 +4,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "vanzuh-webapp-launcher" ''
+    (pkgs.writeShellScriptBin "nixos-webapp-launcher" ''
       #!/bin/bash
 
       browser=$(${pkgs.xdg-utils}/bin/xdg-settings get default-web-browser)

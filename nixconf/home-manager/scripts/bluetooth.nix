@@ -4,7 +4,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "vanzuh-bluetooth" ''
+    (pkgs.writeShellScriptBin "nixos-bluetooth" ''
       #!/bin/sh
 
       notification_timeout=1000

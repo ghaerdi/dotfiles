@@ -4,7 +4,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "vanzuh-hyprland-window-pop" ''
+    (pkgs.writeShellScriptBin "nixos-hyprland-window-pop" ''
       #!/bin/bash
 
       # Toggle to pop-out a tile to stay fixed on a display basis.

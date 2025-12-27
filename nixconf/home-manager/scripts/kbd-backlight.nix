@@ -1,10 +1,11 @@
 {
   config,
   pkgs,
+  homeDirectory,
   ...
 }: {
   home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "vanzuh-kbd-backlight" ''
+    (pkgs.writeShellScriptBin "nixos-kbd-backlight" ''
       #!/bin/sh
 
       notification_timeout=1000
@@ -30,9 +31,9 @@
       get_icon() {
         brightness=$1
         if [ "$brightness" -eq 0 ]; then
-          echo "/home/vanzuh/dotfiles/nixconf/assets/icons/keyboard-off.svg"
+          echo "${homeDirectory}/dotfiles/nixconf/assets/icons/keyboard-off.svg"
         else
-          echo "/home/vanzuh/dotfiles/nixconf/assets/icons/keyboard.svg"
+          echo "${homeDirectory}/dotfiles/nixconf/assets/icons/keyboard.svg"
         fi
       }
 

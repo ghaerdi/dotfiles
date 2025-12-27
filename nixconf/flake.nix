@@ -1,5 +1,5 @@
 {
-  description = "Vanzuh's nix configuration";
+  description = "Nix configuration";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -21,7 +21,7 @@
   } @ inputs: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
-    username = "vanzuh";
+    username = "ghaerdi";
     homeDirectory = "/home/${username}";
     stateVersion = "24.05"; # Please read releases notes before changing.
     zen = zen-browser.packages.${system};
@@ -55,7 +55,7 @@
     };
 
     homeConfigurations = {
-      "vanzuh@laptop" = home-manager.lib.homeManagerConfiguration {
+      "laptop" = home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = {
           zen-browser = zen.twilight;
           username = username;
@@ -68,7 +68,7 @@
           ./hosts/laptop/home-manager.nix
         ];
       };
-      "vanzuh@qtile" = home-manager.lib.homeManagerConfiguration {
+      "qtile" = home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = {
           zen-browser = zen.twilight;
           username = username;
