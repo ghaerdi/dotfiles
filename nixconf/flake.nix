@@ -44,6 +44,14 @@
           stylix.nixosModules.stylix
         ];
       };
+
+      isoimage = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/isoimage/configuration.nix
+          stylix.nixosModules.stylix
+        ];
+      };
     };
 
     homeConfigurations = {
