@@ -1,10 +1,11 @@
 {
   config,
   pkgs,
+  homeDirectory,
   ...
 }: {
   home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "vanzuh-brightness" ''
+    (pkgs.writeShellScriptBin "nixos-brightness" ''
       #!/bin/sh
       notification_timeout=1000
       step=5
@@ -16,11 +17,11 @@
       get_icon() {
       	brightness=$1
       	if [ $brightness -le 33 ]; then
-      		echo "/home/vanzuh/dotfiles/nixconf/assets/icons/brightness-down.svg"
+      		echo "${homeDirectory}/dotfiles/nixconf/assets/icons/brightness-down.svg"
       	elif [ $brightness -le 66 ]; then
-      		echo "/home/vanzuh/dotfiles/nixconf/assets/icons/brightness-middle.svg"
+      		echo "${homeDirectory}/dotfiles/nixconf/assets/icons/brightness-middle.svg"
       	else
-      		echo "/home/vanzuh/dotfiles/nixconf/assets/icons/brightness-up.svg"
+      		echo "${homeDirectory}/dotfiles/nixconf/assets/icons/brightness-up.svg"
       	fi
       }
 

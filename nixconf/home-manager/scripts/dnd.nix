@@ -4,7 +4,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "vanzuh-dnd" ''
+    (pkgs.writeShellScriptBin "nixos-dnd" ''
       #!/bin/sh
 
       get_dnd_status() {

@@ -4,7 +4,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "vanzuh-wifi" ''
+    (pkgs.writeShellScriptBin "nixos-wifi" ''
       #!/bin/sh
 
       notification_timeout=1000

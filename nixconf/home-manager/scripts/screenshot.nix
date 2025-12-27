@@ -4,7 +4,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "vanzuh-screenshot" ''
+    (pkgs.writeShellScriptBin "nixos-screenshot" ''
       #!/bin/bash
 
       [[ -f ~/.config/user-dirs.dirs ]] && source ~/.config/user-dirs.dirs
