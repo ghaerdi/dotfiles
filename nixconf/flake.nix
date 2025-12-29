@@ -23,14 +23,18 @@
     pkgs = nixpkgs.legacyPackages.${system};
     username = "ghaerdi";
     homeDirectory = "/home/${username}";
-    stateVersion = "24.05"; # Please read releases notes before changing.
+    stateVersion = "25.11"; # Please read releases notes before changing.
     zen = zen-browser.packages.${system};
   in {
     formatter.${system} = pkgs.alejandra;
 
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = {
+          inherit inputs;
+          username = username;
+          stateVersion = stateVersion;
+        };
         modules = [
           ./hosts/laptop/configuration.nix
           stylix.nixosModules.stylix
@@ -38,7 +42,15 @@
       };
 
       qtile = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = {
+          inherit inputs;
+          username = username;
+          stateVersion = stateVersion;
+        };
+        extraSpecialArgs = {
+          username = username;
+          stateVersion = stateVersion;
+        };
         modules = [
           ./hosts/qtile/configuration.nix
           stylix.nixosModules.stylix
