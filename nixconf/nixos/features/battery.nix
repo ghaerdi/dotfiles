@@ -1,9 +1,4 @@
 {config, ...}: {
-  powerManagement = {
-    enable = true;
-    powertop.enable = true;
-    cpuFreqGovernor = "powersave";
-  };
   services = {
     thermald.enable = true;
     power-profiles-daemon.enable = false;
@@ -15,7 +10,7 @@
           turbo = "never";
         };
         charger = {
-          governor = "powersave";
+          governor = "performance";
           turbo = "auto";
         };
       };

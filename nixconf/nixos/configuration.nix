@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    ./hardware-configuration.nix
+    /etc/nixos/hardware-configuration.nix
     ./features/stylix.nix
   ];
 
@@ -24,21 +24,6 @@
         device = "nodev";
         efiSupport = true;
       };
-    };
-  };
-
-  fileSystems = {
-    "/mnt/personal" = {
-      device = "/dev/disk/by-uuid/504CE43A4CE41D0A"; # Correct UUID
-      fsType = "ntfs-3g";
-      options = [
-        "default"
-        "nofail"
-        "uid=ghaerdi"
-        "gid=users"
-        "dmask=0000"
-        "fmask=0000"
-      ];
     };
   };
 
@@ -100,7 +85,6 @@
 
   virtualisation.docker = {
     enable = true;
-    storageDriver = "btrfs";
   };
 
   services = {
@@ -175,5 +159,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "25.11"; # Did you read the comment?
 }
