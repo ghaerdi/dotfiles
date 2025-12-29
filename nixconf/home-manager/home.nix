@@ -13,6 +13,7 @@
       ".config/kanata".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/kanata/.config/kanata";
       ".config/tmux".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/tmux/.config/tmux";
       ".config/zellij".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/zellij/.config/zellij";
+      "dotfiles/zellij/.config/zellij/themes/pywal.kdl".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/.cache/wal/zellij.kdl";
       ".config/ghostty".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/ghostty/.config/ghostty";
       ".config/espanso".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/espanso/.config/espanso";
       ".local/share/fastfetch".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/fastfetch/.local/share/fastfetch";
