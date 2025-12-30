@@ -29,11 +29,11 @@
 
       toggle_night_mode() {
         if [ "$(get_night_mode_status)" = "on" ]; then
-          ${pkgs.procps}/bin/pkill hyprsunset 2>/dev/null || true
+          ${pkgs.hyprland}/bin/hyprctl hyprsunset identity
           echo "off" > "$state_file"
         else
-          ${pkgs.procps}/bin/pkill hyprsunset 2>/dev/null || true
-          ${pkgs.hyprsunset}/bin/hyprsunset -t 3400 >/dev/null 2>&1 &
+          ${pkgs.hyprland}/bin/hyprctl hyprsunset temperature 4000
+          ${pkgs.hyprland}/bin/hyprctl hyprsunset gamma 85
           echo "on" > "$state_file"
         fi
       }
