@@ -7,12 +7,6 @@
 [submodule "Wallpapers"]
 	path = Wallpapers
 	url = https://github.com/ghaerdi/Wallpapers
-[submodule "fastfetch/.local/share/fastfetch"]
-	path = fastfetch/.local/share/fastfetch
-	url = https://github.com/LierB/fastfetch.git
-[submodule "alacritty/.config/alacritty/themes"]
-	path = alacritty/.config/alacritty/themes
-	url = https://github.com/alacritty/alacritty-theme.git
 [submodule "tmux/.config/tmux/plugins/tpm"]
 	path = tmux/.config/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
