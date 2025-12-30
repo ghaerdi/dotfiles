@@ -7,11 +7,13 @@ in
     packages = with pkgs; [
       uv
       ssm-session-manager-plugin
+      mongodb-tools
       (python3.withPackages (p:
         with p; [
           pexpect
           requests
           boto3
+          pymongo
         ]))
       (python.withPackages (p:
         with p; [
