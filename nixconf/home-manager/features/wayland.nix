@@ -8,7 +8,7 @@
     wl-clipboard
     hyprpicker
     hyprsunset
-    hyprpaper
+    hypridle
     hyprlock
     cliphist
     waybar
