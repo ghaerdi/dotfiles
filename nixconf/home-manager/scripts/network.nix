@@ -4,7 +4,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "nixos-wifi" ''
+    (pkgs.writeShellScriptBin "nixconf-wifi" ''
       #!/bin/sh
 
       notification_timeout=1000

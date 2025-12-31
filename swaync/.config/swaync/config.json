@@ -43,8 +43,8 @@
 			"label": "󰌌",
 			"max": 3,
 			"max_limit": 3,
-			"cmd_getter": "nixos-kbd-backlight get",
-			"cmd_setter": "nixos-kbd-backlight set $value"
+			"cmd_getter": "nixconf-asus-proart-kbd-backlight get",
+			"cmd_setter": "nixconf-asus-proart-kbd-backlight set $value"
 		},
     "buttons-grid": {
       "buttons-per-row": 4,
@@ -68,26 +68,26 @@
         {
           "label": "󰤨",
           "type": "toggle",
-          "command": "nixos-wifi toggle",
-          "update-command": "sh -c '[[ $(nixos-wifi status) == \"on\" ]] && echo true || echo false'"
+          "command": "nixconf-wifi toggle",
+          "update-command": "sh -c '[[ $(nixconf-wifi status) == \"on\" ]] && echo true || echo false'"
         },
         {
           "label": "",
           "type": "toggle",
-          "command": "nixos-bluetooth toggle",
-          "update-command": "sh -c '[[ $(nixos-bluetooth status) == \"on\" ]] && echo true || echo false'"
+          "command": "nixconf-bluetooth toggle",
+          "update-command": "sh -c '[[ $(nixconf-bluetooth status) == \"on\" ]] && echo true || echo false'"
         },
         {
           "label": "󰖔",
           "type": "toggle",
-          "command": "nixos-night-mode toggle",
-          "update-command": "sh -c '[[ $(nixos-night-mode status) == \"on\" ]] && echo true || echo false'"
+          "command": "nixconf-night-mode toggle",
+          "update-command": "sh -c '[[ $(nixconf-night-mode status) == \"on\" ]] && echo true || echo false'"
         },
         {
           "label": "",
           "type": "toggle",
-          "command": "nixos-dnd toggle",
-          "update-command": "nixos-dnd status"
+          "command": "nixconf-dnd toggle",
+          "update-command": "nixconf-dnd status"
         }
       ]
     }

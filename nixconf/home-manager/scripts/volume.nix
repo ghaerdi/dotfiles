@@ -5,7 +5,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "nixos-volume" ''
+    (pkgs.writeShellScriptBin "nixconf-volume" ''
       #!/bin/sh
 
       notification_timeout=1000

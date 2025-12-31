@@ -5,7 +5,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "nixos-kbd-backlight" ''
+    (pkgs.writeShellScriptBin "nixconf-asus-proart-kbd-backlight" ''
       #!/bin/sh
 
       notification_timeout=1000

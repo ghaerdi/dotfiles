@@ -4,7 +4,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "nixos-bluetooth" ''
+    (pkgs.writeShellScriptBin "nixconf-bluetooth" ''
       #!/bin/sh
 
       notification_timeout=1000
