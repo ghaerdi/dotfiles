@@ -4,7 +4,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "nixos-webapp-launcher" ''
+    (pkgs.writeShellScriptBin "nixconf-webapp-launcher" ''
       #!/bin/bash
 
       browser=$(${pkgs.xdg-utils}/bin/xdg-settings get default-web-browser)

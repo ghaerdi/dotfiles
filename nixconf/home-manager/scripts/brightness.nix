@@ -5,7 +5,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "nixos-brightness" ''
+    (pkgs.writeShellScriptBin "nixconf-brightness" ''
       #!/bin/sh
       notification_timeout=1000
       step=5

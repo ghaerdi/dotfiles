@@ -51,7 +51,7 @@
               # Function to display a random fetch prompt using fastfetch
               function random_propmt
               	# List of available fastfetch configurations
-              	set -l scripts "fastfetch --config nix" "fastfetch --config minimal" "fastfetch --config groups"
+              	set -l scripts "nixconf-prompt" "fastfetch --config minimal" "fastfetch --config groups"
 
               	# Select a random index from the scripts list
               	set -l random_index (math (random) % (count $scripts) + 1)

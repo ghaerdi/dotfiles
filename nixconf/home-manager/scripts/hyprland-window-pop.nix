@@ -4,7 +4,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "nixos-hyprland-window-pop" ''
+    (pkgs.writeShellScriptBin "nixconf-hyprland-window-pop" ''
       #!/bin/bash
 
       # Toggle to pop-out a tile to stay fixed on a display basis.
