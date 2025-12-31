@@ -15,6 +15,7 @@
     slurp
     pywal
     rofi
+    bemoji
     grim
     swww
   ];

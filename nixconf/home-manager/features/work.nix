@@ -4,5 +4,5 @@
   lib,
   ...
 }: {
-  home.packages = with pkgs; [slack awscli2 jq mongodb-compass zoom-us];
+  home.packages = with pkgs; [slack awscli2 jq mongodb-compass];
 }

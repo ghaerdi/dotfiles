@@ -15,13 +15,10 @@
     devenv
     neovim
     zoxide
-    aichat
     impala
-    pyenv
+    zellij
     gitui
     unzip
-    tmux
-    zellij
     cava
     yazi
     btop

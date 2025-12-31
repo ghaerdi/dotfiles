@@ -22,12 +22,6 @@
       ".config/yazi".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/yazi/.config/yazi";
       ".config/rofi".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/rofi/.config/rofi";
 
-      # xserver
-      ".config/polybar".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/polybar/.config/polybar";
-      ".config/qtile".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/qtile/.config/qtile";
-      ".config/picom".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/picom/.config/picom";
-      ".xprofile".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/xprofile/.xprofile";
-
       # wayland
       ".config/hypr".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/hypr/.config/hypr";
       ".config/waybar".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/waybar/.config/waybar";
