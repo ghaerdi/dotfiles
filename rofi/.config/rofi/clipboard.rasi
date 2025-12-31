@@ -6,7 +6,7 @@
 }
 
 configuration {
-		modi:              "clipboard:greenclip print";
+		modi:              "clipboard:cliphist list";
 		display-clipboard: " CLIPBOARD";
 }
 
