@@ -21,10 +21,8 @@
     gnome-disk-utility
     nautilus # file explorer
     libreoffice
-    baobab # disk usage
     eog # gnome image viewer
     evince # gnome document viewer
-    localsend
     telegram-desktop
     youtube-music
     pavucontrol
@@ -33,16 +31,10 @@
     obsidian
     vesktop
     ghostty
-    nmgui # network manager
     vlc
 
     # TOOLS
     bluetui # bluetooth
-    xcolor
-    volctl
-
-    # PROGRAMMING & DEPENDENCIES
-    haskellPackages.greenclip
 
     # Fonts
     nerd-fonts.fira-code

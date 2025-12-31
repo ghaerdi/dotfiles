@@ -29,30 +29,14 @@
     formatter.${system} = pkgs.alejandra;
 
     nixosConfigurations = {
-      laptop = nixpkgs.lib.nixosSystem {
+      asus-proart = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
           username = username;
           stateVersion = stateVersion;
         };
         modules = [
-          ./hosts/laptop/configuration.nix
-          stylix.nixosModules.stylix
-        ];
-      };
-
-      qtile = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs;
-          username = username;
-          stateVersion = stateVersion;
-        };
-        extraSpecialArgs = {
-          username = username;
-          stateVersion = stateVersion;
-        };
-        modules = [
-          ./hosts/qtile/configuration.nix
+          ./hosts/asus-proart/configuration.nix
           stylix.nixosModules.stylix
         ];
       };
@@ -67,7 +51,7 @@
     };
 
     homeConfigurations = {
-      "laptop" = home-manager.lib.homeManagerConfiguration {
+      asus-proart = home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = {
           zen-browser = zen.twilight;
           username = username;
@@ -77,20 +61,7 @@
         pkgs = pkgs;
         modules = [
           stylix.homeModules.stylix
-          ./hosts/laptop/home-manager.nix
-        ];
-      };
-      "qtile" = home-manager.lib.homeManagerConfiguration {
-        extraSpecialArgs = {
-          zen-browser = zen.twilight;
-          username = username;
-          homeDirectory = homeDirectory;
-          stateVersion = stateVersion;
-        };
-        pkgs = pkgs;
-        modules = [
-          stylix.homeModules.stylix
-          ./hosts/qtile/home-manager.nix
+          ./hosts/asus-proart/home-manager.nix
         ];
       };
     };

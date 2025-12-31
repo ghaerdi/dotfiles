@@ -9,11 +9,12 @@
   imports = [
     /etc/nixos/hardware-configuration.nix
     ./features/stylix.nix
+    ./features/cachix.nix
   ];
 
   boot = {
     supportedFilesystems = ["ntfs"];
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages;
     loader = {
       efi = {
         canTouchEfiVariables = true;
@@ -149,12 +150,10 @@
       ntfs3g
       neovim
       git
-      udiskie
     ];
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
-  nix.settings.trusted-users = ["root" username];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

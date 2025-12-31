@@ -30,6 +30,5 @@
       "veracrypt"
       "obsidian"
       "slack"
-      "zoom"
     ];
 }
