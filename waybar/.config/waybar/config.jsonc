@@ -73,7 +73,6 @@
 		"interval": 3,
 		"spacing": 1,
 		"on-click": "$TERMINAL --class=com.ghaerdi.Impala -e impala",
-		"on-click-right": "nmgui"
 	},
 	"group/tray-expander": {
 		"orientation": "inherit",
@@ -87,9 +86,7 @@
 		"format": "⛃",
 		"tooltip-format": "{specific_free:0.2f} GB out of {specific_total:0.2f} GB available.",
 		"unit": "GB",
-		"on-click": "$TERMINAL --class=com.ghaerdi.Yazi -e yazi",
-		"on-click-right": "nautilus",
-		"on-click-middle": "baobab"
+		"on-click": "$TERMINAL --class=com.ghaerdi.Dust -e sh -c 'dust /; read'"
 	},
 	"cpu": {
     "interval": 10,
