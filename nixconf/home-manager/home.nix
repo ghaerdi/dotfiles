@@ -21,6 +21,7 @@
       ".config/starship.toml".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/starship/.config/starship.toml";
       ".config/yazi".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/yazi/.config/yazi";
       ".config/rofi".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/rofi/.config/rofi";
+      ".config/quickshell".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/quickshell/.config/quickshell";
 
       # wayland
       ".config/hypr".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/hypr/.config/hypr";

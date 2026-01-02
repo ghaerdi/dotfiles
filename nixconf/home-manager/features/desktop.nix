@@ -3,6 +3,7 @@
   config,
   lib,
   zen-browser,
+  quickshell,
   ...
 }: {
   programs.home-manager.enable = true;
@@ -23,6 +24,7 @@
     libreoffice
     eog # gnome image viewer
     evince # gnome document viewer
+    quickshell
     telegram-desktop
     youtube-music
     pavucontrol
