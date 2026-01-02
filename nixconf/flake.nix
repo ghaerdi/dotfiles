@@ -10,6 +10,10 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     stylix.url = "github:danth/stylix";
     swww.url = "github:LGFae/swww";
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -17,6 +21,7 @@
     home-manager,
     zen-browser,
     stylix,
+    quickshell,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -24,7 +29,6 @@
     username = "ghaerdi";
     homeDirectory = "/home/${username}";
     stateVersion = "25.11"; # Please read releases notes before changing.
-    zen = zen-browser.packages.${system};
   in {
     formatter.${system} = pkgs.alejandra;
 
@@ -53,7 +57,8 @@
     homeConfigurations = {
       asus-proart = home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = {
-          zen-browser = zen.twilight;
+          zen-browser = zen-browser.packages.${system}.twilight;
+          quickshell = quickshell.packages.${system}.default;
           username = username;
           homeDirectory = homeDirectory;
           stateVersion = stateVersion;

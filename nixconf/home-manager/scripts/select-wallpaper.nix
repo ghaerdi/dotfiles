@@ -67,6 +67,11 @@
           echo '// reload trigger' >> "$HOME/.config/zellij/config.kdl" && ${pkgs.gnused}/bin/sed -i '/^\/\/ reload trigger$/d' "$HOME/.config/zellij/config.kdl"
         fi
 
+        # Trigger quickshell update
+        if [ -f "$HOME/dotfiles/quickshell/.config/quickshell/shell.qml" ]; then
+          echo '// reload trigger' >> "$HOME/dotfiles/quickshell/.config/quickshell/shell.qml" && ${pkgs.gnused}/bin/sed -i '/^\/\/ reload trigger$/d' "$HOME/dotfiles/quickshell/.config/quickshell/shell.qml"
+        fi
+
         ${pkgs.libnotify}/bin/notify-send -i "$FULL_PATH" -t 3000 -u low -h string:x-canonical-private-synchronous:wallpaper "Wallpaper" "Wallpaper updated and colors generated."
       fi
     '')

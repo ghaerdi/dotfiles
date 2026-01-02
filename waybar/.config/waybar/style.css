@@ -15,7 +15,7 @@ window#waybar {
 #system,
 #workspaces,
 .modules-center {
-  background-color: @background;
+  background: alpha(@background, 0.4);
   padding: 0 15px;
 }
 
@@ -60,13 +60,8 @@ window#waybar {
   color: @color6;
 }
 
-#clock {
-  color: @color4;
-}
-
 #custom-love {
-	color: @color5;
-	font-size: 12px;
+	font-size: 11px;
 }
 
 #battery {
