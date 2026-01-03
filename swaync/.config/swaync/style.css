@@ -20,7 +20,7 @@
   text-shadow: none;
   color: @foreground;
   background-color: transparent;
-  border-radius: 9px;
+  border-radius: 15px;
 }
 
 /* -----------------------------------
