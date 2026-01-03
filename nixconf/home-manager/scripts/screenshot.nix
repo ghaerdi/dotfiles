@@ -14,7 +14,7 @@
       	${pkgs.coreutils}/bin/mkdir -p "$OUTPUT_DIR"
       fi
 
-      ${pkgs.procps}/bin/pkill slurp || ${pkgs.hyprshot}/bin/hyprshot -m ''${1:-region} --raw |
+      ${pkgs.hyprshot}/bin/hyprshot -m ''${1:-region} --freeze --raw |
       	${pkgs.satty}/bin/satty --filename - \
       		--output-filename "$OUTPUT_DIR/screenshot-$(${pkgs.coreutils}/bin/date +'%Y-%m-%d_%H-%M-%S').png" \
       		--early-exit \
