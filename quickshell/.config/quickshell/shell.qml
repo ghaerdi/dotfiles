@@ -47,7 +47,6 @@ ShellRoot {
 
 		PanelWindow {
 			anchors { top: true; bottom: true; left: true; right: true }
-			aboveWindows: false
 			surfaceFormat.opaque: false
 			color: "transparent"
 
