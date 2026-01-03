@@ -1,98 +1,91 @@
 import Quickshell
 import QtQuick
-import QtQuick.Effects // Requires qml6-module-qtquick-effects
+import QtQuick.Effects
 import Quickshell.Io
 import Quickshell.Hyprland 
 import Quickshell.Wayland 
-
-Scope {
-	WlrLayershell.namespace: "quickshell-border";
+//
+ShellRoot {
 	FileView {
-			id: wal
-			// The path goes here, NOT in the JsonAdapter
-			path: Quickshell.env("HOME") + "/.cache/wal/colors.json"
+		id: wal
+		path: Quickshell.env("HOME") + "/.cache/wal/colors.json"
 
-			// 2. The adapter parses the content
-			JsonAdapter {
-					// This property matches the "colors" key in Pywal's JSON
-					// Using 'var' allows it to hold the entire sub-object of colors
-					property var colors: ({}) 
-					
-					// Optional: You can also grab the wallpaper path
-					property string wallpaper: ""
-			}
+		JsonAdapter {
+			property var colors: ({}) 
+		}
 	}
+	property var styles: new Object({ radius: 15, color: wal.adapter.colors.color0 })
+	property var panels: new Object({ left: 10, right: 10, top: 0, bottom: 10 })
 
-	PanelWindow {
-		anchors { bottom: true; left: true; right: true; }
-		height: 15;
-		color: wal.adapter.colors.color0;
-		HyprlandWindow.opacity: 0.8;
-		WlrLayershell.namespace: "quickshell-border";
-	}
+	Item {
+		anchors.fill: parent
+		layer.enabled: true
 
-	PanelWindow {
-		anchors { left: true; top: true; bottom: true; }
-		width: 15;
-		color: wal.adapter.colors.color0;
-		HyprlandWindow.opacity: 0.8;
-		WlrLayershell.namespace: "quickshell-border";
-	}
+		PanelWindow {
+			anchors { top: true; left: true; right: true; }
+			height: panels.top;
+			color: styles.color;
+		}
 
-	PanelWindow {
-		anchors { right: true; top: true; bottom: true; }
-		width: 15;
-		color: wal.adapter.colors.color0;
-		HyprlandWindow.opacity: 0.8;
-		WlrLayershell.namespace: "quickshell-border";
-	}
+		PanelWindow {
+			anchors { bottom: true; left: true; right: true; }
+			height: panels.bottom;
+			color: styles.color;
+		}
 
-	PanelWindow {
+		PanelWindow {
+			anchors { left: true; top: true; bottom: true; }
+			width: panels.left;
+			color: styles.color;
+		}
+
+		PanelWindow {
+			anchors { right: true; top: true; bottom: true; }
+			width: panels.right;
+			color: styles.color;
+		}
+
+		PanelWindow {
 			anchors { top: true; bottom: true; left: true; right: true }
-			
-			// CORRECT SYNTAX: Use dot notation for the grouped property
+			aboveWindows: false
 			surfaceFormat.opaque: false
 			color: "transparent"
-			HyprlandWindow.opacity: 0.8
 
-			// 1. CLICK MASK: Handles mouse pass-through
 			mask: Region {
-					item: maskSource
-					intersection: Intersection.Xor
+				item: mask
+				intersection: Intersection.Xor
 			}
 
-			// 2. RED FRAME (Hidden Source)
-			Rectangle {
-					id: redFrame
+			Item {
+				anchors.fill: parent
+
+				Rectangle {
 					anchors.fill: parent
-					color: wal.adapter.colors.color0
-					visible: false // Must be hidden so only the effect is seen
-			}
+					color: styles.color;
 
-			// 3. THE CUTOUT EFFECT
-			MultiEffect {
+					layer.enabled: true
+					layer.effect: MultiEffect {
+							maskSource: mask
+							maskEnabled: true
+							maskInverted: true
+							maskThresholdMin: 0.5
+							maskSpreadAtMin: 1
+					}
+				}
+
+				Item {
+					id: mask
+
 					anchors.fill: parent
-					source: redFrame
-					maskSource: maskSource
-					maskEnabled: true
-					maskInverted: true // "Invert" to keep the outside, cut the inside
+					layer.enabled: true
+					visible: false
+
+					Rectangle {
+						anchors.fill: parent
+						radius: styles.radius
+					}
+				}
 			}
-
-			// 4. THE HOLE SHAPE (Mask)
-			Rectangle {
-					id: maskSource
-					anchors.fill: parent
-					anchors.margins: 5 // Border Thickness
-					radius: 9         // Inner Radius
-					color: "white"
-					
-					// CRITICAL FIXES FOR RED SCREEN:
-					visible: false     
-					layer.enabled: true // Forces this item to render to a texture even if hidden
-					layer.smooth: true  // Ensures smooth rounded edges
-			}
-
-
+		}
 	}
 }
-
