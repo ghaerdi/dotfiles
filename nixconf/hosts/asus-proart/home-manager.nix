@@ -28,6 +28,7 @@
   ];
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
+      "davinci-resolve"
       "mongodb-compass"
       "veracrypt"
       "obsidian"
