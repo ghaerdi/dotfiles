@@ -26,7 +26,6 @@
     evince # gnome document viewer
     quickshell
     telegram-desktop
-    davinci-resolve
     youtube-music
     pavucontrol
     zen-browser
