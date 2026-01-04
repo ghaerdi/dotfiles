@@ -19,6 +19,7 @@
     zellij
     gitui
     unzip
+    pigz
     cava
     yazi
     btop
