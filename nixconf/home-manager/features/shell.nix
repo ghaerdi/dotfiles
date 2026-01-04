@@ -60,6 +60,22 @@
             	eval $scripts[$random_index]
             end
 
+            # Function to run when changing directories (chpwd hook)
+            function __on_pwd_change --on-variable PWD
+            	# Display directory listing
+            	eza -a
+
+            	# Show git status if in a git repository
+            	if git rev-parse --git-dir >/dev/null 2>&1
+            		git status -s
+            	end
+
+            	# Run devenv shell if devenv.nix exists
+            	if test -f devenv.nix
+            		devenv shell $SHELL
+            	end
+            end
+
             # Disable the default Fish greeting message
             set fish_greeting ""
 
