@@ -27,6 +27,7 @@
     quickshell
     telegram-desktop
     youtube-music
+    kdePackages.kdenlive
     pavucontrol
     zen-browser
     obs-studio
