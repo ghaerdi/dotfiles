@@ -25,6 +25,7 @@
     ../../home-manager/scripts/select-wallpaper.nix
     ../../home-manager/scripts/volume.nix
     ../../home-manager/scripts/webapp-launcher.nix
+    ../../home-manager/scripts/cleanup.nix
   ];
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [

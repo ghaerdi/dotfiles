@@ -107,8 +107,8 @@
 
       # Nix Cleanup
       if command -v nix-collect-garbage &> /dev/null; then
-        echo -e "\n''${BLUE}Collecting Nix garbage (removing old generations)...''${NC}"
-        nix-collect-garbage -d
+        echo -e "\n''${BLUE}Collecting Nix garbage (older than 7 days)...''${NC}"
+        nix-collect-garbage --delete-older-than 7d
         echo -e "''${GREEN}✓ Nix garbage collected''${NC}"
       fi
 
