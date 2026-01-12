@@ -28,6 +28,7 @@
     telegram-desktop
     youtube-music
     kdePackages.kdenlive
+    brightnessctl
     pavucontrol
     zen-browser
     obs-studio
