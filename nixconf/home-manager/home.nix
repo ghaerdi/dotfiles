@@ -28,6 +28,7 @@
       ".config/waybar".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/waybar/.config/waybar";
       ".config/wal".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/wal/.config/wal";
       ".config/swaync".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/swaync/.config/swaync";
+      ".config/waypaper".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/waypaper/.config/waypaper";
     };
   };
 }

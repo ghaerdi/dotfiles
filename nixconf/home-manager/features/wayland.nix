@@ -17,6 +17,9 @@
     rofi
     bemoji
     grim
+
+    # wallpaper
+    waypaper
     swww
   ];
 }
