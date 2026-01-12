@@ -19,5 +19,8 @@
       enable = true;
       useStockConfig = true;
     };
+    logind = {
+      lidSwitch = "suspend";
+    };
   };
 }

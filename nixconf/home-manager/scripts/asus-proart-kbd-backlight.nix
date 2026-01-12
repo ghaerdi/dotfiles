@@ -5,17 +5,20 @@
   ...
 }: {
   home.packages = with pkgs; [
+    brightnessctl
     (pkgs.writeShellScriptBin "nixconf-asus-proart-kbd-backlight" ''
       #!/bin/sh
 
       notification_timeout=1000
+      DEVICE="asus::kbd_backlight"
 
-      # Path to the backlight brightness file
-      BRIGHTNESS_FILE="/sys/class/leds/asus::kbd_backlight/brightness"
-      MAX_BRIGHTNESS_FILE="/sys/class/leds/asus::kbd_backlight/max_brightness"
+      # Helper function to run brightnessctl for the keyboard
+      bctl() {
+        ${pkgs.brightnessctl}/bin/brightnessctl -d "$DEVICE" "$@"
+      }
 
       get_kbd_status() {
-        current_brightness=$(cat "$BRIGHTNESS_FILE")
+        current_brightness=$(bctl get)
         if [ "$current_brightness" -eq 0 ]; then
           echo "off"
         else
@@ -24,8 +27,7 @@
       }
 
       get_kbd_level() {
-        current_brightness=$(cat "$BRIGHTNESS_FILE")
-        echo "$current_brightness"
+        bctl get
       }
 
       get_icon() {
@@ -38,48 +40,31 @@
       }
 
       notify_user() {
-        current_brightness=$(cat "$BRIGHTNESS_FILE")
-        max_brightness=$(cat "$MAX_BRIGHTNESS_FILE")
+        current_brightness=$(bctl get)
+        max_brightness=$(bctl max)
         percentage=$((current_brightness * 100 / max_brightness))
         icon=$(get_icon $current_brightness)
         ${pkgs.libnotify}/bin/notify-send -t $notification_timeout -u low -i "$icon" -h string:x-canonical-private-synchronous:kbd_backlight -h int:value:$percentage "Keyboard Backlight" "Brightness Level: $current_brightness"
       }
 
       toggle_kbd_backlight() {
-        # Get current brightness
-        current_brightness=$(cat "$BRIGHTNESS_FILE")
+        current_brightness=$(bctl get)
+        max_brightness=$(bctl max)
 
-        # Get max brightness
-        max_brightness=$(cat "$MAX_BRIGHTNESS_FILE")
-
-        # Calculate next brightness level
+        # Calculate next brightness level (cycle: 0 -> 1 -> ... -> max -> 0)
         if [ "$current_brightness" -eq "$max_brightness" ]; then
           next_brightness=0
         else
           next_brightness=$((current_brightness + 1))
         fi
 
-        # Set new brightness level
-        echo "$next_brightness" > "$BRIGHTNESS_FILE"
+        bctl set "$next_brightness" > /dev/null
       }
 
       set_kbd_backlight() {
         value=$1
-        max_brightness=$(cat "$MAX_BRIGHTNESS_FILE")
-
-        # Validate input
-        if [ -z "$value" ] || ! [ "$value" -eq "$value" ] 2>/dev/null; then
-          echo "Error: Please provide a valid number (0-$max_brightness)"
-          exit 1
-        fi
-
-        if [ "$value" -lt 0 ] || [ "$value" -gt "$max_brightness" ]; then
-          echo "Error: Value must be between 0 and $max_brightness"
-          exit 1
-        fi
-
-        # Set brightness level
-        echo "$value" > "$BRIGHTNESS_FILE"
+        # brightnessctl handles validation limits automatically
+        bctl set "$value" > /dev/null
       }
 
       main() {

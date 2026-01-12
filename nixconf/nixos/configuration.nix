@@ -68,6 +68,16 @@
     };
   };
 
+  powerManagement = {
+    enable = true;
+    powerDownCommands = ''
+      ${pkgs.kmod}/bin/modprobe -r mt7925e
+    '';
+    powerUpCommands = ''
+      ${pkgs.kmod}/bin/modprobe mt7925e
+    '';
+  };
+
   time.timeZone = "America/Santo_Domingo";
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -103,9 +113,6 @@
         destination = "/etc/udev/rules.d/99-input.rules";
       })
     ];
-    udev.extraRules = ''
-      SUBSYSTEM=="leds", KERNEL=="asus::kbd_backlight", ACTION=="add", RUN+="${pkgs.coreutils}/bin/chmod 664 /sys/class/leds/asus::kbd_backlight/brightness", RUN+="${pkgs.coreutils}/bin/chgrp wheel /sys/class/leds/asus::kbd_backlight/brightness"
-    '';
     displayManager.gdm.enable = true;
     xserver = {
       enable = true;
