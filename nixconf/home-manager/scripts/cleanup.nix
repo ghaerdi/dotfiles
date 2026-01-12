@@ -1,9 +1,8 @@
-{
-  pkgs,
-  ...}: { home.packages = with pkgs; [
+{pkgs, ...}: {
+  home.packages = with pkgs; [
     (pkgs.writeShellScriptBin "nixconf-cleanup" ''
       #!/bin/bash
-      
+
       # Colors
       RED='\033[0;31m'
       GREEN='\033[0;32m'
@@ -17,17 +16,17 @@
       cleanup_dir() {
         name=$1
         path=$2
-        
+
         if [ -d "$path" ]; then
           # Get size - handled safely if directory is empty or permission denied
           size=$(du -sh "$path" 2>/dev/null | cut -f1)
           if [ -z "$size" ]; then size="0B"; fi
-          
+
           echo -ne "Cleaning $name cache... found ''${RED}$size''${NC}"
-          
+
           # Remove contents but keep directory
           find "$path" -mindepth 1 -delete 2>/dev/null
-          
+
           echo -e " ''${GREEN}✓''${NC}"
         fi
       }
@@ -42,7 +41,7 @@
       cleanup_dir "Slack Service Worker" "$HOME/.config/Slack/Service Worker/CacheStorage"
       cleanup_dir "Telegram" "$HOME/.local/share/TelegramDesktop/tdata/user_data/cache"
       cleanup_dir "Telegram Media" "$HOME/.local/share/TelegramDesktop/tdata/user_data/media_cache"
-      
+
       # Vesktop (Discord)
       cleanup_dir "Vesktop" "$HOME/.config/vesktop/sessionData/Cache"
       cleanup_dir "Vesktop Code" "$HOME/.config/vesktop/sessionData/Code Cache"
@@ -50,7 +49,7 @@
 
       # Development
       echo -e "\n''${YELLOW}Cleaning Development Tools...''${NC}"
-      
+
       if command -v npm &> /dev/null; then
         echo -ne "Running npm cache clean..."
         npm cache clean --force &> /dev/null
@@ -78,11 +77,11 @@
         bun pm cache rm &> /dev/null
         echo -e " ''${GREEN}✓''${NC}"
       fi
-      
+
       # System
       cleanup_dir "Thumbnails" "$HOME/.cache/thumbnails"
       cleanup_dir "Trash" "$HOME/.local/share/Trash"
-      
+
       # Media
       cleanup_dir "YouTube Music" "$HOME/.config/YouTube Music/Cache"
       cleanup_dir "YouTube Music Code" "$HOME/.config/YouTube Music/Code Cache"
