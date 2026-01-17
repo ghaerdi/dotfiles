@@ -14,7 +14,7 @@
 
   boot = {
     supportedFilesystems = ["ntfs" "ntfs-3g"];
-    kernelPackages = pkgs.linuxPackages;
+    kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       efi = {
         canTouchEfiVariables = true;
