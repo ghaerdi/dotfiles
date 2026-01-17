@@ -27,7 +27,7 @@
       name = "Noto Color Emoji";
     };
   };
-  stylix.iconTheme = {
+  stylix.icons = {
     enable = true;
     package = pkgs.gruvbox-plus-icons;
     dark = "Gruvbox-Plus-Dark";

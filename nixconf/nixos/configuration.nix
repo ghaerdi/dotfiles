@@ -70,12 +70,12 @@
 
   powerManagement = {
     enable = true;
-    powerDownCommands = ''
-      ${pkgs.kmod}/bin/modprobe -r mt7925e
-    '';
-    powerUpCommands = ''
-      ${pkgs.kmod}/bin/modprobe mt7925e
-    '';
+    # powerDownCommands = ''
+    #   ${pkgs.kmod}/bin/modprobe -r mt7925e
+    # '';
+    # powerUpCommands = ''
+    #   ${pkgs.kmod}/bin/modprobe mt7925e
+    # '';
   };
 
   time.timeZone = "America/Santo_Domingo";

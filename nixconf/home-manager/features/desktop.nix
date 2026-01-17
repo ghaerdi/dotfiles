@@ -26,7 +26,7 @@
     evince # gnome document viewer
     quickshell
     telegram-desktop
-    youtube-music
+    pear-desktop
     kdePackages.kdenlive
     brightnessctl
     pavucontrol
