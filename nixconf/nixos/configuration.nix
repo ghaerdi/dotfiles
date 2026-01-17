@@ -13,7 +13,7 @@
   ];
 
   boot = {
-    supportedFilesystems = ["ntfs"];
+    supportedFilesystems = ["ntfs" "ntfs-3g"];
     kernelPackages = pkgs.linuxPackages;
     loader = {
       efi = {
