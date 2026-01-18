@@ -38,6 +38,7 @@
     wireless.iwd.settings.Settings.AutoConnect = true;
     firewall = rec {
       enable = true;
+      checkReversePath = "loose";
       allowedTCPPortRanges = [
         {
           from = 1714;
