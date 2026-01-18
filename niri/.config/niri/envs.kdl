@@ -1,0 +1,5 @@
+environment {
+    QT_QPA_PLATFORM "wayland"
+    TERMINAL "ghostty"
+    EDITOR "nvim"
+}

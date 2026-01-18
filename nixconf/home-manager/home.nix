@@ -14,6 +14,7 @@
       ".config/tmux".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/tmux/.config/tmux";
       ".config/zellij".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/zellij/.config/zellij";
       "dotfiles/zellij/.config/zellij/themes/pywal.kdl".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/.cache/wal/zellij.kdl";
+      "dotfiles/niri/.config/niri/colors.kdl".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/.cache/wal/niri.kdl";
       ".config/ghostty".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/ghostty/.config/ghostty";
       ".config/espanso".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/espanso/.config/espanso";
       ".local/share/fastfetch".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/fastfetch/.local/share/fastfetch";
@@ -29,6 +30,7 @@
       ".config/wal".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/wal/.config/wal";
       ".config/swaync".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/swaync/.config/swaync";
       ".config/waypaper".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/waypaper/.config/waypaper";
+      ".config/niri".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/niri/.config/niri";
     };
   };
 }

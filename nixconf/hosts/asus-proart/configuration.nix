@@ -8,6 +8,7 @@
     ../../nixos/configuration.nix
     ../../nixos/features/battery.nix
     ../../nixos/features/hyprland.nix
+    ../../nixos/features/niri.nix
     ../../nixos/features/nvidia.nix
     ../../nixos/features/pipewire.nix
     ../../nixos/features/steam.nix

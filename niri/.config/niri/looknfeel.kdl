@@ -1,0 +1,49 @@
+// Settings that influence how windows are positioned and sized.
+// Find more information on the wiki:
+// https://yalter.github.io/niri/Configuration:-Layout
+layout {
+    gaps 10
+    center-focused-column "on-overflow"
+	  always-center-single-column
+
+    // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
+    preset-column-widths {
+        proportion 0.5
+        proportion 0.9
+        proportion 1.0
+    }
+
+    default-column-width { proportion 0.9; }
+    empty-workspace-above-first
+
+    focus-ring {
+				on
+        width 2
+    }
+
+    border {
+        on
+        width 2
+    }
+}
+
+// Animation settings.
+// The wiki explains how to configure individual animations:
+// https://yalter.github.io/niri/Configuration:-Animations
+animations {
+    slowdown 0.5
+}
+
+// Uncomment this line to ask the clients to omit their client-side decorations if possible.
+// If the client will specifically ask for CSD, the request will be honored.
+// Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
+// This option will also fix border/focus ring drawing behind some semitransparent windows.
+// After enabling or disabling this, you need to restart the apps for this to take effect.
+// prefer-no-csd
+
+window-rule {
+    geometry-corner-radius 15
+    clip-to-geometry true
+}
+
+include "colors.kdl"
