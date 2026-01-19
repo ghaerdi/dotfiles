@@ -11,7 +11,6 @@
     stateVersion = stateVersion;
     file = {
       ".config/kanata".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/kanata/.config/kanata";
-      ".config/tmux".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/tmux/.config/tmux";
       ".config/zellij".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/zellij/.config/zellij";
       "dotfiles/zellij/.config/zellij/themes/pywal.kdl".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/.cache/wal/zellij.kdl";
       "dotfiles/niri/.config/niri/colors.kdl".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/.cache/wal/niri.kdl";
@@ -20,7 +19,6 @@
       ".local/share/fastfetch".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/fastfetch/.local/share/fastfetch";
       ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/nvim/.config/nvim";
       ".config/starship.toml".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/starship/.config/starship.toml";
-      ".config/yazi".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/yazi/.config/yazi";
       ".config/rofi".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/rofi/.config/rofi";
       ".config/quickshell".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/quickshell/.config/quickshell";
 
