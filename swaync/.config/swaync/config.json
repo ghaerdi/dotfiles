@@ -78,12 +78,6 @@
           "update-command": "sh -c '[[ $(nixconf-bluetooth status) == \"on\" ]] && echo true || echo false'"
         },
         {
-          "label": "󰖔",
-          "type": "toggle",
-          "command": "nixconf-night-mode toggle",
-          "update-command": "sh -c '[[ $(nixconf-night-mode status) == \"on\" ]] && echo true || echo false'"
-        },
-        {
           "label": "",
           "type": "toggle",
           "command": "nixconf-dnd toggle",

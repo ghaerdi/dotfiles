@@ -2,7 +2,7 @@ spawn-sh-at-startup "waypaper --restore"
 spawn-at-startup "waybar"
 spawn-sh-at-startup "sleep 1 && quickshell"
 spawn-sh-at-startup "wl-paste --watch cliphist store"
-spawn-sh-at-startup "hyprsunset"
+spawn-sh-at-startup "sunsetr r"
 spawn-sh-at-startup "hypridle"
 spawn-at-startup "swaync"
 

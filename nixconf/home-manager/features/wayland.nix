@@ -7,7 +7,6 @@
     espanso-wayland
     wl-clipboard
     hyprpicker
-    hyprsunset
     hypridle
     hyprlock
     cliphist

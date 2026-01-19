@@ -19,7 +19,6 @@
     ../../home-manager/scripts/dnd.nix
     ../../home-manager/scripts/hyprland-window-pop.nix
     ../../home-manager/scripts/network.nix
-    ../../home-manager/scripts/night-mode.nix
     ../../home-manager/scripts/prompt.nix
     ../../home-manager/scripts/screenshot.nix
     ../../home-manager/scripts/select-wallpaper.nix
