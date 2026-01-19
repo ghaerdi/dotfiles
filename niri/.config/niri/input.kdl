@@ -7,17 +7,13 @@ input {
     }
 
     mouse {
-        // off
-        // natural-scroll
-        // accel-speed 0.2
-        // accel-profile "flat"
-        // scroll-method "no-scroll"
+				left-handed
     }
 
     warp-mouse-to-focus
 }
 
 cursor {
-    hide-after-inactive-ms 2000
+    hide-after-inactive-ms 10000
     hide-when-typing
 }
