@@ -8,8 +8,10 @@ layout cwd="$HOME/dotfiles" {
 					plugin location="zellij:status-bar"
 			}
 	}
-	tab split_direction="vertical" {
-		pane size="60%"
-		pane command="claude"
+	tab name="AI" {
+		pane command="gemini"
+	}
+	tab name="main" focus=true {
+		pane
 	}
 }

@@ -1,6 +1,5 @@
 layout cwd="$HOME/Documents/Projects/nectar" {
 	default_tab_template {
-			// the default zellij tab-bar and status bar plugins
 			pane size=1 borderless=true {
 					plugin location="zellij:tab-bar"
 			}
@@ -9,21 +8,16 @@ layout cwd="$HOME/Documents/Projects/nectar" {
 					plugin location="zellij:status-bar"
 			}
 	}
-	tab name="main" split_direction="vertical" {
-		pane command="btop"
+	tab name="AI" {
+		pane command="claude"
+	}
+	tab name="cdk" cwd="cdk" {
+		pane
 	}
 	tab name="web" cwd="web" split_direction="vertical" {
-		floating_panes {
-			pane cwd="web"
-		}
-		pane size="60%"
-		pane command="claude"
+		pane
 	}
 	tab name="server" cwd="server" split_direction="vertical" focus=true {
-		floating_panes {
-			pane cwd="server"
-		}
-		pane size="60%"
-		pane command="claude"
+		pane
 	}
 }

@@ -9,8 +9,10 @@ layout cwd="$HOME/Documents/los-navegantes-malditos" {
 			plugin location="zellij:status-bar"
 		}
 	}
-	tab name="main" split_direction="vertical" {
-		pane size="70%"
-		pane command="gemini" size="40%"
+	tab name="AI" {
+		pane command="gemini"
+	}
+	tab name="main" {
+		pane
 	}
 }
