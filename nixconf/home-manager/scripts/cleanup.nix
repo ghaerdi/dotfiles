@@ -89,9 +89,9 @@
       # Docker Cleanup
       if command -v docker &> /dev/null; then
         if docker info &> /dev/null; then
-          echo -e "\n''${BLUE}Cleaning Docker unused images...''${NC}"
-          docker image prune -f
-          echo -e "''${GREEN}✓ Docker images pruned''${NC}"
+          echo -e "\n''${BLUE}Cleaning Docker...''${NC}"
+					docker system prune -a --volumes -f
+          echo -e "''${GREEN}✓ Docker pruned''${NC}"
         else
           echo -e "\n''${RED}Skipping Docker: Daemon not running''${NC}"
         fi
