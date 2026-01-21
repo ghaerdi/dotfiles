@@ -10,12 +10,12 @@ window-rule {
 
 window-rule {
 	match app-id="zen-twilight"
-	open-maximized-to-edges true
+  default-column-width { proportion 1.0; }
 }
 
 window-rule {
 	match app-id="brave-browser"
-	open-maximized-to-edges true
+  default-column-width { proportion 1.0; }
 }
 
 window-rule {
@@ -42,10 +42,10 @@ window-rule {
 
 window-rule {
 	match app-id="org.telegram.desktop"
-	max-width 400
+  default-column-width { proportion 0.225; }
 }
 
 window-rule {
 	match app-id="vesktop"
-	max-width 1450
+  default-column-width { proportion 0.775; }
 }

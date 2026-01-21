@@ -9,11 +9,10 @@ layout {
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
         proportion 0.5
-        proportion 0.9
-        proportion 1.0
+        proportion 0.95
     }
 
-    default-column-width { proportion 0.9; }
+    default-column-width { proportion 0.95; }
     empty-workspace-above-first
 
     focus-ring {
