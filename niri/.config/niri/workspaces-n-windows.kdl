@@ -1,3 +1,8 @@
+workspace "main" {}
+workspace "chat" {}
+workspace "coding" {}
+workspace "work" {}
+
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
@@ -6,16 +11,6 @@ window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
     block-out-from "screencast"
-}
-
-window-rule {
-	match app-id="zen-twilight"
-  default-column-width { proportion 1.0; }
-}
-
-window-rule {
-	match app-id="brave-browser"
-  default-column-width { proportion 1.0; }
 }
 
 window-rule {
@@ -41,11 +36,55 @@ window-rule {
 }
 
 window-rule {
-	match app-id="org.telegram.desktop"
-  default-column-width { proportion 0.225; }
+	match app-id="vesktop"
+  default-column-width { proportion 0.775; }
+}
+
+window-rule {
+	match app-id="zen-twilight"
+	open-on-workspace "main"
+}
+
+window-rule {
+	match app-id="com.github.th_ch.youtube_music"
+	open-on-workspace "main"
 }
 
 window-rule {
 	match app-id="vesktop"
-  default-column-width { proportion 0.775; }
+	open-on-workspace "chat"
 }
+
+window-rule {
+	match app-id="org.telegram.desktop"
+	exclude app-id="org.telegram.desktop" title="Media viewer"
+  default-column-width { proportion 0.225; }
+	open-on-workspace "chat"
+}
+
+window-rule {
+	match app-id="org.telegram.desktop" title="Media viewer"
+  default-column-width { proportion 0.775; }
+	open-floating false
+}
+
+window-rule {
+	match app-id="brave"
+	open-on-workspace "work"
+}
+
+window-rule {
+	match app-id="Slack"
+	open-on-workspace "work"
+}
+
+window-rule {
+	match app-id="MongoDB Compass"
+	open-on-workspace "coding"
+}
+
+window-rule {
+	match title="New Private Tab - Brave"
+	open-on-workspace "coding"
+}
+

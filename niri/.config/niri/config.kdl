@@ -1,6 +1,6 @@
+include "workspaces-n-windows.kdl"
 include "bindings.kdl"
 include "looknfeel.kdl"
 include "autostart.kdl"
-include "windows.kdl"
 include "input.kdl"
 include "envs.kdl"
