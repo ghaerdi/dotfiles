@@ -36,19 +36,7 @@
     wireless.iwd.enable = true;
     networkmanager.wifi.backend = "iwd";
     wireless.iwd.settings.Settings.AutoConnect = true;
-    firewall = rec {
-      enable = true;
-      checkReversePath = "loose";
-      allowedTCPPortRanges = [
-        {
-          from = 1714;
-          to = 1764;
-        }
-      ];
-      allowedUDPPortRanges = allowedTCPPortRanges;
-    };
-    # Or disable the firewall altogether.
-    # firewall.enable = false;
+    firewall.enable = false;
   };
 
   hardware = {
