@@ -4,7 +4,7 @@ import QtQuick.Effects
 import Quickshell.Io
 import Quickshell.Hyprland 
 import Quickshell.Wayland 
-//
+
 ShellRoot {
 	FileView {
 		id: wal
@@ -14,35 +14,36 @@ ShellRoot {
 			property var colors: ({}) 
 		}
 	}
-	property var styles: new Object({ radius: 15, color: wal.adapter.colors.color0 })
-	property var panels: new Object({ left: 10, right: 10, top: 0, bottom: 10 })
+
+	property var colors: new Object({
+		background: wal.adapter.colors.color0,
+		foreground: wal.adapter.colors.color7,
+	})
+	property var styles: new Object({ radius: 15 })
+	property var panels: new Object({ left: 10, right: 10, top: 30, bottom: 10 })
 
 	Item {
 		anchors.fill: parent
 		layer.enabled: true
 
-		PanelWindow {
-			anchors { top: true; left: true; right: true; }
-			height: panels.top;
-			color: styles.color;
-		}
+		// Bar {}
 
 		PanelWindow {
 			anchors { bottom: true; left: true; right: true; }
 			height: panels.bottom;
-			color: styles.color;
+			color: colors.background;
 		}
 
 		PanelWindow {
 			anchors { left: true; top: true; bottom: true; }
 			width: panels.left;
-			color: styles.color;
+			color: colors.background;
 		}
 
 		PanelWindow {
 			anchors { right: true; top: true; bottom: true; }
 			width: panels.right;
-			color: styles.color;
+			color: colors.background;
 		}
 
 		PanelWindow {
@@ -60,7 +61,7 @@ ShellRoot {
 
 				Rectangle {
 					anchors.fill: parent
-					color: styles.color;
+					color: colors.background;
 
 					layer.enabled: true
 					layer.effect: MultiEffect {
