@@ -5,6 +5,12 @@
 
   environment.systemPackages = with pkgs; [
     xwayland-satellite
-		sunsetr
+    gnome-keyring
+    sunsetr
   ];
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome];
+  };
 }
