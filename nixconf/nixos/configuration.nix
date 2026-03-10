@@ -67,7 +67,7 @@
     # '';
   };
 
-  time.timeZone = "America/Santo_Domingo";
+  time.timeZone = "America/Santiago";
 
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.supportedLocales = ["en_US.UTF-8/UTF-8" "es_DO.UTF-8/UTF-8"];
