@@ -35,6 +35,7 @@
     obsidian
     vesktop
     ghostty
+    zed-editor
     vlc
 
     # TOOLS
