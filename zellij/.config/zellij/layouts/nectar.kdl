@@ -8,8 +8,9 @@ layout cwd="$HOME/Documents/Projects/nectar" {
 					plugin location="zellij:status-bar"
 			}
 	}
-	tab name="AI" {
-		pane command="claude"
+	tab name="AI" focus=true split_direction="vertical" {
+		pane command="opencode" focus=true
+		pane command="opencode"
 	}
 	tab name="cdk" cwd="cdk" {
 		pane
@@ -17,7 +18,7 @@ layout cwd="$HOME/Documents/Projects/nectar" {
 	tab name="web" cwd="web" split_direction="vertical" {
 		pane
 	}
-	tab name="server" cwd="server" split_direction="vertical" focus=true {
+	tab name="server" cwd="server" split_direction="vertical" {
 		pane
 	}
 }

@@ -9,7 +9,7 @@ layout cwd="$HOME/dotfiles" {
 			}
 	}
 	tab name="AI" {
-		pane command="gemini"
+		pane command="opencode"
 	}
 	tab name="main" focus=true {
 		pane
