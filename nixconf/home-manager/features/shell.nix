@@ -29,6 +29,7 @@
     fzf
     fd
     xh
+    gh
 
     lua-language-server
     python3
@@ -102,6 +103,16 @@
               # Add ~/.local/bin and the fastfetch binary path to the user's PATH
               # Ensures commands in these directories can be run directly
               set -U fish_user_paths $fish_user_paths /bin/fastfetch ~/.local/bin ~/.bun/bin
+
+              # --- History Wrapper ---
+              # Failed commands don't pollute history
+              function __fish_history_disable --on-event fish_preexec
+                  set -x fish_history ""
+              end
+
+              function __fish_history_restore --on-event fish_postexec
+                  set -x fish_history "default"
+              end
 
               # --- Integrations (Keep at the end) ---
 

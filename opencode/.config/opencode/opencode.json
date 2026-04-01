@@ -1,0 +1,92 @@
+{
+	"$schema": "https://opencode.ai/config.json",
+	"default_agent": "plan",
+	"instructions": [],
+	"mcp": {
+		"context7": {
+			"headers": {
+				"CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+			},
+			"type": "remote",
+			"url": "https://mcp.context7.com/mcp"
+		},
+		"excalidraw": {
+			"type": "remote",
+			"url": "https://mcp.excalidraw.com"
+		},
+		"microsoft-learn": {
+			"type": "remote",
+			"url": "https://learn.microsoft.com/api/mcp"
+		},
+		"sequential-thinking": {
+			"type": "local",
+			"command": [
+				"npx",
+				"-y",
+				"@modelcontextprotocol/server-sequential-thinking"
+			],
+		},
+		"time": {
+			"type": "local",
+			"command": [
+				"docker",
+				"run",
+				"-i",
+				"--rm",
+				"-e",
+				"LOCAL_TIMEZONE",
+				"mcp/time"
+			]
+		},
+		"memory": {
+			"type": "local",
+			"command": [
+				"npx",
+				"-y",
+				"@modelcontextprotocol/server-memory"
+			]
+		},
+		"chrome-devtools": {
+			"type": "local",
+			"command": [
+				"npx",
+				"-y",
+				"chrome-devtools-mcp@latest",
+				"--executablePath",
+				"/home/ghaerdi/.nix-profile/bin/brave",
+				"--isolated"
+			]
+		}
+	},
+	"plugin": [
+		"opencode-gemini-auth@latest"
+	],
+	"provider": {
+		"ollama": {
+			"models": {
+				"minimax-m2.7:cloud": {
+					"limit": {
+						"context": 204800,
+						"output": 128000
+					},
+					"name": "minimax-m2.7:cloud"
+				},
+				"qwen3-vl:2b": {
+					"name": "qwen3-vl:2b"
+				},
+				"qwen3.5:cloud": {
+					"limit": {
+						"context": 262144,
+						"output": 32768
+					},
+					"name": "qwen3.5:cloud"
+				}
+			},
+			"name": "Ollama",
+			"npm": "@ai-sdk/openai-compatible",
+			"options": {
+				"baseURL": "http://localhost:11434/v1"
+			}
+		}
+	}
+}

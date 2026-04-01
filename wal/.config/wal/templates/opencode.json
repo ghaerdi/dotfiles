@@ -1,0 +1,215 @@
+{
+  "$schema": "https://opencode.ai/theme.json",
+  "defs": {
+    "bg": "{background}",
+    "fg": "{foreground}",
+    "red": "{color1}",
+    "green": "{color2}",
+    "yellow": "{color3}",
+    "blue": "{color4}",
+    "magenta": "{color5}",
+    "orange": "{color6}"
+  },
+  "theme": {
+    "primary": {
+      "dark": "blue",
+      "light": "blue"
+    },
+    "secondary": {
+      "dark": "magenta",
+      "light": "magenta"
+    },
+    "accent": {
+      "dark": "orange",
+      "light": "orange"
+    },
+    "error": {
+      "dark": "red",
+      "light": "red"
+    },
+    "warning": {
+      "dark": "yellow",
+      "light": "yellow"
+    },
+    "success": {
+      "dark": "green",
+      "light": "green"
+    },
+    "info": {
+      "dark": "blue",
+      "light": "magenta"
+    },
+    "text": {
+      "dark": "fg",
+      "light": "fg"
+    },
+    "textMuted": {
+      "dark": "fg",
+      "light": "fg"
+    },
+    "background": {
+      "dark": "#00000000",
+      "light": "#ffffff00"
+    },
+    "backgroundPanel": {
+      "dark": "bg",
+      "light": "bg"
+    },
+    "backgroundElement": {
+      "dark": "bg",
+      "light": "bg"
+    },
+    "border": {
+      "dark": "fg",
+      "light": "fg"
+    },
+    "borderActive": {
+      "dark": "blue",
+      "light": "blue"
+    },
+    "borderSubtle": {
+      "dark": "fg",
+      "light": "fg"
+    },
+    "diffAdded": {
+      "dark": "green",
+      "light": "green"
+    },
+    "diffRemoved": {
+      "dark": "red",
+      "light": "red"
+    },
+    "diffContext": {
+      "dark": "fg",
+      "light": "fg"
+    },
+    "diffHunkHeader": {
+      "dark": "fg",
+      "light": "fg"
+    },
+    "diffHighlightAdded": {
+      "dark": "green",
+      "light": "green"
+    },
+    "diffHighlightRemoved": {
+      "dark": "red",
+      "light": "red"
+    },
+    "diffAddedBg": {
+      "dark": "bg",
+      "light": "bg"
+    },
+    "diffRemovedBg": {
+      "dark": "bg",
+      "light": "bg"
+    },
+    "diffContextBg": {
+      "dark": "bg",
+      "light": "bg"
+    },
+    "diffLineNumber": {
+      "dark": "fg",
+      "light": "fg"
+    },
+    "diffAddedLineNumberBg": {
+      "dark": "bg",
+      "light": "bg"
+    },
+    "diffRemovedLineNumberBg": {
+      "dark": "bg",
+      "light": "bg"
+    },
+    "markdownText": {
+      "dark": "fg",
+      "light": "fg"
+    },
+    "markdownHeading": {
+      "dark": "blue",
+      "light": "blue"
+    },
+    "markdownLink": {
+      "dark": "magenta",
+      "light": "magenta"
+    },
+    "markdownLinkText": {
+      "dark": "orange",
+      "light": "orange"
+    },
+    "markdownCode": {
+      "dark": "green",
+      "light": "green"
+    },
+    "markdownBlockQuote": {
+      "dark": "fg",
+      "light": "fg"
+    },
+    "markdownEmph": {
+      "dark": "yellow",
+      "light": "yellow"
+    },
+    "markdownStrong": {
+      "dark": "orange",
+      "light": "orange"
+    },
+    "markdownHorizontalRule": {
+      "dark": "fg",
+      "light": "fg"
+    },
+    "markdownListItem": {
+      "dark": "blue",
+      "light": "blue"
+    },
+    "markdownListEnumeration": {
+      "dark": "orange",
+      "light": "orange"
+    },
+    "markdownImage": {
+      "dark": "magenta",
+      "light": "magenta"
+    },
+    "markdownImageText": {
+      "dark": "orange",
+      "light": "orange"
+    },
+    "markdownCodeBlock": {
+      "dark": "fg",
+      "light": "fg"
+    },
+    "syntaxComment": {
+      "dark": "magenta",
+      "light": "magenta"
+    },
+    "syntaxKeyword": {
+      "dark": "magenta",
+      "light": "magenta"
+    },
+    "syntaxFunction": {
+      "dark": "magenta",
+      "light": "magenta"
+    },
+    "syntaxVariable": {
+      "dark": "magenta",
+      "light": "magenta"
+    },
+    "syntaxString": {
+      "dark": "magenta",
+      "light": "magenta"
+    },
+    "syntaxNumber": {
+      "dark": "magenta",
+      "light": "magenta"
+    },
+    "syntaxType": {
+      "dark": "magenta",
+      "light": "magenta"
+    },
+    "syntaxOperator": {
+      "dark": "magenta",
+      "light": "magenta"
+    },
+    "syntaxPunctuation": {
+      "dark": "magenta",
+      "light": "magenta"
+    }
+  }
+}
