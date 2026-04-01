@@ -74,4 +74,7 @@ keybinds {
   }
 }
 
+// TODO: remove this temporal fix for issue https://github.com/zellij-org/zellij/issues/4889
+theme_dir "/home/ghaerdi/.config/zellij/themes"
+
 theme "pywal"
