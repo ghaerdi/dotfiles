@@ -1,17 +1,120 @@
-themes {{
-    pywal {{
-        bg "{background}"
-        fg "{foreground}"
-        red "{color1}"
-        green "{color2}"
-        blue "{color4}"
-        yellow "{color3}"
-        magenta "{color5}"
-        orange "{color6}"
-        cyan "{color6}"
-        black "{background}"
-        white "{foreground}"
-    }}
-}}
-
-theme "pywal"
+themes {
+    pywal {
+        text_unselected {
+            base "{foreground}"
+            background "{background}"
+            emphasis_0 "{color1}"
+            emphasis_1 "{color2}"
+            emphasis_2 "{color3}"
+            emphasis_3 "{color5}"
+        }
+        text_selected {
+            base "{foreground}"
+            background "{background}"
+            emphasis_0 "{color1}"
+            emphasis_1 "{color2}"
+            emphasis_2 "{color3}"
+            emphasis_3 "{color5}"
+        }
+        ribbon_selected {
+            base "{background}"
+            background "{color1}"
+            emphasis_0 "{color1}"
+            emphasis_1 "{color2}"
+            emphasis_2 "{color3}"
+            emphasis_3 "{color5}"
+        }
+        ribbon_unselected {
+            base "{background}"
+            background "{foreground}"
+            emphasis_0 "{color1}"
+            emphasis_1 "{color2}"
+            emphasis_2 "{color3}"
+            emphasis_3 "{color5}"
+        }
+        table_title {
+            base "{color3}"
+            background 0
+            emphasis_0 "{color1}"
+            emphasis_1 "{color2}"
+            emphasis_2 "{color3}"
+            emphasis_3 "{color5}"
+        }
+        table_cell_selected {
+            base "{foreground}"
+            background "{background}"
+            emphasis_0 "{color1}"
+            emphasis_1 "{color2}"
+            emphasis_2 "{color3}"
+            emphasis_3 "{color5}"
+        }
+        table_cell_unselected {
+            base "{foreground}"
+            background "{background}"
+            emphasis_0 "{color1}"
+            emphasis_1 "{color2}"
+            emphasis_2 "{color3}"
+            emphasis_3 "{color5}"
+        }
+        list_selected {
+            base "{foreground}"
+            background "{background}"
+            emphasis_0 "{color1}"
+            emphasis_1 "{color2}"
+            emphasis_2 "{color3}"
+            emphasis_3 "{color5}"
+        }
+        list_unselected {
+            base "{foreground}"
+            background "{background}"
+            emphasis_0 "{color1}"
+            emphasis_1 "{color2}"
+            emphasis_2 "{color3}"
+            emphasis_3 "{color5}"
+        }
+        frame_selected {
+            base "{color3}"
+            background 0
+            emphasis_0 "{color1}"
+            emphasis_1 "{color2}"
+            emphasis_2 "{color5}"
+            emphasis_3 0
+        }
+        frame_highlight {
+            base "{color1}"
+            background 0
+            emphasis_0 "{color5}"
+            emphasis_1 "{color1}"
+            emphasis_2 "{color1}"
+            emphasis_3 "{color1}"
+        }
+        exit_code_success {
+            base "{color2}"
+            background 0
+            emphasis_0 "{color2}"
+            emphasis_1 "{background}"
+            emphasis_2 "{color5}"
+            emphasis_3 "{color4}"
+        }
+        exit_code_error {
+            base "{color1}"
+            background 0
+            emphasis_0 "{color3}"
+            emphasis_1 0
+            emphasis_2 0
+            emphasis_3 0
+        }
+        multiplayer_user_colors {
+            player_1 "{color5}"
+            player_2 "{color4}"
+            player_3 0
+            player_4 "{color3}"
+            player_5 "{color2}"
+            player_6 0
+            player_7 "{color1}"
+            player_8 0
+            player_9 0
+            player_10 0
+        }
+    }
+}
