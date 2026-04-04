@@ -1,7 +1,8 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "instructions": [
-    "~/dotfiles/opencode/.config/opencode/docs/subagent-workflow.md"
+    "~/dotfiles/opencode/.config/opencode/docs/subagent-workflow.md",
+    "~/dotfiles/opencode/.config/opencode/docs/sequential-thinking-guide.md"
   ],
   "mcp": {
     "chrome-devtools": {
