@@ -4,17 +4,6 @@
     "~/dotfiles/opencode/.config/opencode/docs/subagent-workflow.md"
   ],
   "mcp": {
-    "chrome-devtools": {
-      "command": [
-        "npx",
-        "-y",
-        "chrome-devtools-mcp@latest",
-        "--executablePath",
-        "/home/ghaerdi/.nix-profile/bin/brave",
-        "--isolated"
-      ],
-      "type": "local"
-    },
     "context7": {
       "headers": {
         "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
@@ -31,14 +20,15 @@
       "url": "https://learn.microsoft.com/api/mcp"
     },
     "sequential-thinking": {
+      "type": "local",
       "command": [
         "npx",
         "-y",
         "@modelcontextprotocol/server-sequential-thinking"
-      ],
-      "type": "local"
+      ]
     },
     "time": {
+      "type": "local",
       "command": [
         "docker",
         "run",
@@ -47,56 +37,29 @@
         "-e",
         "LOCAL_TIMEZONE",
         "mcp/time"
-      ],
-      "type": "local"
+      ]
+    },
+    "chrome-devtools": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "chrome-devtools-mcp@latest",
+        "--executablePath",
+        "/home/ghaerdi/.nix-profile/bin/brave",
+        "--isolated"
+      ]
     }
   },
   "plugin": [
-    "opencode-gemini-auth@latest",
-    "@tarquinen/opencode-dcp@latest",
-    "opencode-pty",
-    "oh-my-openagent"
+    "oh-my-openagent",
+    "opencode-gemini-auth@latest"
   ],
   "provider": {
     "ollama": {
+      "name": "Ollama",
+      "npm": "@ai-sdk/openai-compatible",
       "models": {
-        "deepseek-v3.2:cloud": {
-          "_launch": true,
-          "limit": {
-            "context": 163840,
-            "output": 65536
-          },
-          "name": "deepseek-v3.2:cloud"
-        },
-        "devstral-2:cloud": {
-          "limit": {
-            "context": 262144,
-            "output": 32768
-          },
-          "name": "devstral-2:cloud"
-        },
-        "glm-5:cloud": {
-          "limit": {
-            "context": 198000,
-            "output": 32768
-          },
-          "name": "glm-5:cloud"
-        },
-        "gpt-oss:120b-cloud": {
-          "_launch": true,
-          "limit": {
-            "context": 131072,
-            "output": 131072
-          },
-          "name": "gpt-oss:120b-cloud"
-        },
-        "kimi-k2.5:cloud": {
-          "limit": {
-            "context": 262144,
-            "output": 32768
-          },
-          "name": "kimi-k2.5:cloud"
-        },
         "minimax-m2.7:cloud": {
           "limit": {
             "context": 204800,
@@ -114,6 +77,27 @@
           },
           "name": "qwen3.5:397b-cloud"
         },
+        "glm-5:cloud": {
+          "limit": {
+            "context": 198000,
+            "output": 32768
+          },
+          "name": "glm-5:cloud"
+        },
+        "kimi-k2.5:cloud": {
+          "limit": {
+            "context": 262144,
+            "output": 32768
+          },
+          "name": "kimi-k2.5:cloud"
+        },
+        "devstral-2:cloud": {
+          "limit": {
+            "context": 262144,
+            "output": 32768
+          },
+          "name": "devstral-2:cloud"
+        },
         "qwen3.5:cloud": {
           "limit": {
             "context": 262144,
@@ -122,8 +106,6 @@
           "name": "qwen3.5:cloud"
         }
       },
-      "name": "Ollama",
-      "npm": "@ai-sdk/openai-compatible",
       "options": {
         "baseURL": "http://localhost:11434/v1"
       }

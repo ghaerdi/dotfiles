@@ -43,7 +43,6 @@ description: >-
 mode: subagent
 model: ollama/devstral-2:cloud
 tools:
-  bash: false
   write: false
   edit: false
 ---
