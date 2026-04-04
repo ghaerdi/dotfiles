@@ -30,6 +30,7 @@
     fd
     xh
     gh
+    libnotify
 
     lua-language-server
     python3

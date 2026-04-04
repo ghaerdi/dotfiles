@@ -30,6 +30,7 @@
       ".config/waypaper".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/waypaper/.config/waypaper";
       ".config/niri".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/niri/.config/niri";
       ".config/opencode".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/opencode/.config/opencode";
+      ".agents".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/opencode/.agents";
       "dotfiles/opencode/.config/opencode/themes/pywal.json".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/.cache/wal/opencode.json";
     };
   };
