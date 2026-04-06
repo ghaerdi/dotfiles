@@ -11,7 +11,7 @@ description: >-
   'Go to example.com, search for laptops and extract product names and prices';
   'Log into site.com and download the monthly report'.
 mode: subagent
-model: ollama/kimi-k2.5:cloud
+model: ollama/deepseek-v3.2:cloud
 tools:
   bash: false
   write: false

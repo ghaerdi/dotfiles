@@ -18,6 +18,15 @@
       "skillFolderHash": "7a2d3874dc378edce1e9c433338057cd078c3962",
       "installedAt": "2026-04-04T21:29:36.061Z",
       "updatedAt": "2026-04-04T21:29:36.061Z"
+    },
+    "tavily-research": {
+      "source": "tavily-ai/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/tavily-ai/skills.git",
+      "skillPath": "skills/tavily-research/SKILL.md",
+      "skillFolderHash": "fa87e5a0c7bb3f4cffe75a65189f16a4271f9c41",
+      "installedAt": "2026-04-05T00:24:37.351Z",
+      "updatedAt": "2026-04-05T00:24:37.351Z"
     }
   },
   "dismissed": {

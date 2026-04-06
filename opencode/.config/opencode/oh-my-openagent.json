@@ -22,10 +22,10 @@
       "variant": "high"
     },
     "atlas": {
-      "model": "ollama/kimi-k2.5:cloud"
+      "model": "ollama/deepseek-v3.2:cloud"
     },
     "momus": {
-      "model": "ollama/qwen3.5:cloud",
+      "model": "ollama/qwen3.5:397b-cloud",
       "variant": "high"
     },
     "metis": {
@@ -38,10 +38,10 @@
       "model": "ollama/minimax-m2.7:cloud"
     },
     "multimodal-looker": {
-      "model": "ollama/kimi-k2.5:cloud"
+      "model": "ollama/qwen3.5:397b-cloud"
     },
     "sisyphus-junior": {
-      "model": "ollama/kimi-k2.5:cloud"
+      "model": "ollama/devstral-2:cloud"
     }
   },
   "categories": {
@@ -58,14 +58,14 @@
       "variant": "medium"
     },
     "artistry": {
-      "model": "ollama/kimi-k2.5:cloud",
+      "model": "ollama/qwen3.5:397b-cloud",
       "variant": "high"
     },
     "quick": {
       "model": "ollama/minimax-m2.7:cloud"
     },
     "unspecified-high": {
-      "model": "ollama/qwen3.5:cloud"
+      "model": "ollama/qwen3.5:397b-cloud"
     },
     "unspecified-low": {
       "model": "ollama/minimax-m2.7:cloud"
