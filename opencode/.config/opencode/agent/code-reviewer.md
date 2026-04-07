@@ -41,7 +41,7 @@ description: >-
 
   </example>
 mode: subagent
-model: ollama/devstral-2:cloud
+model: ollama/deepseek-v3.2:cloud
 tools:
   bash: false
   write: false

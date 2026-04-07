@@ -22,7 +22,7 @@
       "variant": "high"
     },
     "atlas": {
-      "model": "ollama/deepseek-v3.2:cloud"
+      "model": "ollama/qwen3.5:cloud"
     },
     "momus": {
       "model": "ollama/qwen3.5:397b-cloud",
@@ -38,15 +38,18 @@
       "model": "ollama/minimax-m2.7:cloud"
     },
     "multimodal-looker": {
-      "model": "ollama/qwen3.5:397b-cloud"
+      "model": "ollama/qwen3-vl:235b-instruct-cloud"
     },
     "sisyphus-junior": {
       "model": "ollama/devstral-2:cloud"
+    },
+    "code-reviewer": {
+      "model": "ollama/deepseek-v3.2:cloud"
     }
   },
   "categories": {
     "visual-engineering": {
-      "model": "ollama/kimi-k2.5:cloud",
+      "model": "ollama/qwen3-vl:235b-instruct-cloud",
       "variant": "high"
     },
     "ultrabrain": {

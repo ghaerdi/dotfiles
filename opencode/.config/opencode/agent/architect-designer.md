@@ -72,7 +72,7 @@ description: >-
 
   </example>
 mode: subagent
-model: ollama/qwen3.5:397b-cloud
+model: google/gemini-3.1-pro-preview
 tools:
   bash: false
   edit: false
