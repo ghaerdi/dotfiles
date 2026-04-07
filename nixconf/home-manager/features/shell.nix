@@ -5,6 +5,7 @@
 }: {
   home.packages = with pkgs; [
     uutils-coreutils-noprefix
+		worktrunk
     fastfetch
     playerctl
     starship
