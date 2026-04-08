@@ -32,6 +32,7 @@
     xh
     gh
     libnotify
+		television
 
     lua-language-server
     python3
