@@ -20,6 +20,9 @@ description: >-
   criteria, and edge cases. </commentary> </example>
 mode: subagent
 model: google/gemini-2.5-pro
+fallback_models:
+  - ollama/qwen3.5:cloud
+  - google/gemini-3.1-pro-preview
 tools:
   write: false
   edit: false

@@ -7,6 +7,9 @@ description: >-
   coverage needs to be improved.
 mode: subagent
 model: ollama/devstral-2:cloud
+fallback_models:
+  - ollama/qwen3.5:cloud
+  - google/gemini-3.1-pro-preview
 ---
 You are an expert Software Quality Assurance Engineer and Test Automation Specialist with deep knowledge of testing methodologies, test design patterns, and bug detection strategies.
 

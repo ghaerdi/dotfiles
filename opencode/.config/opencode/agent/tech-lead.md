@@ -1,5 +1,8 @@
 ---
 model: "ollama/qwen3.5:397b-cloud"
+fallback_models:
+  - "ollama/qwen3.5:cloud"
+  - "google/gemini-3.1-pro-preview"
 description: >-
   Use this agent when you need a senior AI developer to orchestrate complex
   development workflows, break down ambiguous user requests into actionable

@@ -2,13 +2,15 @@
 description: >-
   Use this agent when you need to manage databases (SQL, NoSQL, migrations,
   backups, performance tuning), work with container tools (Docker, Kubernetes,
-  container orchestration), handle infrastructure deployments, perform database
-  administration tasks, or troubleshoot containerized applications. Examples:
-  'Set up a PostgreSQL database', 'Deploy this app with Docker', 'Create a
-  Kubernetes deployment', 'Run database migrations', 'Optimize database
-  queries', 'Debug a container issue'.
+  container orchestration), handle infrastructure deployments, or troubleshoot
+  containerized applications. Examples: 'Set up a PostgreSQL database', 'Deploy
+  this app with Docker', 'Create a Kubernetes deployment', 'Run database
+  migrations', 'Optimize database queries', 'Debug a container issue'.
 mode: subagent
 model: ollama/minimax-m2.7:cloud
+fallback_models:
+  - ollama/qwen3.5:cloud
+  - google/gemini-3.1-pro-preview
 tools:
   bash: false
   write: false

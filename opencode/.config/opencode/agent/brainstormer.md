@@ -10,6 +10,9 @@ description: >-
   budget?'; 'Suggest creative solutions for a small apartment home office'.
 mode: subagent
 model: ollama/qwen3.5:397b-cloud
+fallback_models:
+  - ollama/qwen3.5:cloud
+  - google/gemini-3.1-pro-preview
 tools:
   bash: false
   write: false

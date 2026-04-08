@@ -68,6 +68,9 @@ description: >-
   </example>
 mode: subagent
 model: ollama/devstral-2:cloud
+fallback_models:
+  - ollama/qwen3.5:cloud
+  - google/gemini-3.1-pro-preview
 tools:
   task: false
 ---

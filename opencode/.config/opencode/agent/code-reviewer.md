@@ -42,6 +42,9 @@ description: >-
   </example>
 mode: subagent
 model: ollama/deepseek-v3.2:cloud
+fallback_models:
+  - ollama/qwen3.5:cloud
+  - google/gemini-3.1-pro-preview
 tools:
   bash: false
   write: false

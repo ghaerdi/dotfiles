@@ -3,78 +3,152 @@
   "agents": {
     "sisyphus": {
       "model": "ollama/qwen3.5:397b-cloud",
-			"variant": "high"
+      "variant": "high",
+      "fallback_models": [
+        "ollama/qwen3.5:cloud",
+        "google/gemini-3.1-pro-preview"
+      ]
     },
     "prometheus": {
       "model": "ollama/glm-5:cloud",
-      "variant": "high"
+      "variant": "high",
+      "fallback_models": [
+        "ollama/qwen3.5:cloud",
+        "google/gemini-3.1-pro-preview"
+      ]
     },
     "hephaestus": {
       "model": "google/gemini-3.1-pro-preview",
-			"variant": "high",
+      "variant": "high",
       "fallback_models": [
+        "ollama/qwen3.5:cloud",
         "ollama/devstral-2:cloud",
         "ollama/glm-5:cloud"
       ]
     },
     "oracle": {
       "model": "ollama/glm-5:cloud",
-      "variant": "high"
+      "variant": "high",
+      "fallback_models": [
+        "ollama/qwen3.5:cloud",
+        "google/gemini-3.1-pro-preview"
+      ]
     },
     "atlas": {
-      "model": "ollama/qwen3.5:cloud"
+      "model": "ollama/qwen3.5:cloud",
+      "fallback_models": [
+        "google/gemini-3.1-pro-preview"
+      ]
     },
     "momus": {
       "model": "ollama/qwen3.5:397b-cloud",
-      "variant": "high"
+      "variant": "high",
+      "fallback_models": [
+        "ollama/qwen3.5:cloud",
+        "google/gemini-3.1-pro-preview"
+      ]
     },
     "metis": {
-      "model": "ollama/qwen3.5:cloud"
+      "model": "ollama/qwen3.5:cloud",
+      "fallback_models": [
+        "google/gemini-3.1-pro-preview"
+      ]
     },
     "explore": {
-      "model": "ollama/minimax-m2.7:cloud"
+      "model": "ollama/minimax-m2.7:cloud",
+      "fallback_models": [
+        "ollama/qwen3.5:cloud",
+        "google/gemini-3.1-pro-preview"
+      ]
     },
     "librarian": {
-      "model": "ollama/minimax-m2.7:cloud"
+      "model": "ollama/minimax-m2.7:cloud",
+      "fallback_models": [
+        "ollama/qwen3.5:cloud",
+        "google/gemini-3.1-pro-preview"
+      ]
     },
     "multimodal-looker": {
-      "model": "ollama/qwen3-vl:235b-instruct-cloud"
+      "model": "ollama/qwen3-vl:235b-instruct-cloud",
+      "fallback_models": [
+        "ollama/qwen3.5:cloud",
+        "google/gemini-3.1-pro-preview"
+      ]
     },
     "sisyphus-junior": {
-      "model": "ollama/devstral-2:cloud"
+      "model": "ollama/devstral-2:cloud",
+      "fallback_models": [
+        "ollama/qwen3.5:cloud",
+        "google/gemini-3.1-pro-preview"
+      ]
     },
     "code-reviewer": {
-      "model": "ollama/deepseek-v3.2:cloud"
+      "model": "ollama/deepseek-v3.2:cloud",
+      "fallback_models": [
+        "ollama/qwen3.5:cloud",
+        "google/gemini-3.1-pro-preview"
+      ]
     }
   },
   "categories": {
     "visual-engineering": {
       "model": "ollama/qwen3-vl:235b-instruct-cloud",
-      "variant": "high"
+      "variant": "high",
+      "fallback_models": [
+        "ollama/qwen3.5:cloud",
+        "google/gemini-3.1-pro-preview"
+      ]
     },
     "ultrabrain": {
       "model": "ollama/glm-5:cloud",
-      "variant": "xhigh"
+      "variant": "xhigh",
+      "fallback_models": [
+        "ollama/qwen3.5:cloud",
+        "google/gemini-3.1-pro-preview"
+      ]
     },
     "deep": {
       "model": "ollama/devstral-2:cloud",
-      "variant": "medium"
+      "variant": "medium",
+      "fallback_models": [
+        "ollama/qwen3.5:cloud",
+        "google/gemini-3.1-pro-preview"
+      ]
     },
     "artistry": {
       "model": "ollama/qwen3.5:397b-cloud",
-      "variant": "high"
+      "variant": "high",
+      "fallback_models": [
+        "ollama/qwen3.5:cloud",
+        "google/gemini-3.1-pro-preview"
+      ]
     },
     "quick": {
-      "model": "ollama/minimax-m2.7:cloud"
+      "model": "ollama/minimax-m2.7:cloud",
+      "fallback_models": [
+        "ollama/qwen3.5:cloud",
+        "google/gemini-3.1-pro-preview"
+      ]
     },
     "unspecified-high": {
-      "model": "ollama/qwen3.5:397b-cloud"
+      "model": "ollama/qwen3.5:397b-cloud",
+      "fallback_models": [
+        "ollama/qwen3.5:cloud",
+        "google/gemini-3.1-pro-preview"
+      ]
     },
     "unspecified-low": {
-      "model": "ollama/minimax-m2.7:cloud"
+      "model": "ollama/minimax-m2.7:cloud",
+      "fallback_models": [
+        "ollama/qwen3.5:cloud",
+        "google/gemini-3.1-pro-preview"
+      ]
     },
     "writing": {
-      "model": "ollama/qwen3.5:cloud"
+      "model": "ollama/qwen3.5:cloud",
+      "fallback_models": [
+        "google/gemini-3.1-pro-preview"
+      ]
     }
   },
   "background_task": {

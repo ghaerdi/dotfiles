@@ -12,6 +12,10 @@ description: >-
   'Log into site.com and download the monthly report'.
 mode: subagent
 model: google/gemini-3.1-pro-preview
+fallback_models:
+  - ollama/qwen3.5:cloud
+  - ollama/devstral-2:cloud
+  - ollama/glm-5:cloud
 tools:
   bash: false
   write: false
