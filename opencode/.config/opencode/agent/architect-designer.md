@@ -72,11 +72,10 @@ description: >-
 
   </example>
 mode: subagent
-model: google/gemini-3.1-pro-preview
+model: ollama-cloud/qwen3-vl:235b-instruct
 fallback_models:
+  - ollama/kimi-k2.5:cloud
   - ollama/qwen3.5:cloud
-  - ollama/devstral-2:cloud
-  - ollama/glm-5:cloud
 tools:
   bash: false
   edit: false

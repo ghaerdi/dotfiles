@@ -6,22 +6,27 @@ This document defines how agents should coordinate and when to invoke custom sub
 
 ### Core Subagents (invoke via `task(subagent_type="...")`)
 
-| Agent | Purpose | Model | When to Use |
+| Agent | Purpose | Model | Config File |
 |-------|---------|-------|-------------|
-| `researcher` | Web research, browser automation | gemini-3.1-pro-preview | Live web search, documentation lookup, data extraction |
-| `librarian` | Official documentation, code examples | minimax-m2.7:cloud | API references, framework guides, Context7 queries |
-| `code-reviewer` | Code validation, pattern consistency | deepseek-v3.2:cloud | After writing/modifying code, before finalization |
-| `tester` | Bug finding, test writing, test execution | devstral-2:cloud | After review passes, for comprehensive testing |
-| `infra-ops` | DevOps, databases, containers | minimax-m2.7:cloud | Docker, Kubernetes, database operations, cloud infra |
-| `oracle` | High-IQ consultant for complex problems | glm-5:cloud | Architecture decisions, debugging after 2+ failures |
-| `metis` | Pre-planning consultant | qwen3.5:cloud | Complex task scoping, ambiguity resolution |
-| `momus` | Work plan reviewer | qwen3.5:397b-cloud | Evaluate plans for clarity, verifiability, completeness |
-| `explore` | Codebase pattern discovery | minimax-m2.7:cloud | Find existing patterns, file structures, implementations |
-| `architect-designer` | High-level system design | gemini-3.1-pro-preview | Architecture planning, pattern selection, trade-off analysis |
-| `implementation-specialist` | Precise code implementation | devstral-2:cloud | Execute delegated coding tasks following existing patterns |
-| `requirements-clarifier` | Requirements gathering | gemini-2.5-pro | Transform vague tasks into actionable specifications |
-| `brainstormer` | Creative ideation | qwen3.5:397b-cloud | Idea generation, divergent thinking, creative problem-solving |
-| `tech-lead` | Orchestrator/coordinator | qwen3.5:397b-cloud | Complex workflows requiring multiple specialists |
+| `researcher` | Web research, browser automation | gemini-2.5-pro | `agent/researcher.md` |
+| `code-reviewer` | Code validation, pattern consistency | deepseek-v3.2:cloud | `agent/code-reviewer.md` |
+| `tester` | Bug finding, test writing, test execution | devstral-2:cloud | `agent/tester.md` |
+| `infra-ops` | DevOps, databases, containers | minimax-m2.7:cloud | `agent/infra-ops.md` |
+| `architect-designer` | High-level system design | gemini-3.1-pro-preview | `agent/architect-designer.md` |
+| `implementation-specialist` | Precise code implementation | devstral-2:cloud | `agent/implementation-specialist.md` |
+| `requirements-clarifier` | Requirements gathering | gemini-2.5-pro | `agent/requirements-clarifier.md` |
+| `brainstormer` | Creative ideation | qwen3.5:397b-cloud | `agent/brainstormer.md` |
+| `tech-lead` | Orchestrator/coordinator | qwen3.5:cloud | `agent/tech-lead.md` |
+
+### Consultation Agents (invoke as needed)
+
+| Agent | Purpose | When to Use |
+|-------|---------|-------------|
+| `oracle` | High-IQ consultant for complex problems | Architecture decisions, debugging after 2+ failures |
+| `metis` | Pre-planning consultant | Complex task scoping, ambiguity resolution |
+| `momus` | Work plan reviewer | Evaluate plans for clarity, verifiability, completeness |
+| `explore` | Codebase pattern discovery | Find existing patterns, file structures, implementations |
+| `librarian` | Official documentation, code examples | API references, framework guides, Context7 queries |
 
 ### Skills (invoke via `skill()` tool)
 
@@ -364,74 +369,3 @@ Implementation → code-reviewer → tester → (iterate) → Delivery
 - tester must PASS before delivery
 - Fix issues → re-review → re-test until both pass
 - Never deliver with failing tests or review issues
-
-### Automatic Review After Code Changes
-
-ALWAYS call `code-reviewer` (via Task tool with `subagent_type="code-reviewer"`) after:
-1. Writing new code
-2. Modifying existing code
-3. Fixing bugs or issues
-
-### Review Iteration Loop
-
-1. **Initial review** - Call code-reviewer after code changes
-2. **Fix issues** - If issues found, fix them
-3. **Re-review** - Call code-reviewer again
-4. **Repeat** - Continue until code-reviewer passes
-
-<example>
-Context: Code has been written.
-
-assistant: "Now I'll call the code-reviewer agent to validate the code against our standards."
-
-<commentary>
-Always call code-reviewer after completing code changes. Iterate until pass.
-</commentary>
-</example>
-
-## Testing Workflow
-
-### Call tester After review passes
-
-Call `tester` (via Task tool with `subagent_type="tester"`) after:
-1. Code-reviewer has validated the code
-2. Implementation is complete
-3. You need bug/edge case detection
-
-### Test-Review Iteration Loop
-
-1. **Initial test** - Call tester after code-reviewer passes
-2. **Fix bugs** - If bugs found, fix them
-3. **Re-review** - Call code-reviewer to validate fixes
-4. **Re-test** - Call tester to verify fixes
-5. **Repeat** - Continue until both pass
-
-<example>
-Context: Code-reviewer has approved the code.
-
-assistant: "The code-reviewer has validated the code. Now I'll call the tester agent to find bugs and edge cases."
-
-<commentary>
-The workflow is: implement → code-review → test → iterate.
-</commentary>
-</example>
-
-## Infrastructure Operations
-
-### When to Use infra-ops
-
-Call `infra-ops` (via Task tool with `subagent_type="infra-ops"`) for:
-- Docker operations (containers, images, compose)
-- Kubernetes operations (pods, deployments, services)
-- Database operations (migrations, queries, backups)
-- Cloud infrastructure (AWS, GCP, Azure)
-
-<example>
-Context: User needs to check Docker container status.
-
-assistant: "I'll use the infra-ops agent to manage the Docker containers."
-
-<commentary>
-Infra-ops has specialized knowledge for DevOps tasks.
-</commentary>
-</example>

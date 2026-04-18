@@ -67,10 +67,10 @@ description: >-
 
   </example>
 mode: subagent
-model: ollama/devstral-2:cloud
+model: ollama-cloud/glm-5.1
 fallback_models:
   - ollama/qwen3.5:cloud
-  - google/gemini-3.1-pro-preview
+  - ollama/deepseek-v3.2:cloud
 tools:
   task: false
 ---

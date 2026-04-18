@@ -19,10 +19,10 @@ description: >-
   requirements-clarifier agent to break it down into user stories, acceptance
   criteria, and edge cases. </commentary> </example>
 mode: subagent
-model: google/gemini-2.5-pro
+model: ollama/kimi-k2.5:cloud
 fallback_models:
   - ollama/qwen3.5:cloud
-  - google/gemini-3.1-pro-preview
+  - ollama/glm-5.1
 tools:
   write: false
   edit: false

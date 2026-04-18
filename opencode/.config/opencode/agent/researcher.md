@@ -11,11 +11,10 @@ description: >-
   'Go to example.com, search for laptops and extract product names and prices';
   'Log into site.com and download the monthly report'.
 mode: subagent
-model: google/gemini-3.1-pro-preview
+model: ollama/kimi-k2.5:cloud
 fallback_models:
   - ollama/qwen3.5:cloud
-  - ollama/devstral-2:cloud
-  - ollama/glm-5:cloud
+  - ollama/glm-5.1
 tools:
   bash: false
   write: false

@@ -31,8 +31,6 @@ Agents are specialized subagents for specific task types.
 | `code-reviewer` | Code validation, pattern consistency | `task(subagent_type="code-reviewer")` |
 | `tester` | Bug finding, test writing | `task(subagent_type="tester")` |
 | `infra-ops` | Database, Docker, Kubernetes | `task(subagent_type="infra-ops")` |
-| `memory` | Cross-session memory, knowledge graph | `task(subagent_type="memory")` |
-| `time` | Timezone coordination | `task(subagent_type="time")` |
 
 ## Skills
 

@@ -1,8 +1,8 @@
 ---
-model: "ollama/qwen3.5:397b-cloud"
+model: "ollama-cloud/kimi-k2-thinking"
 fallback_models:
   - "ollama/qwen3.5:cloud"
-  - "google/gemini-3.1-pro-preview"
+  - "ollama/glm-5.1"
 description: >-
   Use this agent when you need a senior AI developer to orchestrate complex
   development workflows, break down ambiguous user requests into actionable
