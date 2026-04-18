@@ -1,0 +1,7 @@
+post-switch = "zellij action rename-tab {{ worktree_name }}"
+skip-commit-generation-prompt = true
+
+[commit.generation]
+command = "opencode run -m ollama/qwen3.5:cloud --variant fast"
+
+[projects]
