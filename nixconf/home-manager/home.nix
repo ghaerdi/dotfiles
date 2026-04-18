@@ -21,6 +21,11 @@
       ".config/starship.toml".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/starship/.config/starship.toml";
       ".config/rofi".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/rofi/.config/rofi";
       ".config/quickshell".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/quickshell/.config/quickshell";
+      ".config/opencode".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/opencode/.config/opencode";
+      ".agents".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/opencode/.agents";
+      "dotfiles/opencode/.config/opencode/themes/pywal.json".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/.cache/wal/opencode.json";
+      ".config/television".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/television/.config/television";
+      ".config/worktrunk".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/worktrunk/.config/worktrunk";
 
       # wayland
       ".config/hypr".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/hypr/.config/hypr";
@@ -29,9 +34,6 @@
       ".config/swaync".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/swaync/.config/swaync";
       ".config/waypaper".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/waypaper/.config/waypaper";
       ".config/niri".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/niri/.config/niri";
-      ".config/opencode".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/opencode/.config/opencode";
-      ".agents".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/opencode/.agents";
-      "dotfiles/opencode/.config/opencode/themes/pywal.json".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/.cache/wal/opencode.json";
     };
   };
 }

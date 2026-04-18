@@ -5,7 +5,7 @@
 }: {
   home.packages = with pkgs; [
     uutils-coreutils-noprefix
-		worktrunk
+    worktrunk
     fastfetch
     playerctl
     starship
@@ -32,7 +32,7 @@
     xh
     gh
     libnotify
-		television
+    television
 
     lua-language-server
     python3
@@ -43,6 +43,10 @@
     gopls
     go
   ];
+  programs.nix-search-tv = {
+    enable = true;
+    enableTelevisionIntegration = true;
+  };
   programs.fish = {
     enable = true;
     interactiveShellInit =
@@ -131,6 +135,10 @@
               		zoxide init fish | source
               end
 
+              if command -v tv > /dev/null
+        	tv init fish | source
+              end
+
               if not set -q IN_NIX_SHELL
               	if command -v pyenv > /dev/null
               	   pyenv init --path | source
@@ -139,11 +147,5 @@
               end
                  end
       '';
-    plugins = [
-      {
-        name = "fzf";
-        src = pkgs.fishPlugins.fzf;
-      }
-    ];
   };
 }
