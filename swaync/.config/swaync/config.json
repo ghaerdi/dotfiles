@@ -1,40 +1,40 @@
 {
 	"$schema": "/home/ghaerdi/.nix-profile/etc/xdg/swaync/configSchema.json",
-  "cssPriority": "user",
-  "control-center-margin-bottom": 40,
-  "timeout": 5,
-  "timeout-low": 3,
-  "fit-to-screen": true,
-  "control-center-width": 470,
-  "notification-window-width": 470,
-  "image-visibility": "always",
-  "widgets": [
+	"cssPriority": "user",
+	"control-center-margin-bottom": 40,
+	"timeout": 5,
+	"timeout-low": 3,
+	"fit-to-screen": true,
+	"control-center-width": 470,
+	"notification-window-width": 470,
+	"image-visibility": "always",
+	"widgets": [
 		"buttons-grid",
 		"volume",
 		"backlight",
 		"slider",
-    "title",
-    "notifications",
+		"title",
+		"notifications",
 		"mpris"
-  ],
-  "widget-config": {
-    "title": {
-      "text": "Notifications",
-      "clear-all-button": true,
-      "button-text": "󰆴"
-    },
-    "mpris": {
-      "show-album-art": "always",
-      "loop-carousel": true
-    },
-    "volume": {
-      "label": "󰎇",
-      "expand-button-label": "",
-      "collapse-button-label": "",
-      "show-per-app": true,
-      "show-per-app-icon": true,
-      "show-per-app-label": false
-    },
+	],
+	"widget-config": {
+		"title": {
+			"text": "Notifications",
+			"clear-all-button": true,
+			"button-text": "󰆴"
+		},
+		"mpris": {
+			"show-album-art": "always",
+			"loop-carousel": true
+		},
+		"volume": {
+			"label": "󰎇",
+			"expand-button-label": "",
+			"collapse-button-label": "",
+			"show-per-app": true,
+			"show-per-app-icon": true,
+			"show-per-app-label": false
+		},
 		"backlight": {
 			"label": "󰖨",
 			"device": "amdgpu_bl1"
@@ -46,84 +46,84 @@
 			"cmd_getter": "nixconf-asus-proart-kbd-backlight get",
 			"cmd_setter": "nixconf-asus-proart-kbd-backlight set $value"
 		},
-    "buttons-grid": {
-      "buttons-per-row": 4,
-      "actions": [
-        {
-          "label": "󰗼",
-          "command": "hyprctl dispatch exit"
-        },
-        {
-          "label": "󰍁",
-          "command": "hyprlock"
-        },
-        {
-          "label": "󰜉",
-          "command": "reboot"
-        },
-        {
-          "label": "",
-          "command": "shutdown now"
-        },
-        {
-          "label": "󰤨",
-          "type": "toggle",
-          "command": "nixconf-wifi toggle",
-          "update-command": "sh -c '[[ $(nixconf-wifi status) == \"on\" ]] && echo true || echo false'"
-        },
-        {
-          "label": "",
-          "type": "toggle",
-          "command": "nixconf-bluetooth toggle",
-          "update-command": "sh -c '[[ $(nixconf-bluetooth status) == \"on\" ]] && echo true || echo false'"
-        },
-        {
-          "label": "",
-          "type": "toggle",
-          "command": "nixconf-dnd toggle",
-          "update-command": "nixconf-dnd status"
-        }
-      ]
-    }
-  },
-  "ignore-gtk-theme": true,
-  "positionX": "right",
-  "positionY": "top",
-  "layer": "overlay",
-  "control-center-layer": "top",
-  "layer-shell": true,
-  "layer-shell-cover-screen": true,
-  "control-center-margin-top": 0,
-  "control-center-margin-right": 0,
-  "control-center-margin-left": 0,
-  "notification-2fa-action": true,
-  "notification-inline-replies": false,
-  "notification-body-image-height": 100,
-  "notification-body-image-width": 200,
-  "timeout-critical": 0,
-  "relative-timestamps": true,
-  "keyboard-shortcuts": true,
-  "notification-grouping": true,
-  "transition-time": 200,
-  "hide-on-action": true,
-  "text-empty": "No Notifications",
-  "script-fail-notify": true,
-  "scripts": {
-    "example-script": {
-      "exec": "echo 'Do something...'",
-      "urgency": "Normal"
-    },
-    "example-action-script": {
-      "exec": "echo 'Do something actionable!'",
-      "urgency": "Normal",
-      "run-on": "action"
-    }
-  },
-  "notification-visibility": {
-    "example-name": {
-      "state": "muted",
-      "urgency": "Low",
-      "app-name": "Spotify"
-    }
-  }
+		"buttons-grid": {
+			"buttons-per-row": 4,
+			"actions": [
+				{
+					"label": "󰗼",
+					"command": "hyprctl dispatch exit"
+				},
+				{
+					"label": "󰍁",
+					"command": "hyprlock"
+				},
+				{
+					"label": "󰜉",
+					"command": "reboot"
+				},
+				{
+					"label": "",
+					"command": "shutdown now"
+				},
+				{
+					"label": "󰤨",
+					"type": "toggle",
+					"command": "nixconf-wifi toggle",
+					"update-command": "sh -c '[[ $(nixconf-wifi status) == \"on\" ]] && echo true || echo false'"
+				},
+				{
+					"label": "",
+					"type": "toggle",
+					"command": "nixconf-bluetooth toggle",
+					"update-command": "sh -c '[[ $(nixconf-bluetooth status) == \"on\" ]] && echo true || echo false'"
+				},
+				{
+					"label": "",
+					"type": "toggle",
+					"command": "nixconf-dnd toggle",
+					"update-command": "nixconf-dnd status"
+				}
+			]
+		}
+	},
+	"ignore-gtk-theme": true,
+	"positionX": "right",
+	"positionY": "top",
+	"layer": "overlay",
+	"control-center-layer": "top",
+	"layer-shell": true,
+	"layer-shell-cover-screen": true,
+	"control-center-margin-top": 0,
+	"control-center-margin-right": 0,
+	"control-center-margin-left": 0,
+	"notification-2fa-action": true,
+	"notification-inline-replies": false,
+	"notification-body-image-height": 100,
+	"notification-body-image-width": 200,
+	"timeout-critical": 0,
+	"relative-timestamps": true,
+	"keyboard-shortcuts": true,
+	"notification-grouping": true,
+	"transition-time": 200,
+	"hide-on-action": true,
+	"text-empty": "No Notifications",
+	"script-fail-notify": true,
+	"scripts": {
+		"example-script": {
+			"exec": "echo 'Do something...'",
+			"urgency": "Normal"
+		},
+		"example-action-script": {
+			"exec": "echo 'Do something actionable!'",
+			"urgency": "Normal",
+			"run-on": "action"
+		}
+	},
+	"notification-visibility": {
+		"example-name": {
+			"state": "muted",
+			"urgency": "Low",
+			"app-name": "Spotify"
+		}
+	}
 }
