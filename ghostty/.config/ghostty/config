@@ -9,7 +9,7 @@ window-padding-y = 10
 confirm-close-surface = false
 gtk-single-instance = false
 custom-shader = ./cursor_smear.glsl
-keybind = alt+h=unbind
-keybind = alt+j=unbind
-keybind = alt+k=unbind
-keybind = alt+l=unbind
+keybind = global:alt+h=unbind
+keybind = global:alt+j=unbind
+keybind = global:alt+k=unbind
+keybind = global:alt+l=unbind
