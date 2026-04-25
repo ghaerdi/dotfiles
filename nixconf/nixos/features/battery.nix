@@ -20,7 +20,11 @@
       useStockConfig = true;
     };
     logind = {
-      settings.Login.HandleLidSwitch = "suspend";
+      settings.Login.HandleLidSwitch = "suspend-then-hibernate";
+      settings.Login = {
+        IdleAction = "hibernate";
+        IdleActionSec = "30min";
+      };
     };
   };
 }
