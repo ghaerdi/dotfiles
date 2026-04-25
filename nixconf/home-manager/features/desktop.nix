@@ -25,10 +25,7 @@
     veracrypt
     gnome-calculator
     gnome-disk-utility
-    nautilus # file explorer
     libreoffice
-    eog # gnome image viewer
-    evince # gnome document viewer
     quickshell
     telegram-desktop
     pear-desktop

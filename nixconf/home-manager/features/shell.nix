@@ -18,7 +18,6 @@
     zoxide
     impala
     zellij
-    gitui
     unzip
     pigz
     cava

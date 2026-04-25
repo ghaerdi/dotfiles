@@ -19,6 +19,6 @@
 
     # wallpaper
     waypaper
-    swww
+    awww
   ];
 }

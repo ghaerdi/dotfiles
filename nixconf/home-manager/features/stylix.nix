@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  gtk.gtk4.theme = null;
   stylix.enable = true;
   stylix.autoEnable = true;
   stylix.image = ../../../wallpapers/Wallpapers/astronaut_gruvbox_2160p-4K.webp;
