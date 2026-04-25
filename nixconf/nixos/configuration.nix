@@ -104,6 +104,7 @@
       })
     ];
     displayManager.gdm.enable = true;
+    desktopManager.plasma6.enable = true;
     xserver = {
       enable = true;
       dpi = 276;
@@ -141,6 +142,17 @@
   };
 
   environment = {
+    plasma6.excludePackages = with pkgs; [
+      kdePackages.elisa # Music player
+      kdePackages.kdepim-runtime # Akonadi agents
+      kdePackages.kmahjongg
+      kdePackages.kmines
+      kdePackages.konversation # IRC client
+      kdePackages.kpat # Solitaire
+      kdePackages.ksudoku
+      kdePackages.ktorrent
+    ];
+
     systemPackages = with pkgs; [
       inputs.swww.packages.${stdenv.hostPlatform.system}.swww
       home-manager
