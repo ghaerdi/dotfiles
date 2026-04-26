@@ -15,9 +15,6 @@
   ];
 
   boot.resumeDevice = "/dev/disk/by-label/swap";
-  boot.initrd.systemd.enable = true;
-
-  security.protectKernelImage = false;
 
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
