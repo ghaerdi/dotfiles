@@ -6,17 +6,17 @@ This document defines how agents should coordinate and when to invoke custom sub
 
 ### Core Subagents (invoke via `task(subagent_type="...")`)
 
-| Agent | Purpose | Model | Config File |
-|-------|---------|-------|-------------|
-| `researcher` | Web research, browser automation | gemini-2.5-pro | `agent/researcher.md` |
-| `code-reviewer` | Code validation, pattern consistency | deepseek-v3.2:cloud | `agent/code-reviewer.md` |
-| `tester` | Bug finding, test writing, test execution | devstral-2:cloud | `agent/tester.md` |
-| `infra-ops` | DevOps, databases, containers | minimax-m2.7:cloud | `agent/infra-ops.md` |
-| `architect-designer` | High-level system design | gemini-3.1-pro-preview | `agent/architect-designer.md` |
-| `implementation-specialist` | Precise code implementation | devstral-2:cloud | `agent/implementation-specialist.md` |
-| `requirements-clarifier` | Requirements gathering | gemini-2.5-pro | `agent/requirements-clarifier.md` |
-| `brainstormer` | Creative ideation | qwen3.5:397b-cloud | `agent/brainstormer.md` |
-| `tech-lead` | Orchestrator/coordinator | qwen3.5:cloud | `agent/tech-lead.md` |
+| Agent | Purpose | Config File |
+|-------|---------|-------------|
+| `researcher` | Web research, browser automation | `agent/researcher.md` |
+| `code-reviewer` | Code validation, pattern consistency | `agent/code-reviewer.md` |
+| `tester` | Bug finding, test writing, test execution | `agent/tester.md` |
+| `infra-ops` | DevOps, databases, containers | `agent/infra-ops.md` |
+| `architect-designer` | High-level system design | `agent/architect-designer.md` |
+| `implementation-specialist` | Precise code implementation | `agent/implementation-specialist.md` |
+| `requirements-clarifier` | Requirements gathering | `agent/requirements-clarifier.md` |
+| `brainstormer` | Creative ideation | `agent/brainstormer.md` |
+| `tech-lead` | Orchestrator/coordinator | `agent/tech-lead.md` |
 
 ### Consultation Agents (invoke as needed)
 
@@ -27,6 +27,21 @@ This document defines how agents should coordinate and when to invoke custom sub
 | `momus` | Work plan reviewer | Evaluate plans for clarity, verifiability, completeness |
 | `explore` | Codebase pattern discovery | Find existing patterns, file structures, implementations |
 | `librarian` | Official documentation, code examples | API references, framework guides, Context7 queries |
+
+### Task Categories (invoke via `task(category="...")`)
+
+Categories route tasks to models optimized for specific domains.
+
+| Category | Domain | Fallback |
+|----------|--------|----------|
+| `visual-engineering` | Frontend, UI/UX, styling, animation | ollama-cloud/gemma4:31b |
+| `ultrabrain` | Hard logic, algorithms, architecture | ollama-cloud/glm-5.1 |
+| `deep` | Autonomous research + implementation | ollama-cloud/kimi-k2.6:cloud |
+| `quick` | Single-file fixes, trivial changes | ollama-cloud/gemma4:31b |
+| `unspecified-low` | Low-effort misc tasks | ollama-cloud/gemma4:31b |
+| `unspecified-high` | High-effort misc tasks | ollama-cloud/kimi-k2.6:cloud |
+| `writing` | Documentation, prose | ollama-cloud/kimi-k2.6:cloud |
+| `artistry` | Creative, unconventional problem-solving | ollama-cloud/kimi-k2.6:cloud |
 
 ### Skills (invoke via `skill()` tool)
 

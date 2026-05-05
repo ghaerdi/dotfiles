@@ -41,10 +41,9 @@ description: >-
 
   </example>
 mode: subagent
-model: ollama-cloud/glm-5.1
+model: opencode-go/glm-5.1
 fallback_models:
-  - ollama/qwen3.5:cloud
-  - ollama/deepseek-v3.2:cloud
+  - ollama-cloud/glm-5.1
 tools:
   bash: false
   write: false

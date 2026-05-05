@@ -11,10 +11,9 @@ description: >-
   'Go to example.com, search for laptops and extract product names and prices';
   'Log into site.com and download the monthly report'.
 mode: subagent
-model: ollama/kimi-k2.5:cloud
+model: opencode-go/kimi-k2.6
 fallback_models:
-  - ollama/qwen3.5:cloud
-  - ollama/glm-5.1
+  - ollama-cloud/kimi-k2.6:cloud
 tools:
   bash: false
   write: false

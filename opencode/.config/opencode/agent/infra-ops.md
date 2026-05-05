@@ -7,10 +7,9 @@ description: >-
   this app with Docker', 'Create a Kubernetes deployment', 'Run database
   migrations', 'Optimize database queries', 'Debug a container issue'.
 mode: subagent
-model: ollama/minimax-m2.7:cloud
+model: opencode-go/minimax-m2.7
 fallback_models:
-  - ollama/qwen3.5:cloud
-  - google/gemini-3.1-pro-preview
+  - ollama-cloud/gemma4:31b
 tools:
   bash: false
   write: false

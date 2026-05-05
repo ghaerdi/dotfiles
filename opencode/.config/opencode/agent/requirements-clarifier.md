@@ -19,10 +19,9 @@ description: >-
   requirements-clarifier agent to break it down into user stories, acceptance
   criteria, and edge cases. </commentary> </example>
 mode: subagent
-model: ollama/kimi-k2.5:cloud
+model: opencode-go/kimi-k2.6
 fallback_models:
-  - ollama/qwen3.5:cloud
-  - ollama/glm-5.1
+  - ollama-cloud/kimi-k2.6:cloud
 tools:
   write: false
   edit: false

@@ -69,54 +69,40 @@
         "mongodb-mcp-server",
         "--readOnly"
       ],
-			"environment": {
-				"MDB_MCP_CONNECTION_STRING": "mongodb://127.0.0.1:27017/clinic1?directConnection=true"
-			}
+      "environment": {
+        "MDB_MCP_CONNECTION_STRING": "mongodb://127.0.0.1:27017/clinic1?directConnection=true"
+      }
     }
   },
   "plugin": [
     "opencode-gemini-auth@latest",
     "@tarquinen/opencode-dcp@latest",
     "opencode-pty",
-    "oh-my-openagent"
+    "oh-my-openagent@latest"
   ],
   "provider": {
     "ollama": {
       "models": {
-        "deepseek-v3.2:cloud": {
+        "gemma4": {
           "limit": {
-            "context": 163840,
-            "output": 65536
+            "context": 131072,
+            "output": 8192
           },
-          "name": "deepseek-v3.2:cloud"
+          "name": "gemma4"
         },
-        "glm-5:cloud": {
+        "kimi-k2-thinking": {
           "limit": {
-            "context": 198000,
-            "output": 32768
+            "context": 131072,
+            "output": 16384
           },
-          "name": "glm-5:cloud"
+          "name": "kimi-k2-thinking"
         },
-        "kimi-k2.5:cloud": {
+        "qwen3-vl:235b-instruct": {
           "limit": {
-            "context": 262144,
-            "output": 32768
+            "context": 131072,
+            "output": 8192
           },
-          "name": "kimi-k2.5:cloud"
-        },
-        "minimax-m2.7:cloud": {
-          "limit": {
-            "context": 204800,
-            "output": 128000
-          },
-          "name": "minimax-m2.7:cloud"
-        },
-        "qwen3.5:cloud": {
-          "limit": {
-            "context": 262144,
-            "output": 32768
-          },
-          "name": "qwen3.5:cloud"
+          "name": "qwen3-vl:235b-instruct"
         }
       },
       "name": "Ollama",

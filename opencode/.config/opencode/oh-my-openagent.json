@@ -2,154 +2,138 @@
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
   "agents": {
     "sisyphus": {
-      "model": "ollama/kimi-k2.5:cloud",
+      "model": "opencode-go/kimi-k2.6",
+      "variant": "high",
+      "fallback_models": [
+        "ollama-cloud/kimi-k2.6:cloud"
+      ]
+    },
+    "oracle": {
+      "model": "opencode-go/glm-5.1",
       "variant": "high",
       "fallback_models": [
         "ollama-cloud/glm-5.1",
-        "ollama/qwen3.5:cloud"
+        "google/gemini-3.1-pro-preview"
+      ]
+    },
+    "librarian": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "ollama-cloud/gemma4:31b",
+        "google/gemini-3.1-pro-preview"
+      ]
+    },
+    "explore": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "ollama-cloud/glm-5.1",
+        "google/gemini-3.1-pro-preview"
+      ]
+    },
+    "multimodal-looker": {
+      "model": "opencode-go/qwen3.6-plus",
+      "fallback_models": [
+        "ollama-cloud/gemma4:31b",
+        "google/gemini-3.1-pro-preview"
       ]
     },
     "prometheus": {
-      "model": "ollama/glm-5:cloud",
+      "model": "opencode-go/glm-5.1",
       "variant": "high",
       "fallback_models": [
-        "ollama/qwen3.5:cloud",
+        "ollama-cloud/glm-5.1",
         "google/gemini-3.1-pro-preview"
+      ]
+    },
+    "metis": {
+      "model": "opencode-go/glm-5.1",
+      "fallback_models": [
+        "ollama-cloud/glm-5.1"
+      ]
+    },
+    "momus": {
+      "model": "opencode-go/glm-5.1",
+      "variant": "high",
+      "fallback_models": [
+        "ollama-cloud/glm-5.1"
+      ]
+    },
+    "atlas": {
+      "model": "opencode-go/kimi-k2.6",
+      "fallback_models": [
+        "ollama-cloud/kimi-k2.6:cloud"
+      ]
+    },
+    "sisyphus-junior": {
+      "model": "opencode-go/minimax-m2.7",
+      "fallback_models": [
+        "ollama-cloud/gemma4:31b"
       ]
     },
     "hephaestus": {
       "model": "google/gemini-3.1-pro-preview",
       "variant": "high",
-			"disable": true,
-      "fallback_models": [
-        "ollama/qwen3.5:cloud",
-        "ollama/glm-5:cloud"
-      ]
-    },
-    "oracle": {
-      "model": "ollama/glm-5:cloud",
-      "variant": "high",
-      "fallback_models": [
-        "ollama/qwen3.5:cloud",
-        "google/gemini-3.1-pro-preview"
-      ]
-    },
-    "atlas": {
-      "model": "ollama/kimi-k2.5:cloud",
-      "fallback_models": [
-        "ollama-cloud/glm-5.1",
-        "ollama/qwen3.5:cloud"
-      ]
-    },
-    "momus": {
-      "model": "ollama-cloud/glm-5.1",
-      "variant": "high",
-      "fallback_models": [
-        "ollama/qwen3.5:cloud",
-        "ollama/deepseek-v3.2:cloud"
-      ]
-    },
-    "metis": {
-      "model": "ollama-cloud/kimi-k2-thinking",
-      "fallback_models": [
-        "ollama-cloud/glm-5.1",
-        "ollama/qwen3.5:cloud"
-      ]
-    },
-    "explore": {
-      "model": "ollama/minimax-m2.7:cloud",
-      "fallback_models": [
-        "ollama/qwen3.5:cloud",
-        "google/gemini-3.1-pro-preview"
-      ]
-    },
-    "librarian": {
-      "model": "ollama/minimax-m2.7:cloud",
-      "fallback_models": [
-        "ollama/qwen3.5:cloud",
-        "google/gemini-3.1-pro-preview"
-      ]
-    },
-    "multimodal-looker": {
-      "model": "ollama-cloud/qwen3-vl:235b-instruct",
-      "fallback_models": [
-        "ollama/qwen3.5:cloud",
-        "google/gemini-3.1-pro-preview"
-      ]
-    },
-    "sisyphus-junior": {
-      "model": "ollama/minimax-m2.7:cloud",
-      "fallback_models": [
-        "ollama/qwen3.5:cloud",
-        "ollama-cloud/glm-5.1"
-      ]
+      "disable": true
     }
   },
   "categories": {
     "visual-engineering": {
-      "model": "ollama-cloud/qwen3-vl:235b-instruct",
-      "variant": "high",
+      "model": "opencode-go/qwen3.6-plus",
       "fallback_models": [
-        "ollama/qwen3.5:cloud",
-        "google/gemini-3.1-pro-preview"
+        "ollama-cloud/gemma4:31b"
       ]
     },
     "ultrabrain": {
-      "model": "ollama/glm-5:cloud",
+      "model": "opencode-go/glm-5.1",
       "variant": "xhigh",
       "fallback_models": [
-        "ollama/qwen3.5:cloud",
+        "ollama-cloud/glm-5.1",
         "google/gemini-3.1-pro-preview"
       ]
     },
     "deep": {
-      "model": "ollama/kimi-k2.5:cloud",
+      "model": "opencode-go/kimi-k2.6",
       "variant": "medium",
       "fallback_models": [
-        "ollama-cloud/glm-5.1",
-        "ollama/qwen3.5:cloud"
-      ]
-    },
-    "artistry": {
-      "model": "ollama/kimi-k2.5:cloud",
-      "variant": "high",
-      "fallback_models": [
-        "ollama-cloud/glm-5.1",
-        "ollama/qwen3.5:cloud"
+        "ollama-cloud/kimi-k2.6:cloud"
       ]
     },
     "quick": {
-      "model": "ollama/minimax-m2.7:cloud",
+      "model": "opencode-go/minimax-m2.7",
       "fallback_models": [
-        "ollama/qwen3.5:cloud",
-        "google/gemini-3.1-pro-preview"
-      ]
-    },
-    "unspecified-high": {
-      "model": "ollama/kimi-k2.5:cloud",
-      "fallback_models": [
-        "ollama-cloud/glm-5.1",
-        "ollama/qwen3.5:cloud"
+        "ollama-cloud/gemma4:31b"
       ]
     },
     "unspecified-low": {
-      "model": "ollama/minimax-m2.7:cloud",
+      "model": "opencode-go/minimax-m2.7",
       "fallback_models": [
-        "ollama/qwen3.5:cloud",
-        "google/gemini-3.1-pro-preview"
+        "ollama-cloud/gemma4:31b"
+      ]
+    },
+    "unspecified-high": {
+      "model": "opencode-go/kimi-k2.6",
+      "fallback_models": [
+        "ollama-cloud/kimi-k2.6:cloud"
       ]
     },
     "writing": {
-      "model": "ollama/kimi-k2.5:cloud",
+      "model": "opencode-go/qwen3.6-plus",
       "fallback_models": [
-        "ollama-cloud/glm-5.1",
-        "ollama/qwen3.5:cloud"
+        "ollama-cloud/kimi-k2.6:cloud"
+      ]
+    },
+    "artistry": {
+      "model": "opencode-go/kimi-k2.6",
+      "variant": "high",
+      "fallback_models": [
+        "ollama-cloud/kimi-k2.6:cloud"
       ]
     }
   },
   "background_task": {
     "providerConcurrency": {
-      "ollama": 10,
+      "ollama": 3,
+      "opencode-go": 5,
       "google": 5
     }
   }

@@ -6,10 +6,9 @@ description: >-
   quality, after implementing new features, when debugging issues, or when test
   coverage needs to be improved.
 mode: subagent
-model: ollama-cloud/glm-5.1
+model: opencode-go/glm-5.1
 fallback_models:
-  - ollama/qwen3.5:cloud
-  - ollama/deepseek-v3.2:cloud
+  - ollama-cloud/glm-5.1
 ---
 You are an expert Software Quality Assurance Engineer and Test Automation Specialist with deep knowledge of testing methodologies, test design patterns, and bug detection strategies.
 

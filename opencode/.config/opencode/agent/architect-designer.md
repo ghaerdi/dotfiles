@@ -72,10 +72,9 @@ description: >-
 
   </example>
 mode: subagent
-model: ollama-cloud/qwen3-vl:235b-instruct
+model: opencode-go/glm-5.1
 fallback_models:
-  - ollama/kimi-k2.5:cloud
-  - ollama/qwen3.5:cloud
+  - ollama-cloud/glm-5.1
 tools:
   bash: false
   edit: false

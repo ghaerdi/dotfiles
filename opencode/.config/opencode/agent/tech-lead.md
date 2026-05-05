@@ -1,8 +1,7 @@
 ---
-model: "ollama-cloud/kimi-k2-thinking"
+model: "opencode-go/glm-5.1"
 fallback_models:
-  - "ollama/qwen3.5:cloud"
-  - "ollama/glm-5.1"
+  - "ollama-cloud/glm-5.1"
 description: >-
   Use this agent when you need a senior AI developer to orchestrate complex
   development workflows, break down ambiguous user requests into actionable
