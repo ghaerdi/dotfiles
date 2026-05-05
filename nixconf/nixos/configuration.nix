@@ -103,7 +103,9 @@
         destination = "/etc/udev/rules.d/99-input.rules";
       })
     ];
-    displayManager.gdm.enable = true;
+    displayManager.sddm = {
+      enable = true;
+    };
     desktopManager.plasma6.enable = true;
     xserver = {
       enable = true;
@@ -151,6 +153,11 @@
       kdePackages.kpat # Solitaire
       kdePackages.ksudoku
       kdePackages.ktorrent
+      kdePackages.discover
+      kdePackages.kwrited
+      kdePackages.konsole
+      kdePackages.okular
+      kdePackages.kate
     ];
 
     systemPackages = with pkgs; [
