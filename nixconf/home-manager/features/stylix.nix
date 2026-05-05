@@ -2,7 +2,7 @@
   gtk.gtk4.theme = null;
   stylix.enable = true;
   stylix.autoEnable = true;
-  stylix.image = ../../../wallpapers/Wallpapers/astronaut_gruvbox_2160p-4K.webp;
+  stylix.image = ../../../wallpapers/Wallpapers/genshin-impact_raiden-shogun_1440p-2K.webp;
   stylix.polarity = "dark";
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
   stylix.cursor = {
