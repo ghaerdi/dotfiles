@@ -13,6 +13,12 @@
           automount = true;
           notify = true;
         };
+        mount_options = [
+          {
+            device_label = "SHARGE_SSD";
+            options = ["compress=zstd" "noatime" "user" "exec"];
+          }
+        ];
       };
     };
   };
