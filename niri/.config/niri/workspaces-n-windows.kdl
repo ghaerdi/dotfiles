@@ -1,5 +1,5 @@
-workspace "main" {}
 workspace "chat" {}
+workspace "main" {}
 workspace "coding" {}
 workspace "work" {}
 
@@ -32,12 +32,26 @@ window-rule {
 window-rule {
 	match title="Splash Screen — Kdenlive"
 	match app-id="org.gnome.Calculator"
+	match app-id="org.kde.qrca"
 	open-floating true
 }
 
 window-rule {
-	match app-id="vesktop"
-  default-column-width { proportion 0.775; }
+	match app-id="com.mitchellh.ghostty" is-active=true
+  background-effect {
+    xray true
+    blur true
+    saturation 2
+  }
+}
+
+window-rule {
+	match app-id="com.mitchellh.ghostty" is-active=false
+  background-effect {
+    xray true
+    blur true
+    saturation 1
+  }
 }
 
 window-rule {
@@ -52,6 +66,7 @@ window-rule {
 
 window-rule {
 	match app-id="vesktop"
+  default-column-width { proportion 0.775; }
 	open-on-workspace "chat"
 }
 
