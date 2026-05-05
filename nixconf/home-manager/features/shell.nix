@@ -75,7 +75,7 @@
 
               	# Show git status if in a git repository
               	if git rev-parse --git-dir >/dev/null 2>&1
-              		git status -s
+              		git status -s .
               	end
 
               	# Run devenv shell if devenv.nix exists
