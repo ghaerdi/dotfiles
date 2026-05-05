@@ -41,7 +41,7 @@ binds {
 
 		// Screenshot
     Print { spawn-sh "nixconf-screenshot"; }
-    Shift+Print { spawn-sh "nixconf-screenshot window"; }
+    Shift+Print { spawn-sh "niri msg action screenshot-window"; }
     Ctrl+Print { spawn-sh "nixconf-screenshot output"; }
 
 
