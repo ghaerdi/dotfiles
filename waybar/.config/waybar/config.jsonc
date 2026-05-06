@@ -1,11 +1,10 @@
-
 {
 	"layer": "top",
 	"position": "top",
 	"reload_style_on_change": true,
 	"modules-left": [
-		"custom/windows-count",
 		"hyprland/workspaces",
+		"niri/workspaces",
 		"custom/love"
 	],
 	"modules-center": [
@@ -31,26 +30,82 @@
 			"10": "十"
 		}
 	},
+	"niri/workspaces": {
+		"format": "{icon}",
+		"current-only": true,
+		"format-icons": {
+			"chat": "",
+			"main": "󰸐",
+			"coding": "󰅬",
+			"work": "󰃖",
+			// "active": "",
+			"default": ""
+		}
+	},
 	"custom/love": {
 		"format": "{} 󰩗 ",
 		"exec": "bun ~/dotfiles/polybar/.config/polybar/scripts/love.ts",
 		"interval": 60
 	},
 	"clock": {
-		"format": "{:L%A %H:%M}",
-		"format-alt": "{:L%d %B %Y}",
-		"tooltip": false
+		"format": "{:L%A %R}",
+		"format-alt": "{:L%e %B %I:%M %p (%Z)}",
+		"tooltip-format": "{calendar}\n\n{tz_list}",
+		"calendar": {
+			"mode": "year",
+			"mode-mon-col": 3,
+			"format": {
+				"months": "<span color='#ffead3'><b>{}</b></span>",
+				"days": "<span color='#ecc6d9'><b>{}</b></span>",
+				"weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+				"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+				"today": "<span color='#ff6699'><b>{}</b></span>"
+			}
+		},
+		"timezones": [
+			"",
+			"Etc/UTC",
+			"America/Los_Angeles",
+			"America/Santo_Domingo",
+			"America/Santiago"
+		]
 	},
 	"group/system": {
 		"orientation": "inherit",
-		"modules": ["network", "battery", "custom/notification-center"]
+		"modules": [
+			"network",
+			"battery",
+			"custom/notification-center"
+		]
 	},
 	"battery": {
 		"format": "{icon}",
 		"format-plugged": "",
 		"format-icons": {
-			"charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
-			"default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+			"charging": [
+				"󰢜",
+				"󰂆",
+				"󰂇",
+				"󰂈",
+				"󰢝",
+				"󰂉",
+				"󰢞",
+				"󰂊",
+				"󰂋",
+				"󰂅"
+			],
+			"default": [
+				"󰁺",
+				"󰁻",
+				"󰁼",
+				"󰁽",
+				"󰁾",
+				"󰁿",
+				"󰂀",
+				"󰂁",
+				"󰂂",
+				"󰁹"
+			]
 		},
 		"format-full": "󰂅",
 		"tooltip-format-discharging": "Capacity: {capacity}%\nPower usage: {power:>1.0f}W↓\nTime: {time}",
@@ -62,7 +117,13 @@
 		}
 	},
 	"network": {
-		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+		"format-icons": [
+			"󰤯",
+			"󰤟",
+			"󰤢",
+			"󰤥",
+			"󰤨"
+		],
 		"format": "{icon}",
 		"format-wifi": "{icon}",
 		"format-ethernet": "󰀂",
@@ -79,7 +140,14 @@
 		"drawer": {
 			"transition-duration": 200
 		},
-		"modules": ["custom/expand-icon", "tray", "bluetooth", "pulseaudio", "cpu", "disk"]
+		"modules": [
+			"custom/expand-icon",
+			"tray",
+			"bluetooth",
+			"pulseaudio",
+			"cpu",
+			"disk"
+		]
 	},
 	"disk": {
 		"interval": 30,
@@ -89,9 +157,9 @@
 		"on-click": "$TERMINAL --class=com.ghaerdi.Dust -e sh -c 'dust /; read'"
 	},
 	"cpu": {
-    "interval": 10,
-    "format": "",
-    "max-length": 10,
+		"interval": 10,
+		"format": "",
+		"max-length": 10,
 		"on-click": "$TERMINAL --class=com.ghaerdi.Btop -e btop"
 	},
 	"bluetooth": {
@@ -112,7 +180,11 @@
 			"phone": "",
 			"portable": "",
 			"car": "",
-			"default": ["", "", ""]
+			"default": [
+				"",
+				"",
+				""
+			]
 		},
 		"on-click": "$TERMINAL --class=com.ghaerdi.Wiremix -e wiremix",
 		"on-click-right": "pavucontrol",
@@ -133,4 +205,3 @@
 		"on-click": "swaync-client -t"
 	}
 }
-
