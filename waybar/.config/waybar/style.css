@@ -12,6 +12,12 @@ window#waybar {
   background: alpha(@background, 1);
  }
 
+tooltip {
+  background: @background;
+  color: @foreground;
+  border-radius: 5px;
+}
+
 #system,
 #workspaces,
 .modules-center {
