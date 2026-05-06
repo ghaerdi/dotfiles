@@ -40,7 +40,6 @@ animations {
 // prefer-no-csd
 
 window-rule {
-		draw-border-with-background false
     geometry-corner-radius 15
     clip-to-geometry true
 }

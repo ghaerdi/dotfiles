@@ -37,7 +37,8 @@ window-rule {
 }
 
 window-rule {
-	match app-id="com.mitchellh.ghostty" is-active=true
+	match app-id="com.mitchellh.ghostty" is-active=true is-floating=false
+	draw-border-with-background false
   background-effect {
     xray true
     blur true
@@ -46,7 +47,8 @@ window-rule {
 }
 
 window-rule {
-	match app-id="com.mitchellh.ghostty" is-active=false
+	match app-id="com.mitchellh.ghostty" is-active=false is-floating=false
+	draw-border-with-background false
   background-effect {
     xray true
     blur true
