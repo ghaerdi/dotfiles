@@ -6,7 +6,7 @@ import QtQuick
 Singleton {
   id: root
   readonly property string time: {
-    Qt.formatDateTime(clock.date, isDetailedFormat ? "dd MMMM yyyy" : "dddd hh:mm")
+    Qt.formatDateTime(clock.date, isDetailedFormat ? "dd MMMM yyyy" : "dddd HH:mm")
   }
 	property bool isDetailedFormat: false
 

@@ -2,15 +2,16 @@ import QtQuick
 import Quickshell
 
 Text {
-	color: colors.foreground;
-	font.pixelSize: 13
+	id: root
+	color: colors.foreground
+	font.pixelSize: 20
 	font.family: "JetBrainsMono NL"
-	text: Time.time
+	text: ""
 
 	MouseArea {
 		anchors.fill: parent
 		hoverEnabled: true
 		cursorShape: Qt.PointingHandCursor
-		onClicked: Time.isDetailedFormat = !Time.isDetailedFormat
+		onClicked: 			Quickshell.execDetached(["swaync-client", "-t"])
 	}
 }
