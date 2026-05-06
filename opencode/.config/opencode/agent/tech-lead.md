@@ -1,7 +1,8 @@
 ---
-model: "opencode-go/glm-5.1"
+disable: true
+model: ollama-cloud/glm-5.1
 fallback_models:
-  - "ollama-cloud/glm-5.1"
+  - opencode-go/glm-5.1
 description: >-
   Use this agent when you need a senior AI developer to orchestrate complex
   development workflows, break down ambiguous user requests into actionable

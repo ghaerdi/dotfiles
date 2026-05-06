@@ -72,9 +72,9 @@ description: >-
 
   </example>
 mode: subagent
-model: opencode-go/glm-5.1
+model: ollama-cloud/glm-5.1
 fallback_models:
-  - ollama-cloud/glm-5.1
+  - opencode-go/glm-5.1
 tools:
   bash: false
   edit: false

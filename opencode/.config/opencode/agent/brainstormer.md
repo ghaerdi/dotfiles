@@ -9,9 +9,9 @@ description: >-
   Victorian England'; 'What are some unique date night ideas for couples on a
   budget?'; 'Suggest creative solutions for a small apartment home office'.
 mode: subagent
-model: opencode-go/kimi-k2.6
+model: ollama-cloud/kimi-k2.6:cloud
 fallback_models:
-  - ollama-cloud/kimi-k2.6:cloud
+  - opencode-go/kimi-k2.6
 tools:
   bash: false
   write: false

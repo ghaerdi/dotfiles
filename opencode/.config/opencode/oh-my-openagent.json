@@ -2,18 +2,17 @@
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
   "agents": {
     "sisyphus": {
-      "model": "opencode-go/kimi-k2.6",
+      "model": "ollama-cloud/kimi-k2.6:cloud",
       "variant": "high",
       "fallback_models": [
-        "ollama-cloud/kimi-k2.6:cloud"
+        "opencode-go/kimi-k2.6"
       ]
     },
     "oracle": {
-      "model": "opencode-go/glm-5.1",
+      "model": "ollama-cloud/glm-5.1",
       "variant": "high",
       "fallback_models": [
-        "ollama-cloud/glm-5.1",
-        "google/gemini-3.1-pro-preview"
+        "opencode-go/glm-5.1"
       ]
     },
     "librarian": {
@@ -33,35 +32,33 @@
     "multimodal-looker": {
       "model": "opencode-go/qwen3.6-plus",
       "fallback_models": [
-        "ollama-cloud/gemma4:31b",
-        "google/gemini-3.1-pro-preview"
+        "ollama-cloud/gemma4:31b"
       ]
     },
     "prometheus": {
-      "model": "opencode-go/glm-5.1",
+      "model": "ollama-cloud/glm-5.1",
       "variant": "high",
       "fallback_models": [
-        "ollama-cloud/glm-5.1",
-        "google/gemini-3.1-pro-preview"
+        "opencode-go/glm-5.1"
       ]
     },
     "metis": {
-      "model": "opencode-go/glm-5.1",
+      "model": "ollama-cloud/glm-5.1",
       "fallback_models": [
-        "ollama-cloud/glm-5.1"
+        "opencode-go/glm-5.1"
       ]
     },
     "momus": {
-      "model": "opencode-go/glm-5.1",
+      "model": "ollama-cloud/glm-5.1",
       "variant": "high",
       "fallback_models": [
-        "ollama-cloud/glm-5.1"
+        "opencode-go/glm-5.1"
       ]
     },
     "atlas": {
-      "model": "opencode-go/kimi-k2.6",
+      "model": "ollama-cloud/kimi-k2.6:cloud",
       "fallback_models": [
-        "ollama-cloud/kimi-k2.6:cloud"
+        "opencode-go/kimi-k2.6"
       ]
     },
     "sisyphus-junior": {
@@ -84,18 +81,17 @@
       ]
     },
     "ultrabrain": {
-      "model": "opencode-go/glm-5.1",
+      "model": "ollama-cloud/glm-5.1",
       "variant": "xhigh",
       "fallback_models": [
-        "ollama-cloud/glm-5.1",
-        "google/gemini-3.1-pro-preview"
+        "ollama-cloud/glm-5.1"
       ]
     },
     "deep": {
-      "model": "opencode-go/kimi-k2.6",
+      "model": "ollama-cloud/kimi-k2.6:cloud",
       "variant": "medium",
       "fallback_models": [
-        "ollama-cloud/kimi-k2.6:cloud"
+        "opencode-go/kimi-k2.6"
       ]
     },
     "quick": {
@@ -111,9 +107,9 @@
       ]
     },
     "unspecified-high": {
-      "model": "opencode-go/kimi-k2.6",
+      "model": "ollama-cloud/kimi-k2.6:cloud",
       "fallback_models": [
-        "ollama-cloud/kimi-k2.6:cloud"
+        "opencode-go/kimi-k2.6"
       ]
     },
     "writing": {
@@ -123,10 +119,10 @@
       ]
     },
     "artistry": {
-      "model": "opencode-go/kimi-k2.6",
+      "model": "ollama-cloud/kimi-k2.6:cloud",
       "variant": "high",
       "fallback_models": [
-        "ollama-cloud/kimi-k2.6:cloud"
+        "opencode-go/kimi-k2.6"
       ]
     }
   },
