@@ -30,6 +30,7 @@
     telegram-desktop
     pear-desktop
     kdePackages.kdenlive
+    whatsapp-electron
     brightnessctl
     pavucontrol
     zen-browser
