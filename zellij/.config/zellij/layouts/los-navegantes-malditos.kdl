@@ -11,7 +11,7 @@ layout cwd="$HOME/Documents/los-navegantes-malditos" {
 	tab name="AI" {
 		pane command="opencode"
 	}
-	tab name="main" {
+	tab name="main" focus=true {
 		pane
 	}
 }

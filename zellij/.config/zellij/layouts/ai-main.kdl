@@ -1,4 +1,4 @@
-layout cwd="$HOME/Documents/Projects/nectar" {
+layout {
 	default_tab_template {
 			pane size=1 borderless=true {
 					plugin location="zellij:tab-bar"
@@ -8,19 +8,10 @@ layout cwd="$HOME/Documents/Projects/nectar" {
 					plugin location="zellij:status-bar"
 			}
 	}
-	tab name="AI" split_direction="vertical" {
+	tab name="AI" {
 		pane command="opencode"
 	}
 	tab name="main" focus=true {
-		pane
-	}
-	tab name="cdk" cwd="cdk" {
-		pane
-	}
-	tab name="web" cwd="web" split_direction="vertical" {
-		pane
-	}
-	tab name="server" cwd="server" split_direction="vertical" {
 		pane
 	}
 }
