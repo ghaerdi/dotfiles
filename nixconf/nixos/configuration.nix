@@ -1,5 +1,6 @@
 {
   username,
+  hostname,
   stateVersion,
   inputs,
   pkgs,
@@ -8,13 +9,16 @@
 }: {
   imports = [
     /etc/nixos/hardware-configuration.nix
-    ./features/stylix.nix
     ./features/cachix.nix
+    ./features/stylix.nix
   ];
 
   boot = {
     supportedFilesystems = ["ntfs" "ntfs-3g"];
     kernelPackages = pkgs.linuxPackages_latest;
+    extraModprobeConfig = ''
+      options mt7925e disable_aspm=1 disable_pm=1
+    '';
     loader = {
       efi = {
         canTouchEfiVariables = true;
@@ -31,26 +35,16 @@
   };
 
   networking = {
-    hostName = "nixos";
-    networkmanager.enable = true;
-    wireless.iwd.enable = true;
-    networkmanager.wifi.backend = "iwd";
-    wireless.iwd.settings.Settings.AutoConnect = true;
-    firewall.enable = false;
+    hostName = hostname;
+    networkmanager = {
+      enable = true;
+      wifi.powersave = false;
+      wifi.backend = "wpa_supplicant";
+    };
   };
 
   hardware = {
-    bluetooth = {
-      enable = true;
-      settings = {
-        General = {
-          AutoEnable = false;
-        };
-        Policy = {
-          AutoEnable = false;
-        };
-      };
-    };
+    bluetooth.enable = true;
     graphics = {
       enable = true;
       enable32Bit = true;
@@ -59,12 +53,6 @@
 
   powerManagement = {
     enable = true;
-    # powerDownCommands = ''
-    #   ${pkgs.kmod}/bin/modprobe -r mt7925e
-    # '';
-    # powerUpCommands = ''
-    #   ${pkgs.kmod}/bin/modprobe mt7925e
-    # '';
   };
 
   time.timeZone = "America/Santiago";
@@ -103,10 +91,6 @@
         destination = "/etc/udev/rules.d/99-input.rules";
       })
     ];
-    displayManager.sddm = {
-      enable = true;
-    };
-    desktopManager.plasma6.enable = true;
     xserver = {
       enable = true;
       dpi = 276;
@@ -132,7 +116,6 @@
       shell = pkgs.fish;
       packages = with pkgs; [
         home-manager
-        stow
         git
       ];
     };
@@ -143,31 +126,13 @@
     nix-ld.enable = true;
   };
 
-  environment = {
-    plasma6.excludePackages = with pkgs; [
-      kdePackages.elisa # Music player
-      kdePackages.kdepim-runtime # Akonadi agents
-      kdePackages.kmahjongg
-      kdePackages.kmines
-      kdePackages.konversation # IRC client
-      kdePackages.kpat # Solitaire
-      kdePackages.ksudoku
-      kdePackages.ktorrent
-      kdePackages.discover
-      kdePackages.kwrited
-      kdePackages.konsole
-      kdePackages.okular
-      kdePackages.kate
-    ];
-
-    systemPackages = with pkgs; [
-      inputs.swww.packages.${stdenv.hostPlatform.system}.swww
-      home-manager
-      ntfs3g
-      neovim
-      git
-    ];
-  };
+  environment.systemPackages = with pkgs; [
+    inputs.swww.packages.${stdenv.hostPlatform.system}.swww
+    home-manager
+    ntfs3g
+    neovim
+    git
+  ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 

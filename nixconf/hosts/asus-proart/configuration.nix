@@ -12,6 +12,7 @@
     ../../nixos/features/nvidia.nix
     ../../nixos/features/pipewire.nix
     ../../nixos/features/steam.nix
+    ../../nixos/features/kde-plasma.nix
   ];
 
   boot.resumeDevice = "/dev/disk/by-label/swap";

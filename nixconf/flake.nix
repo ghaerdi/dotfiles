@@ -37,6 +37,7 @@
         specialArgs = {
           inherit inputs;
           username = username;
+          hostname = "nixos";
           stateVersion = stateVersion;
         };
         modules = [
@@ -45,8 +46,36 @@
         ];
       };
 
+      vm-test = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = {
+          inherit inputs;
+          username = username;
+          hostname = "vm-test";
+          stateVersion = stateVersion;
+        };
+        modules = [
+          ./hosts/minimal/configuration.nix
+          stylix.nixosModules.stylix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.${username} = ./hosts/minimal/home-manager.nix;
+            home-manager.extraSpecialArgs = {
+              inherit inputs stateVersion username homeDirectory;
+              zen-browser = zen-browser.packages.${system}.twilight;
+              quickshell = quickshell.packages.${system}.default;
+            };
+          }
+        ];
+      };
+
       isoimage = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = {
+          inherit inputs;
+          stateVersion = stateVersion;
+        };
         modules = [
           ./hosts/isoimage/configuration.nix
           stylix.nixosModules.stylix
@@ -57,11 +86,9 @@
     homeConfigurations = {
       asus-proart = home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = {
+          inherit inputs stateVersion username homeDirectory;
           zen-browser = zen-browser.packages.${system}.twilight;
           quickshell = quickshell.packages.${system}.default;
-          username = username;
-          homeDirectory = homeDirectory;
-          stateVersion = stateVersion;
         };
         pkgs = pkgs;
         modules = [
