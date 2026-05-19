@@ -36,12 +36,12 @@ Categories route tasks to models optimized for specific domains.
 |----------|--------|----------|
 | `visual-engineering` | Frontend, UI/UX, styling, animation | ollama-cloud/gemma4:31b |
 | `ultrabrain` | Hard logic, algorithms, architecture | ollama-cloud/glm-5.1 |
-| `deep` | Autonomous research + implementation | ollama-cloud/kimi-k2.6:cloud |
+| `deep` | Autonomous research + implementation | ollama-cloud/kimi-k2.6 |
 | `quick` | Single-file fixes, trivial changes | ollama-cloud/gemma4:31b |
 | `unspecified-low` | Low-effort misc tasks | ollama-cloud/gemma4:31b |
-| `unspecified-high` | High-effort misc tasks | ollama-cloud/kimi-k2.6:cloud |
-| `writing` | Documentation, prose | ollama-cloud/kimi-k2.6:cloud |
-| `artistry` | Creative, unconventional problem-solving | ollama-cloud/kimi-k2.6:cloud |
+| `unspecified-high` | High-effort misc tasks | ollama-cloud/kimi-k2.6d |
+| `writing` | Documentation, prose | ollama-cloud/kimi-k2.6 |
+| `artistry` | Creative, unconventional problem-solving | ollama-cloud/kimi-k2.6 |
 
 ### Skills (invoke via `skill()` tool)
 
