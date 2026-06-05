@@ -1,115 +1,147 @@
 {
-  "$schema": "https://opencode.ai/config.json",
-  "instructions": [
-    "~/dotfiles/opencode/.config/opencode/docs/subagent-workflow.md",
-    "~/dotfiles/opencode/.config/opencode/docs/sequential-thinking-guide.md"
-  ],
-  "mcp": {
-    "chrome-devtools": {
-      "command": [
-        "npx",
-        "-y",
-        "chrome-devtools-mcp@latest",
-        "--executablePath",
-        "/home/ghaerdi/.nix-profile/bin/brave",
-        "--isolated"
-      ],
-      "type": "local"
-    },
-    "context7": {
-      "headers": {
-        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
-      },
-      "type": "remote",
-      "url": "https://mcp.context7.com/mcp"
-    },
-    "excalidraw": {
-      "type": "remote",
-      "url": "https://mcp.excalidraw.com"
-    },
-    "microsoft-learn": {
-      "type": "remote",
-      "url": "https://learn.microsoft.com/api/mcp"
-    },
-    "sequential-thinking": {
-      "command": [
-        "npx",
-        "-y",
-        "@modelcontextprotocol/server-sequential-thinking"
-      ],
-      "type": "local"
-    },
-    "time": {
-      "command": [
-        "docker",
-        "run",
-        "-i",
-        "--rm",
-        "-e",
-        "LOCAL_TIMEZONE",
-        "mcp/time"
-      ],
-      "type": "local"
-    },
-    "linear": {
-      "type": "remote",
-      "url": "https://mcp.linear.app/mcp",
-      "oauth": {}
-    },
-    "sentry": {
-      "type": "remote",
-      "url": "https://mcp.sentry.dev/mcp",
-      "oauth": {}
-    },
-    "mongo": {
-      "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "mongodb-mcp-server",
-        "--readOnly"
-      ],
-      "environment": {
-        "MDB_MCP_CONNECTION_STRING": "mongodb://127.0.0.1:27017/clinic1?directConnection=true"
-      }
-    }
-  },
-  "plugin": [
-    "opencode-gemini-auth@latest",
-    "@tarquinen/opencode-dcp@latest",
-    "opencode-pty",
-    "oh-my-openagent@latest"
-  ],
-  "provider": {
-    "ollama": {
-      "models": {
-        "gemma4": {
-          "limit": {
-            "context": 131072,
-            "output": 8192
-          },
-          "name": "gemma4"
-        },
-        "kimi-k2-thinking": {
-          "limit": {
-            "context": 131072,
-            "output": 16384
-          },
-          "name": "kimi-k2-thinking"
-        },
-        "qwen3-vl:235b-instruct": {
-          "limit": {
-            "context": 131072,
-            "output": 8192
-          },
-          "name": "qwen3-vl:235b-instruct"
-        }
-      },
-      "name": "Ollama",
-      "npm": "@ai-sdk/openai-compatible",
-      "options": {
-        "baseURL": "http://localhost:11434/v1"
-      }
-    }
-  }
+	"$schema": "https://opencode.ai/config.json",
+	"instructions": [
+		"~/dotfiles/opencode/.config/opencode/docs/memory-preamble.md",
+		"~/dotfiles/opencode/.config/opencode/docs/subagent-workflow.md",
+		"~/dotfiles/opencode/.config/opencode/docs/sequential-thinking-guide.md"
+	],
+	"mcp": {
+		"chrome-devtools": {
+			"command": [
+				"npx",
+				"-y",
+				"chrome-devtools-mcp@latest",
+				"--executablePath",
+				"/home/ghaerdi/.nix-profile/bin/brave",
+				"--isolated"
+			],
+			"type": "local"
+		},
+		"context7": {
+			"headers": {
+				"CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+			},
+			"type": "remote",
+			"url": "https://mcp.context7.com/mcp"
+		},
+		"microsoft-learn": {
+			"type": "remote",
+			"url": "https://learn.microsoft.com/api/mcp"
+		},
+		"sequential-thinking": {
+			"command": [
+				"npx",
+				"-y",
+				"@modelcontextprotocol/server-sequential-thinking"
+			],
+			"type": "local"
+		},
+		"time": {
+			"command": [
+				"docker",
+				"run",
+				"-i",
+				"--rm",
+				"-e",
+				"LOCAL_TIMEZONE",
+				"mcp/time"
+			],
+			"type": "local"
+		},
+		"notion": {
+			"type": "remote",
+			"url": "https://mcp.notion.com/mcp",
+			"oauth": {}
+		},
+		"jam": {
+			"type": "remote",
+			"url": "https://mcp.jam.dev/mcp",
+			"oauth": {}
+		},
+		"linear": {
+			"type": "remote",
+			"url": "https://mcp.linear.app/mcp",
+			"oauth": {}
+		},
+		"sentry": {
+			"type": "remote",
+			"url": "https://mcp.sentry.dev/mcp",
+			"oauth": {}
+		},
+		"mongo-local": {
+			"type": "local",
+			"command": [
+				"npx",
+				"-y",
+				"mongodb-mcp-server",
+				"--readOnly"
+			],
+			"environment": {
+				"MDB_MCP_CONNECTION_STRING": "mongodb://127.0.0.1:27017/clinic1?directConnection=true"
+			}
+		},
+		"mongo-prod": {
+			"type": "local",
+			"command": [
+				"npx",
+				"-y",
+				"mongodb-mcp-server",
+				"--readOnly"
+			],
+			"environment": {
+				"MDB_MCP_CONNECTION_STRING": "{env:NECTAR_PROD_MONGO_CONNECTION_STRING}"
+			}
+		},
+		"aws": {
+			"type": "local",
+			"command": [
+				"/home/ghaerdi/.local/bin/uvx",
+				"mcp-proxy-for-aws@latest",
+				"https://aws-mcp.us-east-1.api.aws/mcp",
+				"--metadata",
+				"AWS_REGION=us-east-1"
+			],
+			"environment": {
+				"AWS_PROFILE": "claude-readonly"
+			}
+		}
+	},
+	"plugin": [
+		"opencode-gemini-auth@latest",
+		"@tarquinen/opencode-dcp@latest",
+		"opencode-pty",
+		"oh-my-openagent@latest"
+	],
+	"provider": {
+		"ollama": {
+			"models": {
+				"gemma4": {
+					"limit": {
+						"context": 131072,
+						"output": 8192
+					},
+					"name": "gemma4"
+				},
+				"kimi-k2-thinking": {
+					"limit": {
+						"context": 131072,
+						"output": 16384
+					},
+					"name": "kimi-k2-thinking"
+				},
+				"qwen3-vl:235b-instruct": {
+					"limit": {
+						"context": 131072,
+						"output": 8192
+					},
+					"name": "qwen3-vl:235b-instruct"
+				}
+			},
+			"name": "Ollama",
+			"npm": "@ai-sdk/openai-compatible",
+			"options": {
+				"baseURL": "http://localhost:11434/v1"
+			}
+		}
+	}
 }
