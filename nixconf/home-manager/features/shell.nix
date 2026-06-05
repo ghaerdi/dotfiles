@@ -87,7 +87,7 @@
                abbr -a sdn "shutdown now"
                abbr -a c "clear"
                abbr -a ls "eza"
-               abrr -a la "eza -a"
+               abbr -a la "eza -a"
                abbr -a ll "eza -l"
                abbr -a lt "eza -aT"
                abbr -a cat "bat"
