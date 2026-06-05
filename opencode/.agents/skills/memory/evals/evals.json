@@ -1,0 +1,39 @@
+{
+  "skill_name": "memory",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Remember that we decided to use PostgreSQL instead of MongoDB for the user service because we need ACID transactions",
+      "expected_output": "Uses obsidian-cli to append a dated entry to MEMORY.md mentioning PostgreSQL, MongoDB, user service, and ACID transactions",
+      "files": [],
+      "assertions": [
+        "Command uses obsidian-cli vault=agent-memory",
+        "Command uses append file=MEMORY.md",
+        "Content includes PostgreSQL",
+        "Content includes MongoDB"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "What did we decide about the database choice for the user service?",
+      "expected_output": "Searches MEMORY.md for database/user service decisions and summarizes findings",
+      "files": [],
+      "assertions": [
+        "Command uses obsidian-cli vault=agent-memory search",
+        "Query includes database or user service",
+        "Provides a summary answer rather than raw CLI output"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Search my memories for anything about authentication",
+      "expected_output": "Searches for authentication-related memories and returns relevant entries",
+      "files": [],
+      "assertions": [
+        "Command uses obsidian-cli vault=agent-memory",
+        "Query includes authentication",
+        "Returns context from MEMORY.md"
+      ]
+    }
+  ]
+}
