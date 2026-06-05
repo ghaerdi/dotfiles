@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # Pinned nixpkgs for kernel 7.0.3 (Bluetooth MT7925 regression fix)
+    nixpkgs-kernel.url = "github:nixos/nixpkgs/549bd84d6279f9852cae6225e372cc67fb91a4c1";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,6 +21,7 @@
   outputs = {
     nixpkgs,
     home-manager,
+    nixpkgs-kernel,
     zen-browser,
     stylix,
     quickshell,
@@ -37,7 +40,8 @@
         specialArgs = {
           inherit inputs;
           username = username;
-          hostname = "nixos";
+          stable-pkgs = nixpkgs-kernel.legacyPackages.${system};
+          hostname = "proart-nixos";
           stateVersion = stateVersion;
         };
         modules = [

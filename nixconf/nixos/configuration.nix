@@ -15,10 +15,7 @@
 
   boot = {
     supportedFilesystems = ["ntfs" "ntfs-3g"];
-    kernelPackages = pkgs.linuxPackages_latest;
-    extraModprobeConfig = ''
-      options mt7925e disable_aspm=1 disable_pm=1
-    '';
+    kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
     loader = {
       efi = {
         canTouchEfiVariables = true;
@@ -40,11 +37,13 @@
     networkmanager = {
       enable = true;
       wifi.powersave = false;
-      wifi.backend = "wpa_supplicant";
+      wifi.backend = "iwd";
     };
   };
 
   hardware = {
+    firmware = [pkgs.linux-firmware];
+    enableAllFirmware = true;
     bluetooth.enable = true;
     graphics = {
       enable = true;

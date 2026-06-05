@@ -1,7 +1,7 @@
 {
   config,
-  pkgs,
   lib,
+  stable-pkgs,
   ...
 }: {
   services.xserver.videoDrivers = ["nvidia" "amdgpu"];
@@ -13,7 +13,7 @@
       enable = true;
       finegrained = true;
     };
-    open = true;
+    open = false;
     nvidiaSettings = true;
     prime = {
       amdgpuBusId = "PCI:102:0:0";

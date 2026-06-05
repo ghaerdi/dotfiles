@@ -34,6 +34,7 @@
     television
 
     lua-language-server
+    rustup
     python3
     nodejs
     zig
@@ -83,15 +84,21 @@
                set fish_greeting ""
 
                # --- Aliases ---
-               # System aliases
-               alias sdn="shutdown now" # Alias for shutting down the system immediately
-               alias c="clear"          # Alias for clearing the terminal screen
-
-               # File listing aliases using eza (a modern replacement for ls)
-               alias ls="eza"           # Basic listing
-               alias la="eza -a"        # List all files, including hidden ones
-               alias ll="eza -l"        # Long listing format
-               alias lt="eza -aT"       # List all files in a tree format
+               abbr -a sdn "shutdown now"
+               abbr -a c "clear"
+               abbr -a ls "eza"
+               abrr -a la "eza -a"
+               abbr -a ll "eza -l"
+               abbr -a lt "eza -aT"
+               abbr -a cat "bat"
+               abbr -a grep "rg"
+               abbr -a find "fd"
+               abbr -a gss "git status -s ."
+               abbr -a gc "git commit"
+               abbr -a gcn "git commit -n"
+               abbr -a gcm --set-cursor "git commit -m \"%\""
+               abbr -a gcmn --set-cursor "git commit -m \"%\" -n"
+               abbr -a gcp "git cherry-pick"
 
                # Editing aliases
                alias visudo="sudo EDITOR=nvim visudo" # Edit the sudoers file using nvim with sudo privileges
