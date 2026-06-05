@@ -1,8 +1,5 @@
 post-switch = "zellij action rename-tab {{ worktree_name }}"
-post-start = "wt step copy-ignored"
 skip-commit-generation-prompt = true
 
 [commit.generation]
 command = "opencode run -m ollama-cloud/gemma4:31b --variant fast"
-
-[projects]
