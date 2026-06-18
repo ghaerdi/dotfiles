@@ -44,8 +44,13 @@ window-rule {
 }
 
 window-rule {
+	match app-id="spotify" is-floating=false
+	opacity 0.9
+}
+
+window-rule {
 	match app-id="com.mitchellh.ghostty" is-active=true is-floating=false
-	draw-border-with-background false
+	match app-id="spotify" is-floating=false
   background-effect {
     xray true
     blur true
@@ -54,8 +59,13 @@ window-rule {
 }
 
 window-rule {
+	match app-id="com.mitchellh.ghostty" is-floating=true
+	draw-border-with-background true
+}
+
+window-rule {
 	match app-id="com.mitchellh.ghostty" is-active=false is-floating=false
-	draw-border-with-background false
+	match app-id="spotify" is-floating=false
   background-effect {
     xray true
     blur true
