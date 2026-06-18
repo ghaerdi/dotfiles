@@ -50,6 +50,20 @@
         ];
       };
 
+      wsl = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          username = username;
+          stable-pkgs = nixpkgs-kernel.legacyPackages.${system};
+          hostname = "proteo";
+          stateVersion = stateVersion;
+        };
+        modules = [
+          ./hosts/wsl/configuration.nix
+          stylix.nixosModules.stylix
+        ];
+      };
+
       vm-test = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
@@ -98,6 +112,15 @@
         modules = [
           stylix.homeModules.stylix
           ./hosts/asus-proart/home-manager.nix
+        ];
+      };
+      wsl = home-manager.lib.homeManagerConfiguration {
+        extraSpecialArgs = {
+          inherit inputs stateVersion username homeDirectory;
+        };
+        pkgs = pkgs;
+        modules = [
+          ./hosts/wsl/home-manager.nix
         ];
       };
     };
