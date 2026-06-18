@@ -32,5 +32,6 @@
       "veracrypt"
       "obsidian"
       "slack"
+      "spotify"
     ];
 }

@@ -16,22 +16,26 @@
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+		spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 
   outputs = {
     nixpkgs,
     home-manager,
+		spicetify-nix,
     nixpkgs-kernel,
     zen-browser,
     stylix,
     quickshell,
     ...
   } @ inputs: let
-    system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+    system = "x86_64-linux";
     username = "ghaerdi";
     homeDirectory = "/home/${username}";
     stateVersion = "25.11"; # Please read releases notes before changing.
+    spicePkgs = spicetify-nix.legacyPackages.${system};
   in {
     formatter.${system} = pkgs.alejandra;
 
@@ -107,11 +111,13 @@
           inherit inputs stateVersion username homeDirectory;
           zen-browser = zen-browser.packages.${system}.twilight;
           quickshell = quickshell.packages.${system}.default;
+					spicePkgs = spicePkgs;
         };
         pkgs = pkgs;
         modules = [
           stylix.homeModules.stylix
           ./hosts/asus-proart/home-manager.nix
+					inputs.spicetify-nix.homeManagerModules.spicetify
         ];
       };
       wsl = home-manager.lib.homeManagerConfiguration {

@@ -32,6 +32,8 @@
     gh
     libnotify
     television
+		asciinema
+		jrnl
 
     lua-language-server
     rustup

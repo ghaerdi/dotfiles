@@ -1,9 +1,8 @@
 {
   pkgs,
-  config,
-  lib,
   zen-browser,
   quickshell,
+	spicePkgs,
   ...
 }: {
   programs.home-manager.enable = true;
@@ -28,7 +27,6 @@
     libreoffice
     quickshell
     telegram-desktop
-    pear-desktop
     kdePackages.kdenlive
     whatsapp-electron
     brightnessctl
@@ -52,6 +50,22 @@
     noto-fonts-color-emoji
     noto-fonts
   ];
+
+	programs.spicetify = {
+		enable = true;
+		theme = spicePkgs.themes.turntable;
+		enabledExtensions = with spicePkgs.extensions; [
+			hidePodcasts
+			fullAppDisplay
+		];
+		enabledSnippets = with spicePkgs.snippets; [
+			pointer
+		];
+		enabledCustomApps = with spicePkgs.apps; [
+			marketplace
+			ncsVisualizer
+		];
+	};
 
   fonts.fontconfig = {
     enable = true;

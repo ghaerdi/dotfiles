@@ -41,5 +41,6 @@
     helix.enable = false;
     kitty.enable = false;
     foot.enable = false;
+		spicetify.enable = false;
   };
 }
