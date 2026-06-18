@@ -19,9 +19,9 @@ description: >-
   requirements-clarifier agent to break it down into user stories, acceptance
   criteria, and edge cases. </commentary> </example>
 mode: subagent
-model: ollama-cloud/kimi-k2.6
+model: ollama-cloud/deepseek-v4-pro
 fallback_models:
-  - opencode-go/kimi-k2.6
+  - opencode-go/deepseek-v4-flash
 tools:
   write: false
   edit: false

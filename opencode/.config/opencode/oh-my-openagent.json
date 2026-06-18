@@ -2,10 +2,10 @@
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
   "agents": {
     "sisyphus": {
-      "model": "ollama-cloud/kimi-k2.6",
+      "model": "ollama-cloud/deepseek-v4-pro",
       "variant": "high",
       "fallback_models": [
-        "opencode-go/kimi-k2.6"
+        "opencode-go/deepseek-v4-flash"
       ]
     },
     "oracle": {
@@ -58,9 +58,9 @@
       ]
     },
     "atlas": {
-      "model": "ollama-cloud/kimi-k2.6",
+      "model": "ollama-cloud/deepseek-v4-pro",
       "fallback_models": [
-        "opencode-go/kimi-k2.6"
+        "opencode-go/deepseek-v4-flash"
       ]
     },
     "sisyphus-junior": {
@@ -90,10 +90,10 @@
       ]
     },
     "deep": {
-      "model": "ollama-cloud/kimi-k2.6",
+      "model": "ollama-cloud/deepseek-v4-pro",
       "variant": "medium",
       "fallback_models": [
-        "opencode-go/kimi-k2.6"
+        "opencode-go/deepseek-v4-flash"
       ]
     },
     "quick": {
@@ -111,10 +111,10 @@
       ]
     },
     "unspecified-high": {
-      "model": "ollama-cloud/kimi-k2.6",
+      "model": "ollama-cloud/deepseek-v4-pro",
       "variant": "medium",
       "fallback_models": [
-        "opencode-go/kimi-k2.6"
+        "opencode-go/deepseek-v4-flash"
       ]
     },
     "writing": {
@@ -125,7 +125,7 @@
       ]
     },
     "artistry": {
-      "model": "ollama-cloud/kimi-k2.6",
+      "model": "ollama-cloud/gemma4:31b",
       "variant": "medium",
       "fallback_models": [
         "opencode-go/kimi-k2.6"

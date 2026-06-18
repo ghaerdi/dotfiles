@@ -114,29 +114,6 @@
 	],
 	"provider": {
 		"ollama": {
-			"models": {
-				"gemma4": {
-					"limit": {
-						"context": 131072,
-						"output": 8192
-					},
-					"name": "gemma4"
-				},
-				"kimi-k2-thinking": {
-					"limit": {
-						"context": 131072,
-						"output": 16384
-					},
-					"name": "kimi-k2-thinking"
-				},
-				"qwen3-vl:235b-instruct": {
-					"limit": {
-						"context": 131072,
-						"output": 8192
-					},
-					"name": "qwen3-vl:235b-instruct"
-				}
-			},
 			"name": "Ollama",
 			"npm": "@ai-sdk/openai-compatible",
 			"options": {
