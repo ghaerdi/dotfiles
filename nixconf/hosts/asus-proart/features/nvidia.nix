@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  stable-pkgs,
-  ...
-}: {
+{ config, ... }: {
   services.xserver.videoDrivers = ["nvidia" "amdgpu"];
 
   hardware.nvidia = {

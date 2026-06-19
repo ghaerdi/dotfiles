@@ -1,9 +1,5 @@
+{ lib, ... }:
 {
-  inputs,
-  pkgs,
-  lib,
-  ...
-}: {
   imports = [
     ../../nixos/configuration.nix
     ../../nixos/features/battery.nix
@@ -25,7 +21,6 @@
   };
 
   services.tailscale.enable = true;
-
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
       "broadcom-bt-firmware"
@@ -33,10 +28,6 @@
       "xone-dongle-firmware"
       "facetimehd-calibration"
       "facetimehd-firmware"
-      "nvidia-persistenced"
-      "nvidia-settings"
-      "nvidia-x11"
-      "cuda-merged"
       "steam"
       "steam-original"
       "steam-unwrapped"

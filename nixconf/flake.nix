@@ -30,23 +30,23 @@
     quickshell,
     ...
   } @ inputs: let
-    pkgs = nixpkgs.legacyPackages.${system};
     system = "x86_64-linux";
+		pkgs = nixpkgs.legacyPackages.${system};
+		stable-pkgs = import nixpkgs-kernel {
+      inherit system;
+      config.allowUnfree = true;
+    };
     username = "ghaerdi";
     homeDirectory = "/home/${username}";
     stateVersion = "25.11"; # Please read releases notes before changing.
-    spicePkgs = spicetify-nix.legacyPackages.${system};
   in {
     formatter.${system} = pkgs.alejandra;
 
     nixosConfigurations = {
       asus-proart = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit inputs;
-          username = username;
-          stable-pkgs = nixpkgs-kernel.legacyPackages.${system};
+          inherit inputs stateVersion username stable-pkgs;
           hostname = "proart-nixos";
-          stateVersion = stateVersion;
         };
         modules = [
           ./hosts/asus-proart/configuration.nix
@@ -56,51 +56,20 @@
 
       wsl = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit inputs;
-          username = username;
-          stable-pkgs = nixpkgs-kernel.legacyPackages.${system};
+          inherit inputs stateVersion username stable-pkgs;
           hostname = "proteo";
-          stateVersion = stateVersion;
         };
         modules = [
           ./hosts/wsl/configuration.nix
-          stylix.nixosModules.stylix
-        ];
-      };
-
-      vm-test = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = {
-          inherit inputs;
-          username = username;
-          hostname = "vm-test";
-          stateVersion = stateVersion;
-        };
-        modules = [
-          ./hosts/minimal/configuration.nix
-          stylix.nixosModules.stylix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.${username} = ./hosts/minimal/home-manager.nix;
-            home-manager.extraSpecialArgs = {
-              inherit inputs stateVersion username homeDirectory;
-              zen-browser = zen-browser.packages.${system}.twilight;
-              quickshell = quickshell.packages.${system}.default;
-            };
-          }
         ];
       };
 
       isoimage = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit inputs;
-          stateVersion = stateVersion;
+          inherit inputs stateVersion;
         };
         modules = [
           ./hosts/isoimage/configuration.nix
-          stylix.nixosModules.stylix
         ];
       };
     };
@@ -111,13 +80,13 @@
           inherit inputs stateVersion username homeDirectory;
           zen-browser = zen-browser.packages.${system}.twilight;
           quickshell = quickshell.packages.${system}.default;
-					spicePkgs = spicePkgs;
+					spicePkgs = spicetify-nix.legacyPackages.${system};
         };
         pkgs = pkgs;
         modules = [
           stylix.homeModules.stylix
-          ./hosts/asus-proart/home-manager.nix
 					inputs.spicetify-nix.homeManagerModules.spicetify
+          ./hosts/asus-proart/home-manager.nix
         ];
       };
       wsl = home-manager.lib.homeManagerConfiguration {
