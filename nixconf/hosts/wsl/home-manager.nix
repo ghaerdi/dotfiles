@@ -8,7 +8,6 @@
 }: {
   imports = [
     ../../home-manager/features/shell.nix
-
     ../../home-manager/scripts/prompt.nix
     ../../home-manager/scripts/cleanup.nix
   ];

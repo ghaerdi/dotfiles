@@ -54,13 +54,13 @@
         ];
       };
 
-      wsl = nixpkgs.lib.nixosSystem {
+      homelab = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs stateVersion username stable-pkgs;
           hostname = "proteo";
         };
         modules = [
-          ./hosts/wsl/configuration.nix
+          ./hosts/homelab/configuration.nix
         ];
       };
 
@@ -89,13 +89,13 @@
           ./hosts/asus-proart/home-manager.nix
         ];
       };
-      wsl = home-manager.lib.homeManagerConfiguration {
+      homelab = home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = {
           inherit inputs stateVersion username homeDirectory;
         };
         pkgs = pkgs;
         modules = [
-          ./hosts/wsl/home-manager.nix
+          ./hosts/homelab/home-manager.nix
         ];
       };
     };
