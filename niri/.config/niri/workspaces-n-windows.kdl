@@ -9,7 +9,8 @@ workspace "recording" {
 				proportion 0.6
         proportion 0.95
     }
-		default-column-width { proportion 0.6; }
+		default-column-width { proportion 0.7; }
+		gaps 50
 	}
 }
 
