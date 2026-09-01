@@ -11,7 +11,7 @@ description: >-
 mode: subagent
 model: ollama-cloud/gemma4:31b
 fallback_models:
-  - opencode-go/kimi-k2.6
+  - opencode-go/deepseek-v4-flash
 tools:
   bash: false
   write: false

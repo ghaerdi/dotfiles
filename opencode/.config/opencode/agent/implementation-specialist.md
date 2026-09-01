@@ -67,9 +67,10 @@ description: >-
 
   </example>
 mode: subagent
-model: ollama-cloud/glm-5.1
+model: ollama-cloud/glm-5.2
+variant: low
 fallback_models:
-  - opencode-go/glm-5.1
+  - opencode-go/minimax-m3
 tools:
   task: false
 ---

@@ -2,21 +2,21 @@
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
   "agents": {
     "sisyphus": {
-      "model": "ollama-cloud/deepseek-v4-pro",
-      "variant": "high",
+      "model": "ollama-cloud/glm-5.2",
+      "variant": "low",
       "fallback_models": [
-        "opencode-go/deepseek-v4-flash"
+        "opencode-go/minimax-m3"
       ]
     },
     "oracle": {
-      "model": "ollama-cloud/glm-5.1",
-      "variant": "high",
+      "model": "ollama-cloud/glm-5.2",
+      "variant": "low",
       "fallback_models": [
-        "opencode-go/glm-5.1"
+        "opencode-go/minimax-m3"
       ]
     },
     "librarian": {
-      "model": "opencode-go/minimax-m2.7",
+      "model": "opencode-go/deepseek-v4-flash",
 			"variant": "low",
       "fallback_models": [
         "ollama-cloud/gemma4:31b",
@@ -24,7 +24,7 @@
       ]
     },
     "explore": {
-      "model": "opencode-go/minimax-m2.7",
+      "model": "opencode-go/deepseek-v4-flash",
 			"variant": "low",
       "fallback_models": [
         "ollama-cloud/gemma4:31b",
@@ -33,38 +33,42 @@
     },
     "multimodal-looker": {
       "model": "opencode-go/qwen3.6-plus",
+			"variant": "low",
       "fallback_models": [
         "ollama-cloud/gemma4:31b"
       ]
     },
     "prometheus": {
-      "model": "ollama-cloud/glm-5.1",
-      "variant": "xhigh",
+      "model": "ollama-cloud/glm-5.2",
+      "variant": "low",
       "fallback_models": [
-        "opencode-go/glm-5.1"
+        "opencode-go/minimax-m3"
       ]
     },
     "metis": {
-      "model": "ollama-cloud/glm-5.1",
+      "model": "ollama-cloud/glm-5.2",
+			"variant": "low",
       "fallback_models": [
-        "opencode-go/glm-5.1"
+        "opencode-go/minimax-m3"
       ]
     },
     "momus": {
-      "model": "ollama-cloud/glm-5.1",
-      "variant": "high",
+      "model": "ollama-cloud/glm-5.2",
+      "variant": "low",
       "fallback_models": [
-        "opencode-go/glm-5.1"
+        "opencode-go/minimax-m3"
       ]
     },
     "atlas": {
-      "model": "ollama-cloud/deepseek-v4-pro",
+      "model": "ollama-cloud/glm-5.2",
+			"variant": "low",
       "fallback_models": [
-        "opencode-go/deepseek-v4-flash"
+        "opencode-go/minimax-m3"
       ]
     },
     "sisyphus-junior": {
-      "model": "opencode-go/minimax-m2.7",
+      "model": "opencode-go/deepseek-v4-flash",
+			"variant": "low",
       "fallback_models": [
         "ollama-cloud/gemma4:31b"
       ]
@@ -78,47 +82,48 @@
   "categories": {
     "visual-engineering": {
       "model": "opencode-go/qwen3.6-plus",
+			"variant": "low",
       "fallback_models": [
         "ollama-cloud/gemma4:31b"
       ]
     },
     "ultrabrain": {
-      "model": "ollama-cloud/glm-5.1",
-      "variant": "xhigh",
+      "model": "ollama-cloud/glm-5.2",
+      "variant": "low",
       "fallback_models": [
-        "ollama-cloud/glm-5.1"
+        "opencode-go/minimax-m3"
       ]
     },
     "deep": {
-      "model": "ollama-cloud/deepseek-v4-pro",
-      "variant": "medium",
+      "model": "ollama-cloud/glm-5.2",
+      "variant": "low",
       "fallback_models": [
-        "opencode-go/deepseek-v4-flash"
+        "opencode-go/minimax-m3"
       ]
     },
     "quick": {
-      "model": "opencode-go/minimax-m2.7",
+      "model": "opencode-go/deepseek-v4-flash",
 			"variant": "low",
       "fallback_models": [
         "ollama-cloud/gemma4:31b"
       ]
     },
     "unspecified-low": {
-      "model": "opencode-go/minimax-m2.7",
+      "model": "opencode-go/deepseek-v4-flash",
 			"variant": "low",
       "fallback_models": [
         "ollama-cloud/gemma4:31b"
       ]
     },
     "unspecified-high": {
-      "model": "ollama-cloud/deepseek-v4-pro",
-      "variant": "medium",
+      "model": "ollama-cloud/glm-5.2",
+      "variant": "low",
       "fallback_models": [
         "opencode-go/deepseek-v4-flash"
       ]
     },
     "writing": {
-      "model": "opencode-go/qwen3.6-plus",
+      "model": "opencode-go/deepseek-v4-flash",
 			"variant": "low",
       "fallback_models": [
         "ollama-cloud/gemma4:31b"
@@ -126,9 +131,9 @@
     },
     "artistry": {
       "model": "ollama-cloud/gemma4:31b",
-      "variant": "medium",
+      "variant": "low",
       "fallback_models": [
-        "opencode-go/kimi-k2.6"
+        "opencode-go/kimi-k2.7-code"
       ]
     }
   },

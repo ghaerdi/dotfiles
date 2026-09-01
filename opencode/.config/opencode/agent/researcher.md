@@ -12,8 +12,9 @@ description: >-
   'Log into site.com and download the monthly report'.
 mode: subagent
 model: ollama-cloud/gemma4:31b
+variant: low
 fallback_models:
-  - opencode-go/kimi-k2.6
+  - opencode-go/deepseek-v4-flash
 tools:
   bash: false
   write: false

@@ -177,6 +177,353 @@
       "skillFolderHash": "7f59b3476d56495502e390b6fc6a15e89d697e77",
       "installedAt": "2026-05-31T03:52:14.434Z",
       "updatedAt": "2026-05-31T03:52:14.434Z"
+    },
+    "vite": {
+      "source": "antfu/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/antfu/skills.git",
+      "skillPath": "skills/vite/SKILL.md",
+      "skillFolderHash": "3c0dc60ce4ffc34fca02aaa7eb21130ae48c8dff",
+      "installedAt": "2026-06-21T17:19:47.340Z",
+      "updatedAt": "2026-06-21T17:19:47.340Z"
+    },
+    "vitest": {
+      "source": "antfu/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/antfu/skills.git",
+      "skillPath": "skills/vitest/SKILL.md",
+      "skillFolderHash": "b9413e0a4a6880e09e63f13ce59ee7de4019a27d",
+      "installedAt": "2026-06-21T17:19:47.345Z",
+      "updatedAt": "2026-06-21T17:19:47.345Z"
+    },
+    "shadcn": {
+      "source": "shadcn/ui",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/shadcn/ui.git",
+      "skillPath": "skills/shadcn/SKILL.md",
+      "skillFolderHash": "53547268e4c90c0dd7981e098e1ea4a89393575a",
+      "installedAt": "2026-06-21T17:19:51.104Z",
+      "updatedAt": "2026-06-21T17:19:51.104Z"
+    },
+    "vercel-react-view-transitions": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
+      "skillPath": "skills/react-view-transitions/SKILL.md",
+      "skillFolderHash": "4d46c637057aae90b9ec5280190c25dc0d90ec28",
+      "installedAt": "2026-06-21T17:22:01.068Z",
+      "updatedAt": "2026-06-21T17:22:01.068Z"
+    },
+    "vercel-react-native-skills": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
+      "skillPath": "skills/react-native-skills/SKILL.md",
+      "skillFolderHash": "8b4c6a51914e2111ab6f4f00cb81778652aa241d",
+      "installedAt": "2026-06-21T17:22:01.274Z",
+      "updatedAt": "2026-06-21T17:22:01.274Z"
+    },
+    "vercel-react-best-practices": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
+      "skillPath": "skills/react-best-practices/SKILL.md",
+      "skillFolderHash": "343db72180d05814949fef7d46be96b5c6ee86b3",
+      "installedAt": "2026-06-21T17:22:01.314Z",
+      "updatedAt": "2026-06-21T17:22:01.314Z"
+    },
+    "email-and-password-best-practices": {
+      "source": "better-auth/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/better-auth/skills.git",
+      "skillPath": "better-auth/emailAndPassword/SKILL.md",
+      "skillFolderHash": "9da895cd339e3eda0ba6d1b8d2b54e24799b1992",
+      "installedAt": "2026-06-21T17:22:11.688Z",
+      "updatedAt": "2026-06-21T17:22:11.688Z"
+    },
+    "deno-sandbox": {
+      "source": "denoland/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/denoland/skills.git",
+      "skillPath": "skills/deno-sandbox/SKILL.md",
+      "skillFolderHash": "2fd33516d9635b7ddb4de6eb7dc73e04d07d3d16",
+      "installedAt": "2026-06-21T17:22:12.131Z",
+      "updatedAt": "2026-06-21T17:22:12.131Z"
+    },
+    "deno-frontend": {
+      "source": "denoland/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/denoland/skills.git",
+      "skillPath": "skills/deno-frontend/SKILL.md",
+      "skillFolderHash": "83bec3724454842dde729558cc8be1181ab9c3a0",
+      "installedAt": "2026-06-21T17:22:12.134Z",
+      "updatedAt": "2026-06-21T17:22:12.134Z"
+    },
+    "rust-best-practices": {
+      "source": "apollographql/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/apollographql/skills.git",
+      "skillPath": "skills/rust-best-practices/SKILL.md",
+      "skillFolderHash": "73bee942cb621e4ee7f2c3f86de01ab09638ee5d",
+      "installedAt": "2026-06-21T17:22:12.195Z",
+      "updatedAt": "2026-06-21T17:22:12.195Z"
+    },
+    "improve": {
+      "source": "shadcn/improve",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/shadcn/improve.git",
+      "skillPath": "skills/improve/SKILL.md",
+      "skillFolderHash": "7d77d76815e6deb704427f17f6e393f55e3cb6da",
+      "installedAt": "2026-06-21T17:22:12.210Z",
+      "updatedAt": "2026-06-21T17:22:12.210Z"
+    },
+    "clerk-tanstack-patterns": {
+      "source": "clerk/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/clerk/skills.git",
+      "skillPath": "skills/frameworks/clerk-tanstack-patterns/SKILL.md",
+      "skillFolderHash": "69d29c3db975067d2b4eb3f4ae10ab28933e1c93",
+      "pluginName": "frameworks",
+      "installedAt": "2026-06-21T17:22:12.629Z",
+      "updatedAt": "2026-06-21T17:22:12.629Z"
+    },
+    "claude-api": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/skills.git",
+      "skillPath": "skills/claude-api/SKILL.md",
+      "skillFolderHash": "833ddd2c7e101d76dc6eddd9750330f9c91acdd1",
+      "pluginName": "claude-api",
+      "installedAt": "2026-06-21T17:22:13.072Z",
+      "updatedAt": "2026-06-21T17:22:13.072Z"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/skills.git",
+      "skillPath": "skills/frontend-design/SKILL.md",
+      "skillFolderHash": "0d5b74a14bdf3ebcd64f352d06376a2ef05ed296",
+      "pluginName": "example-skills",
+      "installedAt": "2026-06-21T17:22:13.189Z",
+      "updatedAt": "2026-06-21T17:22:13.189Z"
+    },
+    "expo-tailwind-setup": {
+      "source": "expo/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/expo/skills.git",
+      "skillPath": "plugins/expo/skills/expo-tailwind-setup/SKILL.md",
+      "skillFolderHash": "cec5b541d8994b2aa127cdf764b3ff4e80057a2f",
+      "installedAt": "2026-06-21T17:22:13.191Z",
+      "updatedAt": "2026-06-21T17:22:13.191Z"
+    },
+    "shadcn-ui": {
+      "source": "giuseppe-trisciuoglio/developer-kit",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/giuseppe-trisciuoglio/developer-kit.git",
+      "skillPath": "plugins/developer-kit-typescript/skills/shadcn-ui/SKILL.md",
+      "skillFolderHash": "b891a25c0d82630bb534d87606f83dc945a2398f",
+      "installedAt": "2026-06-21T17:22:26.463Z",
+      "updatedAt": "2026-06-21T17:22:37.262Z"
+    },
+    "typescript-advanced-types": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wshobson/agents.git",
+      "skillPath": "plugins/javascript-typescript/skills/typescript-advanced-types/SKILL.md",
+      "skillFolderHash": "7e9663cb1d15ca0aff369d35a31348b7e8cf5e95",
+      "installedAt": "2026-06-21T17:22:26.944Z",
+      "updatedAt": "2026-06-21T17:22:26.944Z"
+    },
+    "tailwind-design-system": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wshobson/agents.git",
+      "skillPath": "plugins/frontend-mobile-development/skills/tailwind-design-system/SKILL.md",
+      "skillFolderHash": "a2164c2d9785aada08dfe3f5e792657c9acafc52",
+      "installedAt": "2026-06-21T17:22:26.964Z",
+      "updatedAt": "2026-06-21T17:22:26.964Z"
+    },
+    "rust-async-patterns": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wshobson/agents.git",
+      "skillPath": "plugins/systems-programming/skills/rust-async-patterns/SKILL.md",
+      "skillFolderHash": "3624037dbe3d96e2e55ecb6988afeaffbbb9ad1b",
+      "installedAt": "2026-06-21T17:22:27.014Z",
+      "updatedAt": "2026-06-21T17:22:27.014Z"
+    },
+    "obsidian-vault": {
+      "source": "mattpocock/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/mattpocock/skills.git",
+      "skillPath": "skills/personal/obsidian-vault/SKILL.md",
+      "skillFolderHash": "1e814d168a215762391895aee58f4de06c8e3b7f",
+      "installedAt": "2026-06-21T17:22:35.540Z",
+      "updatedAt": "2026-06-21T17:22:35.540Z"
+    },
+    "zod-validation-utilities": {
+      "source": "giuseppe-trisciuoglio/developer-kit",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/giuseppe-trisciuoglio/developer-kit.git",
+      "skillPath": "plugins/developer-kit-typescript/skills/zod-validation-utilities/SKILL.md",
+      "skillFolderHash": "1c5c3bd9e1dde5208adcc80230c925025deefccc",
+      "installedAt": "2026-06-21T17:22:37.889Z",
+      "updatedAt": "2026-06-21T17:22:37.889Z"
+    },
+    "tailwind-css-patterns": {
+      "source": "giuseppe-trisciuoglio/developer-kit",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/giuseppe-trisciuoglio/developer-kit.git",
+      "skillPath": "plugins/developer-kit-typescript/skills/tailwind-css-patterns/SKILL.md",
+      "skillFolderHash": "577fb9d8370f939395ce3b6783d44b828fba91dd",
+      "installedAt": "2026-06-21T17:22:38.529Z",
+      "updatedAt": "2026-06-21T17:22:38.529Z"
+    },
+    "tanstack-router-best-practices": {
+      "source": "deckardger/tanstack-agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/deckardger/tanstack-agent-skills.git",
+      "skillPath": "skills/tanstack-router/SKILL.md",
+      "skillFolderHash": "0f076dd09acf3e8e7c2ef80e654ad253e25c6eec",
+      "installedAt": "2026-06-21T17:22:47.643Z",
+      "updatedAt": "2026-06-21T17:22:47.643Z"
+    },
+    "tanstack-query-best-practices": {
+      "source": "deckardger/tanstack-agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/deckardger/tanstack-agent-skills.git",
+      "skillPath": "skills/tanstack-query/SKILL.md",
+      "skillFolderHash": "b73085898a2015a0f33c98aef0f3f2ff4ee9454f",
+      "installedAt": "2026-06-21T17:22:47.647Z",
+      "updatedAt": "2026-06-21T17:22:47.647Z"
+    },
+    "tanstack-start-best-practices": {
+      "source": "deckardger/tanstack-agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/deckardger/tanstack-agent-skills.git",
+      "skillPath": "skills/tanstack-start/SKILL.md",
+      "skillFolderHash": "f51cf71300531adc6e9af58e2a3a578be8a58aea",
+      "installedAt": "2026-06-21T17:22:47.692Z",
+      "updatedAt": "2026-06-21T17:22:47.692Z"
+    },
+    "design-taste-frontend": {
+      "source": "leonxlnx/taste-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/leonxlnx/taste-skill.git",
+      "skillPath": "skills/taste-skill/SKILL.md",
+      "skillFolderHash": "a6d128e53b4ec0238baee751dde33bf707adb5ec",
+      "installedAt": "2026-06-21T17:22:47.872Z",
+      "updatedAt": "2026-06-21T17:22:47.872Z"
+    },
+    "vitepress": {
+      "source": "antfu/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/antfu/skills.git",
+      "skillPath": "skills/vitepress/SKILL.md",
+      "skillFolderHash": "93ad9feab1c2218b8f42008a28e3a832d0473693",
+      "installedAt": "2026-06-21T17:22:48.406Z",
+      "updatedAt": "2026-06-21T17:22:48.406Z"
+    },
+    "react-native-best-practices": {
+      "source": "callstackincubator/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/callstackincubator/agent-skills.git",
+      "skillPath": "skills/react-native-best-practices/SKILL.md",
+      "skillFolderHash": "8fdaa2fb3a03ce006d529c06ec17a33c9f55d893",
+      "pluginName": "react-native-best-practices",
+      "installedAt": "2026-06-21T17:22:49.571Z",
+      "updatedAt": "2026-06-21T17:22:49.571Z"
+    },
+    "tailwind-v4-shadcn": {
+      "source": "secondsky/claude-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/secondsky/claude-skills.git",
+      "skillPath": "plugins/tailwind-v4-shadcn/skills/tailwind-v4-shadcn/SKILL.md",
+      "skillFolderHash": "2d6c390e2e9d814a4033ba0396303224a8e569a5",
+      "installedAt": "2026-06-21T17:22:49.869Z",
+      "updatedAt": "2026-06-21T17:22:49.869Z"
+    },
+    "typescript-react-reviewer": {
+      "source": "dotneet/claude-code-marketplace",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/dotneet/claude-code-marketplace.git",
+      "skillPath": "review-tool/skills/typescript-react-reviewer/SKILL.md",
+      "skillFolderHash": "c42f66f381de0fa465b7e2dbc52e8e8f5ecca495",
+      "installedAt": "2026-06-21T17:22:59.570Z",
+      "updatedAt": "2026-06-21T17:22:59.570Z"
+    },
+    "tailwindcss-advanced-layouts": {
+      "source": "josiahsiegel/claude-plugin-marketplace",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/josiahsiegel/claude-plugin-marketplace.git",
+      "skillPath": "plugins/tailwindcss-master/skills/tailwindcss-advanced-layouts/SKILL.md",
+      "skillFolderHash": "7ec4d140530ee20d719c40247f2e1713f68894cc",
+      "installedAt": "2026-06-21T17:23:00.519Z",
+      "updatedAt": "2026-06-21T17:23:00.519Z"
+    },
+    "m15-anti-pattern": {
+      "source": "zhanghandong/rust-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/zhanghandong/rust-skills.git",
+      "skillPath": "skills/m15-anti-pattern/SKILL.md",
+      "skillFolderHash": "44d2b1226ec9a23afd6bc18f08f8d2623cfa94f4",
+      "pluginName": "rust-skills",
+      "installedAt": "2026-06-21T17:23:01.280Z",
+      "updatedAt": "2026-06-21T17:23:01.280Z"
+    },
+    "rust-patterns": {
+      "source": "affaan-m/everything-claude-code",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/affaan-m/everything-claude-code.git",
+      "skillPath": "skills/rust-patterns/SKILL.md",
+      "skillFolderHash": "70b9890d51c38bc2a184a4e8d7e301e8371c1776",
+      "installedAt": "2026-06-21T17:23:04.055Z",
+      "updatedAt": "2026-06-21T17:23:04.055Z"
+    },
+    "javascript-typescript-jest": {
+      "source": "github/awesome-copilot",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/github/awesome-copilot.git",
+      "skillPath": "skills/javascript-typescript-jest/SKILL.md",
+      "skillFolderHash": "dde626acbe7a053f51fb0a2b706abe4c87d18a0c",
+      "installedAt": "2026-06-21T17:23:07.610Z",
+      "updatedAt": "2026-06-21T17:23:07.610Z"
+    },
+    "rust-testing": {
+      "source": "affaan-m/everything-claude-code",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/affaan-m/everything-claude-code.git",
+      "skillPath": "skills/rust-testing/SKILL.md",
+      "skillFolderHash": "38d383ad33a4ea55498b6a35ec40f33be5e094ab",
+      "installedAt": "2026-06-21T17:23:14.218Z",
+      "updatedAt": "2026-06-21T17:23:14.218Z"
+    },
+    "typescript-mcp-server-generator": {
+      "source": "github/awesome-copilot",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/github/awesome-copilot.git",
+      "skillPath": "skills/typescript-mcp-server-generator/SKILL.md",
+      "skillFolderHash": "946d7e1dd613c9c371d7022bdb774f0170b86c75",
+      "installedAt": "2026-06-21T17:23:19.064Z",
+      "updatedAt": "2026-06-21T17:23:19.064Z"
+    },
+    "typescript-expert": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/sickn33/antigravity-awesome-skills.git",
+      "skillPath": "skills/typescript-expert/SKILL.md",
+      "skillFolderHash": "653b9795fb6a9e1477b8a5a2d857ba6a36544fa7",
+      "installedAt": "2026-06-21T17:23:19.967Z",
+      "updatedAt": "2026-06-21T17:23:19.967Z"
+    },
+    "rust-mcp-server-generator": {
+      "source": "github/awesome-copilot",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/github/awesome-copilot.git",
+      "skillPath": "skills/rust-mcp-server-generator/SKILL.md",
+      "skillFolderHash": "db412fc9452d20c92687d5379d3cb0a7069d158a",
+      "installedAt": "2026-06-21T17:23:20.052Z",
+      "updatedAt": "2026-06-21T17:23:20.052Z"
     }
   },
   "dismissed": {

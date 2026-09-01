@@ -5,12 +5,13 @@ description: >-
   whenever writing or reviewing TypeScript — especially when adding types,
   handling errors, validating external data (APIs, file input, user input),
   designing state machines, or refactoring legacy code with loose booleans or
-  try/catch. It covers four patterns: discriminated unions (eliminate impossible
+  try/catch. It covers five patterns: discriminated unions (eliminate impossible
   states), Result types (explicit failures), schema-based parsing at boundaries
-  (parse don't validate), and explicit mutability. If the user is working with
-  TypeScript and mentions any of these concepts, or if their code shows patterns
-  like boolean overloads, untyped throw, or unchecked external data, apply this
-  skill.
+  (parse don't validate), explicit mutability, and exhaustive pattern matching
+  with match(). If the user is working with TypeScript and mentions any of these
+  concepts — or their code shows boolean overloads, untyped throw, unchecked
+  external data, long if/else chains, or switch statements over union types —
+  apply this skill.
 ---
 
 # TypeScript Rust Patterns
@@ -26,7 +27,7 @@ When the user asks you to write, review, or refactor TypeScript code:
 
 1. **Check what's available** — look at `package.json` (or `deno.json`,
    `importmap`, etc.) to see which of these libraries are already installed:
-   - `@ghaerdi/rustify` (preferred for Result types)
+   - `@ghaerdi/rustify` (preferred for Result types and `match()` pattern matching)
    - `zod` (preferred for validation)
    - `yup`, `joi`, `valibot`, `@effect/schema`, or other schema libs
    - If nothing is available, use lightweight inline alternatives (explained below)
@@ -35,13 +36,30 @@ When the user asks you to write, review, or refactor TypeScript code:
 
 ## Pattern 1: Eliminate Impossible States with Discriminated Unions
 
-### The problem
+### The wider problem
 
-Boolean flags and nullable fields create *impossible states* — combinations the
-type system accepts but that make no sense in practice.
+Interfaces with many optional fields silently allow meaningless combinations.
+The type system can't express which field combinations are valid — every
+consumer has to guess.
 
 ```ts
-// ❌ This type allows meaningless combinations
+// ❌ Too many optional fields — any shape type-checks, but only some make sense
+type ApiResponse = {
+  data?: Data;
+  error?: string;
+  isLoading?: boolean;
+  statusCode?: number;
+  retryAfter?: number;
+  headers?: Record<string, string>;
+};
+// What does data + error both present mean? isLoading + error?
+// Every consumer must guess which combinations are actually possible.
+```
+
+The same problem appears with boolean flags:
+
+```ts
+// ❌ isLoading + isError + isEmpty can all be true at once
 type UIState = {
   isLoading: boolean;
   isEmpty: boolean;
@@ -53,49 +71,90 @@ type UIState = {
 
 ### The fix
 
-Replace loose booleans with a discriminated union. Use `kind` as the
-discriminant property name (not `status` or `type`). Each variant carries only
-the data it needs — no more, no less.
+Model each valid state as a variant of a discriminated union. Each variant
+carries **only the fields relevant to that state** — no optionals, no
+unexpected combinations.
 
 ```ts
-// ✅ Only valid states are representable
+// ✅ Each variant carries only the data it needs.
+// No optional fields — the absence of a field IS its absence.
+
+// For UI states:
 type UIState =
   | { kind: "idle" }
   | { kind: "loading" }
   | { kind: "success"; data: Data }
   | { kind: "failed"; error: Error };
+
+// For API responses (no more guessing which fields pair together):
+type ApiResponse =
+  | { kind: "success"; data: Data; headers: Record<string, string> }
+  | { kind: "rate-limited"; retryAfter: number }
+  | { kind: "error"; statusCode: number; error: string };
 ```
+
+Use `kind` as the discriminant name (not `status` or `type`). The `kind` field
+alone distinguishes variants — **don't add `field?: never`** on other variants;
+they're redundant.
 
 ### Enforce exhaustiveness
 
-Always add a `default` branch in switch statements that assigns the discriminant
-to a `never` variable. If a new variant is added later, TypeScript will catch
-every unhandled case at compile time.
+Add a `default` branch that assigns the discriminant to a `never` variable.
+Wrap it in block braces `{ }` to satisfy the `no-case-declarations` lint rule:
 
 ```ts
-function render(state: UIState): string {
-  switch (state.kind) {
-    case "idle":    return "Waiting...";
-    case "loading": return spinner();
-    case "success": return formatData(state.data);
-    case "failed":  return errorBanner(state.error.message);
-    default:
-      // TypeScript error if a new variant is added without a case
-      const _exhaustive: never = state.kind;
+function handleResponse(res: ApiResponse) {
+  switch (res.kind) {
+    case "success":
+      return renderData(res.data);
+    case "rate-limited":
+      return showRetryCountdown(res.retryAfter);
+    case "error":
+      return showError(res.error);
+    default: {
+      const _exhaustive: never = res.kind; // TS error if a variant is missing
+    }
   }
 }
 ```
 
-### When to use this pattern
+### Construction gotcha: guard against disabled queries
 
-- **Form state**: Instead of `{ isSubmitting, isError, isSuccess, data, error }`,
-  use `{ kind: "idle" | "editing" | "submitting" | "success" | "error" }`
-  where each variant carries only relevant fields.
-- **Async data loading**: Replace `{ isLoading, data, error }` with
-  `{ kind: "loading" | "success"; data | "failed"; error }`.
-- **Feature flags / toggles**: Use a union of string literals instead of
+When constructing a discriminated union from a React Query result, don't
+assume that `!isLoading && !isError` means `data` is defined. A **disabled
+query** has `isLoading: false`, `isError: false`, and `data: undefined`:
+
+```ts
+// ❌ Falls through to "loaded" with undefined data when query is disabled
+const query = useQuery({ enabled: false })
+const state = query.isLoading
+  ? { kind: "loading" }
+  : query.isError
+  ? { kind: "failed", error: query.error }
+  : { kind: "loaded", entry: query.data! } // BOOM — data is undefined
+
+// ✅ Always guard with a truthy check on the data itself
+const state = query.isLoading
+  ? { kind: "loading" }
+  : query.isError
+  ? { kind: "failed", error: query.error }
+  : query.data
+  ? { kind: "loaded", entry: query.data }
+  : { kind: "loading" } // disabled query → safe fallback
+```
+
+### When you know it's time
+
+- An interface has **3+ optional fields** and you find yourself writing
+  `if (x && y && !z)` combinations to reason about valid states.
+- A component receives a prop interface where some fields are **only
+  meaningful in combination** with others (e.g. `error` only when
+  `status === "error"`).
+- You see **boolean flags that can't all be `true`** at once but the type
+  permits it.
+- Any **state machine** (form submission, data loading, multi-step flow).
+- **Feature flags** / toggles: use a union of string literals instead of
   multiple booleans.
-- **Any state machine**: Model each state as a variant.
 
 ## Pattern 2: Explicit Failures with Result Types
 
@@ -387,7 +446,120 @@ class QueryBuilder {
 | Local accumulator (sum, counter, array push) | Use `let`, it's fine |
 | Cross-cutting state (cache, registry) | Encapsulate in a class, document as mutable |
 
-## Decision guide: putting it all together
+## Pattern 5: Exhaustive Pattern Matching with `match()`
+
+### The problem
+
+Consuming a discriminated union means writing a `switch` with a manual `never`
+check, or a tower of nested ternaries. Both are verbose, and a missed case is a
+silent runtime bug — the compiler only catches it if you remember the `default:
+{ const _exhaustive: never }` trick.
+
+### The fix
+
+`@ghaerdi/rustify/match` provides `match(value)` with a ts-pattern-style chain:
+`.with(pattern, handler)` cases terminated by `.exhaustive()`. Exhaustiveness
+is built into the type system — calling `.exhaustive()` on an incomplete match
+is a **compile-time error** naming the exact unhandled case:
+
+```ts
+import { match, P } from "@ghaerdi/rustify/match";
+
+type Shape =
+  | { kind: "circle"; radius: number }
+  | { kind: "rect"; width: number; height: number };
+
+const area = (shape: Shape): number =>
+  match(shape)
+    .with({ kind: "circle" }, ({ radius }) => Math.PI * radius * radius)
+    .with({ kind: "rect" }, ({ width, height }) => width * height)
+    .exhaustive();
+// ^ TS error if a variant is missing:
+//   NeverCase<"NonExhaustive: unhandled case ...">
+```
+
+Handlers receive the narrowed value. Shape patterns are **partial**: a pattern
+like `{ kind: "circle" }` matches any object carrying that field, and the
+handler still receives the whole matched object — so destructuring
+`({ radius })` just works.
+
+### Terminal methods
+
+- `.exhaustive()` — compile-time enforced; throws at runtime only if nothing
+  matched (an invariant violation, e.g. data from outside the type system)
+- `.otherwise(handler)` — default case, the `.with` analog of `default:`; the
+  handler receives the whole input
+- `.run()` — returns `undefined` when nothing matches; for partial coverage the
+  return type is `TOutput | undefined`, and it narrows to `TOutput` when the
+  cases are exhaustive
+
+### Patterns: plain values and `P.*` guards
+
+```ts
+match(x)
+  .with(0, () => "zero")                          // literal (Object.is — NaN matches NaN)
+  .with("ready", () => "go")
+  .with(P.string, (s) => `string: ${s}`)          // type guards
+  .with(P.number, (n) => `number: ${n}`)
+  .with(P.boolean, (b) => (b ? "yes" : "no"))
+  .with(P.nullish, () => "nothing")               // null | undefined
+  .with(P.union(P.string, P.number), (v) => ...)  // alternatives
+  .with(P.instanceOf(Date), (d) => d.toISOString()) // class instances
+  .with(P.array(P.number), (nums) => nums.length) // array of numbers
+  .with([1, 2, 3], () => "exact tuple")           // array literal: same length, pairwise
+  .with({ role: "admin" }, (u) => u.role)         // object shape (partial match)
+  .with(P.not(P.nullish), () => "definitely there")
+  .with(P.when((v): v is Admin => v.role === "admin"), (a) => a.permissions)
+  .otherwise(() => "other");
+```
+
+`P.when` accepts a type-guard predicate, so the handler's parameter narrows
+to whatever the guard asserts. `P.array(sub)` matches arrays where *every*
+element matches `sub`.
+
+### Matching Options
+
+`Option` integrates with `match` through `Option.some` / `Option.none`
+patterns — the handler receives the **unwrapped** value, no annotation needed:
+
+```ts
+import { match } from "@ghaerdi/rustify/match";
+import { Option } from "@ghaerdi/rustify";
+
+const label = (opt: Option<number>) =>
+  match(opt)
+    .with(Option.some, (n) => `Some(${n.toFixed(2)})`) // n: number (unwrapped)
+    .with(Option.none, () => "None")
+    .exhaustive();
+```
+
+### `matches()` — validation without a chain
+
+```ts
+import { matches, P } from "@ghaerdi/rustify/match";
+
+matches({ kind: "circle", radius: 5 }, { kind: "circle" }); // true
+matches("hello", P.string);                                 // true
+```
+
+Use `matches()` for one-off guards and for composing predicates; use
+`match()` when you're branching on a value.
+
+### When to use
+
+- **Consuming discriminated unions** — replace `switch` + manual `never` with
+  `.exhaustive()` (Pattern 1's conceptual model stays; this is the ergonomic
+  consumption)
+- **Branching on untagged values** — types, class instances, or shapes that a
+  plain union can't express
+- **Long if/else chains keyed on value shape** — each `.with()` is a branch
+- **Composing guards** — `P.when` + `P.union` + `P.not` instead of boolean soup
+
+### What NOT to use this pattern for
+
+- Single boolean-ish checks — `matches()` or a plain `if` is simpler
+- When a variant needs no unique handling — a catch-all (`P.any` or
+  `.otherwise()`) is fine; don't enumerate cases for the sake of it
 
 When faced with a TypeScript code problem, use this flow:
 
@@ -398,7 +570,8 @@ When faced with a TypeScript code problem, use this flow:
    a Result instead of throwing)
 
 3. **Is there a state machine or multi-state UI?** → Apply Pattern 1
-   (discriminated union with `kind`, exhaustive switch)
+   (discriminated union with `kind`), and consume it with Pattern 5's
+   `match(...).exhaustive()` instead of a hand-rolled `switch`
 
 4. **Is there a function that might mutate something?** → Apply Pattern 4 (name
    it clearly, prefer immutable returns)
@@ -407,6 +580,9 @@ When faced with a TypeScript code problem, use this flow:
    failure is an expected possibility. Let exceptions only represent
    *unexpected* programming errors (assertions, out-of-memory, etc.).
 
+6. **Are you branching on a value's shape?** → Apply Pattern 5 (`match()` with
+   `.exhaustive()`/`.otherwise()`); use `matches()` or a plain `if` for single
+   checks.
 ## What to check in a code review
 
 When reviewing TypeScript code, look for these red flags:
@@ -417,11 +593,14 @@ When reviewing TypeScript code, look for these red flags:
 - ❌ Functions that silently mutate their arguments
 - ❌ `any` type used where a discriminated union or Result would fit
 - ❌ Catch blocks that swallow errors or log and return a default
-
+- ❌ Long `if/else` chains or `switch` statements over union types that could
+  be `match(...).exhaustive()` (a missed case is a silent runtime bug)
 And suggest these green flags instead:
 
-- ✅ Discriminated unions with `kind` and exhaustive `never` checks
+- ✅ Discriminated unions with `kind` and exhaustive `never` checks (or
+  `match(...).exhaustive()` for consumption)
 - ✅ Result return types for fallible operations
 - ✅ Zod (or equivalent) parsing at API/file boundaries
 - ✅ Immutable-by-default functions, `InPlace` suffix for mutating ones
 - ✅ `type` imports for type-only exports (`import type { Result }`)
+- ✅ `match()` chains with `.exhaustive()` — the compiler enforces coverage
