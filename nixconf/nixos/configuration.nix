@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-		./base-configuration.nix
+    ./base-configuration.nix
     ./features/cachix.nix
     ./features/stylix.nix
   ];

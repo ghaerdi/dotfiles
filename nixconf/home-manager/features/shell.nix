@@ -32,13 +32,16 @@
     gh
     libnotify
     television
-		asciinema
-		jrnl
+    asciinema
+    jrnl
+    jujutsu
+    herdr
 
     lua-language-server
     rustup
     python3
     nodejs
+    deno
     zig
     bun
     gcc

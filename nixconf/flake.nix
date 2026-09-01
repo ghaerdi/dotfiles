@@ -17,22 +17,28 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-		spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
+    herdr.url = "github:ogulcancelik/herdr";
   };
 
   outputs = {
     nixpkgs,
     home-manager,
-		spicetify-nix,
+    spicetify-nix,
     nixpkgs-kernel,
     zen-browser,
     stylix,
     quickshell,
+    herdr,
     ...
   } @ inputs: let
     system = "x86_64-linux";
-		pkgs = nixpkgs.legacyPackages.${system};
-		stable-pkgs = import nixpkgs-kernel {
+    pkgs = import nixpkgs {
+      inherit system;
+      overlays = [ herdr.overlays.default ];
+    };
+    stable-pkgs = import nixpkgs-kernel {
       inherit system;
       config.allowUnfree = true;
     };
@@ -80,12 +86,12 @@
           inherit inputs stateVersion username homeDirectory;
           zen-browser = zen-browser.packages.${system}.twilight;
           quickshell = quickshell.packages.${system}.default;
-					spicePkgs = spicetify-nix.legacyPackages.${system};
+          spicePkgs = spicetify-nix.legacyPackages.${system};
         };
         pkgs = pkgs;
         modules = [
           stylix.homeModules.stylix
-					inputs.spicetify-nix.homeManagerModules.spicetify
+          inputs.spicetify-nix.homeManagerModules.spicetify
           ./hosts/asus-proart/home-manager.nix
         ];
       };

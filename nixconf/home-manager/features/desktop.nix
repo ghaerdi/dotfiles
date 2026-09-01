@@ -2,7 +2,7 @@
   pkgs,
   zen-browser,
   quickshell,
-	spicePkgs,
+  spicePkgs,
   ...
 }: {
   programs.home-manager.enable = true;
@@ -37,6 +37,7 @@
     vesktop
     ghostty
     zed-editor
+    postman
     vlc
 
     # TOOLS
@@ -51,21 +52,21 @@
     noto-fonts
   ];
 
-	programs.spicetify = {
-		enable = true;
-		theme = spicePkgs.themes.turntable;
-		enabledExtensions = with spicePkgs.extensions; [
-			hidePodcasts
-			fullAppDisplay
-		];
-		enabledSnippets = with spicePkgs.snippets; [
-			pointer
-		];
-		enabledCustomApps = with spicePkgs.apps; [
-			marketplace
-			ncsVisualizer
-		];
-	};
+  programs.spicetify = {
+    enable = true;
+    theme = spicePkgs.themes.turntable;
+    enabledExtensions = with spicePkgs.extensions; [
+      hidePodcasts
+      fullAppDisplay
+    ];
+    enabledSnippets = with spicePkgs.snippets; [
+      pointer
+    ];
+    enabledCustomApps = with spicePkgs.apps; [
+      marketplace
+      ncsVisualizer
+    ];
+  };
 
   fonts.fontconfig = {
     enable = true;

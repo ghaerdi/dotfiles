@@ -1,4 +1,4 @@
-{ ... }: {
+{lib, ...}: {
   imports = [
     ../../home-manager/home.nix
     ../../home-manager/features/services.nix
@@ -22,4 +22,13 @@
     ../../home-manager/scripts/webapp-launcher.nix
     ../../home-manager/scripts/cleanup.nix
   ];
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "mongodb-compass"
+      "veracrypt"
+      "obsidian"
+      "slack"
+      "spotify"
+      "postman"
+    ];
 }

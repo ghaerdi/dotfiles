@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     (pkgs.writeShellScriptBin "nixconf-prompt" ''
          #!/bin/sh

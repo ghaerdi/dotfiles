@@ -6,7 +6,7 @@
   imports = [
     /etc/nixos/configuration.nix
     /etc/nixos/hardware-configuration.nix
-		../../nixos/base-configuration.nix
+    ../../nixos/base-configuration.nix
   ];
 
   wsl.defaultUser = lib.mkForce username;

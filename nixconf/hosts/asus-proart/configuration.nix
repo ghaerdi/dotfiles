@@ -1,5 +1,4 @@
-{ lib, ... }:
-{
+{lib, ...}: {
   imports = [
     ../../nixos/configuration.nix
     ../../nixos/features/battery.nix
