@@ -1,5 +1,6 @@
 post-switch = "zellij action rename-tab {{ worktree_name }}"
-skip-commit-generation-prompt = true
+# skip-commit-generation-prompt = true
 
 [commit.generation]
 command = "opencode run -m opencode-go/deepseek-v4-flash --variant fast"
+# stage = "none"
