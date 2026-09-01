@@ -2,6 +2,16 @@ workspace "chat" {}
 workspace "main" {}
 workspace "coding" {}
 workspace "work" {}
+workspace "recording" {
+	layout {
+    preset-column-widths {
+        proportion 0.5
+				proportion 0.6
+        proportion 0.95
+    }
+		default-column-width { proportion 0.6; }
+	}
+}
 
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
