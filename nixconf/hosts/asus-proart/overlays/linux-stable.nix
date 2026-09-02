@@ -2,7 +2,6 @@
   config,
   pkgs,
   inputs,
-  stable-pkgs,
   ...
 }: {
   nixpkgs.overlays = [
@@ -18,5 +17,5 @@
     })
   ];
 
-  boot.kernelPackages = stable-pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 }

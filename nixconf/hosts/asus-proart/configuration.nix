@@ -11,6 +11,8 @@
     ./features/nvidia.nix
   ];
 
+  services.displayManager.defaultSession = lib.mkForce "niri";
+
   boot = {
     resumeDevice = "/dev/disk/by-label/swap";
     kernelParams = [
@@ -20,16 +22,5 @@
   };
 
   services.tailscale.enable = true;
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [
-      "broadcom-bt-firmware"
-      "b43-firmware"
-      "xone-dongle-firmware"
-      "facetimehd-calibration"
-      "facetimehd-firmware"
-      "steam"
-      "steam-original"
-      "steam-unwrapped"
-      "steam-run"
-    ];
+  nixpkgs.config.allowUnfree = true;
 }

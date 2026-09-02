@@ -1,5 +1,4 @@
 {pkgs, ...}: {
-  gtk.gtk4.theme = null;
   stylix.enable = true;
   stylix.autoEnable = true;
   stylix.image = ../../../wallpapers/Wallpapers/genshin-impact_raiden-shogun_1440p-2K.webp;

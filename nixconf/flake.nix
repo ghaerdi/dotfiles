@@ -3,8 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # Pinned nixpkgs for kernel 7.0.3 (Bluetooth MT7925 regression fix)
-    nixpkgs-kernel.url = "github:nixos/nixpkgs/549bd84d6279f9852cae6225e372cc67fb91a4c1";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,7 +24,6 @@
     nixpkgs,
     home-manager,
     spicetify-nix,
-    nixpkgs-kernel,
     zen-browser,
     stylix,
     quickshell,
@@ -38,10 +35,6 @@
       inherit system;
       overlays = [ herdr.overlays.default ];
     };
-    stable-pkgs = import nixpkgs-kernel {
-      inherit system;
-      config.allowUnfree = true;
-    };
     username = "ghaerdi";
     homeDirectory = "/home/${username}";
     stateVersion = "25.11"; # Please read releases notes before changing.
@@ -51,7 +44,7 @@
     nixosConfigurations = {
       asus-proart = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit inputs stateVersion username stable-pkgs;
+          inherit inputs stateVersion username;
           hostname = "proart-nixos";
         };
         modules = [
@@ -62,7 +55,7 @@
 
       homelab = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit inputs stateVersion username stable-pkgs;
+          inherit inputs stateVersion username;
           hostname = "proteo";
         };
         modules = [
