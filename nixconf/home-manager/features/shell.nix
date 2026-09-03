@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     uutils-coreutils-noprefix
     worktrunk
@@ -36,6 +32,7 @@
     jrnl
     jujutsu
     herdr
+    jq
 
     lua-language-server
     rustup

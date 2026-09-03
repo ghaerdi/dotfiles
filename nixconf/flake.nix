@@ -33,7 +33,7 @@
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
-      overlays = [ herdr.overlays.default ];
+      overlays = [herdr.overlays.default];
     };
     username = "ghaerdi";
     homeDirectory = "/home/${username}";
